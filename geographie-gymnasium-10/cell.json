@@ -1,0 +1,2480 @@
+{
+  "$schema": "https://zam.app/schemas/v1/kvt-tile.json",
+  "tile_id": "zam-academy:geographie-gymnasium-10",
+  "version": "2026.11.1",
+  "title": "Geographie 10 Gymnasium (ZAM Academy)",
+  "description": "Geographie 10 am bayerischen Gymnasium (LehrplanPLUS): Arbeitstechniken, Eine Welt und Indikatoren, Tropen und aride Subtropen, Klimawandel und Kippelemente, MENA, Afrika südlich der Sahara sowie Mittel- und Südamerika mit Karibik.",
+  "publisher": "ZAM Academy",
+  "published_at": "2026-11-28T07:00:00Z",
+  "sources": [
+    {
+      "uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/10/geographie",
+      "checked": "2026-11-28",
+      "label": "LehrplanPLUS Bayern, Gymnasium Geographie 10"
+    }
+  ],
+  "atoms": [
+    {
+      "id": "01M8GDA14GAV5XXJ0B2NK8YBFH",
+      "atom_uri": "urn:zam:atom:01M8GDA14GAV5XXJ0B2NK8YBFH",
+      "namespace": "gymnasium-geographie-10",
+      "slug": "geo10-karten-und-satellitenbilder",
+      "title": "Karten, Themenebenen und Satellitenbilder auswerten",
+      "domain": "geographie/gymnasium-10",
+      "reduction": "formal",
+      "typical_age_min": 15,
+      "prerequisites": [],
+      "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=karten-und-satellitenbilder",
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 10,
+          "subject": "geographie",
+          "topic_code": "lb1",
+          "topic_title": "Geographische Arbeitstechniken",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDA15RDVKB7XX26GTHTF8V",
+          "slug": "geo10-karten-satelliten-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "edge_representative": true,
+          "question": "Welchen Vorteil bietet eine Zeitreihe von Satellitenbildern gegenüber einer statischen physischen Atlaskarte?",
+          "concept": "Sie macht aktuelle Oberflächenveränderungen wie Rodungsschneisen oder Stauseen zeitlich sichtbar",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=karten-und-satellitenbilder",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sie macht aktuelle Oberflächenveränderungen wie Rodungsschneisen oder Stauseen zeitlich sichtbar",
+              "Sie blendet grundsätzlich alle Küstenlinien und Gebirge aus"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Sie liefert allein ohne Maßstab und Legende politische Wahlergebnisse eines Landes",
+              "reason": "Verwechslung physischer Erdbeobachtung mit politischen Statistikdaten."
+            },
+            {
+              "text": "Sie ersetzt vollständig jede Atlaskarte, da Relief und Klima direkt aufgedruckt sind",
+              "reason": "Satellitenbilder zeigen Rohoberflächen, ersetzen aber keine interpretierten Themenkarten."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDA163S7ZZ1Z0VQFR6PAWX",
+          "slug": "geo10-karten-satelliten-synthese",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie verbindest du bei einer Raumauswertung physische Atlaskarte, Themenkarte und aktuelles Satellitenbild sinnvoll?",
+          "concept": "Physische Karte klärt Lage und Relief, Themenkarte Klima oder Vegetation und das Satellitenbild aktuelle Eingriffe vor Ort",
+          "sample_solution": "Zuerst verortest du den Raum im Gradnetz und anhand des Reliefs auf der physischen Karte. Anschließend liest du auf Klima- oder Vegetationskarten das langfristige Zonenmuster ab und erkennst schließlich im Satellitenbild aktuelle Veränderungen wie Straßenbau, Rodung oder Siedlungswachstum.",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=karten-und-satellitenbilder",
+          "choice_distractors": [
+            {
+              "text": "Nur das Satellitenbild wird ausgewertet, da Atlas und Themenkarte bei digitaler Nutzung überholt sind",
+              "reason": "Vernachlässigt Gradnetz, Reliefgrundlage und langfristige Klimaeinordnung."
+            },
+            {
+              "text": "Jede Karte wird getrennt ohne Legende betrachtet, damit keine falschen Verknüpfungen entstehen",
+              "reason": "Gerade die verknüpfte Ebenenauswertung mit Legendenprüfung schafft Erkenntnisgewinn."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8GDA14HMG4RCEJJAJGK244W",
+      "atom_uri": "urn:zam:atom:01M8GDA14HMG4RCEJJAJGK244W",
+      "namespace": "gymnasium-geographie-10",
+      "slug": "geo10-klimadiagramme-und-zonen",
+      "title": "Klimadiagramme begründet Klimazonen zuordnen",
+      "domain": "geographie/gymnasium-10",
+      "reduction": "formal",
+      "typical_age_min": 15,
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDA14GAV5XXJ0B2NK8YBFH",
+          "type": "hard"
+        }
+      ],
+      "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=klimadiagramme-und-zonen",
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 10,
+          "subject": "geographie",
+          "topic_code": "lb1",
+          "topic_title": "Geographische Arbeitstechniken",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDA15T3YD00A5V1GQJA4ZY",
+          "slug": "geo10-klimadiagramme-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "edge_representative": true,
+          "question": "Wann gilt ein Monat im Walter-Lieth-Klimadiagramm als arid?",
+          "concept": "Wenn der Monatsniederschlag in Millimetern kleiner ist als die doppelte Temperatur in Grad Celsius",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=klimadiagramme-und-zonen",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Wenn der Monatsniederschlag in Millimetern kleiner ist als die doppelte Temperatur in Grad Celsius",
+              "Sobald die Temperatur im Monatsmittel über zehn Grad Celsius steigt"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Wenn die Niederschlagssäule höher liegt als die Kurve der doppelten Monatstemperatur",
+              "reason": "Verwechslung von arid (N < 2 · T) und humid (N > 2 · T)."
+            },
+            {
+              "text": "Nur in Monaten mit frostigen Mitteltemperaturen unter minus zehn Grad Celsius",
+              "reason": "Aridität beschreibt Wasserknappheit durch Verdunstungsüberschuss, nicht Winterfrost."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDA165YYQ5C53BF8XZZ6AH",
+          "slug": "geo10-klimadiagramme-synthese",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Welche drei Merkmale prüfst du nacheinander, um ein Klimadiagramm begründet einer Klimazone zuzuordnen?",
+          "concept": "Temperaturniveau und Frostmonate, Jahresschwankung zwischen Tages- und Jahreszeitenklima sowie Zahl und Lage arider Monate",
+          "sample_solution": "Zuerst prüfst du Jahresmitteltemperatur und ob Frost auftritt. Zweitens unterscheidest du über die Jahresspanne zwischen Tageszeitenklima und Jahreszeitenklima. Drittens zählst du über N < 2 · T die ariden Monate und prüfst, in welcher Jahreszeit Regen fällt.",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=klimadiagramme-und-zonen",
+          "choice_distractors": [
+            {
+              "text": "Einziger Blick auf die Stationserhebung in Metern sowie den Namen des jeweiligen Landes auf einer Übersichtskarte",
+              "reason": "Höhe und Staatennamen ersetzen nicht die Auswertung von Temperatur- und Niederschlagsgang."
+            },
+            {
+              "text": "Alleiniges Summieren aller zwölf Monatsniederschläge ohne jede Beachtung der monatlichen Temperaturkurve",
+              "reason": "Verdunstung hängt stark von der Temperatur ab; gleiche Summen wirken verschieden."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8GDA14JKRWN8ABRE3E58877",
+      "atom_uri": "urn:zam:atom:01M8GDA14JKRWN8ABRE3E58877",
+      "namespace": "gymnasium-geographie-10",
+      "slug": "geo10-blockbilder-und-kausalprofile",
+      "title": "Blockbilder auswerten und Kausalprofile anfertigen",
+      "domain": "geographie/gymnasium-10",
+      "reduction": "formal",
+      "typical_age_min": 15,
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDA14GAV5XXJ0B2NK8YBFH",
+          "type": "hard"
+        }
+      ],
+      "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=blockbilder-und-kausalprofile",
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 10,
+          "subject": "geographie",
+          "topic_code": "lb1",
+          "topic_title": "Geographische Arbeitstechniken",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDA15WANDVF3JDH0HFS26P",
+          "slug": "geo10-kausalprofile-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "edge_representative": true,
+          "question": "Wodurch unterscheidet sich ein geographisches Kausalprofil von einem einfachen Höhenprofil?",
+          "concept": "Es verknüpft Geländestufen ausdrücklich über Ursache-Wirkungs-Pfeile mit Klima, Boden und Nutzung",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=blockbilder-und-kausalprofile",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Es verknüpft Geländestufen ausdrücklich über Ursache-Wirkungs-Pfeile mit Klima, Boden und Nutzung",
+              "Es stellt ausschließlich Bevölkerungszahlen ohne Geländeform dar"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Es bildet nur die Untergrundgesteine ab und lässt Wind, Niederschlag sowie Bewirtschaftung weg",
+              "reason": "Verwechslung mit einem rein geologischen Profil."
+            },
+            {
+              "text": "Es listet ohne Ordnung einzelne Ortsnamen auf, statt Prozesse zwischen Natur und Mensch zu zeigen",
+              "reason": "Gerade das gezielte Verknüpfen über Pfeile macht ein Kausalprofil aus."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDA167412WWAC4SZV21PYZ",
+          "slug": "geo10-kausalprofile-synthese",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "In welcher logischen Kette ordnest du die Informationen in einem Kausalprofil von Küste zu Gebirgsleeseite?",
+          "concept": "Lage und Relief steuern Windaufstieg und Luv-Lee-Niederschlag, diese prägen Boden und Vegetation sowie die Landnutzung",
+          "sample_solution": "Ausgehend von Meerestemperatur und Relief zeigst du den feuchten Luftaufstieg im Luv (Steigungsregen, üppige Vegetation) und das trockene Absinken im Lee (Regenschatten), leitest davon Bodenfeuchte ab und verbindest dies per Pfeil mit der angepassten Nutzung.",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=blockbilder-und-kausalprofile",
+          "choice_distractors": [
+            {
+              "text": "Man beginnt bei den Stadtgrenzen, springt zufällig zu Bodenarten und zeichnet zuletzt das Meer daneben",
+              "reason": "Ohne Kausalrichtung bleiben Zusammenhänge unverständlich."
+            },
+            {
+              "text": "Relief und Klima werden als völlig getrennte Kästchen ohne Verbindungspfeile gezeichnet",
+              "reason": "Verfehlt das Grundprinzip geographischer Wirkungszusammenhänge."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8GDA14KD3EW1JCBWJ1C4JDD",
+      "atom_uri": "urn:zam:atom:01M8GDA14KD3EW1JCBWJ1C4JDD",
+      "namespace": "gymnasium-geographie-10",
+      "slug": "geo10-experimente-stadtmodell-recherche",
+      "title": "Experimente, Stadtmodelle und digitale Recherche prüfen",
+      "domain": "geographie/gymnasium-10",
+      "reduction": "formal",
+      "typical_age_min": 15,
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDA14GAV5XXJ0B2NK8YBFH",
+          "type": "hard"
+        }
+      ],
+      "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=experimente-stadtmodell-recherche",
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 10,
+          "subject": "geographie",
+          "topic_code": "lb1",
+          "topic_title": "Geographische Arbeitstechniken",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDA15ZGZ19VVYHKYEQG82G",
+          "slug": "geo10-methoden-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "edge_representative": true,
+          "question": "Welche Grundregel gilt bei einem klima- oder bodenkundlichen Experiment, um eine Hypothese sauber zu prüfen?",
+          "concept": "Nur eine einzelne Einflussgröße gezielt verändern und gegen eine Kontrollprobe messen",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=experimente-stadtmodell-recherche",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Nur eine einzelne Einflussgröße gezielt verändern und gegen eine Kontrollprobe messen",
+              "Möglichst viele Bedingungen gleichzeitig verändern, damit der Versuch schneller endet"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Auf Kontrollmessungen verzichten und stattdessen vermutete Wunschwerte direkt eintragen",
+              "reason": "Verstößt gegen wissenschaftliche Prüfbarkeit."
+            },
+            {
+              "text": "Das Experiment nach jedem Durchgang auf ganz anderen Bodenproben ohne Protokoll wiederholen",
+              "reason": "Ohne Variablenkontrolle sind Unterschiede nicht auf eine Ursache rückführbar."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDA16A9920CDR2XYEB5871",
+          "slug": "geo10-methoden-synthese",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie überprüfst du ein geographisches Stadtmodell am Luftbild und eine digitale Informationsquelle auf Zuverlässigkeit?",
+          "concept": "Stadtmodell an realen Grundrissen gegenprüfen sowie bei digitalen Quellen Urheber, Jahr, Datengrundlage und Interessen checken",
+          "sample_solution": "Ein Stadtmodell vereinfacht typische Raumstrukturen; am Luftbild prüfst du Übereinstimmungen und lokale Abweichungen. Bei digitalen Recherchen kontrollierst du Herausgeber, Erhebungsdatum, Messmethoden und mögliche Interessenkonflikte gegen verlässliche Fachquellen.",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=experimente-stadtmodell-recherche",
+          "choice_distractors": [
+            {
+              "text": "Stadtmodelle und Webseiten werden ungeprüft übernommen, sobald sie viele bunte Grafiken zeigen",
+              "reason": "Unreflektierte Übernahme übersieht lokale Besonderheiten und fehlerhafte Quellen."
+            },
+            {
+              "text": "Luftbilder werden komplett ignoriert, weil theoretische Modelle die Realität immer vollständig abbilden",
+              "reason": "Jedes Modell abstrahiert und braucht den empirischen Abgleich."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8GDA14MC4TQACGC2NKDAE1G",
+      "atom_uri": "urn:zam:atom:01M8GDA14MC4TQACGC2NKDAE1G",
+      "namespace": "gymnasium-geographie-10",
+      "slug": "geo10-lebensrealitaeten-eine-welt",
+      "title": "Lebensrealitäten von Kindern und Jugendlichen weltweit",
+      "domain": "geographie/gymnasium-10",
+      "reduction": "formal",
+      "typical_age_min": 15,
+      "prerequisites": [],
+      "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=lebensrealitaeten-eine-welt",
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 10,
+          "subject": "geographie",
+          "topic_code": "lb2",
+          "topic_title": "Leben in der Einen Welt",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDA161TGAG4H9CHK2DXDVA",
+          "slug": "geo10-lebensrealitaeten-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "edge_representative": true,
+          "question": "Warum genügt ein einzelner Landesdurchschnitt nicht, um Lebensrealitäten Jugendlicher im Globalen Süden zu erfassen?",
+          "concept": "Innerstaatliche Unterschiede zwischen Großstadt, ländlichem Raum und Einkommensschichten sind oft enorm",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=lebensrealitaeten-eine-welt",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Innerstaatliche Unterschiede zwischen Großstadt, ländlichem Raum und Einkommensschichten sind oft enorm",
+              "Weil alle Jugendlichen eines Staates immer unter exakt identischen Bedingungen leben"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Weil in Entwicklungsregionen grundsätzlich überhaupt keine Städte oder Schulen existieren",
+              "reason": "Klischeehaftes Vorurteil, das Metropolen und Bildungseinrichtungen ausblendet."
+            },
+            {
+              "text": "Weil das Alter der Jugendlichen statistisch erst ab dreißig Jahren erhoben werden darf",
+              "reason": "Unzutreffende statistische Annahme."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDA16CNJWRZR0VHGE8KSYY",
+          "slug": "geo10-lebensrealitaeten-synthese",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie hängen Trinkwasserzugang, schulische Bildung und spätere Erwerbschancen für Jugendliche in Ländern niedrigen Standes zusammen?",
+          "concept": "Fehlendes Wasser kostet Wegezeit und Gesundheit, erschwert regelmäßigen Schulbesuch und drängt früh in unsichere Arbeit",
+          "sample_solution": "Lange Wege zum Wasserholen und wasserbedingte Krankheiten kosten täglich Lernzeit, sodass Jugendliche – besonders Mädchen – früher die Schule abbrechen und häufiger ohne Ausbildung im informellen Sektor arbeiten müssen.",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=lebensrealitaeten-eine-welt",
+          "choice_distractors": [
+            {
+              "text": "Trinkwasser und Schulbesuch stehen in keinem Zusammenhang, da beide von verschiedenen Ministerien verwaltet werden",
+              "reason": "Ignoriert Alltagszeitaufwand und gesundheitliche Voraussetzungen."
+            },
+            {
+              "text": "Weite Wasserwege fördern automatisch die schulischen Leistungen und verhindern informelle Erwerbsarbeit",
+              "reason": "Verkehrt die reale Belastung ins Gegenteil."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8GDA14N7Y2TDA06TP4YYX23",
+      "atom_uri": "urn:zam:atom:01M8GDA14N7Y2TDA06TP4YYX23",
+      "namespace": "gymnasium-geographie-10",
+      "slug": "geo10-regionen-unterschiedlicher-entwicklung",
+      "title": "Regionen unterschiedlichen Entwicklungsstandes vergleichen",
+      "domain": "geographie/gymnasium-10",
+      "reduction": "formal",
+      "typical_age_min": 15,
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDA14GAV5XXJ0B2NK8YBFH",
+          "type": "hard"
+        },
+        {
+          "atom_id": "01M8GDA14MC4TQACGC2NKDAE1G",
+          "type": "hard"
+        }
+      ],
+      "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=regionen-unterschiedlicher-entwicklung",
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 10,
+          "subject": "geographie",
+          "topic_code": "lb2",
+          "topic_title": "Leben in der Einen Welt",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDA163NR26Q6MHR6SH8738",
+          "slug": "geo10-entwicklungsregionen-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "edge_representative": true,
+          "question": "Was kennzeichnet typische Schwellenländer wie Brasilien oder Indien im globalen Vergleich?",
+          "concept": "Dynamisches Industrie- und Wirtschaftswachstum bei zugleich starken sozialen und regionalen Ungleichheiten",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=regionen-unterschiedlicher-entwicklung",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Dynamisches Industrie- und Wirtschaftswachstum bei zugleich starken sozialen und regionalen Ungleichheiten",
+              "Vollständiges Fehlen moderner Städte, Industrieanlagen und eigener Hochschulen"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Weltweit höchster Lebensstandard für alle Einwohnerinnen und Einwohner ohne jegliche Armutsprobleme",
+              "reason": "Verkennt tiefe innerstaatliche Disparitäten zwischen Zentren und Rändern."
+            },
+            {
+              "text": "Eine reine Selbstversorgungs-Wirtschaft ohne jede Anbindung an den internationalen Welthandel",
+              "reason": "Schwellenländer sind meist stark in globale Wertschöpfungsketten eingebunden."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDA16E5T8VNKHXTEQ198H7",
+          "slug": "geo10-entwicklungsregionen-synthese",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Weshalb greift das alte Bild eines einfachen „Nord-Süd-Gefälles“ heute zu kurz?",
+          "concept": "Wirtschaftsstarke Schwellenländer und ölreiche Staaten differenzieren den Süden aus; zudem liegen Australien und Neuseeland im Süden",
+          "sample_solution": "Auf der Südhalbkugel liegen hochentwickelte Staaten wie Australien, während sich der frühere Globale Süden stark aufgespalten hat – zwischen dynamischen Industrieregionen in Ostasien und Lateinamerika einerseits und krisenbetroffenen Ländern niedrigen Standes andererseits.",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=regionen-unterschiedlicher-entwicklung",
+          "choice_distractors": [
+            {
+              "text": "Das alte Bild stimmt heute sogar genauer als früher, weil alle Länder südlich des Äquators völlig gleich arm sind",
+              "reason": "Ignoriert Schwellenländer und Australien/Neuseeland."
+            },
+            {
+              "text": "Das Schema scheitert allein daran, dass die Erdkugel keinen geographischen Nordpol mehr besitzt",
+              "reason": "Absurde geographische Begründung."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8GDA14PWNZ2PG8W57W79YMV",
+      "atom_uri": "urn:zam:atom:01M8GDA14PWNZ2PG8W57W79YMV",
+      "namespace": "gymnasium-geographie-10",
+      "slug": "geo10-indikatoren-kritisch-pruefen",
+      "title": "Entwicklungsindikatoren kritisch bewerten",
+      "domain": "geographie/gymnasium-10",
+      "reduction": "formal",
+      "typical_age_min": 15,
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDA14N7Y2TDA06TP4YYX23",
+          "type": "hard"
+        }
+      ],
+      "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=indikatoren-kritisch-pruefen",
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 10,
+          "subject": "geographie",
+          "topic_code": "lb2",
+          "topic_title": "Leben in der Einen Welt",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDA165CK4GHBJD60PSY2RA",
+          "slug": "geo10-indikatoren-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "edge_representative": true,
+          "question": "Aus welchen drei gleichwertigen Dimensionen setzt sich der Human Development Index der Vereinten Nationen zusammen?",
+          "concept": "Lebenserwartung bei Geburt, Bildungsdauer sowie Bruttonationaleinkommen pro Kopf in Kaufkraftparität",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=indikatoren-kritisch-pruefen",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Lebenserwartung bei Geburt, Bildungsdauer sowie Bruttonationaleinkommen pro Kopf in Kaufkraftparität",
+              "Reine Militärausgaben, Goldreserven und Anzahl der Großstädte"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Jährliche Rohstoffexporte in Tonnen, Straßenkilometer sowie Temperatur am Hauptstadtflughafen",
+              "reason": "Keine davon gehört zu den drei UNDP-Dimensionen Gesundheit, Bildung und Lebensstandard."
+            },
+            {
+              "text": "Bevölkerungsdichte pro Quadratkilometer, Wahlbeteiligung und Fläche geschützter Nationalparks",
+              "reason": "Verwechselt demographische und ökologische Kenngrößen mit dem HDI."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDA16G9SJBPJ22Z7GQWG97",
+          "slug": "geo10-indikatoren-synthese",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Welche Aussagekraft hat der HDI gegenüber dem reinen BIP pro Kopf – und welche Lücken bleiben auch beim HDI bestehen?",
+          "concept": "Der HDI misst zusätzlich Gesundheit und Bildung, bleibt aber blind für Einkommensverteilung, Ökologie und Freiheitsrechte",
+          "sample_solution": "Gegenüber reinen Einkommensdaten zeigt der HDI, ob Wohlstand auch zu längerem Leben und besserer Schulbildung führt. Dennoch bildet er innere Ungleichverteilung (erst über Gini oder IHDI sichtbar), Umweltbelastung und Menschenrechte nicht ab.",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=indikatoren-kritisch-pruefen",
+          "choice_distractors": [
+            {
+              "text": "Der HDI erfasst bereits perfekt jede Ungleichheit zwischen Reich und Arm sowie den gesamten CO₂-Ausstoß pro Person",
+              "reason": "Verkennt die blinden Flecken des klassischen HDI."
+            },
+            {
+              "text": "Das BIP pro Kopf ist deutlich umfassender als der HDI, weil es auch unbezahlte Pflegearbeit genau zählt",
+              "reason": "Gerade unbezahlte Arbeit fehlt im BIP ebenso wie Bildungs- und Gesundheitsmaße."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8GDA14QTH1K9XDVN24CTZ38",
+      "atom_uri": "urn:zam:atom:01M8GDA14QTH1K9XDVN24CTZ38",
+      "namespace": "gymnasium-geographie-10",
+      "slug": "geo10-entwicklungszusammenarbeit-und-flucht",
+      "title": "Länder niedrigen Standes, Zusammenarbeit und Spurensuche hier",
+      "domain": "geographie/gymnasium-10",
+      "reduction": "formal",
+      "typical_age_min": 15,
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDA14MC4TQACGC2NKDAE1G",
+          "type": "hard"
+        },
+        {
+          "atom_id": "01M8GDA14PWNZ2PG8W57W79YMV",
+          "type": "hard"
+        }
+      ],
+      "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=entwicklungszusammenarbeit-und-flucht",
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 10,
+          "subject": "geographie",
+          "topic_code": "lb2",
+          "topic_title": "Leben in der Einen Welt",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDA167TXSWD5ARQK6J5WT8",
+          "slug": "geo10-ez-flucht-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "edge_representative": true,
+          "question": "Was meint das Leitprinzip „Hilfe zur Selbsthilfe“ in der Entwicklungszusammenarbeit?",
+          "concept": "Lokale Kompetenzen, Ausbildung und eigenständige Strukturen stärken, damit Projekte ohne Dauerspenden tragen",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=entwicklungszusammenarbeit-und-flucht",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Lokale Kompetenzen, Ausbildung und eigenständige Strukturen stärken, damit Projekte ohne Dauerspenden tragen",
+              "Dauerhaft kostenlose Konsumgüter liefern, damit vor Ort keine eigenen Betriebe nötig sind"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Vergeben hochverzinster Kredite an Großkonzerne ohne Beteiligung der örtlichen Gemeinden",
+              "reason": "Führt eher zu Schuldenabhängigkeit als zu eigenständiger Entwicklung."
+            },
+            {
+              "text": "Vollständiges Abbrechen aller Handels- und Bildungskontakte zu Ländern niedrigen Standes",
+              "reason": "Isolation widerspricht partnerschaftlicher Entwicklungszusammenarbeit."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDA16JW0MG5WMP3S5P9GV8",
+          "slug": "geo10-ez-flucht-synthese",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie verbinden sich Projekte der Entwicklungszusammenarbeit im Globalen Süden mit der Spurensuche zu Flucht im bayerischen Heimatraum?",
+          "concept": "Konflikte und Armut treiben Flucht bis in unsere Gemeinden; dort fördern faire Teilhabe und Ursachenminderung Perspektiven",
+          "sample_solution": "Kriege, Perspektivlosigkeit und Dürren lösen Flucht aus, deren Folgen im Alltag bayerischer Kommunen sichtbar werden. Während hier Sprach- und Ausbildungszugang Integration stützen, helfen partnerschaftliche Projekte vor Ort bei Bildung, Klima-Anpassung und Einkommen.",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=entwicklungszusammenarbeit-und-flucht",
+          "choice_distractors": [
+            {
+              "text": "Fluchtbewegungen stehen in keinem Zusammenhang mit globalen Krisen und enden stets außerhalb Europas",
+              "reason": "Ignoriert weltweite Push-Faktoren und reale Begegnungen vor Ort."
+            },
+            {
+              "text": "Kommunen im Heimatraum können ausschließlich über Zölle auf Schokolade Einfluss nehmen",
+              "reason": "Übersieht Teilhabe, Bildung und kommunale Partnerschaften."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8GDA14RCTVMZ8REND6TYE9P",
+      "atom_uri": "urn:zam:atom:01M8GDA14RCTVMZ8REND6TYE9P",
+      "namespace": "gymnasium-geographie-10",
+      "slug": "geo10-globale-klima-vegetationszonen",
+      "title": "Klima- und Vegetationszonen der Erde im Überblick",
+      "domain": "geographie/gymnasium-10",
+      "reduction": "formal",
+      "typical_age_min": 15,
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDA14GAV5XXJ0B2NK8YBFH",
+          "type": "hard"
+        },
+        {
+          "atom_id": "01M8GDA14HMG4RCEJJAJGK244W",
+          "type": "hard"
+        }
+      ],
+      "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=globale-klima-vegetationszonen",
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 10,
+          "subject": "geographie",
+          "topic_code": "lb3",
+          "topic_title": "Klima- und Vegetationszonen der Tropen und ariden Subtropen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDA169E04PCGB8HJXY542F",
+          "slug": "geo10-zonen-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "edge_representative": true,
+          "question": "Warum sinkt die durchschnittliche Sonneneinstrahlung pro Fläche vom Äquator zu den Polen?",
+          "concept": "Wegen der Kugelgestalt der Erde wird der Einfallswinkel flacher und dieselbe Energie verteilt sich auf größere Fläche",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=globale-klima-vegetationszonen",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Wegen der Kugelgestalt der Erde wird der Einfallswinkel flacher und dieselbe Energie verteilt sich auf größere Fläche",
+              "Weil die Sonne am Äquator zehnmal näher an der Erde steht als an den Wendekreisen"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Weil die Ozeane in hohen Breiten sämtliches Sonnenlicht in feste Materie umwandeln",
+              "reason": "Physikalisch unhaltbare Erklärung."
+            },
+            {
+              "text": "Weil zwischen Äquator und Polarkreis ausschließlich in den Tropen eine Atmosphäre existiert",
+              "reason": "Die Lufthülle umgibt die gesamte Erde, ist an den Polen aber schräger zu durchqueren."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDA16M6X21BZ1KDEACDST6",
+          "slug": "geo10-zonen-synthese",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie begründet die globale Strahlungsbilanz die zonale Anordnung der Vegetationszonen vom Äquator zu den Polen?",
+          "concept": "Energieüberschuss am Äquator und Energiedefizit an den Polen steuern Wärme, Luftzirkulation und die Gürtel von Regenwald bis Tundra",
+          "sample_solution": "Steile Einstrahlung schafft am Äquator ganzjährig Wärme für immerfeuchten Regenwald. Über wechselfeuchte Savannen und subtropische Trockengürtel sinken Wärme und Verdunstungsüberschuss weiter polwärts bis zu gemäßigten Wäldern, borealer Taiga und polarer Tundra.",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=globale-klima-vegetationszonen",
+          "choice_distractors": [
+            {
+              "text": "Die Vegetation ordnet sich allein nach der zufälligen Lage der Hauptstädte und Eisenbahnstrecken an",
+              "reason": "Verwechselt menschliche Infrastruktur mit natürlichen Klimagürteln."
+            },
+            {
+              "text": "In Äquatornähe herrscht durch senkrechte Strahlen das ganze Jahr hindurch ein Energieverlust mit Eisbedeckung",
+              "reason": "Kehrt Energieüberschuss und -defizit genau um."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8GDA14SW46SCWNFY6D3Y8MH",
+      "atom_uri": "urn:zam:atom:01M8GDA14SW46SCWNFY6D3Y8MH",
+      "namespace": "gymnasium-geographie-10",
+      "slug": "geo10-sonneneinstrahlung-und-passatzirkulation",
+      "title": "Passatzirkulation, ITC und hygrische Jahreszeiten",
+      "domain": "geographie/gymnasium-10",
+      "reduction": "formal",
+      "typical_age_min": 15,
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDA14RCTVMZ8REND6TYE9P",
+          "type": "hard"
+        }
+      ],
+      "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=sonneneinstrahlung-und-passatzirkulation",
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 10,
+          "subject": "geographie",
+          "topic_code": "lb3",
+          "topic_title": "Klima- und Vegetationszonen der Tropen und ariden Subtropen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDA16BT59DRCS790Y49098",
+          "slug": "geo10-passat-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "edge_representative": true,
+          "question": "Wie entsteht die Innertropische Konvergenzzone rund um den Sonnenzenit?",
+          "concept": "Intensive Erwärmung lässt feuchte Luft im Tiefdruck aufsteigen, abkühlen und als Zenitalregen kondensieren",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=sonneneinstrahlung-und-passatzirkulation",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Intensive Erwärmung lässt feuchte Luft im Tiefdruck aufsteigen, abkühlen und als Zenitalregen kondensieren",
+              "Durch kaltes Absinken trockener Polarluft direkt über dem Äquator"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Durch schnelle Meereswellen, die Wasser ohne Erwärmung direkt in die obere Stratosphäre schleudern",
+              "reason": "Fehlende Erklärung des thermischen Aufstiegs."
+            },
+            {
+              "text": "Durch die ständige Blockade aller Winde durch hohe Gebirgsketten wie die Alpen direkt am Äquator",
+              "reason": "Verortung der Gebirge am Äquator und Ursache sind falsch."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDA16P3BD45J1S06N4DPR7",
+          "slug": "geo10-passat-synthese",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Erkläre das Entstehen von Regen- und Trockenzeiten in den Randtropen anhand der Hadley-Zelle.",
+          "concept": "Die ITC wandert dem Sonnenzenit nach: Bei Durchzug fallen Zenitalregen, im Winter dominiert das trockene Subtropenhoch mit Passaten",
+          "sample_solution": "Mit dem Sonnenzenit zwischen 23,5° N und 23,5° S verlagert sich auch die ITC-Regenzone. Steht die ITC über einer Savanne (Nordsommer auf der Nordhalbkugel), herrscht Regenzeit; wandert sie im Winter ab, bringen absinkendes Subtropenhoch und Passat trockene Monate.",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=sonneneinstrahlung-und-passatzirkulation",
+          "choice_distractors": [
+            {
+              "text": "Die Passatzirkulation bleibt das ganze Jahr fest bei 0° stehen, sodass Savannen niemals Trockenzeit kennen",
+              "reason": "Übersieht die jahreszeitliche Verschiebung von Sonnenzenit und ITC."
+            },
+            {
+              "text": "Im Sommer sinkt heiße Luft im Subtropenhoch auf die Savanne herab und löst tägliche Dauerstürme aus",
+              "reason": "Absinkende Luft löst Wolken auf, bringt aber keinen Zenitalregen."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8GDA14TTN7RBA94WBT64FZJ",
+      "atom_uri": "urn:zam:atom:01M8GDA14TTN7RBA94WBT64FZJ",
+      "namespace": "gymnasium-geographie-10",
+      "slug": "geo10-meeresstroemungen-und-relief",
+      "title": "Besonderheiten: Meeresströmungen, Meerestemperatur und Relief",
+      "domain": "geographie/gymnasium-10",
+      "reduction": "formal",
+      "typical_age_min": 15,
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDA14SW46SCWNFY6D3Y8MH",
+          "type": "hard"
+        },
+        {
+          "atom_id": "01M8GDA14JKRWN8ABRE3E58877",
+          "type": "hard"
+        }
+      ],
+      "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=meeresstroemungen-und-relief",
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 10,
+          "subject": "geographie",
+          "topic_code": "lb3",
+          "topic_title": "Klima- und Vegetationszonen der Tropen und ariden Subtropen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDA16DXNHPSSDXJ7Q3D685",
+          "slug": "geo10-meeresstroemung-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "edge_representative": true,
+          "question": "Warum bilden sich vor westlichen Tropen- und Subtropenküsten wie in Chile oder Namibia extreme Küstenwüsten?",
+          "concept": "Kalte Meeresströmungen kühlen die unterste Luftschicht ab; eine Inversion verhindert Wolkenaufstieg und Regen",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=meeresstroemungen-und-relief",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Kalte Meeresströmungen kühlen die unterste Luftschicht ab; eine Inversion verhindert Wolkenaufstieg und Regen",
+              "Weil das Meerwasser vor diesen Küsten über 40 °C heiß ist und Wolken verbrennt"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Weil dort ganzjährig mächtige Eisberge jede feuchte Meeresbrise vollständig vereisen lassen",
+              "reason": "An subtropischen Küsten wie der Atacama gibt es keine geschlossene Eisdecke."
+            },
+            {
+              "text": "Weil hohe Küstenmauern jede Verbindung zwischen Pazifik bzw. Atlantik und Land mechanisch abdichten",
+              "reason": "Nebel zieht landeinwärts, aber eine stabile Temperaturschichtung verhindert Regen."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDA16R7XM2VYZBYVDT8CNJ",
+          "slug": "geo10-meeresstroemung-synthese",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie wandeln Meeresströmungen, Gebirgsrelief und Kontinentalität das ideale Zonenmodell der Tropen und Subtropen ab?",
+          "concept": "Kalte Strömungen schaffen Nebelwüsten, Gebirge trennen Luv-Regen von Lee-Regenschatten, Binnenlage mindert Meeresfeuchte",
+          "sample_solution": "Kalte Auftriebsströmungen wie Humboldt- oder Benguelastrom stabilisieren die Küstenluft (Küstenwüsten statt Regenwald). Hohe Gebirge zwingen Luft auf der Luvseite zum Abregnen und erzeugen trockene Regenschattenräume im Lee; große Meeresferne verstärkt Trockenheit im Kontinentinneren.",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=meeresstroemungen-und-relief",
+          "choice_distractors": [
+            {
+              "text": "Meeresströmungen beeinflussen nur den Schiffsverkehr und haben keinerlei Wirkung auf Küstenklima oder Niederschlag",
+              "reason": "Unterschätzt Verdunstung und Luftschichtung über warmem/kaltem Wasser."
+            },
+            {
+              "text": "An jedem Gebirgsrücken regnet ausschließlich die windabgewandte Leeseite ab, während das Luv wüstenhaft bleibt",
+              "reason": "Vertauscht Luv (Steigungsregen) und Lee (Regenschatten)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8GDA14VB53RYSF853QM9HMK",
+      "atom_uri": "urn:zam:atom:01M8GDA14VB53RYSF853QM9HMK",
+      "namespace": "gymnasium-geographie-10",
+      "slug": "geo10-oekosysteme-regenwald-savanne-wueste",
+      "title": "Regenwald, Savannen und Wüsten: Ökosysteme und Nutzung",
+      "domain": "geographie/gymnasium-10",
+      "reduction": "formal",
+      "typical_age_min": 15,
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDA14RCTVMZ8REND6TYE9P",
+          "type": "hard"
+        },
+        {
+          "atom_id": "01M8GDA14SW46SCWNFY6D3Y8MH",
+          "type": "hard"
+        }
+      ],
+      "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=oekosysteme-regenwald-savanne-wueste",
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 10,
+          "subject": "geographie",
+          "topic_code": "lb3",
+          "topic_title": "Klima- und Vegetationszonen der Tropen und ariden Subtropen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDA16FFMSGVG2F46ZR67Z7",
+          "slug": "geo10-oekosysteme-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "edge_representative": true,
+          "question": "Warum sind die tropischen Regenwaldböden trotz der gewaltigen Pflanzenbiomasse extrem nährstoffarm?",
+          "concept": "Weil Nährstoffe im kurzgeschlossenen Kreislauf direkt an der Bodenoberfläche zersetzt und von Flachwurzeln aufgenommen werden",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=oekosysteme-regenwald-savanne-wueste",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Weil Nährstoffe im kurzgeschlossenen Kreislauf direkt an der Bodenoberfläche zersetzt und von Flachwurzeln aufgenommen werden",
+              "Weil im tropischen Boden meterdicke Fruchtbarkeitsschichten ungenutzt tief im Gestein ruhen"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Weil es im Regenwald fast nie regnet und Bäume ihre Mineralien direkt aus der trockenen und warmen Luft gewinnen",
+              "reason": "Im immerfeuchten Regenwald herrschen hohe Niederschläge, die Mineralboden stark auswaschen."
+            },
+            {
+              "text": "Weil die Wurzeln tropischer Urwaldriesen fünfzig Meter tief hinab in vollkommen dauergefrorenes Gestein wachsen",
+              "reason": "Regenwaldbäume besitzen ausgeprägte Flachwurzeln, keinen Permafrostuntergrund."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDA16TD12XPC2PN66VZJNG",
+          "slug": "geo10-oekosysteme-synthese",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie unterscheiden sich angepasste Nutzungsformen in Regenwald, Savannen und Oasen der Wüstenzone?",
+          "concept": "Agroforst und lange Brachen schützen den Regenwald, Regenzeit-Anbau und mobile Weide die Savanne, Stockwerkbau die Oasen",
+          "sample_solution": "Im Regenwald halten Agroforst oder kleinflächiger Wanderfeldbau mit langer Brache den empfindlichen Nährstoffkreislauf intakt. In Savannen passen sich Hirseanbau und mobile Weidewirtschaft der Zahl humider Monate an, während Wüstenoasen durch schattenspendenden Stockwerkbau Wasser sparen.",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=oekosysteme-regenwald-savanne-wueste",
+          "choice_distractors": [
+            {
+              "text": "Großflächige Dauer-Brandrodung und einseitige Monokulturen sichern in allen drei Zonen langfristig die höchsten Erträge",
+              "reason": "Führt zu Auswaschung im Regenwald, Erosion in der Savanne und Versalzung in Oasen."
+            },
+            {
+              "text": "Alle drei Zonen lassen sich identisch ohne Brache und ohne Wasserbegrenzung mit europäischem Winterweizen bestellen",
+              "reason": "Ignoriert Temperatur-, Boden- und Niederschlagsgrenzen."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8GDA14W3761S18DRDWSPPM3",
+      "atom_uri": "urn:zam:atom:01M8GDA14W3761S18DRDWSPPM3",
+      "namespace": "gymnasium-geographie-10",
+      "slug": "geo10-verwundbarkeit-und-vergleich-heimatraum",
+      "title": "Verwundbarkeit tropischer Ökosysteme im Vergleich zum Heimatraum",
+      "domain": "geographie/gymnasium-10",
+      "reduction": "formal",
+      "typical_age_min": 15,
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDA14VB53RYSF853QM9HMK",
+          "type": "hard"
+        }
+      ],
+      "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=verwundbarkeit-und-vergleich-heimatraum",
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 10,
+          "subject": "geographie",
+          "topic_code": "lb3",
+          "topic_title": "Klima- und Vegetationszonen der Tropen und ariden Subtropen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDA16HJGGDG1AJJ3B6TTXV",
+          "slug": "geo10-verwundbarkeit-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "edge_representative": true,
+          "question": "Wo befindet sich der überwiegende Großteil aller Pflanzennährstoffe im Ökosystem des tropischen Regenwaldes?",
+          "concept": "In der lebenden oberirdischen Biomasse und in der dünnen Streuschicht bei stark ausgewaschenem Mineralboden",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=verwundbarkeit-und-vergleich-heimatraum",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "In der lebenden oberirdischen Biomasse und in der dünnen Streuschicht bei stark ausgewaschenem Mineralboden",
+              "Tief im nährstoffreichen Mineralboden als jahrtausendealte dicke Humusschicht"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Ausschließlich im tiefen Grundwasser unterhalb der Gesteinsschichten fernab der Baumwurzeln",
+              "reason": "Flachwurzeln erschließen Nährstoffe direkt aus der zersetzten Streu an der Oberfläche."
+            },
+            {
+              "text": "In einer mehrere Meter mächtigen gefrorenen Torfdecke ähnlich der arktischen Tundra",
+              "reason": "In den feuchtheißen Tropen entsteht kein Permafrost."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDA16WA1A9GHJHGRR4KFQP",
+          "slug": "geo10-verwundbarkeit-synthese",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Weshalb erholt sich ein tropischer Regenwald nach flächenhaftem Kahlschlag deutlich schlechter als ein bayerischer Mischwald?",
+          "concept": "Dem Regenwald fehlt ein nährstoffreicher Bodenpuffer; Auswaschung, Verkrustung und Artenschwund treffen ihn weit härter",
+          "sample_solution": "Im gemäßigten Mischwald in Bayern bleibt nach Einschlag oder Sturm ein reicher Humus- und Braunerdespeicher erhalten. Im Regenwald vernichten Rodung und Feuer mit der Biomasse den Hauptspeicher, Starkregen wäscht den Ferralsol aus und zerschnittene Artengemeinschaften brechen zusammen.",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=verwundbarkeit-und-vergleich-heimatraum",
+          "choice_distractors": [
+            {
+              "text": "Im bayerischen Mischwald existiert keinerlei Humus, während tropische Böden jahrzehntelang ungeschützt fruchtbar bleiben",
+              "reason": "Kehrt die tatsächliche Bodenspeicherung genau um."
+            },
+            {
+              "text": "Beide Wälder reagieren völlig identisch, da sie dieselben Baumarten und Jahreszeiten teilen",
+              "reason": "Übersieht klimatische, floristische und bodenkundliche Unterschiede."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8GDA14X9W7YP99J1TCCV1T1",
+      "atom_uri": "urn:zam:atom:01M8GDA14X9W7YP99J1TCCV1T1",
+      "namespace": "gymnasium-geographie-10",
+      "slug": "geo10-natuerlicher-und-anthropogener-treibhauseffekt",
+      "title": "Natürlicher und anthropogener Treibhauseffekt",
+      "domain": "geographie/gymnasium-10",
+      "reduction": "formal",
+      "typical_age_min": 15,
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDA14RCTVMZ8REND6TYE9P",
+          "type": "hard"
+        }
+      ],
+      "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=natuerlicher-und-anthropogener-treibhauseffekt",
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 10,
+          "subject": "geographie",
+          "topic_code": "lb4",
+          "topic_title": "Klima im Wandel",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDA16K03XTE2NMFZNNDZVH",
+          "slug": "geo10-treibhauseffekt-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "edge_representative": true,
+          "question": "Um wie viel Grad liegt die globale Mitteltemperatur dank des natürlichen Treibhauseffekts über der einer Erde ohne Treibhausgase?",
+          "concept": "Bei rund plus 15 °C statt etwa minus 18 °C ohne Atmosphäre, also rund 33 °C wärmer",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=natuerlicher-und-anthropogener-treibhauseffekt",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Bei rund plus 15 °C statt etwa minus 18 °C ohne Atmosphäre, also rund 33 °C wärmer",
+              "Bei genau null Grad Celsius unabhängig von jeder Gaszusammensetzung"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Bei rund plus 45 °C statt plus 5 °C, weil Wasserdampf sämtliches Sonnenlicht direkt reflektiert",
+              "reason": "Falscher Temperaturwert und Verwechslung von Absorption und Reflexion."
+            },
+            {
+              "text": "Bei exakt minus 18 °C auf Meereshöhe, da natürliche Spurengase jede Erwärmung verhindern",
+              "reason": "Minus 18 °C wäre die Strahlungstemperatur ohne Treibhausgase."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDA16YMENK7FSD65D0GMN4",
+          "slug": "geo10-treibhauseffekt-synthese",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Erkläre das physikalische Zusammenspiel von anthropogenen Treibhausgasen und Eis-Albedo-Rückkopplung bei der globalen Erwärmung.",
+          "concept": "Zusätzliches CO₂, CH₄ und N₂O verstärkt die Wärmerückstrahlung; schmelzendes Eis senkt die Albedo und beschleunigt die Erwärmung",
+          "sample_solution": "Fossile Brennstoffe, Entwaldung und Landwirtschaft erhöhen CO₂, Methan und Lachgas, sodass mehr langwellige Wärmestrahlung in der Troposphäre verbleibt. Die Erwärmung lässt helles Eis schmelzen; dunkleres Meerwasser absorbiert nun mehr Sonnenlicht und treibt die Erwärmung zusätzlich an.",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=natuerlicher-und-anthropogener-treibhauseffekt",
+          "choice_distractors": [
+            {
+              "text": "CO₂ blockiert die kurzwellige Sonne am Eintreten, während schmelzendes Eis die Erde durch stärkere Reflexion abkühlt",
+              "reason": "Vertauscht Strahlungseigenschaften und Albedo-Wirkung."
+            },
+            {
+              "text": "Der anthropogene Treibhauseffekt wirkt ausschließlich tagsüber in Großstädten und beeinflusst Ozeane überhaupt nicht",
+              "reason": "Treibhausgase verteilen sich global in der Atmosphäre und erwärmen Land und Meere."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8GDA14YPMAJ72Y3V2GZ24ZA",
+      "atom_uri": "urn:zam:atom:01M8GDA14YPMAJ72Y3V2GZ24ZA",
+      "namespace": "gymnasium-geographie-10",
+      "slug": "geo10-positionen-zum-klimawandel-pruefen",
+      "title": "Positionen zum Klimawandel darstellen und kritisch prüfen",
+      "domain": "geographie/gymnasium-10",
+      "reduction": "formal",
+      "typical_age_min": 15,
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDA14X9W7YP99J1TCCV1T1",
+          "type": "hard"
+        },
+        {
+          "atom_id": "01M8GDA14KD3EW1JCBWJ1C4JDD",
+          "type": "hard"
+        }
+      ],
+      "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=positionen-zum-klimawandel-pruefen",
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 10,
+          "subject": "geographie",
+          "topic_code": "lb4",
+          "topic_title": "Klima im Wandel",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDA16N7VV5CE90298XP132",
+          "slug": "geo10-klimapositionen-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "edge_representative": true,
+          "question": "Welcher Messbefund zeigt am deutlichsten, dass nicht eine stärkere Sonne, sondern Treibhausgase die jüngste Erwärmung antreiben?",
+          "concept": "Die untere Atmosphäre erwärmt sich, während sich die Stratosphäre darüber abkühlt und die Sonnenstrahlung stabil bleibt",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=positionen-zum-klimawandel-pruefen",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die untere Atmosphäre erwärmt sich, während sich die Stratosphäre darüber abkühlt und die Sonnenstrahlung stabil bleibt",
+              "Alle Schichten der Atmosphäre bis hinauf ins Weltall heizen sich durch Sonnenflecken gleich stark auf"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "In Mitteleuropa hat es im vergangenen Winter an mehreren aufeinanderfolgenden Tagen geschneit und kurz gefroren",
+              "reason": "Verwechselt kurzfristiges Wetter mit globalen Atmosphärendaten."
+            },
+            {
+              "text": "Die Sonnenstrahlung auf die Erde hat sich laut Satellitenmessungen seit 1980 nahezu verdreifacht und heizt alles auf",
+              "reason": "Widerspricht den realen konstanten bis leicht zyklischen Strahlungsmessungen."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDA17032XBGQTXR24MFQHG",
+          "slug": "geo10-klimapositionen-synthese",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie beurteilst du in der Klimadebatte den Unterschied zwischen natürlichen Zyklen, lokalem Wetter und anthropogenen Trends?",
+          "concept": "Langsame Erdbahn- und Vulkanzyklen laufen auf anderen Zeitskalen; Wetter ist kurzfristig; nur Treibhausgase erklären den raschen Trend",
+          "sample_solution": "Natürliche Antriebe wie Milanković-Zyklen wirken über Jahrtausende, während einzelne Kälteeinbrüche nur lokales Wetter sind. Kritische Quellenprüfung vergleicht weltweite 30-Jahres-Reihen mit Satellitendaten zur Sonnenstrahlung und belegt so den dominanten menschlichen Treibhausgasantrieb.",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=positionen-zum-klimawandel-pruefen",
+          "choice_distractors": [
+            {
+              "text": "Da es früher schon Eiszeiten gab, sind menschliche Emissionen physikalisch unwirksam und Trends nicht prüfbar",
+              "reason": "Fehlschluss: Frühere Klimawandel hatten natürliche Ursachen, heutige Messungen zeigen klare CO₂-Signaturen."
+            },
+            {
+              "text": "Jede einzelne kühle Sommerwoche beweist das sofortige Ende jeder langfristigen Erwärmung",
+              "reason": "Klassische Verwechslung von regionalem Wetter und globalem Klima."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8GDA14Z8HH9QSWCR771BW0Q",
+      "atom_uri": "urn:zam:atom:01M8GDA14Z8HH9QSWCR771BW0Q",
+      "namespace": "gymnasium-geographie-10",
+      "slug": "geo10-klimaszenarien-und-globale-folgen",
+      "title": "Klimaszenarien, regionale Folgen und Kippelemente",
+      "domain": "geographie/gymnasium-10",
+      "reduction": "formal",
+      "typical_age_min": 15,
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDA14X9W7YP99J1TCCV1T1",
+          "type": "hard"
+        }
+      ],
+      "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=klimaszenarien-und-globale-folgen",
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 10,
+          "subject": "geographie",
+          "topic_code": "lb4",
+          "topic_title": "Klima im Wandel",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDA16QC3W1M6MRA8R98N08",
+          "slug": "geo10-szenarien-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "edge_representative": true,
+          "question": "Was versteht man in der Erdsystemforschung unter einem Kippelement im globalen Klimasystem?",
+          "concept": "Eine großskalige Komponente des Erdsystems, die ab einer Schwelle unumkehrbar in einen neuen Zustand übergeht",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=klimaszenarien-und-globale-folgen",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Eine großskalige Komponente des Erdsystems, die ab einer Schwelle unumkehrbar in einen neuen Zustand übergeht",
+              "Die regelmäßige jahreszeitliche Schwankung zwischen Regenzeit und Trockenzeit in den Savannen"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Eine kurzfristige Wettervorhersage für genau sieben Tage innerhalb einer einzelnen Stadtgemeinde in Mitteleuropa",
+              "reason": "Kippelemente betreffen großräumige, langfristig wirksame Systemumschläge."
+            },
+            {
+              "text": "Ein freiwilliges Abkommen mehrerer Staaten zur Errichtung neuer Messstationen auf den Gipfeln des Hochgebirges",
+              "reason": "Verwechslung eines Naturphänomens mit organisatorischen Verträgen."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDA172RE25WGYECWNESYK7",
+          "slug": "geo10-szenarien-synthese",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie unterscheidet sich ein begrenzter Erwärmungspfad von einem hohen Emissionspfad für Küstenräume, Kippelemente und den Heimatraum?",
+          "concept": "Höhere Pfade überschreiten leichter Kippschwellen bei Eis, Permafrost, AMOC oder Amazonas und verschärfen Fluten sowie Hitze",
+          "sample_solution": "Während eine Begrenzung nahe 1,5 °C (Pariser Ziel) viele Anpassungschancen erhält, erhöhen Pfade über 2,5 bis 4 °C das Risiko sich selbst verstärkender Kippprozesse (Permafrost-Methan, Eisschilde, AMOC), gefährden tiefe Küstenländer existentiell und bringen Bayern extreme Hitze und Starkregen.",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=klimaszenarien-und-globale-folgen",
+          "choice_distractors": [
+            {
+              "text": "Zwischen +1,5 °C und +4 °C gibt es außer leicht wärmeren Sommernächten weltweit keinerlei Unterschiede bei Meeren oder Kipppunkten",
+              "reason": "Unterschätzt nichtlineare Schwellenwerte und Meeresspiegelanstieg massiv."
+            },
+            {
+              "text": "Ein starker Temperaturanstieg betrifft ausschließlich die Arktis und lässt Meere, Küsten sowie den Heimatraum unberührt",
+              "reason": "Globale Erwärmung verschiebt Extremwetter und Wasserhaushalt weltweit."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8GDA1508ZMWPVNABXFKTN3H",
+      "atom_uri": "urn:zam:atom:01M8GDA1508ZMWPVNABXFKTN3H",
+      "namespace": "gymnasium-geographie-10",
+      "slug": "geo10-anpassung-und-klimaschutz-vor-ort",
+      "title": "Anpassungsstrategien und Klimaschutz im Heimatraum",
+      "domain": "geographie/gymnasium-10",
+      "reduction": "formal",
+      "typical_age_min": 15,
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDA14Z8HH9QSWCR771BW0Q",
+          "type": "hard"
+        }
+      ],
+      "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=anpassung-und-klimaschutz-vor-ort",
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 10,
+          "subject": "geographie",
+          "topic_code": "lb4",
+          "topic_title": "Klima im Wandel",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDA16SRH10BFGM2X0Q7HKZ",
+          "slug": "geo10-anpassung-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "edge_representative": true,
+          "question": "Welcher Unterschied trennt Klimaschutz und Klimaanpassung?",
+          "concept": "Klimaschutz senkt Treibhausgasemissionen an der Ursache; Anpassung mindert Schäden unvermeidbarer Klimafolgen vor Ort",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=anpassung-und-klimaschutz-vor-ort",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Klimaschutz senkt Treibhausgasemissionen an der Ursache; Anpassung mindert Schäden unvermeidbarer Klimafolgen vor Ort",
+              "Klimaschutz baut nur höhere Deiche, Anpassung schaltet sofort alle Kraftwerke weltweit ab"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Beide Begriffe bedeuten dasselbe: das ruhige Abwarten auf natürliche Abkühlung ohne Maßnahmen",
+              "reason": "Sowohl Vermeidung als auch Anpassung verlangen aktives Handeln."
+            },
+            {
+              "text": "Anpassung gilt allein für Küsteninseln, während in bayerischen Städten ausschließlich Emissionen gemessen werden",
+              "reason": "Auch bayerische Städte und Wälder brauchen Hitze-, Hochwasser- und Waldumbau-Anpassung."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDA174SZ0SG09YPGJEW5WW",
+          "slug": "geo10-anpassung-synthese",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum müssen sich Klimaschutz und Klimaanpassung auf lokaler und globaler Ebene stets ergänzen?",
+          "concept": "Ohne Klimaschutz steigen Kosten und Risiken über jede Anpassungsgrenze; ohne Anpassung bleiben heute schon sichere Extreme ungeschützt",
+          "sample_solution": "Erneuerbare Energien, Verkehrswende und Moorschutz bremsen die Erwärmung (Mitigation), damit Kipppunkte ausbleiben. Zugleich schützen Schwammstädte, Mischwaldumbau und Hochwasserräume vor bereits heute häufigeren Starkregen- und Hitzeereignissen (Adaptation) – beides greift in Bayern Hand in Hand.",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=anpassung-und-klimaschutz-vor-ort",
+          "choice_distractors": [
+            {
+              "text": "Technische Anpassung mit Klimaanlagen macht jedes Einsparen fossiler Emissionen dauerhaft überflüssig",
+              "reason": "Bei ungebremster Erwärmung versagt Anpassung an Kipppunkten und erhöht selbst Energiebedarf."
+            },
+            {
+              "text": "Klimaschutz lohnt sich nur für Staaten am Äquator, während Anpassung allein in Europa Sinn ergibt",
+              "reason": "Beide Aufgaben betreffen alle Regionen weltweit."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8GDA1514SREQV536D7K1QNM",
+      "atom_uri": "urn:zam:atom:01M8GDA1514SREQV536D7K1QNM",
+      "namespace": "gymnasium-geographie-10",
+      "slug": "geo10-mena-ueberblick-und-konstrukt-orient",
+      "title": "Nordafrika, Naher und Mittlerer Osten: Raum und Begriff „Orient“",
+      "domain": "geographie/gymnasium-10",
+      "reduction": "formal",
+      "typical_age_min": 15,
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDA14GAV5XXJ0B2NK8YBFH",
+          "type": "hard"
+        },
+        {
+          "atom_id": "01M8GDA14SW46SCWNFY6D3Y8MH",
+          "type": "hard"
+        }
+      ],
+      "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=mena-ueberblick-und-konstrukt-orient",
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 10,
+          "subject": "geographie",
+          "topic_code": "lb5",
+          "topic_title": "Traditionsreicher Kulturraum im Spannungsfeld aktueller Geopolitik – Nordafrika, Naher und Mittlerer Osten",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDA16VBW5PEVYRDDAT3K30",
+          "slug": "geo10-mena-orient-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "edge_representative": true,
+          "question": "Weshalb prüft die Geographie den Begriff „Orient“ heute kritisch als räumliches Konstrukt?",
+          "concept": "Er entstand aus europäischer Perspektive und fasst sehr verschiedene Länder unter pauschalen Klischees zusammen",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=mena-ueberblick-und-konstrukt-orient",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Er entstand aus europäischer Perspektive und fasst sehr verschiedene Länder unter pauschalen Klischees zusammen",
+              "Weil das Wort historisch aus Australien stammt und ausschließlich tropische Regenwälder beschreibt"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Weil alle Staaten zwischen Marokko und Iran tatsächlich exakt dieselbe Wirtschaft, Sprache und Naturausstattung teilen",
+              "reason": "Verkennt die enorme Vielfalt zwischen Atlantik, Niltal und Golf."
+            },
+            {
+              "text": "Weil in ganz Nordafrika und Westasien keine Städte oder Gebirgszüge auf Karten darstellbar sind",
+              "reason": "Atlas, Taurus, Zagros und Metropolen wie Kairo oder Riad prägen die Region."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDA1768QE44DZGAE6ZT3ZZ",
+          "slug": "geo10-mena-orient-synthese",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie charakterisierst du den Raum Nordafrika sowie Naher und Mittlerer Osten geographisch differenziert jenseits von Orient-Klischees?",
+          "concept": "Aride Wüsten neben Gebirgsrändern und Fremdlingsflüssen wie dem Nil treffen auf höchst verschiedene Staats- und Wirtschaftsformen",
+          "sample_solution": "Naturräumlich prägen aride Subtropen den Großteil der Region, gegliedert durch Atlas, Taurus und Zagros sowie Fremdlingsflüsse (Nil, Euphrat, Tigris). Gesellschaftlich und wirtschaftlich unterscheidet man stark zwischen bevölkerungsreichen Agrar- und Dienstleistungsstaaten und rohstoffreichen Golfstaaten statt einer pauschalen Orient-Schablone.",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=mena-ueberblick-und-konstrukt-orient",
+          "choice_distractors": [
+            {
+              "text": "Der ganze Raum bildet eine einheitliche geschichtslose Sandwüste ohne Unterschiede zwischen Küsten, Gebirgen und Flussoasen",
+              "reason": "Reproduziert genau das kritisierte pauschale Klischee."
+            },
+            {
+              "text": "Das Niltal und die Arabische Halbinsel besitzen identisches feuchtgemäßigtes Klima und gleiche Wirtschaftszweige",
+              "reason": "Fremdlingsfluss-Oase vs. vollaride Halbinsel mit Ölrente unterscheiden sich grundlegend."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8GDA152B6C0REAGZZDBSVR5",
+      "atom_uri": "urn:zam:atom:01M8GDA152B6C0REAGZZDBSVR5",
+      "namespace": "gymnasium-geographie-10",
+      "slug": "geo10-orientalische-stadt-im-wandel",
+      "title": "Die orientalische Stadt: Merkmale, Wandel und Vergleich",
+      "domain": "geographie/gymnasium-10",
+      "reduction": "formal",
+      "typical_age_min": 15,
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDA1514SREQV536D7K1QNM",
+          "type": "hard"
+        },
+        {
+          "atom_id": "01M8GDA14KD3EW1JCBWJ1C4JDD",
+          "type": "hard"
+        }
+      ],
+      "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=orientalische-stadt-im-wandel",
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 10,
+          "subject": "geographie",
+          "topic_code": "lb5",
+          "topic_title": "Traditionsreicher Kulturraum im Spannungsfeld aktueller Geopolitik – Nordafrika, Naher und Mittlerer Osten",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDA16XSX8926CGGW5PJ467",
+          "slug": "geo10-orient-stadt-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "edge_representative": true,
+          "question": "Welche Bauprinzipien prägen traditionelle Altstädte in Nordafrika und Westasien?",
+          "concept": "Hauptmoschee und branchensortierter Suq im Kern, abgestufte Sackgassen und schattige Innenhofhäuser",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=orientalische-stadt-im-wandel",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Hauptmoschee und branchensortierter Suq im Kern, abgestufte Sackgassen und schattige Innenhofhäuser",
+              "Offene rechteckige Straßenraster ohne Schatten und breite sechsspurige Autobahnen durch die gesamte Altstadt"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Strenge Trennung in verstreute einzelne Holzhütten ohne Basare oder gemeinsame Mittelpunkte",
+              "reason": "Die historische Medina ist extrem kompakt und um Moschee und Suq zentriert."
+            },
+            {
+              "text": "Große Glasfassaden und unbeschattete Parkplätze rund um einen historischen Rathausmarktplatz",
+              "reason": "Vermischt Merkmale moderner Neustädte und europäischer Marktplätze."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDA178KA96MKS7YKAY85SF",
+          "slug": "geo10-orient-stadt-synthese",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie wandeln sich Städte in MENA heute, und was unterscheidet die historische Medina von einer deutschen Altstadt?",
+          "concept": "Neben der nach innen gerichteten Sackgassen-Medina wachsen autogerechte Hochhaus-Neustädte; deutsche Städte zeigen offene Plätze",
+          "sample_solution": "Während deutsche Altstädte offene Marktplätze und nach außen weisende Straßenfronten zeigen, schützte die Medina durch enge Sackgassen und Innenhofhäuser Klima und Privatsphäre. Heute entsteht oft eine ausgeprägte Bipolarität zwischen historischer Medina und weitläufigen, modernen CBD- und Hochhausvierteln.",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=orientalische-stadt-im-wandel",
+          "choice_distractors": [
+            {
+              "text": "Traditionelle Altstädte und neue Hochhausbezirke verschmelzen weltweit überall zu völlig identischen europäischen Marktplatz-Grundrissen",
+              "reason": "Übersieht die deutlichen kulturell-klimatischen Grundrissunterschiede."
+            },
+            {
+              "text": "Moderne MENA-Metropolen verbieten grundsätzlich jede Neustadt und bestehen nur aus unberührten Basaren",
+              "reason": "Ignoriert rasante Urbanisierung und moderne Geschäftsbezirke."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8GDA153VCGAXJD4Z5HAHK5H",
+      "atom_uri": "urn:zam:atom:01M8GDA153VCGAXJD4Z5HAHK5H",
+      "namespace": "gymnasium-geographie-10",
+      "slug": "geo10-wasser-oasen-und-bewaesserung",
+      "title": "Wassermangel, Oasen im Wandel und Bewässerung",
+      "domain": "geographie/gymnasium-10",
+      "reduction": "formal",
+      "typical_age_min": 15,
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDA1514SREQV536D7K1QNM",
+          "type": "hard"
+        },
+        {
+          "atom_id": "01M8GDA14VB53RYSF853QM9HMK",
+          "type": "hard"
+        }
+      ],
+      "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=wasser-oasen-und-bewaesserung",
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 10,
+          "subject": "geographie",
+          "topic_code": "lb5",
+          "topic_title": "Traditionsreicher Kulturraum im Spannungsfeld aktueller Geopolitik – Nordafrika, Naher und Mittlerer Osten",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDA16ZYWQCN61S02TS7R7W",
+          "slug": "geo10-oasen-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "edge_representative": true,
+          "question": "Warum führt intensive Oberflächenbewässerung in heißen Wüstenoasen ohne ausreichende Drainage häufig zur Bodenversalzung?",
+          "concept": "Starke Verdunstung zieht salzhaltiges Wasser nach oben und lagert zurückbleibende Salze in der Wurzelzone an",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=wasser-oasen-und-bewaesserung",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Starke Verdunstung zieht salzhaltiges Wasser nach oben und lagert zurückbleibende Salze in der Wurzelzone an",
+              "Weil tropisches Regenwasser jeden Tag sämtliche Minerale sofort ausspült"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Weil Dattelpalmen im Stockwerkbau aktiv Kochsalz aus der Luft auf die Gemüsebeete streuen",
+              "reason": "Im Gegenteil senken Schattenbäume die Verdunstung und bremsen Versalzung."
+            },
+            {
+              "text": "Weil Tröpfchenbewässerung grundsätzlich doppelt so viel Wasser verdunsten lässt wie offene Kanäle",
+              "reason": "Tröpfchenschläuche sparen Verdunstung gegenüber offenen Furchen ein."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDA17AAPHV9TAQTRRZN7R6",
+          "slug": "geo10-oasen-synthese",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum gefährden Tiefbrunnen aus fossilem Grundwasser und unbegrenzte Flächenausweitung den Oasenwandel trotz Spartechnik?",
+          "concept": "Fossiles Wasser erneuert sich nicht; wenn die bewässerte Fläche stark wächst, steigt die Gesamtentnahme trotz Effizienz deutlich an",
+          "sample_solution": "Traditioneller dreistöckiger Oasenbau und Tröpfchenbewässerung sparen Wasser pro Quadratmeter. Pumpen jedoch tiefe Bohrungen nicht-erneuerbares fossiles Wasser ab oder vergrößern Betriebe gleichzeitig die Fläche stark, überschreitet Gesamtentnahme (Fläche · Pro-Hektar-Bedarf) dennoch die Neubildung.",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=wasser-oasen-und-bewaesserung",
+          "choice_distractors": [
+            {
+              "text": "Fossiles Tiefengrundwasser füllt sich in Wüsten innerhalb weniger Wochen durch Morgennebel vollständig wieder auf",
+              "reason": "Fossiles Wasser stammt aus vergangenen Feuchtzeiten und erneuert sich kaum."
+            },
+            {
+              "text": "Sobald ein Feld mit sparsamen Schläuchen bewässert wird, ist die gesamte Wasserentnahme völlig unabhängig von der Flächengröße",
+              "reason": "Ignoriert den Mengeneffekt durch Flächenausweitung."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8GDA1543WXZW7DB444EM25S",
+      "atom_uri": "urn:zam:atom:01M8GDA1543WXZW7DB444EM25S",
+      "namespace": "gymnasium-geographie-10",
+      "slug": "geo10-konflikte-und-migration-mena",
+      "title": "Raumwirksame Konflikte und Migration in MENA",
+      "domain": "geographie/gymnasium-10",
+      "reduction": "formal",
+      "typical_age_min": 15,
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDA1514SREQV536D7K1QNM",
+          "type": "hard"
+        },
+        {
+          "atom_id": "01M8GDA153VCGAXJD4Z5HAHK5H",
+          "type": "hard"
+        }
+      ],
+      "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=konflikte-und-migration-mena",
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 10,
+          "subject": "geographie",
+          "topic_code": "lb5",
+          "topic_title": "Traditionsreicher Kulturraum im Spannungsfeld aktueller Geopolitik – Nordafrika, Naher und Mittlerer Osten",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDA171E4YRWXWQ89QHX5GW",
+          "slug": "geo10-mena-migration-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "edge_representative": true,
+          "question": "Wodurch unterscheidet sich die Arbeitsmigration in Golfstaaten deutlich von Fluchtbewegungen aus Kriegsgebieten?",
+          "concept": "Arbeitsmigration beruht meist auf befristeten Verträgen und Lohnanreizen, Flucht auf gewaltsamem Zwang oder Existenznot",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=konflikte-und-migration-mena",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Arbeitsmigration beruht meist auf befristeten Verträgen und Lohnanreizen, Flucht auf gewaltsamem Zwang oder Existenznot",
+              "Bei der Arbeitsmigration verlassen Menschen ihre Heimat ohne jedes wirtschaftliche Ziel völlig planlos"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "In den ölreichen Golfstaaten leben überhaupt keine ausländischen Arbeitskräfte aus Asien oder Nachbarländern",
+              "reason": "Gastarbeitskräfte bilden in mehreren Golfstaaten einen sehr großen Teil der Erwerbstätigen."
+            },
+            {
+              "text": "Flucht und vertragliche Arbeitsmigration besitzen exakt denselben rechtlichen Schutz und dieselben Ursachen",
+              "reason": "Vertauscht erzwungene Flucht (Push) mit vertraglich geregelter Erwerbsmigration (Pull)."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDA17C5GKSVHF9BHKJ592X",
+          "slug": "geo10-mena-migration-synthese",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Inwiefern wirken Konflikte um Wasser und Macht in MENA sowohl räumlich vor Ort als auch als Auslöser von Migration?",
+          "concept": "Zerstörte Städte und Staudammstreit verändern Siedlung und Flussläufe und lösen Binnenvertreibung sowie grenzüberschreitende Flucht aus",
+          "sample_solution": "Kriege zerstören Wohnraum, Landwirtschaft und Infrastruktur, während einseitige Staudammprojekte an Fremdlingsflüssen wie Nil oder Euphrat/Tigris die Wasserverteilung flussabwärts verknappen. Die Folge sind Binnenvertreibung, große Flüchtlingsaufnahmen in Nachbarstaaten sowie globale Wanderungsbewegungen.",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=konflikte-und-migration-mena",
+          "choice_distractors": [
+            {
+              "text": "Staudämme und Kriege bleiben rein politische Meinungsverschiedenheiten ohne sichtbare Folgen für Städte, Flüsse oder Menschen",
+              "reason": "Verkennt die unmittelbare Raumwirksamkeit auf Infrastruktur und Bevölkerung."
+            },
+            {
+              "text": "Alle Migrantinnen und Migranten aus MENA ziehen ausschließlich als wohlhabende Touristinnen und Touristen an den Golf",
+              "reason": "Vermischt Fluchtursachen mit bezahlter Arbeitsmigration und Tourismus."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8GDA155MAV2H1CGR36F72HG",
+      "atom_uri": "urn:zam:atom:01M8GDA155MAV2H1CGR36F72HG",
+      "namespace": "gymnasium-geographie-10",
+      "slug": "geo10-erdoel-erdgas-und-diversifizierung",
+      "title": "Erdöl, Erdgas, Rentierstaaten und Diversifizierung",
+      "domain": "geographie/gymnasium-10",
+      "reduction": "formal",
+      "typical_age_min": 15,
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDA1514SREQV536D7K1QNM",
+          "type": "hard"
+        }
+      ],
+      "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=erdoel-erdgas-und-diversifizierung",
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 10,
+          "subject": "geographie",
+          "topic_code": "lb5",
+          "topic_title": "Traditionsreicher Kulturraum im Spannungsfeld aktueller Geopolitik – Nordafrika, Naher und Mittlerer Osten",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDA173K3510NZN6Q39T4S7",
+          "slug": "geo10-erdoel-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "edge_representative": true,
+          "question": "Welches Hauptproblem droht einem klassischen Rentierstaat bei einseitiger Abhängigkeit von Erdöl- und Erdgasexporten?",
+          "concept": "Staatshaushalt und Wirtschaft brechen bei Preisstürzen oder langfristiger Dekarbonisierung schwer ein",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=erdoel-erdgas-und-diversifizierung",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Staatshaushalt und Wirtschaft brechen bei Preisstürzen oder langfristiger Dekarbonisierung schwer ein",
+              "Der Staat kann wegen zu vieler eigener Industrieexporte keine Rohstoffe mehr fördern"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Die Bevölkerung muss ihre gesamten Nahrungsmittel selbst im eigenen Garten ohne Energie erzeugen",
+              "reason": "Rentierstaaten importieren meist viele Konsumgüter mithilfe der Devisen."
+            },
+            {
+              "text": "Erdöl und Erdgas vermehren sich unterirdisch umso schneller, je mehr jedes Jahr gefördert wird",
+              "reason": "Fossile Lagerstätten sind endlich."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDA17EP1TZFG0QJ81QX7T2",
+          "slug": "geo10-erdoel-synthese",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Welche Chancen verfolgen Golfstaaten mit wirtschaftlicher Diversifizierung – und welche Nachhaltigkeitsfragen bleiben dabei offen?",
+          "concept": "Logistik, Finanzdienste, Tourismus und Solarstrom mindern Ölabhängigkeit; Wasser-, Energiebedarf und Arbeitsrechte bleiben kritisch",
+          "sample_solution": "Durch Investitionen aus Staatsfonds in Häfen, Flugdrehkreuze, Forschung und Solarenergie entstehen neue Einnahmequellen unabhängig vom Ölpreis. Kritisch bleiben allerdings extrem energieintensive Prestigeprojekte, hoher Wasserverbrauch durch Entsalzung sowie faire Arbeits- und Teilhaberechte.",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=erdoel-erdgas-und-diversifizierung",
+          "choice_distractors": [
+            {
+              "text": "Diversifizierung bedeutet, sämtliche Häfen und Hochschulen zu schließen und nur noch auf mehr Ölförderung zu setzen",
+              "reason": "Das Gegenteil von Strukturwandel."
+            },
+            {
+              "text": "Jedes neue Tourismus- und Hochhausprojekt in der Wüste arbeitet dank Klimaanlagen ohne Wasser und ohne Emissionen nachhaltig",
+              "reason": "Ignoriert hohen Kühl- und Entsalzungsaufwand."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8GDA1564WRFVYY8YWFSEYT0",
+      "atom_uri": "urn:zam:atom:01M8GDA1564WRFVYY8YWFSEYT0",
+      "namespace": "gymnasium-geographie-10",
+      "slug": "geo10-subsahara-naturraum-und-zonenprofil",
+      "title": "Afrika südlich der Sahara: Naturraum und Klima-Vegetations-Profil",
+      "domain": "geographie/gymnasium-10",
+      "reduction": "formal",
+      "typical_age_min": 15,
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDA14SW46SCWNFY6D3Y8MH",
+          "type": "hard"
+        },
+        {
+          "atom_id": "01M8GDA14TTN7RBA94WBT64FZJ",
+          "type": "hard"
+        }
+      ],
+      "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=subsahara-naturraum-und-zonenprofil",
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 10,
+          "subject": "geographie",
+          "topic_code": "lb6",
+          "topic_title": "Entwicklungsperspektiven in tropischen Räumen – Afrika südlich der Sahara",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDA1755W226N8ETHJS00V0",
+          "slug": "geo10-subsahara-profil-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "edge_representative": true,
+          "question": "Welche natürliche Vegetationsabfolge zeigt ein Nord-Süd-Profil in Afrika vom Kongobecken nordwärts bis in die Sahara?",
+          "concept": "Immerfeuchter Regenwald über Feucht-, Trocken- und Dornsavanne bis zur vollariden Wüste",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=subsahara-naturraum-und-zonenprofil",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Immerfeuchter Regenwald über Feucht-, Trocken- und Dornsavanne bis zur vollariden Wüste",
+              "Tundra und borealer Nadelwald direkt am Äquator übergehend in Regenwald bei 20° N"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Von der Sahara bei 20° N wird die Landschaft südwärts zum Kongobecken hin immer trockener und baumloser",
+              "reason": "Kehrt das reale Feuchtigkeitsgefälle um."
+            },
+            {
+              "text": "Über den gesamten Kontinent erstreckt sich ohne jeden Zonenwechsel eine einheitliche Steppenlandschaft",
+              "reason": "Ignoriert die sehr klare zonale Staffelung von Regenwald bis Wüste."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDA17G6MAHZ9ZSEVHFCXGT",
+          "slug": "geo10-subsahara-profil-synthese",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum ordnen sich die Klimazonen in Subsahara-Afrika größtenteils symmetrisch beidseits des Äquators an, und wo treten Abwandlungen auf?",
+          "concept": "Mittige Äquatorlage und weite Tafeln schaffen Symmetrie; Hochländer im Osten und der kalte Benguelastrom wandeln sie ab",
+          "sample_solution": "Da der Äquator Afrika mittig schneidet und breite Becken-Schwellen-Tafeln vorherrschen, spiegeln sich Regenwald und Savannen nach Norden und Süden. Abweichungen entstehen durch Höhenstufen und Regenschatten im ostafrikanischen Hochland sowie die Küstenwüste Namib am kalten Benguelastrom.",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=subsahara-naturraum-und-zonenprofil",
+          "choice_distractors": [
+            {
+              "text": "Hohe West-Ost-Gebirgsketten am Äquator trennen Nord- und Südafrika vollständig und dauerhaft voneinander ab",
+              "reason": "In Zentralafrika fehlt eine durchgängige äquatoriale Gebirgsmauer."
+            },
+            {
+              "text": "Der kalte Benguelastrom verwandelt ganz Südwestafrika in einen ganzjährig feuchten tropischen Regenwald",
+              "reason": "Kalte Auftriebsströmung erzeugt die trockene Küstennebelwüste Namib."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8GDA157TJ8KMG89ERW270V2",
+      "atom_uri": "urn:zam:atom:01M8GDA157TJ8KMG89ERW270V2",
+      "namespace": "gymnasium-geographie-10",
+      "slug": "geo10-desertifikation-in-der-sahelzone",
+      "title": "Desertifikation in der Sahelzone systemisch verstehen",
+      "domain": "geographie/gymnasium-10",
+      "reduction": "formal",
+      "typical_age_min": 15,
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDA1564WRFVYY8YWFSEYT0",
+          "type": "hard"
+        },
+        {
+          "atom_id": "01M8GDA14VB53RYSF853QM9HMK",
+          "type": "hard"
+        }
+      ],
+      "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=desertifikation-in-der-sahelzone",
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 10,
+          "subject": "geographie",
+          "topic_code": "lb6",
+          "topic_title": "Entwicklungsperspektiven in tropischen Räumen – Afrika südlich der Sahara",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDA177DAH01T8513S3JJ1C",
+          "slug": "geo10-desertifikation-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "edge_representative": true,
+          "question": "Wie nennt man den fortschreitenden Prozess der Bodenverödung und Wüstenausbreitung in ariden und semi-ariden Randzonen wie der Sahelzone durch Übernutzung und Klimaschwankungen?",
+          "concept": "Desertifikation als fortschreitende Wüstenbildung durch menschliche Übernutzung und Dürreschwankungen",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=desertifikation-in-der-sahelzone",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Desertifikation als fortschreitende Wüstenbildung durch menschliche Übernutzung und Dürreschwankungen",
+              "Salinisierung durch reines Meerwasser bei jedem tropischen Hochwasser"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Urbanisierung durch geordnetes Wachstum moderner Großstädte mit Nahverkehr und neuen Schulen",
+              "reason": "Verwechselt ländliche Bodendegradation mit Stadtentwicklung."
+            },
+            {
+              "text": "Lateritisierung durch ausschließliche Verwitterung tief im ganzjährig feuchten Äquatorwald",
+              "reason": "Betrifft feuchte Tropen nach Kahlschlag, nicht die semi-aride Sahelzone."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDA17JDKNT1PY77XN5APQG",
+          "slug": "geo10-desertifikation-synthese",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Erkläre die Desertifikation im Sahel als Mensch-Umwelt-System und nenne zwei wirksame Gegenmaßnahmen vor Ort.",
+          "concept": "Dürreschwankung plus Überweidung, Holzentnahme und Bracheverkürzung zerstören die Pflanzendecke; Steinwälle, Zaï und Agroforst bremsen Erosion",
+          "sample_solution": "Wenn auf natürliche Dürrejahre im Sahel hoher Druck durch zu große Viehherden, Brennholzrodung und verkürzte Brachen trifft, trägt Erosion den offenen Oberboden ab. Steinwälle entlang der Höhenlinien, Zaï-Pflanzgruben mit Kompost und Agroforst halten Regenwasser zurück und bauen Bodenbedeckung wieder auf.",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=desertifikation-in-der-sahelzone",
+          "choice_distractors": [
+            {
+              "text": "Desertifikation ist allein ein unaufhaltsames Vorrücken von Sanddünen der Sahara ohne jeden Einfluss von Weide oder Bodenpflege",
+              "reason": "Vernachlässigt menschliche Übernutzung und lokale Schutzmöglichkeiten."
+            },
+            {
+              "text": "Das einzige wirksame Mittel gegen Erosion besteht im vollständigen Abholzen aller Akazien und dem Bohren weiterer Großbrunnen",
+              "reason": "Verschärft Holzmangel und punktuelle Überweidung noch weiter."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8GDA158ERMBT7PEDV1RZK0B",
+      "atom_uri": "urn:zam:atom:01M8GDA158ERMBT7PEDV1RZK0B",
+      "namespace": "gymnasium-geographie-10",
+      "slug": "geo10-endogene-hemmnisse-und-schluesselprobleme",
+      "title": "Endogene Entwicklungshemmnisse und Schlüsselprobleme",
+      "domain": "geographie/gymnasium-10",
+      "reduction": "formal",
+      "typical_age_min": 15,
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDA14PWNZ2PG8W57W79YMV",
+          "type": "hard"
+        },
+        {
+          "atom_id": "01M8GDA1564WRFVYY8YWFSEYT0",
+          "type": "hard"
+        }
+      ],
+      "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=endogene-hemmnisse-und-schluesselprobleme",
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 10,
+          "subject": "geographie",
+          "topic_code": "lb6",
+          "topic_title": "Entwicklungsperspektiven in tropischen Räumen – Afrika südlich der Sahara",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDA17977MK77BD914F32S2",
+          "slug": "geo10-endogene-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "edge_representative": true,
+          "question": "Welches Beispiel gehört zu den endogenen Entwicklungshemmnissen in einem Raumbeispiel Subsahara-Afrikas?",
+          "concept": "Unzureichende Verkehrs- und Energienetze, Korruption, fehlende Rechtssicherheit oder innere Konflikte",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=endogene-hemmnisse-und-schluesselprobleme",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Unzureichende Verkehrs- und Energienetze, Korruption, fehlende Rechtssicherheit oder innere Konflikte",
+              "Historische Kolonialgrenzen und einseitig niedrige Rohstoffpreise auf europäischen Börsen"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Geographische Verschiebung von Klimagürteln über hunderttausend Jahre durch Erdbahnzyklen",
+              "reason": "Kein innerstaatlich-politischer oder struktureller Faktor."
+            },
+            {
+              "text": "Freiwillige Einfuhrzölle ausländischer Industriestaaten auf fertig geröstete Kaffeebohnen",
+              "reason": "Außenhandelszölle anderer Staaten sind exogene (äußere), keine endogenen Faktoren."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDA17M9G1TQD7J9NTW1GS9",
+          "slug": "geo10-endogene-synthese",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie lassen sich gesellschaftliche Schlüsselprobleme wie Jugendperspektiven und Ernährung vor Ort nachhaltig angehen?",
+          "concept": "Dezentrale Solarstromnetze, berufliche Ausbildung, Frauenbildung und lokale Weiterverarbeitung schaffen Einkommen und Versorgungssicherheit",
+          "sample_solution": "Wo schwache Netze und hohe Jugendarbeitslosigkeit Entwicklung bremsen, verbinden nachhaltige Konzepte berufliche Qualifizierung und Gesundheitsversorgung mit dezentralen Solar-Mini-Netzen für ländliche Kühlketten sowie eigener Verarbeitung von Agrarprodukten im Land.",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=endogene-hemmnisse-und-schluesselprobleme",
+          "choice_distractors": [
+            {
+              "text": "Nur der Export völlig unverarbeiteter Erze bei gleichzeitigem Abbau aller örtlichen Schulen löst Arbeitslosigkeit dauerhaft",
+              "reason": "Führt in noch stärkere Abhängigkeit statt nachhaltiger Entwicklung."
+            },
+            {
+              "text": "Endogene Hemmnisse lösen sich ohne jede Reform von Verwaltung, Bildung oder Infrastruktur von allein",
+              "reason": "Verkennt die aktive Rolle lokaler Institutionen und Investitionen."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8GDA159WK63E4BZ88P39A9Y",
+      "atom_uri": "urn:zam:atom:01M8GDA159WK63E4BZ88P39A9Y",
+      "namespace": "gymnasium-geographie-10",
+      "slug": "geo10-direktinvestitionen-und-nachhaltige-entwicklung",
+      "title": "Direktinvestitionen, Geopolitik und Entwicklungsprojekte",
+      "domain": "geographie/gymnasium-10",
+      "reduction": "formal",
+      "typical_age_min": 15,
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDA158ERMBT7PEDV1RZK0B",
+          "type": "hard"
+        },
+        {
+          "atom_id": "01M8GDA14QTH1K9XDVN24CTZ38",
+          "type": "hard"
+        }
+      ],
+      "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=direktinvestitionen-und-nachhaltige-entwicklung",
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 10,
+          "subject": "geographie",
+          "topic_code": "lb6",
+          "topic_title": "Entwicklungsperspektiven in tropischen Räumen – Afrika südlich der Sahara",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDA17BFH7KC01XX697AK0V",
+          "slug": "geo10-fdi-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "edge_representative": true,
+          "question": "Welches Risiko droht bei ausländischen Direktinvestitionen und Großprojekten in afrikanischen Staaten besonders?",
+          "concept": "Hohe Kreditverschuldung, einseitiger Rohstoffabfluss ohne lokale Qualifizierung und mögliche Landkonflikte",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=direktinvestitionen-und-nachhaltige-entwicklung",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Hohe Kreditverschuldung, einseitiger Rohstoffabfluss ohne lokale Qualifizierung und mögliche Landkonflikte",
+              "Dass einheimische Handwerksbetriebe durch Ausbildung sofort alle Schulden des Auslands übernehmen müssen"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Dass neue Straßen und Stromnetze grundsätzlich zu keinen eigenen Steuereinnahmen beitragen können",
+              "reason": "Bei fairen Verträgen stärkt gute Infrastruktur durchaus lokale Wertschöpfung."
+            },
+            {
+              "text": "Dass jede internationale Partnerschaft den Export hochwertiger verarbeiteter Waren gesetzlich verbietet",
+              "reason": "Im Gegenteil suchen faire Partnerschaften genau lokale Verarbeitung."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDA17PKQPFB8XE25Y9CB9D",
+          "slug": "geo10-fdi-synthese",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "An welchen Kriterien prüfst du, ob ein ausländisches Infrastrukturprojekt oder ein deutsches Entwicklungsprojekt nachhaltig wirkt?",
+          "concept": "Wissenstransfer und Arbeitsplätze vor Ort, tragfähige Finanzen ohne Schuldenfalle, gewahrte Landrechte und Umweltstandards",
+          "sample_solution": "Nachhaltige Projekte – ob Infrastrukturinvestition oder deutsches Ausbildungs- und Wasserprojekt – beteiligen lokale Gemeinschaften, qualifizieren Fachkräfte für den dauerhaften Eigenbetrieb, vermeiden Schuldenfallen sowie Land Grabbing und halten ökologische Schutzstandards ein.",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=direktinvestitionen-und-nachhaltige-entwicklung",
+          "choice_distractors": [
+            {
+              "text": "Maßstab ist allein die Bausumme in Milliardenhöhe, unabhängig von Schuldenlast, Umweltfolgen oder Nutzen für Einheimische",
+              "reason": "Verwechselt bloße Baugröße mit echter Entwicklungswirkung."
+            },
+            {
+              "text": "Ausländische Konzerne müssen grundsätzlich ihr gesamtes Personal eingeflogen behalten und alle Gewinne sofort abführen",
+              "reason": "Verhindert lokalen Wissenstransfer und nachhaltige Beschäftigung."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8GDA15A62PCN3G9GRDM6A6N",
+      "atom_uri": "urn:zam:atom:01M8GDA15A62PCN3G9GRDM6A6N",
+      "namespace": "gymnasium-geographie-10",
+      "slug": "geo10-lateinamerika-zonen-und-hoehenstufen",
+      "title": "Südamerika vs. Afrika: Zonierung und Höhenstufen in den Anden",
+      "domain": "geographie/gymnasium-10",
+      "reduction": "formal",
+      "typical_age_min": 15,
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDA1564WRFVYY8YWFSEYT0",
+          "type": "hard"
+        },
+        {
+          "atom_id": "01M8GDA14TTN7RBA94WBT64FZJ",
+          "type": "hard"
+        }
+      ],
+      "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=lateinamerika-zonen-und-hoehenstufen",
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 10,
+          "subject": "geographie",
+          "topic_code": "lb7",
+          "topic_title": "Herausforderungen der Entwicklung in tropischen Räumen – Mittel- und Südamerika, Karibik",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDA17DBZHTBWXWFZ5KV5RC",
+          "slug": "geo10-hoehenstufen-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "edge_representative": true,
+          "question": "Weshalb beginnt die ganzjährige Schneestufe in den tropischen Anden erst über rund 4500 m, in den Bayerischen Alpen aber schon unter 3000 m?",
+          "concept": "Am Fuß der Äquator-Anden herrschen rund 27 °C statt 10 °C im Alpenvorland; bei 0,6 °C Abnahme je 100 m liegt 0 °C viel höher",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=lateinamerika-zonen-und-hoehenstufen",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Am Fuß der Äquator-Anden herrschen rund 27 °C statt 10 °C im Alpenvorland; bei 0,6 °C Abnahme je 100 m liegt 0 °C viel höher",
+              "Weil in den Alpen mit steigender Höhe die Lufttemperatur zunimmt statt sinkt"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Weil die tropischen Anden überwiegend unter dem Meeresspiegel liegen und keine echten Gletscher besitzen",
+              "reason": "Die Anden erreichen fast 7000 m und tragen am Äquator vergletscherte Gipfel."
+            },
+            {
+              "text": "Weil in Bayern der Luftdruck zehnmal höher ist als am Äquator und Wasser schon bei plus 20 °C gefriert",
+              "reason": "Physikalisch unhaltbare Behauptung."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDA17RYV949VZHQR0NC68C",
+          "slug": "geo10-hoehenstufen-synthese",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie verändert die Anden-Kordillere das Klima- und Vegetationsmuster Südamerikas im Vergleich zu Afrika?",
+          "concept": "Anden und kalter Humboldtstrom brechen die zonale Symmetrie durch Steigungsregen, Regenschatten in Patagonien und Höhenstufen",
+          "sample_solution": "Anders als Afrikas breite Tafelländer riegeln die Anden Südamerika im Westen ab, erzeugen am Äquator die fünf vertikalen Höhenstufen (von Tierra caliente bis Tierra nevada), lösen am Humboldtstrom die Küstenwüste Atacama aus und schaffen im Lee der Südanden das trockene Patagonien.",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=lateinamerika-zonen-und-hoehenstufen",
+          "choice_distractors": [
+            {
+              "text": "Beide Kontinente zeigen exakt dieselbe spiegelbildliche Wüsten- und Savannenverteilung beidseits des Äquators ohne Barriere",
+              "reason": "Ignoriert die über 7000 km lange West-Andenkette."
+            },
+            {
+              "text": "In Südamerika gibt es westlich der Anden ausschließlich immerfeuchten Regenwald bis hinunter an die Südspitze Chiles",
+              "reason": "Übersieht die extrem aride Atacama zwischen 18° und 28° S."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8GDA15BCEW6ZNR7P15S2497",
+      "atom_uri": "urn:zam:atom:01M8GDA15BCEW6ZNR7P15S2497",
+      "namespace": "gymnasium-geographie-10",
+      "slug": "geo10-karibik-hurrikane-und-vulnerabilitaet",
+      "title": "Karibik: Hurrikane und Ursachen hoher Verwundbarkeit",
+      "domain": "geographie/gymnasium-10",
+      "reduction": "formal",
+      "typical_age_min": 15,
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDA15A62PCN3G9GRDM6A6N",
+          "type": "hard"
+        },
+        {
+          "atom_id": "01M8GDA14Z8HH9QSWCR771BW0Q",
+          "type": "hard"
+        }
+      ],
+      "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=karibik-hurrikane-und-vulnerabilitaet",
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 10,
+          "subject": "geographie",
+          "topic_code": "lb7",
+          "topic_title": "Herausforderungen der Entwicklung in tropischen Räumen – Mittel- und Südamerika, Karibik",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDA17FGFHJGXEAJ4NCTR5J",
+          "slug": "geo10-hurrikan-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "edge_representative": true,
+          "question": "Welche Grundbedingungen im Ozean und in der Atmosphäre braucht die Entstehung eines karibischen Hurrikans?",
+          "concept": "Warmes Meerwasser ab etwa 26,5 °C als Energiequelle sowie Corioliskraft ab etwa 5° Äquatorabstand",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=karibik-hurrikane-und-vulnerabilitaet",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Warmes Meerwasser ab etwa 26,5 °C als Energiequelle sowie Corioliskraft ab etwa 5° Äquatorabstand",
+              "Kaltes Auftriebswasser unter 10 °C direkt auf der Äquatorlinie bei 0°"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Trockene Wüstenluft aus einem Hochdruckgebiet ohne jede Verdunstung über Wasser",
+              "reason": "Hurrikane beziehen ihre Energie aus feuchter Meeresverdunstung und Kondensationswärme."
+            },
+            {
+              "text": "Hohe Gebirgszüge mitten im Meer, an denen Eisberge schmelzen",
+              "reason": "Gebirge schwächen Hurrikane beim Landgang eher ab, statt sie zu erzeugen."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDA17TNEJ3G1AV59HA2MXK",
+          "slug": "geo10-hurrikan-synthese",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Weshalb treffen Hurrikane kleine Karibikinseln häufig deutlich schwerer als besser geschützte Festlandmetropolen?",
+          "concept": "Enge Insellage ohne Ausweichraum, Sturmflut plus Hangrutsche, leichte Bauweise und hohe Wirtschaftsabhängigkeit erhöhen die Vulnerabilität",
+          "sample_solution": "Zum starken Wind kommen Sturmflut an dichten Küstenorten und Starkregen-Erdrutsche an steilen Vulkanhängen. Auf kleinen Inseln treffen fehlender Ausweichraum, verwundbare Häuser, mangelnde Rücklagen und der schlagartige Ausfall von Tourismus und Exportlandwirtschaft besonders hart.",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=karibik-hurrikane-und-vulnerabilitaet",
+          "choice_distractors": [
+            {
+              "text": "Auf kleinen Inseln schwächt sich jeder Hurrikan durch den Anblick von Stränden sofort zu einem harmlosen Lüftchen ab",
+              "reason": "Im Gegenteil bleibt der Sturm über warmem Meer lange energiereich."
+            },
+            {
+              "text": "Verwundbarkeit hängt niemals von Bauweise, Frühwarnung oder Mangrovenschutz ab",
+              "reason": "Gerade Vorsorge und bauliche Schutzmaßnahmen senken Schäden erheblich."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8GDA15C3GHS0RNQBVCTSBWE",
+      "atom_uri": "urn:zam:atom:01M8GDA15C3GHS0RNQBVCTSBWE",
+      "namespace": "gymnasium-geographie-10",
+      "slug": "geo10-amazonien-abholzung-und-satellitenblick",
+      "title": "Amazonien: Abholzung im Satellitenbild und nachhaltige Nutzung",
+      "domain": "geographie/gymnasium-10",
+      "reduction": "formal",
+      "typical_age_min": 15,
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDA14W3761S18DRDWSPPM3",
+          "type": "hard"
+        },
+        {
+          "atom_id": "01M8GDA15A62PCN3G9GRDM6A6N",
+          "type": "hard"
+        }
+      ],
+      "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=amazonien-abholzung-und-satellitenblick",
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 10,
+          "subject": "geographie",
+          "topic_code": "lb7",
+          "topic_title": "Herausforderungen der Entwicklung in tropischen Räumen – Mittel- und Südamerika, Karibik",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDA17HRPES7KDKRM4F5A4J",
+          "slug": "geo10-amazonien-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "edge_representative": true,
+          "question": "Was zeigt das sogenannte Fischgrätenmuster auf aktuellen Satellitenbildern aus Amazonien an?",
+          "concept": "Rechtwinklige Rodungsflächen entlang von Seitenwegen rechts und links neuer Erschließungsstraßen",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=amazonien-abholzung-und-satellitenblick",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Rechtwinklige Rodungsflächen entlang von Seitenwegen rechts und links neuer Erschließungsstraßen",
+              "Natürliche Flussarme von Gletschern während der letzten Eiszeit"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Geregelte Meeresschutzgebiete unmittelbar vor der langen Atlantikküste Brasiliens",
+              "reason": "Das Fischgrätenmuster liegt tief im Regenwald des Amazonasbeckens."
+            },
+            {
+              "text": "Unterirdische Bewässerungskanäle in den trockenen und kalten Küstenwüsten der Atacama",
+              "reason": "Verwechselt Amazonien-Abholzung mit Qanat-Oasen."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDA17WYN25AWVNKPG5QD92",
+          "slug": "geo10-amazonien-synthese",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Welche regionalen und globalen Folgen hat die Abholzung Amazoniens für Weiden und Soja – und wie wirken nachhaltige Alternativen?",
+          "concept": "Abholzung schwächt den eigenen Regenkreislauf und setzt CO₂ frei; Agroforst, Schutzgebiete und Sammelwirtschaft erhalten den Wald",
+          "sample_solution": "Brandrodung für Rinderweiden und Soja zerstört Lebensräume, schwächt die eigene Waldverdunstung (Austrocknungsrisiko) und setzt riesige Mengen CO₂ frei. Nachhaltige Nutzung über geschützte Gebiete, Agroforst (Kakao unter Bäumen) und Sammelprodukte (Paranuss) sichert Einkommen ohne Kahlschlag.",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=amazonien-abholzung-und-satellitenblick",
+          "choice_distractors": [
+            {
+              "text": "Nach Abholzung verdoppelt sich die natürliche Regenmenge über Weideflächen dauerhaft und bindet mehr CO₂ als Urwald",
+              "reason": "Kehrt den Verlust der Wald-Transpiration und Kohlenstofffreisetzung um."
+            },
+            {
+              "text": "Ein nachhaltiger Schutz Amazoniens gelingt nur, wenn alle indigenen Gemeinschaften umgesiedelt und sämtliche Flächen betoniert werden",
+              "reason": "Indigene Territorien tragen empirisch entscheidend zum Walderhalt bei."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8GDA15DT86ERT2MGEW856D4",
+      "atom_uri": "urn:zam:atom:01M8GDA15DT86ERT2MGEW856D4",
+      "namespace": "gymnasium-geographie-10",
+      "slug": "geo10-megastaedte-plantagen-und-ferntourismus",
+      "title": "Megastädte, Plantagenwirtschaft und Ferntourismus",
+      "domain": "geographie/gymnasium-10",
+      "reduction": "formal",
+      "typical_age_min": 15,
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDA15A62PCN3G9GRDM6A6N",
+          "type": "hard"
+        },
+        {
+          "atom_id": "01M8GDA14KD3EW1JCBWJ1C4JDD",
+          "type": "hard"
+        }
+      ],
+      "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=megastaedte-plantagen-und-ferntourismus",
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 10,
+          "subject": "geographie",
+          "topic_code": "lb7",
+          "topic_title": "Herausforderungen der Entwicklung in tropischen Räumen – Mittel- und Südamerika, Karibik",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDA17KDDYR27GDPSJN7QDQ",
+          "slug": "geo10-latam-stadt-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "edge_representative": true,
+          "question": "Welchen Gegensatz beschreibt die sozialräumliche Fragmentierung in vielen lateinamerikanischen Megastädten?",
+          "concept": "Bewachte Wohlstandsviertel liegen räumlich oft direkt neben ungesicherten Marginalsiedlungen",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=megastaedte-plantagen-und-ferntourismus",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Bewachte Wohlstandsviertel liegen räumlich oft direkt neben ungesicherten Marginalsiedlungen",
+              "Alle Stadtviertel werden durch das Meer auf verschiedene Ozeane verteilt"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "In Megastädten leben ausschließlich Menschen im hochbezahlten formellen Finanzsektor ohne jede Armut",
+              "reason": "Blendet Marginalsiedlungen und den großen informellen Sektor aus."
+            },
+            {
+              "text": "Es existiert nur eine einzige einheitliche historische Altstadt ohne jedes Wachstum am Rand der Stadt",
+              "reason": "Ignoriert starke Metropolisierung und weitläufiges Randwachstum."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDA17YKXKQQ7KMJ0TTH4AD",
+          "slug": "geo10-latam-stadt-synthese",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie bewertest du Exportplantagen und internationalen Ferntourismus in Lateinamerika, und welche Leitlinien leitest du für eigene Reisen ab?",
+          "concept": "Plantagen und Tourismus bringen Devisen bei Preis-, Umwelt- und Abflussrisiken; bewusstes Reisen stützt lokale Betriebe und Klima",
+          "sample_solution": "Monokultur-Plantagen und All-Inclusive-Tourismus liefern zwar Devisen, schaffen aber Preisabhängigkeit, Umweltbelastung und hohe Geldabflüsse ins Ausland (Sickerrate). Für eigene Reisen folgen längere Aufenthalte bei weniger Flügen, lokale Unterkünfte, fairer Lohn und sparsamer Wasser- sowie Naturschutz.",
+          "source_link": "https://academy.zam-os.org/geographie-gymnasium-10/#lesson=megastaedte-plantagen-und-ferntourismus",
+          "choice_distractors": [
+            {
+              "text": "Massenhafte Kurzurlaube in abgeschotteten Konzern-Resorts hinterlassen automatisch alle Einnahmen bei Dorfbauern und schonen das Klima",
+              "reason": "Ignoriert hohe Sickerrate und Flugemissionen."
+            },
+            {
+              "text": "Plantagenwirtschaft und Tourismus sind für Lateinamerikas Wirtschaft völlig bedeutungslos",
+              "reason": "Beide Sektoren bilden in vielen Regionen zentrale Export- und Einnahmequellen."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

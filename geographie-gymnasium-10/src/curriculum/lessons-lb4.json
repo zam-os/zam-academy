@@ -1,0 +1,310 @@
+[
+  {
+    "id": "natuerlicher-und-anthropogener-treibhauseffekt",
+    "lb": 4,
+    "title": "Natürlicher und anthropogener Treibhauseffekt",
+    "period": "Geo10 LB 4 · Strahlungsbilanz",
+    "intro": "Ohne natürlichen Treibhauseffekt wäre unsere Erde ein gefrorener Planet – warum stört schon eine scheinbar kleine Zunahme zusätzlicher Treibhausgase dieses Gleichgewicht?",
+    "paragraphs": [
+      "Kurzwellige Sonnenstrahlung durchdringt die Atmosphäre nahezu ungehindert und erwärmt Landflächen und Ozeane. Die erwärmte Erdoberfläche strahlt ihrerseits langwellige Wärmestrahlung (Infrarot) zurück Richtung Weltraum. Natürliche Spurengase – vor allem Wasserdampf (H₂O), Kohlenstoffdioxid (CO₂) und Methan (CH₄) – absorbieren einen Teil dieser Wärmestrahlung und geben Energie nach allen Seiten wieder ab (atmosphärische Gegenstrahlung). Dadurch liegt das globale Mittel bei lebensfreundlichen rund +15 °C statt bei etwa −18 °C.",
+      "Seit Beginn der Industrialisierung verstärkt der Mensch diesen Effekt (anthropogener Treibhauseffekt): Das Verbrennen fossiler Energieträger (Kohle, Erdöl, Erdgas), großflächige Entwaldung sowie intensive Landwirtschaft (Methan aus Viehhaltung und Nassreisanbau, Lachgas N₂O aus Überdüngung) erhöhen die Treibhausgaskonzentration rapide. Mehr langwellige Wärmestrahlung wird zurückgehalten, bis sich auf höherem Temperaturniveau ein neues Gleichgewicht einstellt.",
+      "Zusätzlich greifen Rückkopplungen ein: Schmilzt weißes Meereis oder Gebirgsschnee, sinkt die Rückstrahlung (Albedo), sodass dunkle Ozeane oder Gesteinsflächen noch mehr Sonnenenergie aufnehmen. Wärmere Luft speichert außerdem mehr Wasserdampf – das verstärkt die Erwärmung zusätzlich."
+    ],
+    "workedExample": "Im Treibhauseffekt-Labor siehst du die Kette: Steigen die fossilen CO₂-Emissionen auf das Zweifache und geht zusätzlich Eis-Albedo verloren, nimmt die Gegenstrahlung spürbar zu – die mittlere Temperatur steigt gegenüber dem vorindustriellen Niveau um deutlich über +2,0 °C.",
+    "takeaway": "Der natürliche Treibhauseffekt ermöglicht Leben (+15 °C statt −18 °C); zusätzliche menschliche Treibhausgase und Albedo-Rückkopplungen verstärken die globale Erwärmung.",
+    "sourceIds": ["lehrplan", "uba-klima", "dwd-klima", "de-ipcc"],
+    "figures": ["treibhaus-bilanz"],
+    "lab": "treibhauseffekt",
+    "quiz": {
+      "question": "Welche Rolle spielen Treibhausgase wie CO₂ und H₂O physikalisch im Strahlungshaushalt der Erde?",
+      "answer": "Sie lassen kurzwellige Sonnenstrahlung größtenteils durch und absorbieren sowie re-emittieren langwellige Wärmestrahlung der Erde",
+      "wrong": [
+        "Sie reflektieren bereits die gesamte kurzwellige Sonnenstrahlung vor dem Erreichen des Bodens zurück ins All",
+        "Sie wandeln langwellige Wärmestrahlung in kurzwellige UV-Strahlung um und kühlen so die Erdoberfläche"
+      ],
+      "explanation": "Die Atmosphäre ist für kurzwelliges Sonnenlicht weitgehend durchlässig, hält aber einen Teil der langwelligen Infrarotabstrahlung der Erde zurück."
+    },
+    "transferCheck": {
+      "question": "Was passiert durch die Eis-Albedo-Rückkopplung, wenn arktisches Meereis zurückgeht?",
+      "answer": "Das dunklere Meerwasser reflektiert weniger Sonnenlicht als Eis, nimmt mehr Wärme auf und beschleunigt die Erwärmung",
+      "wrong": [
+        "Mehr Wasserdampf erhöht die Bewölkung, sodass sich die polaren Meeresflächen dauerhaft unter das vorindustrielle Mittel abkühlen",
+        "Dunkles Meerwasser reflektiert durch Wellengang mehr Strahlung als glatte Schneedecken"
+      ],
+      "explanation": "Helles Eis hat eine hohe Albedo (hohe Reflexion), dunkles Meer eine niedrige – das Schmelzen verstärkt daher die Erwärmung (positive Rückkopplung)."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Natürliche Grundlagen, menschliche Antriebe und Rückkopplungen unterscheiden",
+      "instruction": "Ordne jede Aussage dem passenden Mechanismus im Klimasystem zu.",
+      "categories": ["Natürlicher Treibhauseffekt", "Anthropogener Antrieb", "Rückkopplung"],
+      "entries": [
+        { "text": "Hält die globale Mitteltemperatur der Erde bei rund +15 °C statt −18 °C", "target": 0, "feedback": "Natürliche Konzentrationen von Wasserdampf und CO₂ machen die Erde bewohnbar." },
+        { "text": "Zusätzlicher CO₂-Ausstoß durch Verbrennung von Kohle, Erdöl und Erdgas", "target": 1, "feedback": "Fossile Energieträger setzen über Millionen Jahre gespeicherten Kohlenstoff frei." },
+        { "text": "Rückgang heller Schneeflächen senkt die Albedo und verstärkt die Wärmeaufnahme", "target": 2, "feedback": "Eine Erwärmung verstärkt sich über geringere Reflexion selbst." },
+        { "text": "Methanfreisetzung (CH₄) aus intensiver Rinderhaltung und Nassreisanbau", "target": 1, "feedback": "Landwirtschaftliche Emissionen und Lachgas verstärken den Strahlungsantrieb zusätzlich." },
+        { "text": "Auftauender Permafrost setzt gespeichertes Methan und CO₂ frei", "target": 2, "feedback": "Erwärmung löst hier weitere Treibhausgasemissionen aus." }
+      ],
+      "conclusion": "Natürliche Schutzfunktion, zusätzliche menschliche Emissionen und Rückkopplungen greifen ineinander."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre den Unterschied zwischen natürlichem und anthropogenem Treibhauseffekt anhand von Strahlungswellenlängen und Temperaturwirkung.",
+        "hints": [
+          "Was geschieht mit kurzwelliger Sonnenstrahlung und langwelliger Wärmestrahlung?",
+          "Welche Rolle spielen +15 °C vs. −18 °C und die zusätzlichen menschlichen Emissionen?"
+        ],
+        "model": "Beim natürlichen Treibhauseffekt gelangt kurzwellige Sonnenstrahlung zur Erde; die von der Erde abgestrahlte langwellige Wärmestrahlung wird von natürlichen Spurengasen (v. a. Wasserdampf und CO₂) teilweise absorbiert und zurückgestrahlt, was rund +15 °C statt −18 °C ermöglicht. Beim anthropogenen Treibhauseffekt verstärken menschliche Emissionen (CO₂ aus fossilen Energien und Entwaldung, CH₄, N₂O) diese Gegenstrahlung über das vorindustrielle Gleichgewicht hinaus.",
+        "criteria": [
+          "Ich unterscheide kurzwellige Einstrahlung und langwellige Abstrahlung.",
+          "Ich nenne den Wert von etwa +15 °C gegenüber −18 °C für den natürlichen Effekt.",
+          "Ich erkläre die Verstärkung durch zusätzliche anthropogene Treibhausgase."
+        ]
+      },
+      "2": {
+        "prompt": "Begründe an einem Beispiel aus dem Treibhauseffekt-Labor, warum eine Rückkopplung wie der Albedo-Verlust die Erwärmung auch dann weiter antreiben kann, wenn der jährliche CO₂-Ausstoß nicht weiter steigt.",
+        "hints": [
+          "Welchen direkten Einfluss hat das Schmelzen heller Eisflächen auf die Energieaufnahme?",
+          "Warum spricht die Systemforschung hier von einer selbstverstärkenden Rückkopplung?"
+        ],
+        "model": "Wenn bereits erreichte Erwärmung helle Eis- und Schneedecken abschmilzt, ersetzen dunklere Ozean- oder Felsflächen die zuvor reflektierenden Schichten. Dadurch wird mehr Sonnenenergie absorbiert, selbst wenn der menschliche Ausstoß stagniert – die zusätzliche Wärme lässt wiederum noch mehr Eis schmelzen (positive Rückkopplung).",
+        "criteria": [
+          "Ich erkläre die Änderung des Reflexionsvermögens (Albedo).",
+          "Ich benenne die Folge (mehr Absorption dunkler Flächen).",
+          "Ich zeige den selbstverstärkenden Kreislauf ohne weiteren Ausstoßzuwachs."
+        ]
+      }
+    }
+  },
+  {
+    "id": "positionen-zum-klimawandel-pruefen",
+    "lb": 4,
+    "title": "Positionen zum Klimawandel darstellen und kritisch prüfen",
+    "period": "Geo10 LB 4 · Urteilsbildung",
+    "intro": "Sonne, Vulkane, einzelne Kältewellen oder menschliche Emissionen: Wie trennst du in öffentlichen Debatten belegte wissenschaftliche Erkenntnisse von irreführenden Behauptungen?",
+    "paragraphs": [
+      "Das Erdklima hat sich auch vor dem Auftreten des Menschen immer wieder gewandelt. Extraterrestrische Faktoren (leichte Schwankungen der Sonnenaktivität und über zehntausende Jahre laufende Erdbahnveränderungen nach Milanković) sowie terrestrische Einflüsse (große Vulkanausbrüche, Kontinentalverschiebung, natürliche Ozeanzyklen) prägten Eis- und Warmzeiten.",
+      "Messungen aus Eisbohrkernen, Satelliten und Wetterstationen belegen jedoch eindeutig: Die rasche globale Erwärmung der letzten rund 150 Jahre lässt sich nicht durch Sonne oder Vulkane erklären – im Gegenteil zeigen Messreihen der Sonnenstrahlung in den letzten Jahrzehnten keinen entsprechenden Anstieg, und Vulkanaerosole wirken vorübergehend eher abkühlend. Der Hauptantrieb ist der rasch gestiegene menschliche Treibhausgasausstoß.",
+      "In gesellschaftlichen und politischen Debatten tauchen dennoch verschiedene Positionen auf: Manche verwechseln kurzfristiges regionales Wetter („kalter April“) mit langfristigem globalem Klima; andere verzögern Maßnahmen mit Hinweis auf wirtschaftliche Kosten oder verlangen vor allem Anpassung statt Vermeidung. Kritisches Hinterfragen prüft stets Datengrundlage, Zeitraum und Interessenhintergrund."
+    ],
+    "workedExample": "Behauptung: „Bei uns hat es im Mai geschneit – also findet keine globale Erwärmung statt.“ Gegenprüfung mit DWD-Daten: Ein kalter Mai in Süddeutschland ist ein regionales Wetterereignis über wenige Wochen. Klima meint hingegen weltweite Mittelwerte über mindestens 30 Jahre – und genau diese weltweiten 30-Jahres-Mittel steigen eindeutig.",
+    "takeaway": "Extraterrestrische und natürliche Faktoren prägen langfristige Zyklen, erklären aber nicht die aktuelle Erwärmung; kritische Quellenprüfung unterscheidet Wetter von Klima und belegte Trends von Einzelwerten.",
+    "sourceIds": ["lehrplan", "de-ipcc", "uba-klima", "bpb-klimawandel"],
+    "figures": ["klimapositionen-check"],
+    "quiz": {
+      "question": "Wodurch lassen sich kurzfristige kalte Wintertage von der langfristigen globalen Klimaentwicklung sauber abgrenzen?",
+      "answer": "Wetter beschreibt den kurzfristigen Zustand an einem Ort, Klima die weltweiten statistischen Mittelwerte über mindestens 30 Jahre",
+      "wrong": [
+        "Wetter erfasst monatliche Durchschnittstemperaturen, Klima ausschließlich Einzelwerte extrem kalter Winter",
+        "Beide Begriffe meinen im Kern dasselbe, werden aber von Meteorologie und Politik unterschiedlich benannt"
+      ],
+      "explanation": "Ein einzelnes kaltes Ereignis vor Ort (Wetter) widerlegt keinen jahrzehntelangen globalen Erwärmungstrend (Klima)."
+    },
+    "transferCheck": {
+      "question": "Ein Kommentar behauptet: „Die Erwärmung seit 2000 stammt von einer immer stärker strahlenden Sonne.“ Welcher Befund widerlegt das direkt?",
+      "answer": "Satellitenmessungen der Sonnenstrahlung zeigen seit Jahrzehnten keinen Aufwärtstrend, während die unteren Luftschichten wärmer und die Stratosphäre kühler werden",
+      "wrong": [
+        "Beobachtungen zeigen, dass sich vor allem die Stratosphäre stark erwärmt hat, während die untere Luftschicht kaum reagiert",
+        "Die Sonnenaktivität wirkt sich physikalisch ausschließlich auf die Nachtseiten und Polargebiete aus, nicht auf die Tropen"
+      ],
+      "explanation": "Eine stärkere Sonne würde die gesamte Atmosphäre bis oben erwärmen; beim Treibhauseffekt erwärmt sich die Troposphäre, während die Stratosphäre abkühlt."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Antriebskräfte und Debattenargumente einordnen",
+      "instruction": "Ordne die sechs Aussagen danach ein, ob es sich um extraterrestrische/natürliche Faktoren, anthropogene Fakten oder typische Fehlschlüsse in der Debatte handelt.",
+      "categories": ["Natürlicher / extraterrestrischer Faktor", "Belegter anthropogener Befund", "Methodischer Fehlschluss"],
+      "entries": [
+        { "text": "Langsame Änderungen der Erdachsenneigung und Erdbahn über Jahrzehntausende (Milanković)", "target": 0, "feedback": "Erdbahnparameter steuerten den langfristigen Wechsel von Eis- und Warmzeiten." },
+        { "text": "Anstieg der CO₂-Konzentration über das Niveau der letzten 800 000 Jahre hinaus", "target": 1, "feedback": "Eisbohrkerne und direkte Messungen belegen diesen schnellen Anstieg seit der Industrialisierung." },
+        { "text": "„Heute regnet es kalt – die Erderwärmung ist also erfunden“", "target": 2, "feedback": "Verwechslung eines lokalen Wetterereignisses mit globaler Klimaentwicklung." },
+        { "text": "Kurzfristige weltweite Abkühlung nach großen Vulkanausbrüchen durch Sulfat-Aerosole", "target": 0, "feedback": "Vulkanische Partikel in der Stratosphäre reflektieren zeitweise Sonnenlicht." },
+        { "text": "Wählen nur eines besonders warmen oder kalten Einzeljahres als „Beweis“ gegen Trends", "target": 2, "feedback": "Herauspicken einzelner Ausreißer (Cherry-Picking) verdeckt den 30-Jahres-Trend." },
+        { "text": "Gleichzeitige Erwärmung der unteren Atmosphäre und Abkühlung der Stratosphäre", "target": 1, "feedback": "Dieser Fingerabdruck ist charakteristisch für verstärkte Treibhausgase, nicht für mehr Sonne." }
+      ],
+      "conclusion": "Wer natürliche Antriebe, Messreihen und typische Argumentationsfehler kennt, kann Behauptungen selbständig prüfen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Stelle zwei wissenschaftlich belegte Gründe dar, warum die aktuelle Erwärmung überwiegend vom Menschen verursacht wird und nicht allein auf natürliche Sonnen- oder Vulkanzyklen zurückgeht.",
+        "hints": [
+          "Was zeigen Messungen zur Sonnenaktivität und zu Vulkanausbrüchen in den letzten Jahrzehnten?",
+          "Wie unterscheiden sich Zeitmaßstab und atmosphärisches Profil (Troposphäre vs. Stratosphäre)?"
+        ],
+        "model": "Erstens zeigen direkte Messungen seit Jahrzehnten keinen entsprechenden Anstieg der Sonneneinstrahlung, während die CO₂-Konzentration durch fossile Brennstoffe extrem rasch steigt. Zweitens müsste bei stärkerer Sonneneinstrahlung die gesamte Atmosphäre wärmer werden – tatsächlich erwärmt sich die untere Atmosphäre (Troposphäre), während die Stratosphäre darüber durch zurückgehaltene Wärmestrahlung abkühlt.",
+        "criteria": [
+          "Ich nenne direkte Messungen von Sonnenaktivität und Treibhausgasen.",
+          "Ich beschreibe das Merkmal Troposphäre (wärmer) vs. Stratosphäre (kühler) oder das Tempo.",
+          "Ich trenne natürliche Hintergrundzyklen sauber vom aktuellen Trend."
+        ]
+      },
+      "2": {
+        "prompt": "Formuliere eine sachliche Antwort auf den Satz: „Klimaschutz bei uns lohnt sich nicht, weil einzelne große Länder viel mehr ausstoßen.“ Berücksichtige Verantwortung, Pro-Kopf-Perspektive und globale Signalwirkung.",
+        "hints": [
+          "Welche Bedeutung haben Pro-Kopf-Emissionen und historische Gesamtemissionen?",
+          "Wie hängen Technikentwicklung und internationale Klimadiplomatie zusammen?"
+        ],
+        "model": "Obwohl kein Land den globalen Ausstoß allein stoppen kann, zählt jede Tonne CO₂, da Treibhausgase weltweit wirken. Zudem liegen die Pro-Kopf- und historischen Emissionen klassischer Industrieländer über lange Zeit sehr hoch. Wenn technologisch starke Länder funktionierende Alternativen bei Energie, Wärme und Mobilität wirtschaftlich vorführen, sinken weltweit die Kosten dieser Technologien und erhöhen das Gewicht in internationalen Verhandlungen.",
+        "criteria": [
+          "Ich würdige das richtige Teilargument globaler Kooperation.",
+          "Ich berücksichtige historische oder Pro-Kopf-Emissionen.",
+          "Ich begründe wirtschaftliche Vorreiterwirkung und diplomatische Glaubwürdigkeit."
+        ]
+      }
+    }
+  },
+  {
+    "id": "klimaszenarien-und-globale-folgen",
+    "lb": 4,
+    "title": "Klimaszenarien, regionale Folgen und Kippelemente",
+    "period": "Geo10 LB 4 · Szenarien",
+    "intro": "Was unterscheidet eine Welt mit +1,5 °C Erwärmung von einem ungebremsten Pfad über +3 °C – und warum fürchten Forschende plötzliche Kipppunkte?",
+    "paragraphs": [
+      "Klimamodelle berechnen keine feste Zukunft, sondern Szenarien je nach menschlichem Emissionspfad: Von rascher Dekarbonisierung (Begrenzung nahe 1,5 °C bzw. deutlich unter 2 °C laut Pariser Klimaabkommen 2015) über mittlere Pfade bis hin zu hohen Emissionspfaden mit über +3 °C bis +4 °C bis zum Ende des Jahrhunderts.",
+      "Die Folgen verteilen sich global höchst ungleich: In subtropischen und tropischen Regionen nehmen Hitzewellen und Dürren zu, Gletscher und Meereis schmelzen, der Meeresspiegel steigt durch Wärmeausdehnung des Wassers und schmelzende Eisschilde, und Wetterextreme wie Starkregen oder heftige tropische Wirbelstürme nehmen an Intensität zu. Besonders arme Insel- und Küstenstaaten tragen hohe Risiken (Umwelt- bzw. Klimaflucht), obwohl sie historisch am wenigsten beigetragen haben.",
+      "Besonders kritisch sind Kippelemente (Tipping Elements): großskalige Bestandteile des Erdsystems, die bei Überschreiten einer Temperaturschwelle unumkehrbar in einen neuen Zustand kippen – etwa Grönländischer und Westantarktischer Eisschild, das Auftauen von Permafrostböden (Methanfreisetzung), eine Abschwächung der Atlantischen Umwälzzirkulation (AMOC) oder das Austrocknen des Amazonas-Regenwaldes."
+    ],
+    "workedExample": "Im Klimaszenario-Labor erkennst du den Unterschied der Maßstabsebenen: Bei +4,1 °C bedroht der langfristige Meeresspiegelanstieg ganze Atolle und Deltastädte; im bayerischen Heimatraum steigen zugleich sommerliche Hitzeextreme, Waldbrandgefahr und das Abschmelzen alpiner Permafrost- und Gletscherzonen drastisch.",
+    "takeaway": "Emissionspfade entscheiden über das Ausmaß von Extremwettern und Meeresspiegelanstieg; Kippelemente können ab bestimmten Schwellen irreversible Veränderungen auslösen.",
+    "sourceIds": ["lehrplan", "de-ipcc", "uba-klima", "bmz-klima"],
+    "figures": ["kippelemente-weltkarte"],
+    "lab": "klimaszenarien",
+    "quiz": {
+      "question": "Was versteht man in der Klimaforschung unter einem Kippelement (Tipping Element)?",
+      "answer": "Einen großen Bereich des Erdsystems, der ab einer kritischen Schwelle unumkehrbar in einen neuen Zustand übergeht",
+      "wrong": [
+        "Einen exakt festgelegten Temperaturgrenzwert, ab dem globale Erwärmung automatisch von selbst stoppt",
+        "Jede kurzfristige sommerliche Hitzewelle, die innerhalb weniger Tage wieder abklingt"
+      ],
+      "explanation": "Wird bei einem Kippelement (wie Permafrost oder Grönland-Eisschild) ein Schwellenwert überschritten, verstärkt sich die Veränderung selbst."
+    },
+    "transferCheck": {
+      "question": "Warum erhöht schmelzendes Süßwasser aus Grönland das Risiko einer Abschwächung der atlantischen Umwälzzirkulation (AMOC)?",
+      "answer": "Leichteres Süßwasser verringert die Dichte des Oberflächenwassers im Nordatlantik und bremst das Absinken in die Tiefe",
+      "wrong": [
+        "Weil Süßwasser schwerer als salzhaltiges Tiefenwasser ist und die Strömung dadurch beschleunigt über den Äquator hinaus presst",
+        "Weil Schmelzwasser den Golfstrom direkt am Äquator blockiert, noch bevor es den Nordatlantik erreicht"
+      ],
+      "explanation": "Die AMOC wird von kaltem, salzreichem und damit dichtem Wasser angetrieben, das im Nordatlantik absinkt; viel Süßwasser verdünnt diese Schicht."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Folgen auf verschiedenen Maßstabsebenen zuordnen",
+      "instruction": "Ordne jede Klimafolge der passenden Ebene bzw. Wirkung zu.",
+      "categories": ["Global / Erdsystem", "Regional: Küsten & Trockenzonen", "Lokal: Heimatraum Bayern"],
+      "entries": [
+        { "text": "Tauen des sibirischen Permafrosts mit zusätzlicher Methanfreisetzung", "target": 0, "feedback": "Permafrost wirkt als globales Kippelement auf den Kohlenstoffhaushalt zurück." },
+        { "text": "Versalzung von Süßwasserbrunnen auf tief liegenden Koralleninseln", "target": 1, "feedback": "Steigende Meeresspiegel und Sturmfluten gefährden Trinkwasser in Küstenzonen." },
+        { "text": "Rückzug der Alpengletscher und Trockenstress in Fichtenforsten", "target": 2, "feedback": "Im Alpen- und Voralpenraum machen sich Erwärmung und Sommertrockenheit direkt bemerkbar." },
+        { "text": "Gefährdung von Millionen Menschen in tropischen Deltas (Klimaflucht)", "target": 1, "feedback": "Erosions- und Flutrisiken zerstören Lebensgrundlagen ganzer Küstenregionen." },
+        { "text": "Häufigere Hitzetage in dicht bebauten Innenstädten (z. B. Regensburg oder München)", "target": 2, "feedback": "Städtische Wärmeinseln verschärfen sommerliche Hitzebelastung vor Ort." }
+      ],
+      "conclusion": "Globale Temperaturpfade werden immer auf konkreten regionalen und lokalen Ebenen spürbar."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre an zwei Beispielen (z. B. Grönland-Eisschild und Amazonas-Regenwald), welche Folgen ein Überschreiten von Kipppunkten haben kann.",
+        "hints": [
+          "Was passiert über Albedo und Meeresspiegel beim Grönland-Eisschild?",
+          "Wie verändert sich der Amazonas bei zunehmender Erwärmung und Abholzung (Senke → Quelle)?"
+        ],
+        "model": "Beim Grönland-Eisschild senkt das Abschmelzen die Oberfläche in wärmere Luftschichten ab und verringert die helle Eisfläche (Albedo), sodass das Schmelzen sich selbst verstärkt und langfristig den Meeresspiegel weltweit stark anhebt. Beim Amazonas-Regenwald kann zunehmender Trockenstress zusammen mit Abholzung dazu führen, dass der Wald seinen eigenen Regenkreislauf verliert, teilweise zur Savanne austrocknet und von einer CO₂-Senke zu einer CO₂-Quelle wird.",
+        "criteria": [
+          "Ich beschreibe zwei konkrete Kippelemente sachlich.",
+          "Ich erkläre die jeweilige Rückkopplung oder Unumkehrbarkeit.",
+          "Ich benenne die globale Auswirkung (Meeresspiegel / CO₂-Kreislauf)."
+        ]
+      },
+      "2": {
+        "prompt": "Vergleiche die Verantwortung für Emissionen mit der Betroffenheit durch den Klimawandel am Beispiel eines kleinen pazifischen Inselstaats und eines Industrielandes (Klimagerechtigkeit).",
+        "hints": [
+          "Vergleiche historischen und aktuellen Pro-Kopf-Ausstoß beider Ländertypen.",
+          "Wer trägt jeweils die Hauptlast bei Schäden und Anpassungskosten?"
+        ],
+        "model": "Industrieländer haben durch jahrzehntelange Industrialisierung den Großteil der bisherigen Treibhausgase verursacht und verfügen über finanzielle sowie technische Mittel zur Anpassung. Kleine Inselstaaten tragen kaum zum globalen Ausstoß bei, verlieren aber durch Meeresspiegelanstieg und versalzende Böden ihre Lebensgrundlage und brauchen internationale Unterstützung bei Klimaschutz, Anpassung und Schäden.",
+        "criteria": [
+          "Ich stelle Verursachung (Emissionen) und Betroffenheit gegenüber.",
+          "Ich beziehe die unterschiedliche Anpassungsfähigkeit (Finanzen/Technik) ein.",
+          "Ich leite ein Urteil zur internationalen Klimagerechtigkeit ab."
+        ]
+      }
+    }
+  },
+  {
+    "id": "anpassung-und-klimaschutz-vor-ort",
+    "lb": 4,
+    "title": "Anpassungsstrategien und Klimaschutz im Heimatraum",
+    "period": "Geo10 LB 4 · Handeln",
+    "intro": "Klimaschutz bremst die Erwärmung an der Ursache – Anpassung schützt vor den schon heute spürbaren Folgen. Wie greifen beide Strategien bis in deinen Alltag in Bayern?",
+    "paragraphs": [
+      "Die Klimapolitik stützt sich auf zwei komplementäre Säulen: Klimaschutz (Mitigation) setzt an der Ursache an und vermindert Treibhausgasemissionen – durch den Ausbau erneuerbarer Energien, Energiesparen, Wärmepumpen und Dämmung, nachhaltige Mobilität sowie den Schutz und die Wiedervernässung von Mooren und Wäldern.",
+      "Da ein Teil der Erwärmung bereits eingetreten oder angestoßen ist, wird Klimaanpassung (Adaptation) gleichzeitig unverzichtbar: Städte entsiegeln Plätze, legen Dach- und Fassadenbegrünung sowie Wasserrückhaltebecken als „Schwammstädte“ gegen Starkregen und Hitzeinseln an; Küsten verstärken Deiche; die Landwirtschaft testet trockenheitstolerante Sorten.",
+      "Auch im Heimatraum Bayern greifen beides ineinander: Kommunen bauen Nahwärmenetze, Photovoltaik und Radwege aus (Mitigation), während Forstbetriebe empfindliche reine Fichtenbestände zu klimaresilienteren Mischwäldern umbauen und Wasserwirtschaftsämter Retentionsflächen gegen Donau- oder Isarhochwasser sichern (Adaptation)."
+    ],
+    "workedExample": "In einer bayerischen Stadt verbindet ein neuer Stadtteilplatz beide Prinzipien: Photovoltaikdächer und gute ÖPNV-Anbindung senken die Emissionen (Mitigation); zugleich nehmen versickerungsfähiges Pflaster, schattenspendende Bäume und Rückhaltemulden Sommerhitze und Starkregen auf (Adaptation).",
+    "takeaway": "Nachhaltige Klimapolitik verbindet Klimaschutz (Emissionen senken) und Klimaanpassung (Schäden vor Ort abfedern) auf globaler bis kommunaler Ebene.",
+    "sourceIds": ["lehrplan", "uba-anpassung", "lfu-klima", "dwd-klima"],
+    "figures": ["klimaschutz-anpassung"],
+    "quiz": {
+      "question": "Was ist der Kernunterschied zwischen Mitigation (Klimaschutz) und Adaptation (Klimaanpassung)?",
+      "answer": "Mitigation verringert die Ursachen (Emissionen senken), Adaptation mindert die Folgen vor Ort (z. B. durch Deiche oder Schwammstädte)",
+      "wrong": [
+        "Mitigation beschreibt technische Schutzbauten an der Küste, Adaptation den internationalen Ausstieg aus fossilen Energien",
+        "Beide Begriffe meinen ausschließlich Aufforstungsprojekte in tropischen Regenwäldern"
+      ],
+      "explanation": "Klimaschutz greift bei den Treibhausgasquellen an; Klimaanpassung bereitet Räume und Gesellschaften auf veränderte Klimaextremen vor."
+    },
+    "transferCheck": {
+      "question": "Ein alpiner Skiclub ersetzt einen naturnahen Moorboden durch eine asphaltierte Großfläche, möchte dies aber als „Anpassung“ verkaufen. Warum stimmt diese Einordnung nicht?",
+      "answer": "Die Zerstörung eines Moores setzt zusätzlichen Kohlenstoff frei und erhöht durch Versiegelung das Hochwasserrisiko bei Starkregen",
+      "wrong": [
+        "Weil Hochmoore erst nach vollständiger Trockenlegung und Versiegelung nennenswert CO₂ speichern können",
+        "Weil Asphaltflächen Sonnenlicht stärker absorbieren und deshalb das Grundwasser darunter kühl halten"
+      ],
+      "explanation": "Intakte Moore sind wertvolle CO₂-Senken und natürliche Wasserspeicher; Versiegelung schadet zugleich dem Klimaschutz und der Hochwasseranpassung."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Maßnahmen im Heimatraum und weltweit einordnen",
+      "instruction": "Ordne jede Maßnahme entweder dem Klimaschutz (Mitigation) oder der Klimaanpassung (Adaptation) zu.",
+      "categories": ["Klimaschutz (Mitigation)", "Klimaanpassung (Adaptation)"],
+      "entries": [
+        { "text": "Ausbau von Windkraft, Photovoltaik und elektrischem Nahverkehr", "target": 0, "feedback": "Weniger fossile Verbrennung senkt die Treibhausgasemissionen an der Quelle." },
+        { "text": "Entsiegelung von Schulhöfen und Bau von Versickerungsmulden (Schwammstadt)", "target": 1, "feedback": "Versickerung und Verschattung puffern lokale Starkregen- und Hitzespitzen ab." },
+        { "text": "Wiedervernässung trockengelegter bayerischer Niedermoore", "target": 0, "feedback": "Nasse Moore stoppen den Torfabbau und binden langfristig Kohlenstoff." },
+        { "text": "Hochwasserrückhaltebecken und Deichrückverlegung entlang von Flüssen", "target": 1, "feedback": "Zusätzlicher Überflutungsraum schützt Siedlungen bei Extremabflüssen." },
+        { "text": "Umbau reiner Fichtenforste zu gemischten Laub-Nadel-Wäldern", "target": 1, "feedback": "Tiefe Wurzeln verschiedener Baumarten erhöhen die Widerstandskraft gegen Trockenheit und Sturm." },
+        { "text": "Energetische Gebäudedämmung und Tausch alter Ölheizungen", "target": 0, "feedback": "Geringerer Heizenergiebedarf spart direkt CO₂-Emissionen ein." }
+      ],
+      "conclusion": "Ohne Klimaschutz stößt jede Anpassung irgendwann an Grenzen – ohne Anpassung bleiben heutige Gefahren ungeschützt."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Nenne zwei konkrete Maßnahmen des Klimaschutzes und zwei Maßnahmen der Klimaanpassung, die sich in deinem bayerischen Heimatraum umsetzen lassen.",
+        "hints": [
+          "Welche Rolle spielen Wärme, Strom und Verkehr bei der Vermeidung?",
+          "Wie lassen sich Innenstädte, Wälder oder Flüsse an Hitze und Starkregen anpassen?"
+        ],
+        "model": "Zum Klimaschutz (Mitigation) zählen in Bayern der Ausbau von Solardächern und Nahwärme sowie sichere Rad- und Bahnverbindungen für Schul- und Arbeitswege. Zur Klimaanpassung (Adaptation) gehören Stadtbäume, helle entsiegelte Plätze gegen Hitzeinseln sowie der Waldumbau hin zu trockenheitsverträglicheren Mischwäldern und Hochwasserrückhalteflächen.",
+        "criteria": [
+          "Ich nenne zwei echte Klimaschutz-Maßnahmen (Emissionsminderung).",
+          "Ich nenne zwei echte Anpassungsmaßnahmen vor Ort.",
+          "Ich beziehe den regionalen Rahmen (Bayern/Kommune) klar ein."
+        ]
+      },
+      "2": {
+        "prompt": "Bewerte kritisch: „Wenn wir uns einfach überall mit Klimaanlagen und Deichen anpassen, können wir auf Klimaschutz verzichten.“",
+        "hints": [
+          "Was passiert bei ungebremster Erwärmung (+3 bis +4 °C) mit Kippelementen und Anpassungskosten?",
+          "Welche Bevölkerungsgruppen oder Regionen können sich technische Anpassung nicht leisten?"
+        ],
+        "model": "Anpassung allein reicht nicht aus und wird ohne Klimaschutz unbezahlbar oder physikalisch unmöglich. Bei +3 bis +4 °C steigen Extremwetter und Kipppunkte so stark an, dass Deiche oder Klimaanlagen (die ohne Ökostrom selbst Emissionen erhöhen) versagen; zudem können sich gerade einkommensschwache Regionen diese Technik nicht leisten. Daher sind Vermeidung und Anpassung beide zwingend nötig.",
+        "criteria": [
+          "Ich zeige Grenzen reiner technischer Anpassung (Kosten, physikalische Schwellen, Energiebedarf).",
+          "Ich berücksichtige soziale Ungleichheit zwischen wohlhabenden und ärmeren Regionen.",
+          "Ich begründe das notwendige Zusammenspiel beider Strategien."
+        ]
+      }
+    }
+  }
+]
