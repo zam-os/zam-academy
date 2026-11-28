@@ -8,7 +8,6 @@ import {
   tippingWorldMap,
 } from "./maps";
 import {
-  altitudinalProfile,
   comparisonBars,
   greenhouseDiagram,
   hadleyDiagram,
@@ -32,9 +31,9 @@ const staticScenes: Record<string, () => string> = {
   // LB 2
   entwicklungsregionen: () =>
     figure(
-      "Länder unterschiedlichen Entwicklungsstandes im globalen Überblick",
+      "Länder nach UNDP-HDI-Stufen im globalen Überblick",
       developmentWorldMap(),
-      "Modellhafte Einteilung ausgewählter Staaten. Innerhalb jedes Landes bestehen zudem deutliche regionale und soziale Unterschiede.",
+      "Ausgewählte Staatenbeispiele nach HDI-Stufen (sehr hoch, hoch/mittel, niedrig). Innerhalb jedes Landes bestehen zudem deutliche regionale und soziale Unterschiede.",
     ),
   "indikatoren-vergleich": () =>
     figure(
@@ -65,7 +64,7 @@ const staticScenes: Record<string, () => string> = {
     figure(
       "Passatzirkulation und Wanderung der ITC (Nordsommer-Beispiel)",
       hadleyDiagram(18, 12),
-      "Über dem Sonnenzenit entsteht das äquatoriale Tief (ITC) mit Zenitalregen; um ca. 30° N/S sinkt die Luft im subtropischen Hochdruckgürtel ab.",
+      "Über dem Sonnenzenit entsteht das äquatoriale Tief (ITC) mit Zenitalregen; um ca. 25–33° N/S sinkt die Luft im subtropischen Hochdruckgürtel ab.",
     ),
   "oekosystem-profil": () =>
     figure(
@@ -136,8 +135,8 @@ const staticScenes: Record<string, () => string> = {
   "oasen-stockwerke": () =>
     figure(
       "Oasenwirtschaft und Grundwasser-Entnahme",
-      oasisCrossSection("tropf", 8, 48, 22, "gering"),
-      "Traditioneller dreistöckiger Anbau unter Dattelpalmen spart Wasser durch Beschattung; offene Furchen oder Tiefpumpen erhöhen Verlust und Versalzung.",
+      oasisCrossSection("tropf", 8, 40, 22, "gering"),
+      "Traditioneller dreistöckiger Anbau unter Dattelpalmen spart Wasser durch Beschattung; 8 ha Tröpfchenbewässerung entnehmen 40 Einheiten (unterhalb der Neubildung von 50).",
     ),
   "diversifizierung-golf": () =>
     figure(
@@ -170,9 +169,9 @@ const staticScenes: Record<string, () => string> = {
   // LB 6
   "subsahara-profil": () =>
     figure(
-      "Klima- und Vegetationsgürtel Afrikas im Nord-Süd-Verlauf",
+      "Klima- und Vegetationsgürtel Afrikas beiderseits des Äquators",
       africaZonesMap(),
-      "Vom immerfeuchten Kongobecken über Feucht-, Trocken- und Dornsavannen bis in die Sahara – an der Südwestküste prägt zusätzlich der kalte Benguelastrom die Namib.",
+      "Vom immerfeuchten Kongobecken fast symmetrisch über Feucht-, Trocken- und Dornsavannen nordwärts in die Sahara sowie südwärts in Richtung Kalahari und Namib.",
     ),
 
   // LB 7
@@ -181,12 +180,6 @@ const staticScenes: Record<string, () => string> = {
       "Mittel- und Südamerika: Naturräume, Anden und Meeresströmungen",
       latamOverviewMap(),
       "Anders als in Afrika bricht die Anden-Kordillere die zonale Anordnung in West-Ost-Richtung und bildet ausgeprägte Höhenstufen.",
-    ),
-  "anden-alpen-vergleich": () =>
-    figure(
-      "Höhenstufen in den tropischen Anden im Überblick",
-      altitudinalProfile("anden", 2250),
-      "Mit jedem Kilometer Höhe sinkt die Temperatur im Mittel um rund 6 °C – dadurch entstehen am Äquator alle Vegetationsstufen übereinander.",
     ),
 };
 

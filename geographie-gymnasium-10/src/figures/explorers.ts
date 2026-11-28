@@ -478,7 +478,7 @@ export const EXPLORERS: Record<string, ExplorerSpec> = {
     title: "Hurrikane und Verwundbarkeit im karibischen Raum",
     caption: "Ein Naturereignis wird zur Katastrophe, wenn extreme Wind- und Wassermassen auf ungeschützte Siedlungen und Inselinfrastruktur treffen.",
     parts: [
-      { label: "1. Entstehung über Meer", detail: "Über warmem Tropenmeer (> 26,5 °C) steigt feuchte Luft massiv auf; ab ca. 5° Abstand vom Äquator setzt die Corioliskraft die Luftmasse in Rotation." },
+      { label: "1. Entstehung über Meer", detail: "Über warmem Tropenmeer (über 26,5 °C) steigt feuchte Luft massiv auf; ab ca. 5° Abstand vom Äquator setzt die Corioliskraft die Luftmasse in Rotation." },
       { label: "2. Dreifache Wucht", detail: "Sturmflut an flachen Küsten, extreme Windböen und tagelanger Starkregen (mit Erdrutschen an steilen Inselhängen) treffen oft mehrere Staaten hintereinander." },
       { label: "3. Hohe Verwundbarkeit", detail: "Kleine Inselstaaten haben wenig Ausweichraum, leicht gebaute Küstensiedlungen und hohe Abhängigkeit von Tourismus oder Agrarexport; Frühwarnung rettet Leben." },
     ],
@@ -487,7 +487,7 @@ export const EXPLORERS: Record<string, ExplorerSpec> = {
       label(290, 20, "Karibik: Warum Hurrikane dort so hohe Schäden verursachen", "lbl strong") +
       threeColumnCards(active, [
         {
-          head: "1. Antrieb > 26,5 °C",
+          head: "1. Antrieb ab 26,5 °C",
           sub: "Warmes Meerwasser +\nCoriolis-Rotation",
           motif: '<circle class="geo-tip-ring" cx="71" cy="24" r="18"/><circle class="geo-tip-dot" cx="71" cy="24" r="5"/>',
         },

@@ -19,7 +19,7 @@ Interaktives Lernpaket für **Geographie in der 10. Jahrgangsstufe am bayerische
 npm ci
 npx tsc --noEmit
 npm test
-npm run dev          # http://localhost:5299/geographie-gymnasium-10/
+npm run dev          # http://localhost:5302/geographie-gymnasium-10/
 npm run build        # erzeugt dist/index.html als Einzeldatei
 npm run package:zip  # erzeugt release/ZAM-Academy-Geographie-Gymnasium-10-offline.zip
 ```

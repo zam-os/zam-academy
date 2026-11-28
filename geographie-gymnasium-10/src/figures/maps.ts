@@ -177,29 +177,32 @@ export function worldLayerMap(
 }
 
 export function developmentWorldMap(): string {
-  const industrial = new Set(["DEU", "FRA", "GBR", "USA", "CAN", "JPN", "AUS", "NOR", "SWE", "CHE", "ITA", "ESP"]);
-  const emerging = new Set(["BRA", "MEX", "CHN", "IND", "ZAF", "TUR", "IDN", "ARG", "CHL", "SAU", "ARE"]);
+  const veryHighHdi = new Set([
+    "DEU", "FRA", "GBR", "USA", "CAN", "JPN", "AUS", "NOR", "SWE", "CHE",
+    "ITA", "ESP", "AUT", "NLD", "KOR", "NZL", "ARE", "SAU", "CHL", "ARG", "TUR",
+  ]);
+  const highMidHdi = new Set(["BRA", "MEX", "CHN", "IND", "ZAF", "IDN", "MAR", "EGY", "COL", "PER", "VNM"]);
   const lowHdi = new Set(["NER", "TCD", "CAF", "SSD", "SOM", "MLI", "BFA", "BDI", "MOZ", "ETH", "COD", "HTI"]);
   const cls = (c: CountryShape) => {
-    if (industrial.has(c.id)) return "geo-country geo-dev-high";
-    if (emerging.has(c.id)) return "geo-country geo-dev-mid";
+    if (veryHighHdi.has(c.id)) return "geo-country geo-dev-high";
+    if (highMidHdi.has(c.id)) return "geo-country geo-dev-mid";
     if (lowHdi.has(c.id)) return "geo-country geo-dev-low";
     return "geo-country";
   };
   const labelsOverlay =
-    labels(320, 46, "Beispiel Industrieländer\n(z. B. Deutschland, Japan, USA)", "lbl tiny strong") +
-    labels(220, 186, "Beispiel Schwellenländer\n(z. B. Brasilien, Indien, China)", "lbl tiny strong") +
-    labels(350, 126, "Länder niedrigen\nEntwicklungsstandes (z. B. Sahel)", "lbl tiny strong") +
-    `<rect class="legend-panel" x="10" y="178" width="215" height="58" rx="8"/>` +
+    labels(320, 44, "Sehr hoher HDI (Beispiele:\nDeutschland, Japan, USA, VAE)", "lbl tiny strong") +
+    labels(455, 174, "Hoher / mittlerer HDI (Beispiele:\nBrasilien, Indien, China)", "lbl tiny strong") +
+    labels(355, 126, "Niedriger HDI (Beispiele:\nu. a. im Sahelgürtel)", "lbl tiny strong") +
+    `<rect class="legend-panel" x="10" y="178" width="234" height="58" rx="8"/>` +
     `<rect class="geo-dev-high" x="18" y="187" width="12" height="10" rx="2"/>` +
-    label(36, 196, "Sehr hoher Entwicklungsstand", "lbl tiny", "start") +
+    label(36, 196, "Sehr hoher HDI (Beispiele)", "lbl tiny", "start") +
     `<rect class="geo-dev-mid" x="18" y="203" width="12" height="10" rx="2"/>` +
-    label(36, 212, "Schwellen- / Aufholländer", "lbl tiny", "start") +
+    label(36, 212, "Hoher / mittlerer HDI (Beispiele)", "lbl tiny", "start") +
     `<rect class="geo-dev-low" x="18" y="219" width="12" height="10" rx="2"/>` +
-    label(36, 228, "Niedriger Entwicklungsstand (Beispiele)", "lbl tiny", "start");
+    label(36, 228, "Niedriger HDI (Beispiele)", "lbl tiny", "start");
   return renderRegionMap(
     "world",
-    "Weltkarte mit Modellbeispielen für Länder unterschiedlichen Entwicklungsstandes",
+    "Weltkarte mit Modellbeispielen für Länder nach UNDP-HDI-Stufen",
     labelsOverlay,
     [],
     cls,
@@ -291,8 +294,11 @@ export function africaZonesMap(): string {
   const bands: Array<[number, number, string, string]> = [
     [22, 16, "geo-band-desert", "Sahara (Wüste)"],
     [16, 11, "geo-band-sahel", "Sahelzone (Dorn-/Trockensavanne)"],
-    [11, 4, "geo-band-savanna", "Feucht- und Trockensavanne"],
+    [11, 4, "geo-band-savanna", "Feucht- und Trockensavanne (Nord)"],
     [4, -5, "geo-band-rain", "Tropischer Regenwald (Kongobecken)"],
+    [-5, -17, "geo-band-savanna", "Feucht- und Trockensavanne (Süd)"],
+    [-17, -22, "geo-band-sahel", "Dornsavanne (Übergang Süd)"],
+    [-22, -28, "geo-band-desert", "Trockenräume Kalahari / Namib"],
   ];
   const bandRects = bands
     .map(([latTop, latBot, cls]) => {
@@ -335,21 +341,24 @@ export function latamOverviewMap(): string {
     xy(proj, -69, -30),
     xy(proj, -72, -48),
   ];
-  const [h1x, h1y] = xy(proj, -79, -32);
-  const [h2x, h2y] = xy(proj, -82, -10);
+  const [h1x, h1y] = xy(proj, -73.8, -33.5);
+  const [hmx, hmy] = xy(proj, -72.6, -23.5);
+  const [h2x, h2y] = xy(proj, -79.5, -11.5);
   const [hur1x, hur1y] = xy(proj, -60, 14);
   const [hurMidX, hurMidY] = xy(proj, -70, 18.5);
   const [hur2x, hur2y] = xy(proj, -80, 22);
 
   const overlay =
     `<polyline class="geo-ridge" points="${andes.map(([x, y]) => `${f1(x)},${f1(y)}`).join(" ")}"/>` +
-    arrow(h1x, h1y, h2x, h2y, "geo-cold-arrow") +
-    labels(h2x - 8, (h1y + h2y) / 2, "Kalter\nHumboldtstrom\n(Atacama)", "lbl tiny strong", "end") +
+    `<path class="geo-cold-current" fill="none" d="M${f1(h1x)} ${f1(h1y)} Q${f1(hmx)} ${f1(hmy)} ${f1(h2x)} ${f1(h2y)}"/>` +
+    arrow(hmx + (h2x - hmx) * 0.72, hmy + (h2y - hmy) * 0.72, h2x, h2y, "geo-cold-arrow") +
+    labels(xy(proj, -76.5, -28.0)[0], xy(proj, -76.5, -28.0)[1], "Kalter\nHumboldtstrom", "lbl tiny strong", "end") +
+    label(xy(proj, -73.0, -21.0)[0], xy(proj, -73.0, -21.0)[1], "Atacama", "lbl tiny strong", "end") +
     `<path class="geo-warm-track" d="M${f1(hur1x)} ${f1(hur1y)} Q${f1(hurMidX)} ${f1(hurMidY)} ${f1(hur2x)} ${f1(hur2y)}"/>` +
     arrow(hur2x + 12, hur2y - 4, hur2x, hur2y, "geo-warm-arrow") +
     label(xy(proj, -72, 23)[0], xy(proj, -72, 23)[1], "Karibik (Hurrikanbahn)", "lbl tiny strong") +
     label(xy(proj, -60, -5)[0], xy(proj, -60, -5)[1], "Amazonasbecken", "lbl small strong") +
-    label(xy(proj, -73, -18)[0], xy(proj, -73, -18)[1], "Anden", "lbl tiny strong", "end") +
+    label(xy(proj, -69.2, -16.5)[0], xy(proj, -69.2, -16.5)[1], "Anden", "lbl tiny strong", "start") +
     label(xy(proj, -61, -35)[0], xy(proj, -61, -35)[1], "Pampa", "lbl tiny strong") +
     dot(...xy(proj, -99.1, 19.4)) +
     label(xy(proj, -99.1, 19.4)[0], xy(proj, -99.1, 19.4)[1] - 10, "Mexiko-Stadt", "lbl tiny strong") +

@@ -87,7 +87,7 @@
       "Aus diesem Verhältnis liest du auf einen Blick humide und aride Monate ab: Liegt die Niederschlagskurve bzw. -säule über der Temperaturkurve (also gilt N > 2 · T), fällt mehr Wasser, als potenziell verdunstet – der Monat ist humid. Bleibt der Niederschlag darunter (N < 2 · T), übersteigt die mögliche Verdunstung den Niederschlag – der Monat ist arid.",
       "Zur begründeten Zuordnung einer Klimazone prüfst du drei Merkmale gemeinsam: die Jahresmitteltemperatur und eventuelle Frostmonate, die Jahrestemperaturspanne (Tageszeitenklima mit unter 5 °C Jahresschwankung vs. ausgeprägtes Jahreszeitenklima) sowie Zahl und Jahreszeit der humiden und ariden Monate."
     ],
-    "workedExample": "Bei unserer Modellstation in den wechselfeuchten Tropen liegt die Temperatur ganzjährig zwischen 25 °C und 31 °C (Spanne 6 °C, kein Frost). Von Mai bis Oktober liegen die Niederschläge bei 95 bis 240 mm und damit über 2 · T (ca. 50 bis 56 mm) → sechs humide Monate. Von November bis April sinken sie auf 4 bis 45 mm → sechs aride Monate. Ergebnis: Wechselfeuchte Tropen der Nordhalbkugel.",
+    "workedExample": "Bei unserer Modellstation in den wechselfeuchten Tropen liegt die Temperatur ganzjährig zwischen 25 °C und 31 °C (Spanne 6 °C, kein Frost). Von Mai bis Oktober liegen die Niederschläge bei 65 bis 240 mm und damit über 2 · T (ca. 50 bis 60 mm) → sechs humide Monate. Von November bis April sinken sie auf 4 bis 45 mm → sechs aride Monate. Ergebnis: Wechselfeuchte Tropen der Nordhalbkugel.",
     "takeaway": "Temperaturniveau, Jahresspanne und das 2·T-Verhältnis für humide/aride Monate führen zur begründeten Einordnung in eine Klimazone.",
     "sourceIds": ["lehrplan", "dwd-daten", "lfu-klima"],
     "figures": ["walter-lieth-schema"],
@@ -138,7 +138,7 @@
         ]
       },
       "2": {
-        "prompt": "Zwei Stationen haben beide 24 °C Jahresmitteltemperatur und 900 mm Jahresniederschlag. Begründe, warum die eine dennoch eine ganzjährige Landwirtschaft braucht als die andere, wenn sich die Niederschläge verschieden verteilen.",
+        "prompt": "Zwei Stationen haben beide 24 °C Jahresmitteltemperatur und 900 mm Jahresniederschlag. Begründe, warum die eine Station ganzjährigen Regenfeldbau erlaubt und die andere Bewässerung braucht, wenn sich die Niederschläge verschieden über das Jahr verteilen.",
         "hints": [
           "Unterscheide zwischen gleichmäßiger Verteilung auf 12 Monate und starker Konzentration auf 4 Monate.",
           "Welche Folgen hat eine achtmonatige aride Phase für den Anbau?"
@@ -163,7 +163,7 @@
       "Ein Kausalprofil reduziert diesen Querschnitt gezielt auf die Frage: Warum sieht die Landschaft an genau dieser Stelle so aus? Dazu werden übereinander oder hintereinander liegende Ebenen beschriftet: Relief und Lage zum Meer, Luftströmungen und Niederschläge, Bodeneigenschaften sowie typische Landwirtschaft oder Gefährdung.",
       "Entscheidend beim eigenen Zeichnen auf Papier sind Sauberkeit und echte Verknüpfung: Pfeile verbinden nur zusammenhängende Ursachen und Wirkungen (zum Beispiel „Luvseite des Gebirges → Staufeuchte steigt auf → Abregnen → dichter Bergregenwald“). Reine Stichwortsammlungen ohne Richtung und ohne klare Ebenen sind noch kein Kausalprofil."
     ],
-    "workedExample": "In einem Kausalprofil durch Südamerika bei 20° S liegen von West nach Ost: kalter Humboldtstrom → kühle, stabile Küstenluft mit Küstennebelwüste (Atacama) → steiler Andenanstieg mit Temperaturabnahme um ca. 0,6 °C je 100 m → Regenschatten im Lee im trockenen Altiplano.",
+    "workedExample": "In einem Kausalprofil durch Südamerika bei 20° S zeigen sich je nach Seite verschiedene Steuerfaktoren: Feuchte Luft aus dem Amazonasbecken regnet an der Ostabdachung der Anden (Yungas) als Steigungsregen ab, sodass das Hochland (Altiplano/Puna) trocken im Regenschatten (Lee) liegt; an der Pazifikküste wiederum erzeugen kaltes Auftriebswasser des Humboldtstroms und subtropische Absinkluft die Küstennebelwüste Atacama.",
     "takeaway": "Blockbilder zeigen räumliche Tiefe; Kausalprofile ordnen einen Querschnitt konsequent nach Ursache, Prozess und Raumwirkung.",
     "sourceIds": ["lehrplan", "natural-earth"],
     "figures": ["kausalprofil"],
@@ -255,8 +255,8 @@
       "question": "Beim Vergleich eines Stadtmodells mit einem aktuellen Luftbild bemerkst du am Stadtrand eine ganz neue Logistikzone, die im Lehrbuchmodell fehlt. Was bedeutet das?",
       "answer": "Das Modell bildet eine typische Grundstruktur ab, während reale Städte sich durch neue Prozesse weiterentwickeln",
       "wrong": [
-        "Das Luftbild muss fehlerhaft sein, weil Modelle immer exakt vollständig sind",
-        "Man darf Luftbilder nicht neben Stadtmodelle legen"
+        "Das Stadtmodell ist damit komplett widerlegt und darf im ganzen Land nicht mehr genutzt werden",
+        "Die Logistikzone gilt nur als kurzfristige Baustelle, da sich Stadtstrukturen außerhalb des Zentrums kaum verändern"
       ],
       "explanation": "Modelle abstrahieren räumliche Muster. Abweichungen im Luftbild zeigen reale, aktuelle Entwicklungen vor Ort auf."
     },

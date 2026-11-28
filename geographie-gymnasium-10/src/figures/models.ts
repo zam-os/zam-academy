@@ -56,11 +56,12 @@ export type ClimateStationId = keyof typeof CLIMATE_STATIONS;
 export function walterLiethChart(id: ClimateStationId): string {
   const { name, temp, rain } = CLIMATE_STATIONS[id];
   const x = (i: number) => 64 + i * 40;
-  // Base line = 0 °C / 0 mm at y = 212 (shifted down cleanly below chart header).
-  // Scale below 100 mm: 1 °C = 3 px -> 10 °C = 30 px -> 20 mm = 30 px -> 1 mm = 1,5 px (up to 100 mm -> 150 px -> y = 62).
-  const ty = (t: number) => 212 - t * 3;
+  // Base line = 0 °C / 0 mm at y = 216.
+  // Scale below 100 mm: 10 °C = 20 mm -> 1 °C = 2,6 px -> 1 mm = 1,3 px (100 mm -> y = 86).
+  // Scale above 100 mm: 10 °C = 100 mm -> 100 mm = 26 px -> 1 mm = 0,26 px (250 mm -> y = 47).
+  const ty = (t: number) => 216 - t * 2.6;
   const ry = (r: number) =>
-    r <= 100 ? 212 - r * 1.5 : 62 - (r - 100) * 0.2;
+    r <= 100 ? 216 - r * 1.3 : 86 - (r - 100) * 0.26;
 
   const grid = [-10, 0, 10, 20, 30, 40]
     .map(
@@ -71,12 +72,12 @@ export function walterLiethChart(id: ClimateStationId): string {
     .join("");
 
   const rightLabels = [
-    [0, 212],
-    [20, 182],
-    [40, 152],
-    [60, 122],
-    [100, 62],
-    [250, 32],
+    [0, 216],
+    [20, 190],
+    [40, 164],
+    [60, 138],
+    [100, 86],
+    [250, 47],
   ]
     .map(([mm, y]) => label(530, y + 4, String(mm), "lbl tiny", "start"))
     .join("");
@@ -85,7 +86,7 @@ export function walterLiethChart(id: ClimateStationId): string {
     .map((r, i) => {
       const yTop = ry(r);
       const arid = r < 2 * Math.max(0, temp[i]);
-      return `<rect class="${arid ? "geo-arid-bar" : "geo-rain"}" x="${f1(x(i) - 10)}" y="${f1(yTop)}" width="20" height="${f1(212 - yTop)}" rx="2"/>`;
+      return `<rect class="${arid ? "geo-arid-bar" : "geo-rain"}" x="${f1(x(i) - 10)}" y="${f1(yTop)}" width="20" height="${f1(216 - yTop)}" rx="2"/>`;
     })
     .join("");
 
@@ -98,16 +99,16 @@ export function walterLiethChart(id: ClimateStationId): string {
     274,
     `Klimadiagramm ${name} im Walter-Lieth-Maßstab 10 Grad Celsius gleich 20 Millimeter`,
     label(290, 18, `${name} · Ø ${fmtDe(meanT, 1)} °C · ${sumR} mm/Jahr`, "lbl small strong") +
-      label(42, 49, "°C", "lbl tiny strong", "end") +
-      label(530, 49, "mm", "lbl tiny strong", "start") +
+      label(42, 68, "°C", "lbl tiny strong", "end") +
+      label(530, 68, "mm", "lbl tiny strong", "start") +
       grid +
       rightLabels +
-      `<line class="geo-zero-line" x1="50" y1="212" x2="520" y2="212"/>` +
+      `<line class="geo-zero-line" x1="50" y1="216" x2="520" y2="216"/>` +
       bars +
       `<polyline class="geo-temp" points="${tempPoints}"/>` +
       temp.map((t, i) => `<circle class="geo-temp-dot" cx="${f1(x(i))}" cy="${f1(ty(t))}" r="2.8"/>`).join("") +
-      MONTHS.map((m, i) => label(x(i), 256, m, "lbl tiny")).join("") +
-      label(290, 269, "Maßstab bis 100 mm: 10 °C = 20 mm (blau = humid, ocker = arid; ab 100 mm gestaucht)", "lbl tiny muted"),
+      MONTHS.map((m, i) => label(x(i), 254, m, "lbl tiny")).join("") +
+      label(290, 268, "Maßstab bis 100 mm: 10 °C = 20 mm (blau = humid, ocker = arid; ab 100 mm 10 °C = 100 mm)", "lbl tiny muted"),
   );
 }
 
@@ -216,8 +217,8 @@ export function hadleyDiagram(zenitLat: number, obsLat: number): string {
   const lx = (lat: number) => 290 + (lat / 35) * 210;
   const zx = lx(zenitLat);
   const ox = lx(obsLat);
-  const highN = Math.min(32, zenitLat + 28);
-  const highS = Math.max(-32, zenitLat - 28);
+  const highN = Math.min(33, Number((29 + zenitLat * 0.2).toFixed(1)));
+  const highS = Math.max(-33, Number((-29 + zenitLat * 0.2).toFixed(1)));
   const hnX = lx(highN);
   const hsX = lx(highS);
 

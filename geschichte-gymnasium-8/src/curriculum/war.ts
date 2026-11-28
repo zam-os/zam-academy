@@ -1,0 +1,100 @@
+import { classify, lesson } from "./helpers";
+
+export const war = [
+  lesson(6, {
+    id: "imperialismus", title: "Koloniale Herrschaft und Widerstand", period: "um 1880–1908", sourceIds: ["colonial", "genocide", "curriculum"],
+    intro: "Untersuche an ausgewählten Regionen, wie Großmächte ihren Einfluss ausweiteten und wie Menschen sich widersetzten.",
+    paragraphs: [
+      "Imperialismus bezeichnet das Streben von Staaten nach Herrschaft und Einfluss über andere Gebiete. Im späten 19. Jahrhundert suchten europäische Mächte unter anderem Rohstoffe, Absatzmärkte, strategische Vorteile und Ansehen. Rassistische Ideen dienten zur Rechtfertigung von Unterwerfung.",
+      "Um 1900 war ein großer Teil Afrikas unter europäischer Kolonialherrschaft. Staaten benutzten Verträge, militärische Gewalt und Verwaltungszwang. Die Übersicht zeigt ausgewählte Beispiele. Sie zeigt nicht die Vielfalt lokaler Gesellschaften und macht umstrittene Kontrolle nur vereinfacht sichtbar.",
+      "In Deutsch-Südwestafrika, dem heutigen Namibia, widersetzten sich Ovaherero und Nama der deutschen Kolonialherrschaft. Der Krieg und die deutsche Verfolgung führten zum Völkermord an Ovaherero und Nama. Eine Karte allein zeigt weder den Widerstand noch die Erfahrungen der Betroffenen.",
+    ],
+    takeaway: "Frage bei einer Kolonialkarte, wer Macht beanspruchte, was vor Ort geschah und welche Perspektiven fehlen.",
+    check: ["Warum reicht eine Kolonialkarte für ein Urteil über die Herrschaft nicht aus?", "Sie zeigt Ansprüche und Gebiete, aber die Erfahrungen der dort lebenden Menschen brauchen weitere Quellen.", ["Die Farben erklären die Absichten aller Regierungen vollständig.", "Widerstand findet nur außerhalb der eingezeichneten Gebiete statt."], "Eine Karte hat einen bestimmten Gegenstand. Sie kann Herrschaft räumlich zeigen, jedoch keine Erfahrungen ersetzen."],
+    workshop: classify("Ziele, Mittel und Folgen unterscheiden", ["Ziel der Kolonialmacht", "Mittel kolonialer Herrschaft", "Widerstand oder Folge"], [
+      ["Eine Regierung möchte Zugang zu Rohstoffen und mehr Prestige.", 0, "Beides sind Ziele, mit denen Politiker Expansion begründeten."],
+      ["Eine Kolonialmacht setzt Verwaltungsregeln mit Zwang durch.", 1, "Der Zwang ist ein Mittel zur Kontrolle."],
+      ["Ovaherero und Nama widersetzen sich der deutschen Herrschaft.", 2, "Betroffene Völker handelten selbst und leisteten Widerstand."],
+      ["Ovaherero und Nama werden Opfer eines Völkermords.", 2, "Der Völkermord ist eine Folge der deutschen Verfolgung und Gewalt."],
+    ], "Kolonialherrschaft lässt sich nur verstehen, wenn auch die betroffenen Menschen und ihre Entscheidungen sichtbar werden."),
+    guided: ["Verorte Deutsch-Südwestafrika auf der Übersicht und erkläre, welche Informationen du für eine Darstellung des Widerstands ergänzen müsstest.", ["Wo liegt das Gebiet heute?", "Aus wessen Perspektive fehlen Informationen?"], "Deutsch-Südwestafrika lag im Südwesten Afrikas, im heutigen Namibia. Die Übersicht zeigt den deutschen Herrschaftsanspruch, aber nicht, wie Ovaherero und Nama Widerstand organisierten und verfolgt wurden. Dazu brauche ich weitere Quellen und die Perspektive der Betroffenen.", ["Gebiet verortet", "Aussage der Karte eingegrenzt", "Fehlende Perspektive benannt"]],
+    transfer: ["Beurteile eine Ausstellung, die koloniale Grenzen als alleinige Erklärung für einen heutigen Landkonflikt darstellt. Formuliere zwei Fragen für weitere Recherche.", ["Welche älteren Veränderungen könnten wichtig sein?", "Welche Entwicklungen seit der Unabhängigkeit müsstest du untersuchen?"], "Koloniale Enteignung und Grenzziehungen können Landkonflikte langfristig beeinflussen. Ich würde untersuchen, wer während der Kolonialherrschaft Land verlor und wie die Eigentums- und politischen Verhältnisse seit der Unabhängigkeit verändert wurden. Die Karte allein beantwortet das nicht.", ["Historische Wurzel", "Zwei prüfbare Fragen", "Spätere Entwicklungen berücksichtigt"]],
+  }),
+  lesson(6, {
+    id: "julikrise", title: "Warum wurde aus einer Krise ein Weltkrieg?", period: "Vorgeschichte · Juli und August 1914", sourceIds: ["war", "july", "curriculum"],
+    intro: "Trenne langfristige Spannungen, den Anlass und die Entscheidungen, die den Konflikt ausweiteten.",
+    paragraphs: [
+      "Vor 1914 belasteten Konkurrenz zwischen Großmächten, Wettrüsten und einflussreiche Bündnisse die Beziehungen in Europa. Auf dem Balkan trafen nationale Bewegungen und Großmachtinteressen aufeinander. Diese Bedingungen erhöhten das Risiko eines großen Kriegs.",
+      "Am 28. Juni 1914 wurde der österreichisch-ungarische Thronfolger Franz Ferdinand in Sarajevo ermordet. Das Attentat war der Anlass der Julikrise. Die Deutsche Reichsleitung sagte Österreich-Ungarn Rückhalt zu. Nach einem Ultimatum erklärte Österreich-Ungarn Serbien den Krieg. Mobilmachungen und weitere Entscheidungen weiteten den Krieg aus.",
+      "In einer historischen Darstellung suche nach der Erklärungsthese und ihren Belegen. Beispielsweise kann eine Darstellung besonders die Kriegserklärung, eine andere längerfristige Machtkonflikte betonen. Beides lässt sich prüfen, indem du nach Zeitfolge, Entscheidungen und Handlungsmöglichkeiten fragst. Vergleiche deine Erklärung anschließend mit der verlinkten LeMO-Darstellung: Welche Entscheidung hebt der Autor hervor und wie begründet er ihre Bedeutung?",
+    ],
+    takeaway: "Langfristige Spannungen begünstigen Konflikte. Der Anlass und Entscheidungen erklären mit, warum es zu diesem Zeitpunkt zum Krieg kam.",
+    check: ["Welche Einordnung ist richtig?", "Das Attentat war der Anlass. Großmachtrivalität und Wettrüsten waren längerfristige Bedingungen.", ["Das Attentat war eine Folge des Weltkriegs.", "Nach dem Attentat gab es keine politischen Entscheidungen mehr."], "Das Attentat löste eine Krise aus. Die Ausweitung ergab sich aus Entscheidungen in einem schon angespannten Umfeld."],
+    workshop: classify("Ursachenkette aufbauen", ["Langfristige Bedingung", "Anlass", "Entscheidung in der Krise"], [
+      ["Mehrere Mächte rüsten über Jahre auf.", 0, "Das Wettrüsten erhöhte die Spannungen bereits vor 1914."],
+      ["Franz Ferdinand wird in Sarajevo ermordet.", 1, "Das Ereignis bringt die Julikrise in Gang."],
+      ["Die deutsche Führung sichert Österreich-Ungarn Unterstützung zu.", 2, "Das war eine politische Entscheidung nach dem Attentat."],
+      ["Österreich-Ungarn erklärt Serbien den Krieg.", 2, "Die Kriegserklärung folgt auf das Ultimatum und die Antwort Serbiens."],
+      ["Auf dem Balkan treffen nationale Bewegungen und Großmachtinteressen aufeinander.", 0, "Die Konkurrenz bestand schon vor dem Attentat."],
+    ], "Du erklärst den Kriegsausbruch, wenn du Bedingungen und Entscheidungen miteinander verknüpfst."),
+    guided: ["Erkläre den Kriegsausbruch mit einer längerfristigen Bedingung, dem Anlass und einer Entscheidung.", ["Was bestand schon vor Juni 1914?", "Welche Entscheidung folgte auf das Attentat?"], "Das Wettrüsten trug zu Misstrauen zwischen den Großmächten bei. Das Attentat von Sarajevo löste die Krise aus. Österreich-Ungarn entschied sich mit deutscher Unterstützung für ein hartes Vorgehen gegen Serbien und erklärte ihm schließlich den Krieg.", ["Langfristige Bedingung", "Anlass korrekt", "Entscheidung mit Zusammenhang"]],
+    transfer: ["Vergleiche die beiden Erklärungen «Das Attentat verursachte alles» und «Die Spannungen machten den Krieg unausweichlich». Formuliere eine begründete dritte Erklärung.", ["Was erklärt jede Aussage?", "Welche Entscheidung blendet sie aus?"], "Das Attentat erklärt den Zeitpunkt der Krise, aber noch nicht den europäischen Krieg. Die Spannungen erklären das hohe Risiko, ließen politische Entscheidungen jedoch weiterhin zu. Mit deutscher Unterstützung verschärfte Österreich-Ungarn den Konflikt mit Serbien. Die Ausweitung hatte langfristige und kurzfristige Ursachen.", ["Nutzen beider Deutungen geprüft", "Grenze beider Deutungen benannt", "Mehrere Ursachen verknüpft"]],
+  }),
+  lesson(6, {
+    id: "massenkrieg", title: "Wie veränderte der Krieg das Leben an Front und Heimat?", period: "1914–1918", sourceIds: ["war", "trenches", "homefront", "fieldpost"],
+    intro: "Verbinde eine Quelle von der Front mit Informationen über das zivile Leben.",
+    paragraphs: [
+      "An der Westfront erstarrte der Krieg über lange Zeit zum Stellungskrieg. In Materialschlachten wurden Munition, Maschinen und Nachschub in riesigem Umfang eingesetzt. Viele Menschen wurden getötet oder verwundet. Geländegewinne blieben in manchen Schlachten trotz hoher Verluste gering.",
+      "Für die Zivilbevölkerung veränderten sich Arbeit, Versorgung und Alltag. In Deutschland litten Menschen besonders im Winter 1916/17 unter Lebensmittelknappheit. Rationierung und Ersatzprodukte prägten den Alltag. Krieg und Wirtschaft rückten enger zusammen.",
+      "Feldpost kann zeigen, was ein Soldat Angehörigen mitteilen wollte. Angst vor Kontrolle und Rücksicht auf die Familie konnten beeinflussen, was er schrieb. Ein späteres Denkmal verweist auf öffentliches Gedenken und beantwortet andere Fragen als ein Brief aus dem Krieg.",
+    ],
+    takeaway: "Massenkrieg erfasst Front, Wirtschaft und Zivilbevölkerung. Ein einzelnes Zeugnis hat einen begrenzten Blickwinkel.",
+    check: ["Was erschließt du am besten aus einem einzelnen Feldpostbrief?", "Was der Verfasser seinen Adressaten mitteilen wollte.", ["Die genaue Versorgungslage aller deutschen Städte.", "Die Haltung sämtlicher Soldaten zum Krieg."], "Ein Brief zeigt eine konkrete Stimme unter bestimmten Umständen. Allgemeine Aussagen benötigen weitere Quellen."],
+    workshop: classify("Zeugnisse nach ihrer Aussagekraft ordnen", ["Front und persönliche Erfahrung", "Zivile Versorgung", "Späteres Gedenken"], [
+      ["Ein Brief an Angehörige berichtet von Anspannung im Schützengraben.", 0, "Der Brief kann eine persönliche Frontwahrnehmung zeigen."],
+      ["Eine Lebensmittelkarte legt die zugeteilte Brotmenge fest.", 1, "Das Dokument gibt Regeln der Versorgung an."],
+      ["Ein nach 1918 errichtetes Denkmal nennt Gefallene des Ortes.", 2, "Es zeigt, wie später vor Ort erinnert wurde."],
+      ["Ein Foto zeigt Zerstörung in einer Frontgegend.", 0, "Das Motiv dokumentiert einen Ort aus der Perspektive der aufnehmenden Person."],
+    ], "Prüfe Herkunft und Entstehungszeit, bevor du verschiedene Zeugnisse zu einer Erklärung verbindest."),
+    guided: ["Wähle Feldpost und Lebensmittelkarte. Erkläre an jedem Zeugnis einen Aspekt des Massenkriegs und eine Grenze.", ["Wer schrieb an wen?", "Zeigt die Karte tatsächliche Ernährung oder eine Zuteilung?"], "Ein Feldbrief kann Belastung an der Front zeigen, allerdings nur aus Sicht des Schreibenden. Eine Lebensmittelkarte zeigt, wie die Verwaltung knappe Güter verteilte. Ob die eingetragenen Mengen überall verfügbar waren, lässt sich daran allein nicht erkennen.", ["Zwei Zeugnisse ausgewertet", "Front und Alltag verbunden", "Grenzen benannt"]],
+    transfer: ["Plane ein kurzes Referat über ein lokales Kriegerdenkmal. Welche zwei Beobachtungen würdest du mit einem zeitgenössischen Zeugnis vergleichen?", ["Achte auf Inschrift, Symbole und Datum.", "Was zeigt ein Feldpostbrief anders als ein Denkmal?"], "Ich würde die Inschrift und das Errichtungsjahr erfassen und fragen, ob das Denkmal vor allem Trauer oder Heldengedenken ausdrückt. Ein Kriegsbrief könnte zeigen, wie sich Unsicherheit im Alltag anfühlte. Im Referat würde ich den Zeitpunkt und Zweck beider Zeugnisse vergleichen.", ["Zwei Beobachtungen vorbereitet", "Vergleichsquelle ausgewählt", "Präsentation mit Quellenkritik geplant"]],
+  }),
+  lesson(6, {
+    id: "epochenjahr-1917", title: "Warum gilt 1917 als Epochenjahr?", period: "1917–1918", sourceIds: ["war", "america", "russia"],
+    intro: "Verfolge zwei Entwicklungen mit verschiedenen Ursachen, die Krieg und Weltpolitik veränderten.",
+    paragraphs: [
+      "Im April 1917 traten die USA in den Krieg gegen das Deutsche Reich ein. Dazu trugen der uneingeschränkte deutsche U-Boot-Krieg und weitere Spannungen bei. Wirtschaftliche und militärische Hilfe der USA stärkte die Entente. Der Beitrag an der Front wuchs vor allem 1918.",
+      "In Russland führten Krieg, Versorgungskrise und politische Konflikte zur Februarrevolution und zum Ende der Zarenherrschaft. Die Provisorische Regierung setzte den Krieg fort. In der Oktoberrevolution übernahmen die Bolschewiki die Macht. Der Friedensvertrag von Brest-Litowsk beendete 1918 Russlands Krieg mit den Mittelmächten.",
+      "Ein Epochenjahr markiert Entwicklungen mit Folgen über das einzelne Jahr hinaus. Die USA griffen militärisch ein, während in Russland eine neue Herrschaft entstand und das Land aus dem Krieg ausschied. Diese Prozesse veränderten die Kräfteverhältnisse und wirkten auf die Zeit nach dem Krieg.",
+    ],
+    takeaway: "Begründe ein Epochenjahr mit Einschnitten und ihren längerfristigen Folgen.",
+    check: ["Welche Ereignisse begründen die Bezeichnung Epochenjahr für 1917?", "Der Kriegseintritt der USA und die Revolutionen in Russland.", ["Der Wiener Kongress und das Hambacher Fest.", "Die Unterzeichnung von Brest-Litowsk und Versailles im selben Jahr."], "Die beiden Verträge wurden erst 1918 beziehungsweise 1919 unterzeichnet."],
+    workshop: classify("Zwei Entwicklungen, zwei Zeitverläufe", ["USA treten ein", "Umbruch in Russland", "Unmittelbare Folge im Jahr 1918"], [
+      ["Die USA erklären im April 1917 dem Deutschen Reich den Krieg.", 0, "Die USA werden Kriegsteilnehmer."],
+      ["Der Zar dankt nach der Februarrevolution ab.", 1, "Die bisherige Staatsordnung zerbricht."],
+      ["Die Bolschewiki übernehmen im Herbst die Macht.", 1, "Die neue Führung verfolgt einen Friedensschluss."],
+      ["Russland scheidet mit Brest-Litowsk aus dem Krieg aus.", 2, "Der Vertrag wird im März 1918 geschlossen."],
+    ], "Der Kriegseintritt und der russische Umbruch fanden im selben Jahr statt. Sie hatten verschiedene Ursachen."),
+    guided: ["Erkläre, wie zwei Entwicklungen des Jahres 1917 den Krieg 1918 beeinflussten.", ["Welche Seite erhielt Unterstützung?", "Welche Front veränderte Russlands Austritt?"], "Die USA stärkten die Entente, besonders mit wachsender Beteiligung 1918. Nach den Revolutionen schloss die neue Führung Russlands Frieden mit den Mittelmächten, wodurch sich die Lage im Osten veränderte. Beides beeinflusste die Kräfteverhältnisse.", ["Zwei Ereignisse", "Zwei Folgen", "Bedeutung für den Krieg"]],
+    transfer: ["Vergleiche 1917 mit 1789 als historische Zäsur. Nutze für beide Jahre dasselbe Kriterium.", ["Messen wir einen politischen Umbruch oder eine militärische Veränderung?", "Was wirkt über das Jahr hinaus?"], "Gemessen am politischen Umbruch veränderte 1789 die Grundlagen französischer Herrschaft und machte Bürgerrechte zum Maßstab. 1917 endete in Russland die Zarenherrschaft und die Bolschewiki kamen an die Macht. Beide Jahre markieren längerfristige Veränderungen, doch 1917 verschob außerdem der Kriegseintritt der USA das internationale Kräfteverhältnis.", ["Gleiches Kriterium", "Beide Jahre belegt", "Reichweite verglichen"]],
+  }),
+  lesson(6, {
+    id: "friedensordnung", title: "Was regelten die Friedensverträge?", period: "1918–1920", sourceIds: ["versailles", "war", "casualties", "paris"],
+    intro: "Vergleiche neue Grenzen und Vertragsregeln mit den menschlichen Folgen des Kriegs.",
+    paragraphs: [
+      "Am 11. November 1918 endeten die Kämpfe zwischen Deutschland und den Alliierten durch einen Waffenstillstand. Der Vertrag von Versailles regelte 1919 den Frieden mit Deutschland. Deutschland musste unter anderem Elsass-Lothringen abtreten, seine Streitkräfte begrenzen und Reparationen leisten.",
+      "Artikel 231 schrieb die Verantwortung Deutschlands und seiner Verbündeten für die verursachten Schäden fest und begründete die Reparationsforderungen. Das unterscheidet sich von der historischen Frage, wie Entscheidungen mehrerer Staaten zum Krieg führten. Weitere Pariser Vorortverträge betrafen etwa Österreich und Ungarn. In Mitteleuropa entstanden neue Staaten, darunter die Tschechoslowakei.",
+      "Die Niederlage der Mittelmächte, Millionen Tote, Verwundete, Flucht und politische Konflikte prägten die Nachkriegszeit. Opferzahlen beruhen auf unterschiedlichen Erhebungen. Prüfe, ob eine Statistik militärische Tote, zivile Tote, Verwundete oder mehrere Gruppen erfasst.",
+    ],
+    takeaway: "Trenne Kriegsende, Vertragsregeln, menschliche Folgen und historische Erklärungen des Kriegsausbruchs.",
+    check: ["Was war der unmittelbare Zweck des Waffenstillstands vom 11. November 1918?", "Er beendete die Kämpfe zwischen Deutschland und den Alliierten.", ["Er regelte bereits alle Reparationen endgültig.", "Er gründete den Deutschen Bund."], "Die Kämpfe endeten mit dem Waffenstillstand. Der Friedensvertrag von Versailles folgte 1919."],
+    workshop: classify("Kriegsfolgen mit passenden Belegen untersuchen", ["Territoriale Veränderung", "Weitere Vertragsregel", "Statistik oder persönliches Zeugnis"], [
+      ["Elsass-Lothringen kommt zu Frankreich.", 0, "Die Veränderung ist in Grenzvergleichen erkennbar und vertraglich belegt."],
+      ["Deutschland soll für Schäden Reparationen leisten.", 1, "Der Vertrag behandelt Verantwortlichkeit und Entschädigung."],
+      ["Eine Tabelle zählt getötete und verwundete Soldaten getrennt.", 2, "Die Kategorien machen sichtbar, welche Folgen erfasst werden."],
+      ["Österreich muss die neue Tschechoslowakei anerkennen.", 0, "Der Vertrag von Saint-Germain gehört zur Neuordnung Mitteleuropas."],
+    ], "Die Folgen des Kriegs erscheinen je nach Karte, Vertrag und Statistik aus einem anderen Blickwinkel."),
+    guided: ["Nenne je eine Grenzänderung und eine weitere Regel von Versailles. Erkläre, wozu du eine Opferstatistik zusätzlich brauchst.", ["Welches Gebiet wechselte zu Frankreich?", "Was sagt ein Vertrag kaum über Menschen aus?"], "Elsass-Lothringen kam zu Frankreich. Eine weitere Regel verpflichtete Deutschland zur Leistung von Reparationen. Eine Statistik über Tote und Verwundete zeigt eine andere Dimension der Kriegsfolgen, die man nicht aus neuen Grenzen ablesen kann.", ["Grenzänderung richtig", "Weitere Regel richtig", "Statistik als eigener Beleg erklärt"]],
+    transfer: ["Prüfe in der verlinkten LeMO-Darstellung die Zahlen zu Todesopfern und Verwundeten. Begründe anschließend, warum ein Vergleich von Kriegsopfern verschiedener Staaten klare Kategorien braucht.", ["Wer zählt als militärisches Opfer?", "Welche Gruppen oder Fälle können fehlen?"], "LeMO unterscheidet gefallene Soldaten und Verwundete. Wenn eine Zahl nur Soldaten erfasst und eine andere auch Zivilpersonen, sind sie nicht direkt vergleichbar. Ich würde Kategorien, Zeitraum und Erhebung nennen, bevor ich ein Urteil über das Ausmaß formuliere.", ["Kategorien anhand der Quelle", "Vergleichsgrenze erkannt", "Folgerung für das Urteil"]],
+  }),
+];

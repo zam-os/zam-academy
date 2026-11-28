@@ -172,16 +172,19 @@ export const passatzirkulation: LabDef = {
     const month = num(s, "month");
     const obsLat = num(s, "obsLat");
     const monthNames = ["", "Jan", "Feb", "Mär (21.3.)", "Apr", "Mai", "Jun (21.6.)", "Jul", "Aug", "Sep (23.9.)", "Okt", "Nov", "Dez (21.12.)"];
-    // Sun zenith approximation across the year: 23.5 * sin(2*pi*(m-3)/12), attenuated slightly for ITC inertia (~0.75)
+    // Sun zenith approximation across the year: 23.5 * sin(2*pi*(m-3)/12), attenuated for ITC inertia (~0.85);
+    // subtropical highs stay near 25–33° N/S rather than swinging across the equator.
     const sunZenit = Number((23.5 * Math.sin(((month - 3) / 12) * 2 * Math.PI)).toFixed(1));
     const itcLat = Number((sunZenit * 0.85).toFixed(1));
+    const highN = Number((29 + sunZenit * 0.2).toFixed(1));
+    const highS = Number((-29 + sunZenit * 0.2).toFixed(1));
     const dist = Math.abs(obsLat - itcLat);
     const regime =
       dist <= 9
         ? "Regenzeit (Zenitalregen nahe der ITC: aufsteigende feuchte Luft, Wolkenbildung)"
-        : Math.abs(obsLat - (itcLat + 28)) <= 9 || Math.abs(obsLat - (itcLat - 28)) <= 9
-          ? "Trockenzone im Subtropenhoch (absinkende, sich erwärmende Luft)"
-          : "Passat-Übergangszone (trockener Nordost- bzw. Südostpassat)";
+        : Math.abs(obsLat - highN) <= 7 || Math.abs(obsLat - highS) <= 7
+          ? "Trockenzone im Subtropenhoch (absinkende, sich adiabatisch erwärmende Luft)"
+          : "Passat-Trockenzeit (trockener Nordost- bzw. Südostpassat bei ferner ITC)";
 
     return range("month", "Monat im Jahreslauf", month, 3, 12, 3, monthNames[month] ?? String(month)) +
       choice("obsLat", "Beobachtungsbreite", String(obsLat), [
@@ -274,7 +277,7 @@ export const klimaszenarien: LabDef = {
       kueste: {
         schutz: "Küsten/Inselstaaten (+1,5 °C): Begrenzter Meeresspiegelanstieg macht Küstenschutz und lokale Anpassung in vielen Regionen noch bezahlbar.",
         mittel: "Küsten/Inselstaaten (+2,6 °C): Häufigere Sturmfluten und Versalzung von Süßwasserlinsen zwingen erste Küstenorte zur Umsiedlung.",
-        hoch: "Küsten/Inselstaaten (+4,1 °C): Langfristig mehrerer Meter Meeresspiegelanstieg möglich; Existenz tief liegender Atolle und Deltastädte bedroht.",
+        hoch: "Küsten/Inselstaaten (+4,1 °C): Langfristig ist ein Meeresspiegelanstieg von mehreren Metern möglich; die Existenz tief liegender Atolle und Deltastädte ist bedroht.",
       },
       bayern: {
         schutz: "Heimatraum Bayern (+1,5 °C): Geringerer Hitzestress in Städten und bessere Chancen für den Umbau zu trockenheitsverträglichen Mischwäldern.",

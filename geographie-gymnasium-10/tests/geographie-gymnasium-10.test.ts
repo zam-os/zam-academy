@@ -117,8 +117,27 @@ describe("interactive SVG labs", () => {
         expect(witnessHtml).toContain("<svg");
         expect(witnessHtml).not.toContain("NaN");
         expect(witnessHtml).not.toContain("undefined");
+
+        for (const match of witnessHtml.matchAll(/<input[^>]+type="range"[^>]*>/g)) {
+          const tag = match[0];
+          const key = tag.match(/data-lab-range="([^"]+)"/)?.[1];
+          const min = Number(tag.match(/min="([^"]+)"/)?.[1]);
+          const max = Number(tag.match(/max="([^"]+)"/)?.[1]);
+          const step = Number(tag.match(/step="([^"]+)"/)?.[1]);
+          if (key && key in witness) {
+            const val = Number(witness[key]);
+            expect(val).toBeGreaterThanOrEqual(min - 1e-9);
+            expect(val).toBeLessThanOrEqual(max + 1e-9);
+            const steps = (val - min) / step;
+            expect(Math.abs(steps - Math.round(steps))).toBeLessThan(1e-6);
+          }
+        }
       });
     }
+
+    expect(reachedGoals(LABS.oasenwasser, { methode: "tropf", area: 11 })[1]).toBe(false);
+    expect(reachedGoals(LABS.oasenwasser, { methode: "tropf", area: 14 })[1]).toBe(true);
+    expect(LABS.passatzirkulation.render({ month: 12, obsLat: 12 })).not.toContain("Subtropenhoch");
   });
 });
 

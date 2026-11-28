@@ -25,9 +25,9 @@ export const hdiRechner: LabDef = {
     } },
   ],
   witnesses: [
-    { life: 81, edu: 15, gni: 42000, gini: 28 },
-    { life: 70, edu: 11, gni: 35000, gini: 62 },
-    { life: 56, edu: 6, gni: 1800, gini: 44 },
+    { life: 81, edu: 15, gni: 42000, gini: 30 },
+    { life: 70, edu: 11, gni: 35000, gini: 60 },
+    { life: 56, edu: 6, gni: 2000, gini: 45 },
   ],
   render: (s) => {
     const life = num(s, "life");
@@ -47,7 +47,7 @@ export const hdiRechner: LabDef = {
         ["Gesundheit (Index)", Math.round(leIdx * 100), 0],
         ["Bildung (Index)", Math.round(edIdx * 100), 2],
         ["Einkommen BNE (Index)", Math.round(incIdx * 100), 1],
-        ["Ungleichheits-bereinigt", Math.round(ihdiApprox * 100), 3],
+        ["Ungleichheitsbereinigt", Math.round(ihdiApprox * 100), 3],
       ],
       "%",
       100,
@@ -57,7 +57,7 @@ export const hdiRechner: LabDef = {
     const cat = hdi >= 0.8 ? "sehr hoher Entwicklungsstand" : hdi >= 0.7 ? "hoher Entwicklungsstand" : hdi >= 0.55 ? "mittlerer Entwicklungsstand" : "niedriger Entwicklungsstand";
     return range("life", "Lebenserwartung", life, 50, 85, 1, `${life} Jahre`) +
       range("edu", "Bildungsdauer", edu, 4, 18, 1, `${edu} Jahre`) +
-      range("gni", "BNE pro Kopf (KKP)", gni, 1500, 55000, 1000, `${String(gni).replace(/\B(?=(\d{3})+(?!\d))/g, " ")} $`) +
+      range("gni", "BNE pro Kopf (KKP)", gni, 1000, 55000, 1000, `${String(gni).replace(/\B(?=(\d{3})+(?!\d))/g, " ")} $`) +
       range("gini", "Ungleichheit (Gini)", gini, 25, 65, 5, `${gini}`) +
       chart +
       readout(`Berechneter HDI: ${fmtDe(hdi, 2)} (${cat}). Mit Gini ${gini} sinkt der geschätzte verteilungsbereinigte Wert auf ${fmtDe(ihdiApprox, 2)}. ${gini >= 55 && gni >= 25000 ? "Hohes Durchschnittseinkommen verdeckt hier starke Armut innerhalb des Landes!" : ""}`, gini >= 55 ? "warn" : hdi >= 0.8 && gini <= 30 ? "good" : "");
@@ -141,7 +141,7 @@ export const oasenwasser: LabDef = {
   initial: () => ({ methode: "furche", area: 8 }),
   goals: [
     { text: "Senke bei gleicher Fläche (8 ha) das Versalzungsrisiko auf „gering“.", reached: (s) => str(s, "methode") === "tropf" && num(s, "area") <= 8 },
-    { text: "Entdecke den Jevons-Effekt: Spare je Hektar mit Tröpfchenbewässerung, verbrauche durch Flächenausweitung (ab 14 ha) aber über 50 Einheiten.", reached: (s) => str(s, "methode") === "tropf" && num(s, "area") * 5 > 50 },
+    { text: "Entdecke den Jevons-Effekt: Spare je Hektar mit Tröpfchenbewässerung, verbrauche durch Flächenausweitung (ab 14 ha) aber über 50 Einheiten.", reached: (s) => str(s, "methode") === "tropf" && num(s, "area") >= 14 },
     { text: "Untersuche die Übernutzung bei Kreisberegnung mit fossilem Tiefengrundwasser (ab 10 ha).", reached: (s) => str(s, "methode") === "fossil" && num(s, "area") >= 10 },
   ],
   witnesses: [
