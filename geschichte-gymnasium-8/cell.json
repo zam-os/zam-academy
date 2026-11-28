@@ -1,0 +1,2390 @@
+{
+  "$schema": "https://zam.app/schemas/v1/kvt-tile.json",
+  "tile_id": "zam-academy:geschichte-gymnasium-8",
+  "version": "2026.11.1",
+  "title": "Geschichte 8 Gymnasium (ZAM Academy)",
+  "description": "Geschichte 8 am Gymnasium in Bayern: 25 Lektionen zum langen 19. Jahrhundert mit Quellenwerkstätten und 75 Lernkarten.",
+  "publisher": "ZAM Academy",
+  "published_at": "2026-11-28T12:00:00Z",
+  "sources": [
+    {
+      "uri": "https://academy.zam-os.org/geschichte-gymnasium-8/",
+      "label": "Geschichte 8 Gymnasium (ZAM Academy)"
+    },
+    {
+      "uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/8/geschichte",
+      "label": "ISB · LehrplanPLUS Geschichte 8 Gymnasium",
+      "checked": "2026-11-28"
+    },
+    {
+      "uri": "https://www.elysee.fr/en/french-presidency/the-declaration-of-the-rights-of-man-and-of-the-citizen",
+      "label": "Élysée · Erklärung der Menschen- und Bürgerrechte (Englisch)",
+      "checked": "2026-11-28"
+    },
+    {
+      "uri": "https://www.elysee.fr/la-presidence/la-constitution-du-3-septembre-1791",
+      "label": "Élysée · Französische Verfassung von 1791",
+      "checked": "2026-11-28"
+    },
+    {
+      "uri": "https://collections.louvre.fr/ark:/53355/cl020016898",
+      "label": "Louvre · Napoleon krönt sich selbst (Zeichnung)",
+      "checked": "2026-11-28"
+    },
+    {
+      "uri": "https://archiv.hdbg.de/napoleon/pdf/Die_territoriale_Entwicklung_Bayerns.pdf",
+      "label": "Haus der Bayerischen Geschichte · Karten zur territorialen Entwicklung Bayerns (PDF)",
+      "checked": "2026-11-28"
+    },
+    {
+      "uri": "https://www.historisches-lexikon-bayerns.de/Lexikon/Konstitution_des_K%C3%B6nigreichs_Bayern_%281808%29",
+      "label": "Historisches Lexikon Bayerns · Konstitution des Königreichs Bayern",
+      "checked": "2026-11-28"
+    },
+    {
+      "uri": "https://www.dhm.de/lemo/kapitel/vormaerz-und-revolution/wiener-kongress/bundesakte",
+      "label": "DHM · Deutsche Bundesakte von 1815",
+      "checked": "2026-11-28"
+    },
+    {
+      "uri": "https://de.wikisource.org/wiki/Die_schlesischen_Weber",
+      "label": "Heinrich Heine · Die schlesischen Weber",
+      "checked": "2026-11-28"
+    },
+    {
+      "uri": "https://de.wikisource.org/wiki/Der_Hessische_Landbote",
+      "label": "Georg Büchner und Friedrich Ludwig Weidig · Der Hessische Landbote",
+      "checked": "2026-11-28"
+    },
+    {
+      "uri": "https://hambacher-schloss.de/entdecken/hambacher-fest/",
+      "label": "Stiftung Hambacher Schloss · Hambacher Fest",
+      "checked": "2026-11-28"
+    },
+    {
+      "uri": "https://www.bundestag.de/parlament/geschichte/parlamentarismus/1848/1848-199600",
+      "label": "Deutscher Bundestag · Revolution und Frankfurter Nationalversammlung",
+      "checked": "2026-11-28"
+    },
+    {
+      "uri": "https://www.historisches-lexikon-bayerns.de/Lexikon/Artikel_44564",
+      "label": "Historisches Lexikon Bayerns · Pfalz im 19. und 20. Jahrhundert",
+      "checked": "2026-11-28"
+    },
+    {
+      "uri": "https://www.stmi.bayern.de/staat-und-verfassung/staatssymbole/",
+      "label": "Bayerisches Innenministerium · Staatssymbole",
+      "checked": "2026-11-28"
+    },
+    {
+      "uri": "https://www.blfd.bayern.de/denkmal-atlas/index.html",
+      "label": "Bayerisches Landesamt für Denkmalpflege · Bayerischer Denkmal-Atlas",
+      "checked": "2026-11-28"
+    },
+    {
+      "uri": "https://www.historisches-lexikon-bayerns.de/Lexikon/Artikel_44512",
+      "label": "Historisches Lexikon Bayerns · Industrialisierung",
+      "checked": "2026-11-28"
+    },
+    {
+      "uri": "https://www.dhm.de/lemo/kapitel/kaiserreich/industrie",
+      "label": "DHM · Industrie und Wirtschaft im Kaiserreich",
+      "checked": "2026-11-28"
+    },
+    {
+      "uri": "https://germanhistorydocs.org/en/wilhelmine-germany-and-the-first-world-war-1890-1918/ghdi:document-633",
+      "label": "Deutsches Historisches Institut Washington · Statistik zu Erwerbstätigen (Englisch)",
+      "checked": "2026-11-28"
+    },
+    {
+      "uri": "https://www.dhm.de/lemo/kapitel/kaiserreich/reich/reichsgruendung",
+      "label": "DHM · Reichsgründung 1871",
+      "checked": "2026-11-28"
+    },
+    {
+      "uri": "https://germanhistorydocs.org/de/reichsgruendung-bismarcks-deutschland-1866-1890/anton-von-werner-die-proklamierung-des-deutschen-kaiserreiches-18-januar-1871-friedrichsruher-fassung-1885",
+      "label": "Deutsches Historisches Institut Washington · Friedrichsruher Fassung der Kaiserproklamation",
+      "checked": "2026-11-28"
+    },
+    {
+      "uri": "https://commons.wikimedia.org/wiki/File:A_v_Werner_-_Kaiserproklamation_am_18_Januar_1871_(3._Fassung_1885).jpg",
+      "label": "Wikimedia Commons · Gemeinfreie Reproduktion des Gemäldes",
+      "checked": "2026-11-28"
+    },
+    {
+      "uri": "https://www.dhm.de/lemo/kapitel/kaiserreich",
+      "label": "DHM · Das Deutsche Kaiserreich",
+      "checked": "2026-11-28"
+    },
+    {
+      "uri": "https://www.bundestag.de/parlament/geschichte/parlamentarismus/kaiserreich",
+      "label": "Deutscher Bundestag · Parlamentarismus im Kaiserreich",
+      "checked": "2026-11-28"
+    },
+    {
+      "uri": "https://www.dhm.de/lemo/kapitel/kaiserreich/innenpolitik/sozialgesetze",
+      "label": "DHM · Sozialgesetzgebung",
+      "checked": "2026-11-28"
+    },
+    {
+      "uri": "https://www.dhm.de/lemo/kapitel/kaiserreich/alltagsleben",
+      "label": "DHM · Alltagsleben im Kaiserreich",
+      "checked": "2026-11-28"
+    },
+    {
+      "uri": "https://www.dhm.de/lemo/kapitel/kaiserreich/aussenpolitik/kolonialpolitik",
+      "label": "DHM · Deutsche Kolonialpolitik",
+      "checked": "2026-11-28"
+    },
+    {
+      "uri": "https://www.dhm.de/lemo/kapitel/kaiserreich/aussenpolitik/herero-krieg-1904",
+      "label": "DHM · Der Kolonialkrieg gegen die Herero",
+      "checked": "2026-11-28"
+    },
+    {
+      "uri": "https://www.dhm.de/lemo/kapitel/erster-weltkrieg",
+      "label": "DHM · Der Erste Weltkrieg",
+      "checked": "2026-11-28"
+    },
+    {
+      "uri": "https://www.dhm.de/lemo/kapitel/erster-weltkrieg/kriegsverlauf/juli-krise-1914",
+      "label": "DHM · Juli-Krise 1914",
+      "checked": "2026-11-28"
+    },
+    {
+      "uri": "https://www.dhm.de/lemo/kapitel/erster-weltkrieg/kriegsverlauf/stellungskrieg",
+      "label": "DHM · Stellungskrieg",
+      "checked": "2026-11-28"
+    },
+    {
+      "uri": "https://www.dhm.de/lemo/kapitel/erster-weltkrieg/alltagsleben",
+      "label": "DHM · Alltagsleben im Ersten Weltkrieg",
+      "checked": "2026-11-28"
+    },
+    {
+      "uri": "https://www.dhm.de/lemo/kapitel/erster-weltkrieg/kriegsverlauf/feldpost",
+      "label": "DHM · Feldpost",
+      "checked": "2026-11-28"
+    },
+    {
+      "uri": "https://history.state.gov/milestones/1914-1920/wwi",
+      "label": "US Office of the Historian · Kriegseintritt der USA (Englisch)",
+      "checked": "2026-11-28"
+    },
+    {
+      "uri": "https://www.dhm.de/lemo/kapitel/erster-weltkrieg/kriegsverlauf/russische-revolution",
+      "label": "DHM · Russische Revolution",
+      "checked": "2026-11-28"
+    },
+    {
+      "uri": "https://www.dhm.de/lemo/kapitel/weimarer-republik/aussenpolitik/versailles",
+      "label": "DHM · Versailler Vertrag",
+      "checked": "2026-11-28"
+    },
+    {
+      "uri": "https://www.dhm.de/lemo/kapitel/erster-weltkrieg/kriegsverlauf/tod-und-verwundung",
+      "label": "DHM · Tod und Verwundung",
+      "checked": "2026-11-28"
+    },
+    {
+      "uri": "https://history.state.gov/milestones/1914-1920/paris-peace",
+      "label": "US Office of the Historian · Pariser Friedenskonferenz (Englisch)",
+      "checked": "2026-11-28"
+    }
+  ],
+  "atoms": [
+    {
+      "id": "01M8GC4G51Q3F79BZMV1NC6J5N",
+      "atom_uri": "urn:zam:atom:01M8GC4G51Q3F79BZMV1NC6J5N",
+      "namespace": "zam-academy-geschichte-gymnasium-8",
+      "slug": "g8-aufklaerung",
+      "title": "Wer gibt dem Staat seine Macht?",
+      "domain": "geschichte/revolution",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=aufklaerung",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-8",
+          "topic_code": "lb1",
+          "topic_title": "Aufklärung, Französische Revolution und Napoleon"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "geschichte",
+          "topic_code": "lb1",
+          "topic_title": "Aufklärung, Französische Revolution und Napoleon",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GC4G52J18ND4P09RPVDSTC",
+          "slug": "g8-aufklaerung-volkssouveraenitaet",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=aufklaerung",
+          "question": "Was bedeutet Volkssouveränität?",
+          "concept": "Die Staatsgewalt geht vom Volk aus.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Staatsgewalt geht vom Volk aus.",
+              "Die Staatsgewalt geht allein vom Monarchen aus."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G5214BXHWA01HZN9ZQT",
+          "slug": "g8-aufklaerung-gewaltenteilung",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=aufklaerung",
+          "question": "Welches Prinzip forderte Montesquieu zur Verhinderung von Machtmissbrauch?",
+          "concept": "Gewaltenteilung in Gesetzgebung, vollziehende Gewalt und Rechtsprechung.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Gewaltenteilung in Gesetzgebung, vollziehende Gewalt und Rechtsprechung.",
+              "Konzentration aller drei Staatsgewalten beim Monarchen."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G52ZHZF7K0P75HR6ZFX",
+          "slug": "g8-aufklaerung-rechte-grenzen",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=aufklaerung",
+          "question": "Warum belegt die Erklärung von 1789 allein kein allgemeines Wahlrecht?",
+          "concept": "Sie formuliert einen Rechtsanspruch. Die Wahlregeln zeigen getrennt, wer tatsächlich wählen durfte.",
+          "materiality": "material",
+          "sample_solution": "Sie formuliert einen Rechtsanspruch. Die Wahlregeln zeigen getrennt, wer tatsächlich wählen durfte."
+        }
+      ]
+    },
+    {
+      "id": "01M8GC4G5264F9TJ5WTG7YKJWN",
+      "atom_uri": "urn:zam:atom:01M8GC4G5264F9TJ5WTG7YKJWN",
+      "namespace": "zam-academy-geschichte-gymnasium-8",
+      "slug": "g8-franzoesische-revolution",
+      "title": "Warum geriet Frankreich 1789 in Revolution?",
+      "domain": "geschichte/revolution",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=franzoesische-revolution",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GC4G51Q3F79BZMV1NC6J5N",
+          "type": "soft",
+          "rationale": "Die frühere Lektion erklärt einen Begriff, eine Methode oder einen historischen Zusammenhang für diese Lektion."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-8",
+          "topic_code": "lb1",
+          "topic_title": "Aufklärung, Französische Revolution und Napoleon"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "geschichte",
+          "topic_code": "lb1",
+          "topic_title": "Aufklärung, Französische Revolution und Napoleon",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GC4G528JHABA4ESPGKRC4T",
+          "slug": "g8-franzoesische-revolution-bastille",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=franzoesische-revolution",
+          "question": "Welches Ereignis am 14. Juli 1789 wurde zum Symbol für den Beginn der Französischen Revolution?",
+          "concept": "Der Sturm auf die Bastille in Paris.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Der Sturm auf die Bastille in Paris.",
+              "Die Ausrufung der Republik in Paris."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G52XEN9QTKE0J1VSJ3Z",
+          "slug": "g8-franzoesische-revolution-republik",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=franzoesische-revolution",
+          "question": "Wann schaffte Frankreich das Königtum ab und wurde zur Republik?",
+          "concept": "1792.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "1792.",
+              "1789."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G525TPV4FFDX9V30E49",
+          "slug": "g8-franzoesische-revolution-mehrere-ursachen",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=franzoesische-revolution",
+          "question": "Warum genügen steigende Brotpreise als Erklärung für die Revolution nicht?",
+          "concept": "Brotpreise verschärften die Not. Staatsverschuldung, ständische Ungleichheit und Forderungen nach politischer Mitsprache wirkten ebenfalls mit.",
+          "materiality": "material",
+          "sample_solution": "Brotpreise verschärften die Not. Staatsverschuldung, ständische Ungleichheit und Forderungen nach politischer Mitsprache wirkten ebenfalls mit."
+        }
+      ]
+    },
+    {
+      "id": "01M8GC4G52EB83HRWVNM8ZKXGT",
+      "atom_uri": "urn:zam:atom:01M8GC4G52EB83HRWVNM8ZKXGT",
+      "namespace": "zam-academy-geschichte-gymnasium-8",
+      "slug": "g8-verfassung-1791",
+      "title": "Wie begrenzte die Verfassung den König?",
+      "domain": "geschichte/revolution",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=verfassung-1791",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GC4G51Q3F79BZMV1NC6J5N",
+          "type": "soft",
+          "rationale": "Die frühere Lektion erklärt einen Begriff, eine Methode oder einen historischen Zusammenhang für diese Lektion."
+        },
+        {
+          "atom_id": "01M8GC4G5264F9TJ5WTG7YKJWN",
+          "type": "soft",
+          "rationale": "Die frühere Lektion erklärt einen Begriff, eine Methode oder einen historischen Zusammenhang für diese Lektion."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-8",
+          "topic_code": "lb1",
+          "topic_title": "Aufklärung, Französische Revolution und Napoleon"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "geschichte",
+          "topic_code": "lb1",
+          "topic_title": "Aufklärung, Französische Revolution und Napoleon",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GC4G52WV2X572J26GGDPTQ",
+          "slug": "g8-verfassung-1791-monarchie",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=verfassung-1791",
+          "question": "Woran erkennst du eine konstitutionelle Monarchie?",
+          "concept": "Eine Verfassung regelt und begrenzt die Rechte des Monarchen.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Eine Verfassung regelt und begrenzt die Rechte des Monarchen.",
+              "Der Monarch kann seine Rechte jederzeit allein bestimmen."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G52VFD39ZFVA7FW8F76",
+          "slug": "g8-verfassung-1791-veto",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=verfassung-1791",
+          "question": "Wie wirkte das Veto des französischen Königs nach der Verfassung von 1791?",
+          "concept": "Es konnte viele Gesetze vorübergehend aufhalten.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Es konnte viele Gesetze vorübergehend aufhalten.",
+              "Es konnte jedes Gesetz endgültig verhindern."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G52977MQXTRY7EV6H5G",
+          "slug": "g8-verfassung-1791-wahl-und-verfassung",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=verfassung-1791",
+          "question": "Warum bedeutete Frankreichs Verfassung von 1791 keine gleiche politische Beteiligung?",
+          "concept": "Nur bestimmte Männer hatten Wahlrecht und wählten indirekt. Die Verfassung begrenzte die Königsgewalt, schloss aber große Teile der Bevölkerung politisch aus.",
+          "materiality": "material",
+          "sample_solution": "Nur bestimmte Männer hatten Wahlrecht und wählten indirekt. Die Verfassung begrenzte die Königsgewalt, schloss aber große Teile der Bevölkerung politisch aus."
+        }
+      ]
+    },
+    {
+      "id": "01M8GC4G52BSTZ2DBA4M7XWTRB",
+      "atom_uri": "urn:zam:atom:01M8GC4G52BSTZ2DBA4M7XWTRB",
+      "namespace": "zam-academy-geschichte-gymnasium-8",
+      "slug": "g8-napoleon",
+      "title": "Napoleon und die Neuordnung Europas",
+      "domain": "geschichte/revolution",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=napoleon",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GC4G5264F9TJ5WTG7YKJWN",
+          "type": "soft",
+          "rationale": "Die frühere Lektion erklärt einen Begriff, eine Methode oder einen historischen Zusammenhang für diese Lektion."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-8",
+          "topic_code": "lb1",
+          "topic_title": "Aufklärung, Französische Revolution und Napoleon"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "geschichte",
+          "topic_code": "lb1",
+          "topic_title": "Aufklärung, Französische Revolution und Napoleon",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GC4G52FX86XD6RB6JP99J6",
+          "slug": "g8-napoleon-rheinbund",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=napoleon",
+          "question": "Welcher Bund entstand 1806 unter Napoleons Schutz?",
+          "concept": "Der Rheinbund.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Der Rheinbund.",
+              "Der Deutsche Bund."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G52TMFEJJQNA2AKR0Z3",
+          "slug": "g8-napoleon-reichsende",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=napoleon",
+          "question": "Welches Reich endete 1806 mit der Niederlegung der Kaiserkrone durch Franz II.?",
+          "concept": "Das Heilige Römische Reich.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Das Heilige Römische Reich.",
+              "Das Deutsche Kaiserreich von 1871."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G52RRR2RKWMP2QP4YG2",
+          "slug": "g8-napoleon-kaiserzeichen",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=napoleon",
+          "question": "Was zeigt die Anwesenheit des Papstes zusammen mit Napoleons Selbstkrönung über seinen Machtanspruch?",
+          "concept": "Napoleon knüpfte an die Tradition christlicher Kaiser an, indem der Papst anwesend war. Dass er sich selbst krönte, betonte seinen eigenen Anspruch auf Autorität.",
+          "materiality": "material",
+          "sample_solution": "Napoleon knüpfte an die Tradition christlicher Kaiser an, indem der Papst anwesend war. Dass er sich selbst krönte, betonte seinen eigenen Anspruch auf Autorität."
+        }
+      ]
+    },
+    {
+      "id": "01M8GC4G52T1C854BP8RKT7EG6",
+      "atom_uri": "urn:zam:atom:01M8GC4G52T1C854BP8RKT7EG6",
+      "namespace": "zam-academy-geschichte-gymnasium-8",
+      "slug": "g8-montgelas",
+      "title": "Montgelas verändert Bayern",
+      "domain": "geschichte/revolution",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=montgelas",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GC4G52BSTZ2DBA4M7XWTRB",
+          "type": "soft",
+          "rationale": "Die frühere Lektion erklärt einen Begriff, eine Methode oder einen historischen Zusammenhang für diese Lektion."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-8",
+          "topic_code": "lb1",
+          "topic_title": "Aufklärung, Französische Revolution und Napoleon"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "geschichte",
+          "topic_code": "lb1",
+          "topic_title": "Aufklärung, Französische Revolution und Napoleon",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GC4G52R1FKKBK67MF5ESNW",
+          "slug": "g8-montgelas-koenigreich",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=montgelas",
+          "question": "In welchem Jahr wurde Bayern zum Königreich?",
+          "concept": "1806.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "1806.",
+              "1815."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G52HPKMP6Z39BDQM76Z",
+          "slug": "g8-montgelas-saekularisation",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=montgelas",
+          "question": "Was bedeutete Säkularisation in Bayern um 1803 für viele Klöster?",
+          "concept": "Sie wurden aufgehoben und ihr Besitz ging an weltliche Träger.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sie wurden aufgehoben und ihr Besitz ging an weltliche Träger.",
+              "Sie übernahmen Besitz staatlicher Behörden."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G52XQMFAMGZ8FRVSB78",
+          "slug": "g8-montgelas-reformurteil",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=montgelas",
+          "question": "Warum konnten Montgelas' Reformen modernisieren, obwohl politische Mitsprache begrenzt blieb?",
+          "concept": "Einheitliche Behörden und stärker an Qualifikation gebundene Ämter veränderten den Staat. Eine wirksame Volksvertretung entstand durch die Konstitution von 1808 nicht.",
+          "materiality": "material",
+          "sample_solution": "Einheitliche Behörden und stärker an Qualifikation gebundene Ämter veränderten den Staat. Eine wirksame Volksvertretung entstand durch die Konstitution von 1808 nicht."
+        }
+      ]
+    },
+    {
+      "id": "01M8GC4G527CFN13NSKQB9NVX2",
+      "atom_uri": "urn:zam:atom:01M8GC4G527CFN13NSKQB9NVX2",
+      "namespace": "zam-academy-geschichte-gymnasium-8",
+      "slug": "g8-wiener-kongress",
+      "title": "Wer ordnet Europa nach Napoleon?",
+      "domain": "geschichte/restauration",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=wiener-kongress",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GC4G52BSTZ2DBA4M7XWTRB",
+          "type": "soft",
+          "rationale": "Die frühere Lektion erklärt einen Begriff, eine Methode oder einen historischen Zusammenhang für diese Lektion."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-8",
+          "topic_code": "lb2",
+          "topic_title": "Einigkeit und Freiheit? Deutschland zwischen Restauration und Revolution"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "geschichte",
+          "topic_code": "lb2",
+          "topic_title": "Einigkeit und Freiheit? Deutschland zwischen Restauration und Revolution",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GC4G52NPENXSKB90520C07",
+          "slug": "g8-wiener-kongress-kongressjahr",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=wiener-kongress",
+          "question": "Welches grundlegende Datum steht für die Neuordnung durch den Wiener Kongress?",
+          "concept": "1815.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "1815.",
+              "1832."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G52K1G52J8PN1Y1J1TW",
+          "slug": "g8-wiener-kongress-deutscher-bund",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=wiener-kongress",
+          "question": "Was war der Deutsche Bund?",
+          "concept": "Ein Zusammenschluss eigenständiger Fürstenstaaten und freier Städte.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Ein Zusammenschluss eigenständiger Fürstenstaaten und freier Städte.",
+              "Ein einheitlicher deutscher Nationalstaat."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G52219ZETRY2FZMQES4",
+          "slug": "g8-wiener-kongress-grenzen",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=wiener-kongress",
+          "question": "Warum gehörte Ungarn trotz habsburgischer Herrschaft nicht zum Deutschen Bund?",
+          "concept": "Die Habsburgermonarchie umfasste mehr Gebiete als ihre Mitgliedsgebiete im Deutschen Bund. Der Bund hatte eigene, enger gezogene Grenzen.",
+          "materiality": "material",
+          "sample_solution": "Die Habsburgermonarchie umfasste mehr Gebiete als ihre Mitgliedsgebiete im Deutschen Bund. Der Bund hatte eigene, enger gezogene Grenzen."
+        }
+      ]
+    },
+    {
+      "id": "01M8GC4G52QSN05WKWQRZNEHSX",
+      "atom_uri": "urn:zam:atom:01M8GC4G52QSN05WKWQRZNEHSX",
+      "namespace": "zam-academy-geschichte-gymnasium-8",
+      "slug": "g8-vormaerz",
+      "title": "Kritik trotz Zensur",
+      "domain": "geschichte/restauration",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=vormaerz",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GC4G527CFN13NSKQB9NVX2",
+          "type": "soft",
+          "rationale": "Die frühere Lektion erklärt einen Begriff, eine Methode oder einen historischen Zusammenhang für diese Lektion."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-8",
+          "topic_code": "lb2",
+          "topic_title": "Einigkeit und Freiheit? Deutschland zwischen Restauration und Revolution"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "geschichte",
+          "topic_code": "lb2",
+          "topic_title": "Einigkeit und Freiheit? Deutschland zwischen Restauration und Revolution",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GC4G53QKQXH3DV8MYZ303N",
+          "slug": "g8-vormaerz-zensur",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=vormaerz",
+          "question": "Wozu dienten die Karlsbader Beschlüsse im Umgang mit Druckschriften?",
+          "concept": "Sie ermöglichten politische Kontrolle und Zensur.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sie ermöglichten politische Kontrolle und Zensur.",
+              "Sie garantierten freie Veröffentlichung politischer Kritik."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G53GWZARX62EB6AZQP1",
+          "slug": "g8-vormaerz-liberalismus",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=vormaerz",
+          "question": "Welches Ziel war typisch für den politischen Liberalismus im Vormärz?",
+          "concept": "Freiheitsrechte und eine Verfassung.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Freiheitsrechte und eine Verfassung.",
+              "Unbegrenzte fürstliche Herrschaft."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G53W225MWWEFR3SRS3G",
+          "slug": "g8-vormaerz-wirkung",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=vormaerz",
+          "question": "Warum sagt der Hessische Landbote mehr über die Absicht der Autoren als über seine Wirkung auf Leser aus?",
+          "concept": "Seine Sprache zeigt, wie die Autoren mobilisieren wollten. Um die Wirkung zu beurteilen, brauchst du weitere Quellen zu Reaktionen oder Verbreitung.",
+          "materiality": "material",
+          "sample_solution": "Seine Sprache zeigt, wie die Autoren mobilisieren wollten. Um die Wirkung zu beurteilen, brauchst du weitere Quellen zu Reaktionen oder Verbreitung."
+        }
+      ]
+    },
+    {
+      "id": "01M8GC4G52FS8N54QV3GY3V5S7",
+      "atom_uri": "urn:zam:atom:01M8GC4G52FS8N54QV3GY3V5S7",
+      "namespace": "zam-academy-geschichte-gymnasium-8",
+      "slug": "g8-hambach",
+      "title": "Einigkeit und Freiheit in Hambach",
+      "domain": "geschichte/restauration",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=hambach",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GC4G52QSN05WKWQRZNEHSX",
+          "type": "soft",
+          "rationale": "Die frühere Lektion erklärt einen Begriff, eine Methode oder einen historischen Zusammenhang für diese Lektion."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-8",
+          "topic_code": "lb2",
+          "topic_title": "Einigkeit und Freiheit? Deutschland zwischen Restauration und Revolution"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "geschichte",
+          "topic_code": "lb2",
+          "topic_title": "Einigkeit und Freiheit? Deutschland zwischen Restauration und Revolution",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GC4G53HXAAST7RGPB7272N",
+          "slug": "g8-hambach-jahr",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=hambach",
+          "question": "Wann fand das Hambacher Fest statt?",
+          "concept": "1832.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "1832.",
+              "1815."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G537SCC1PSNH537TNTC",
+          "slug": "g8-hambach-einheitsziel",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=hambach",
+          "question": "Welche Forderung drückt vor allem das nationale Ziel in Hambach aus?",
+          "concept": "Die deutschen Staaten sollen sich politisch zusammenschließen.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die deutschen Staaten sollen sich politisch zusammenschließen.",
+              "Zeitungen sollen ohne politische Vorzensur erscheinen dürfen."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G539ZA99APEN2GBM6HQ",
+          "slug": "g8-hambach-engagement",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=hambach",
+          "question": "Woran erkennst du in Hambach politische Beteiligung außerhalb eines Parlaments?",
+          "concept": "Menschen zeigten durch Reden, Fahnen und einen Festzug öffentliche Forderungen nach Rechten und Einheit, obwohl kein deutsches Nationalparlament bestand.",
+          "materiality": "material",
+          "sample_solution": "Menschen zeigten durch Reden, Fahnen und einen Festzug öffentliche Forderungen nach Rechten und Einheit, obwohl kein deutsches Nationalparlament bestand."
+        }
+      ]
+    },
+    {
+      "id": "01M8GC4G5299DHXBW0G4Z7DVRW",
+      "atom_uri": "urn:zam:atom:01M8GC4G5299DHXBW0G4Z7DVRW",
+      "namespace": "zam-academy-geschichte-gymnasium-8",
+      "slug": "g8-paulskirche",
+      "title": "1848/49: Was blieb von der Revolution?",
+      "domain": "geschichte/restauration",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=paulskirche",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GC4G52FS8N54QV3GY3V5S7",
+          "type": "soft",
+          "rationale": "Die frühere Lektion erklärt einen Begriff, eine Methode oder einen historischen Zusammenhang für diese Lektion."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-8",
+          "topic_code": "lb2",
+          "topic_title": "Einigkeit und Freiheit? Deutschland zwischen Restauration und Revolution"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "geschichte",
+          "topic_code": "lb2",
+          "topic_title": "Einigkeit und Freiheit? Deutschland zwischen Restauration und Revolution",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GC4G53YYFHY6B86ZG8BCR7",
+          "slug": "g8-paulskirche-ort",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=paulskirche",
+          "question": "Wo tagte die deutsche Nationalversammlung 1848/49?",
+          "concept": "In der Frankfurter Paulskirche.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "In der Frankfurter Paulskirche.",
+              "Im Hambacher Schloss."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G53VS1JCS5V810SC2JZ",
+          "slug": "g8-paulskirche-krone",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=paulskirche",
+          "question": "Wie reagierte der preußische König auf die ihm 1849 angebotene Kaiserkrone?",
+          "concept": "Er lehnte sie ab.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Er lehnte sie ab.",
+              "Er nahm sie an und setzte die Reichsverfassung durch."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G533G486S5C71FXMY81",
+          "slug": "g8-paulskirche-scheitern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=paulskirche",
+          "question": "Wie konnte die Revolution von 1848/49 scheitern und trotzdem etwas bewirken?",
+          "concept": "Die Nationalversammlung konnte ihre Verfassung nicht durchsetzen. Ihre Grundrechte und die Erfahrung eines gewählten Parlaments wirkten in späteren Debatten weiter.",
+          "materiality": "material",
+          "sample_solution": "Die Nationalversammlung konnte ihre Verfassung nicht durchsetzen. Ihre Grundrechte und die Erfahrung eines gewählten Parlaments wirkten in späteren Debatten weiter."
+        }
+      ]
+    },
+    {
+      "id": "01M8GC4G52GHT1SPCYTP3GKSJA",
+      "atom_uri": "urn:zam:atom:01M8GC4G52GHT1SPCYTP3GKSJA",
+      "namespace": "zam-academy-geschichte-gymnasium-8",
+      "slug": "g8-bayern-karten",
+      "title": "Wie Bayerns Staatsgebiet wuchs und schrumpfte",
+      "domain": "geschichte/bayern",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=bayern-karten",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GC4G52T1C854BP8RKT7EG6",
+          "type": "soft",
+          "rationale": "Die frühere Lektion erklärt einen Begriff, eine Methode oder einen historischen Zusammenhang für diese Lektion."
+        },
+        {
+          "atom_id": "01M8GC4G527CFN13NSKQB9NVX2",
+          "type": "soft",
+          "rationale": "Die frühere Lektion erklärt einen Begriff, eine Methode oder einen historischen Zusammenhang für diese Lektion."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-8",
+          "topic_code": "lb3",
+          "topic_title": "Bayern – Identität, Staatsgebiet und kulturelles Erbe (Längsschnitt)"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "geschichte",
+          "topic_code": "lb3",
+          "topic_title": "Bayern – Identität, Staatsgebiet und kulturelles Erbe (Längsschnitt)",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GC4G534BK5AMWK78MF1RX7",
+          "slug": "g8-bayern-karten-pfalz",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=bayern-karten",
+          "question": "Welches vom Hauptgebiet getrennte Territorium kam 1816 zu Bayern?",
+          "concept": "Die linksrheinische Pfalz.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die linksrheinische Pfalz.",
+              "Das Königreich Ungarn."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G53H52T5JXM51G7KWBH",
+          "slug": "g8-bayern-karten-karls-kroenung",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=bayern-karten",
+          "question": "Wann wurde Karl der Große zum Kaiser gekrönt?",
+          "concept": "Im Jahr 800.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Im Jahr 800.",
+              "Im Jahr 1806."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G5393CR61ZPRCAG74M4",
+          "slug": "g8-bayern-karten-vergleich",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=bayern-karten",
+          "question": "Warum sind historische Bayern-Karten verschiedener Jahre für einen Längsschnitt wichtig?",
+          "concept": "Sie zeigen dieselben Orte in verschiedenen politischen Ordnungen. Die Pfalz gehörte beispielsweise 1816 zu Bayern und nach 1945 zu Rheinland-Pfalz.",
+          "materiality": "material",
+          "sample_solution": "Sie zeigen dieselben Orte in verschiedenen politischen Ordnungen. Die Pfalz gehörte beispielsweise 1816 zu Bayern und nach 1945 zu Rheinland-Pfalz."
+        }
+      ]
+    },
+    {
+      "id": "01M8GC4G52JBGHMH7151YBXWCA",
+      "atom_uri": "urn:zam:atom:01M8GC4G52JBGHMH7151YBXWCA",
+      "namespace": "zam-academy-geschichte-gymnasium-8",
+      "slug": "g8-bayern-wappen",
+      "title": "Welche Geschichten erzählt das Bayernwappen?",
+      "domain": "geschichte/bayern",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=bayern-wappen",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GC4G52GHT1SPCYTP3GKSJA",
+          "type": "soft",
+          "rationale": "Die frühere Lektion erklärt einen Begriff, eine Methode oder einen historischen Zusammenhang für diese Lektion."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-8",
+          "topic_code": "lb3",
+          "topic_title": "Bayern – Identität, Staatsgebiet und kulturelles Erbe (Längsschnitt)"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "geschichte",
+          "topic_code": "lb3",
+          "topic_title": "Bayern – Identität, Staatsgebiet und kulturelles Erbe (Längsschnitt)",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GC4G53XRC3M0K0PQ1KACH8",
+          "slug": "g8-bayern-wappen-rechen",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=bayern-wappen",
+          "question": "Welche historische Region vertritt der fränkische Rechen im großen bayerischen Staatswappen?",
+          "concept": "Franken.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Franken.",
+              "Schwaben."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G536N2FQ3K4DS7HW8F8",
+          "slug": "g8-bayern-wappen-loewen",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=bayern-wappen",
+          "question": "Wofür stehen die drei schwarzen Löwen im großen bayerischen Staatswappen?",
+          "concept": "Für Schwaben.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Für Schwaben.",
+              "Für Altbayern."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G53S4W7ARAW89QZ0XX1",
+          "slug": "g8-bayern-wappen-reichweite",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=bayern-wappen",
+          "question": "Warum kann das Bayernwappen die heutige Bevölkerung nur teilweise repräsentieren?",
+          "concept": "Es bündelt Symbole historischer Landesteile. Erfahrungen späterer Zuwanderung und persönliche Zugehörigkeiten sind an diesen Zeichen kaum ablesbar.",
+          "materiality": "material",
+          "sample_solution": "Es bündelt Symbole historischer Landesteile. Erfahrungen späterer Zuwanderung und persönliche Zugehörigkeiten sind an diesen Zeichen kaum ablesbar."
+        }
+      ]
+    },
+    {
+      "id": "01M8GC4G52K9TBC2AB3Z8TDNVD",
+      "atom_uri": "urn:zam:atom:01M8GC4G52K9TBC2AB3Z8TDNVD",
+      "namespace": "zam-academy-geschichte-gymnasium-8",
+      "slug": "g8-bayern-denkmaeler",
+      "title": "Was Gebäude über Bayern erzählen",
+      "domain": "geschichte/bayern",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=bayern-denkmaeler",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GC4G52GHT1SPCYTP3GKSJA",
+          "type": "soft",
+          "rationale": "Die frühere Lektion erklärt einen Begriff, eine Methode oder einen historischen Zusammenhang für diese Lektion."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-8",
+          "topic_code": "lb3",
+          "topic_title": "Bayern – Identität, Staatsgebiet und kulturelles Erbe (Längsschnitt)"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "geschichte",
+          "topic_code": "lb3",
+          "topic_title": "Bayern – Identität, Staatsgebiet und kulturelles Erbe (Längsschnitt)",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GC4G53QT9BMY51VG9N1MYV",
+          "slug": "g8-bayern-denkmaeler-walhalla",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=bayern-denkmaeler",
+          "question": "Welcher König veranlasste den Bau der Walhalla bei Donaustauf?",
+          "concept": "Ludwig I.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Ludwig I.",
+              "Ludwig II."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G539RCA7CVZE1N6Z68B",
+          "slug": "g8-bayern-denkmaeler-beobachtung",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=bayern-denkmaeler",
+          "question": "Welche Aussage ist eine unmittelbare Beobachtung an der Walhalla?",
+          "concept": "Der Bau hat Säulen und einen Giebel.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Der Bau hat Säulen und einen Giebel.",
+              "Der Bauherr wollte mit der Form an die Antike erinnern."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G53WEY804FRFDQ44V00",
+          "slug": "g8-bayern-denkmaeler-schutz",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=bayern-denkmaeler",
+          "question": "Wie kannst du die Schutzwürdigkeit eines Bauwerks begründen?",
+          "concept": "Beschreibe ein sichtbares Merkmal und belege, welche historische Geschichte darin erkennbar wird. Wäge Erhaltung und heutige Nutzung ab.",
+          "materiality": "material",
+          "sample_solution": "Beschreibe ein sichtbares Merkmal und belege, welche historische Geschichte darin erkennbar wird. Wäge Erhaltung und heutige Nutzung ab."
+        }
+      ]
+    },
+    {
+      "id": "01M8GC4G52HTX6GTVWKSR1B9Q2",
+      "atom_uri": "urn:zam:atom:01M8GC4G52HTX6GTVWKSR1B9Q2",
+      "namespace": "zam-academy-geschichte-gymnasium-8",
+      "slug": "g8-fabrik-alltag",
+      "title": "Vom Heimgewerbe zur Fabrik",
+      "domain": "geschichte/industrialisierung",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=fabrik-alltag",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-8",
+          "topic_code": "lb4",
+          "topic_title": "Industrialisierung und Soziale Frage"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "geschichte",
+          "topic_code": "lb4",
+          "topic_title": "Industrialisierung und Soziale Frage",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GC4G533NW3H3K4AYTBA46S",
+          "slug": "g8-fabrik-alltag-fabrik",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=fabrik-alltag",
+          "question": "Was änderte die Fabrik gegenüber dem Heimgewerbe für viele Beschäftigte?",
+          "concept": "Arbeitsort und Schichtzeiten wurden zentral festgelegt.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Arbeitsort und Schichtzeiten wurden zentral festgelegt.",
+              "Die Produktion fand überwiegend im eigenen Haushalt statt."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G538EXC12YNC435YJAK",
+          "slug": "g8-fabrik-alltag-verstaedterung",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=fabrik-alltag",
+          "question": "Was bedeutet Verstädterung im Zusammenhang mit der Industrialisierung?",
+          "concept": "Städte wachsen, und ein größerer Anteil der Bevölkerung lebt in ihnen.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Städte wachsen, und ein größerer Anteil der Bevölkerung lebt in ihnen.",
+              "Immer mehr Beschäftigte verlassen die Städte für die Landwirtschaft."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G53S7RXA21VRZ7C00SY",
+          "slug": "g8-fabrik-alltag-stadtwachstum",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=fabrik-alltag",
+          "question": "Wie kann eine Fabrik zugleich Beschäftigung schaffen und den Wohnraum belasten?",
+          "concept": "Arbeitsplätze ziehen Menschen an. Wächst der Ort schneller als der Wohnungsbau, wird Wohnraum knapp und die Infrastruktur kann überlastet sein.",
+          "materiality": "material",
+          "sample_solution": "Arbeitsplätze ziehen Menschen an. Wächst der Ort schneller als der Wohnungsbau, wird Wohnraum knapp und die Infrastruktur kann überlastet sein."
+        }
+      ]
+    },
+    {
+      "id": "01M8GC4G525V53EJWWKW6T6F26",
+      "atom_uri": "urn:zam:atom:01M8GC4G525V53EJWWKW6T6F26",
+      "namespace": "zam-academy-geschichte-gymnasium-8",
+      "slug": "g8-industrie-vergleich",
+      "title": "Warum begann der Wandel in England früher?",
+      "domain": "geschichte/industrialisierung",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=industrie-vergleich",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GC4G52HTX6GTVWKSR1B9Q2",
+          "type": "soft",
+          "rationale": "Die frühere Lektion erklärt einen Begriff, eine Methode oder einen historischen Zusammenhang für diese Lektion."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-8",
+          "topic_code": "lb4",
+          "topic_title": "Industrialisierung und Soziale Frage"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "geschichte",
+          "topic_code": "lb4",
+          "topic_title": "Industrialisierung und Soziale Frage",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GC4G53C4BDRQV89MW1HR0N",
+          "slug": "g8-industrie-vergleich-england",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=industrie-vergleich",
+          "question": "Welche Kombination begünstigte die frühe Industrialisierung in England?",
+          "concept": "Kohle, Kapital, Handel und technische Entwicklungen.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Kohle, Kapital, Handel und technische Entwicklungen.",
+              "Fehlende Märkte und ausbleibende Investitionen."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G5378XCJYV9GJYJZXH5",
+          "slug": "g8-industrie-vergleich-zollverein",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=industrie-vergleich",
+          "question": "Wozu trug der Deutsche Zollverein ab 1834 bei?",
+          "concept": "Er verringerte Handelsbarrieren zwischen Mitgliedstaaten.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Er verringerte Handelsbarrieren zwischen Mitgliedstaaten.",
+              "Er vermehrte die Zollgrenzen zwischen Mitgliedstaaten."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G534BD8Q377HWA62041",
+          "slug": "g8-industrie-vergleich-bahn",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=industrie-vergleich",
+          "question": "Warum erklärt eine neue Eisenbahn allein keine Industrialisierung?",
+          "concept": "Die Bahn erleichtert Transporte. Produktion braucht zugleich Absatz, Kapital, Rohstoffe und Arbeitskräfte.",
+          "materiality": "material",
+          "sample_solution": "Die Bahn erleichtert Transporte. Produktion braucht zugleich Absatz, Kapital, Rohstoffe und Arbeitskräfte."
+        }
+      ]
+    },
+    {
+      "id": "01M8GC4G525JPKY3X0YKAVFBSE",
+      "atom_uri": "urn:zam:atom:01M8GC4G525JPKY3X0YKAVFBSE",
+      "namespace": "zam-academy-geschichte-gymnasium-8",
+      "slug": "g8-industrie-daten",
+      "title": "Was zeigen Daten über den Strukturwandel?",
+      "domain": "geschichte/industrialisierung",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=industrie-daten",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GC4G525V53EJWWKW6T6F26",
+          "type": "soft",
+          "rationale": "Die frühere Lektion erklärt einen Begriff, eine Methode oder einen historischen Zusammenhang für diese Lektion."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-8",
+          "topic_code": "lb4",
+          "topic_title": "Industrialisierung und Soziale Frage"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "geschichte",
+          "topic_code": "lb4",
+          "topic_title": "Industrialisierung und Soziale Frage",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GC4G53MM1GYTJSSPT5JER0",
+          "slug": "g8-industrie-daten-nenner",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=industrie-daten",
+          "question": "Was ist der Nenner, wenn du einen Anteil der Erwerbstätigen in der Landwirtschaft berechnest?",
+          "concept": "Die Gesamtzahl der erfassten Erwerbstätigen.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Gesamtzahl der erfassten Erwerbstätigen.",
+              "Die Zahl der Erwerbstätigen nur in der Landwirtschaft."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G53P6P7JDAE3N5P2SVF",
+          "slug": "g8-industrie-daten-einheit",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=industrie-daten",
+          "question": "Welche Einheit hat der Unterschied zwischen 43,4 Prozent und 35,2 Prozent?",
+          "concept": "Prozentpunkte.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Prozentpunkte.",
+              "Personen."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G534A7C1ZR07KPFY9QT",
+          "slug": "g8-industrie-daten-anteil",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=industrie-daten",
+          "question": "Wie kann der Anteil einer Branche sinken, wenn dort mehr Menschen arbeiten?",
+          "concept": "Die Gesamtzahl der Erwerbstätigen kann schneller wachsen als die Beschäftigung in der Branche. Dann wächst ihre absolute Zahl langsamer als die Bezugsgröße.",
+          "materiality": "material",
+          "sample_solution": "Die Gesamtzahl der Erwerbstätigen kann schneller wachsen als die Beschäftigung in der Branche. Dann wächst ihre absolute Zahl langsamer als die Bezugsgröße."
+        }
+      ]
+    },
+    {
+      "id": "01M8GC4G52NP4V9XGQHJY0RPKN",
+      "atom_uri": "urn:zam:atom:01M8GC4G52NP4V9XGQHJY0RPKN",
+      "namespace": "zam-academy-geschichte-gymnasium-8",
+      "slug": "g8-soziale-frage",
+      "title": "Wer sollte die Soziale Frage lösen?",
+      "domain": "geschichte/industrialisierung",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=soziale-frage",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GC4G52HTX6GTVWKSR1B9Q2",
+          "type": "soft",
+          "rationale": "Die frühere Lektion erklärt einen Begriff, eine Methode oder einen historischen Zusammenhang für diese Lektion."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-8",
+          "topic_code": "lb4",
+          "topic_title": "Industrialisierung und Soziale Frage"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "geschichte",
+          "topic_code": "lb4",
+          "topic_title": "Industrialisierung und Soziale Frage",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GC4G53SF3RYTYMAY9F1J8J",
+          "slug": "g8-soziale-frage-soziale-not",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=soziale-frage",
+          "question": "Was bezeichnet die Soziale Frage im 19. Jahrhundert?",
+          "concept": "Die durch Industrialisierung verschärften sozialen Probleme der Arbeits- und Lebenswelt.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die durch Industrialisierung verschärften sozialen Probleme der Arbeits- und Lebenswelt.",
+              "Den Streit um eine deutsche Kaiserkrone."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G537MGVBTZQ2Q1YYG3Q",
+          "slug": "g8-soziale-frage-gewerkschaft",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=soziale-frage",
+          "question": "Welche Aufgabe übernahmen Gewerkschaften?",
+          "concept": "Sie organisierten Beschäftigte zur gemeinsamen Vertretung ihrer Interessen.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sie organisierten Beschäftigte zur gemeinsamen Vertretung ihrer Interessen.",
+              "Sie vertraten die Regierungen der Bundesstaaten."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G533D1MCWE7DY017W2Q",
+          "slug": "g8-soziale-frage-hilfe",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=soziale-frage",
+          "question": "Welchen unterschiedlichen Nutzen können Werkswohnungen und Sozialversicherungen haben?",
+          "concept": "Werkswohnungen können unmittelbar Wohnraum schaffen und an den Betrieb binden. Sozialversicherungen schaffen gesetzlich geregelte Ansprüche bei bestimmten Risiken.",
+          "materiality": "material",
+          "sample_solution": "Werkswohnungen können unmittelbar Wohnraum schaffen und an den Betrieb binden. Sozialversicherungen schaffen gesetzlich geregelte Ansprüche bei bestimmten Risiken."
+        }
+      ]
+    },
+    {
+      "id": "01M8GC4G52S5T5HY6BPXF4225G",
+      "atom_uri": "urn:zam:atom:01M8GC4G52S5T5HY6BPXF4225G",
+      "namespace": "zam-academy-geschichte-gymnasium-8",
+      "slug": "g8-reichsgruendung",
+      "title": "Wer gründete das Kaiserreich?",
+      "domain": "geschichte/kaiserreich",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=reichsgruendung",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GC4G5299DHXBW0G4Z7DVRW",
+          "type": "soft",
+          "rationale": "Die frühere Lektion erklärt einen Begriff, eine Methode oder einen historischen Zusammenhang für diese Lektion."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-8",
+          "topic_code": "lb5",
+          "topic_title": "Das Deutsche Kaiserreich"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "geschichte",
+          "topic_code": "lb5",
+          "topic_title": "Das Deutsche Kaiserreich",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GC4G53PM1CJZ3DX4V66PR6",
+          "slug": "g8-reichsgruendung-versailles",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=reichsgruendung",
+          "question": "Wo wurde Wilhelm I. am 18. Januar 1871 zum Deutschen Kaiser ausgerufen?",
+          "concept": "Im Schloss Versailles.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Im Schloss Versailles.",
+              "In der Frankfurter Paulskirche."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G535DSAQPZVQ92WZ668",
+          "slug": "g8-reichsgruendung-gemaelde",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=reichsgruendung",
+          "question": "Wann entstand die Friedrichsruher Fassung von Anton von Werners Kaiserproklamation?",
+          "concept": "1885, nach dem dargestellten Ereignis.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "1885, nach dem dargestellten Ereignis.",
+              "1871, zeitgleich mit dem dargestellten Ereignis."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G53YCFQAWZB458ZQMM4",
+          "slug": "g8-reichsgruendung-bildkritik",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=reichsgruendung",
+          "question": "Warum ist die helle Uniform Bismarcks im Historiengemälde kein sicherer Beleg für seine Kleidung am 18. Januar 1871?",
+          "concept": "Der Maler gestaltete eine spätere Fassung als Geschenk für Bismarck. Die auffällige Uniform kann ihn ins Zentrum rücken. Für die wirkliche Kleidung sind andere Zeugnisse nötig.",
+          "materiality": "material",
+          "sample_solution": "Der Maler gestaltete eine spätere Fassung als Geschenk für Bismarck. Die auffällige Uniform kann ihn ins Zentrum rücken. Für die wirkliche Kleidung sind andere Zeugnisse nötig."
+        }
+      ]
+    },
+    {
+      "id": "01M8GC4G52GV6WXNYPXY6YVFYX",
+      "atom_uri": "urn:zam:atom:01M8GC4G52GV6WXNYPXY6YVFYX",
+      "namespace": "zam-academy-geschichte-gymnasium-8",
+      "slug": "g8-reichsverfassung",
+      "title": "Wer hatte Macht im Kaiserreich?",
+      "domain": "geschichte/kaiserreich",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=reichsverfassung",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GC4G52S5T5HY6BPXF4225G",
+          "type": "soft",
+          "rationale": "Die frühere Lektion erklärt einen Begriff, eine Methode oder einen historischen Zusammenhang für diese Lektion."
+        },
+        {
+          "atom_id": "01M8GC4G52EB83HRWVNM8ZKXGT",
+          "type": "soft",
+          "rationale": "Die frühere Lektion erklärt einen Begriff, eine Methode oder einen historischen Zusammenhang für diese Lektion."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-8",
+          "topic_code": "lb5",
+          "topic_title": "Das Deutsche Kaiserreich"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "geschichte",
+          "topic_code": "lb5",
+          "topic_title": "Das Deutsche Kaiserreich",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GC4G53DVEP3BCP84MGBEW2",
+          "slug": "g8-reichsverfassung-kanzler",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=reichsverfassung",
+          "question": "Wer ernannte im Kaiserreich den Reichskanzler?",
+          "concept": "Der Deutsche Kaiser.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Der Deutsche Kaiser.",
+              "Der Reichstag."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G53ZNPRZYR64BBCGFVM",
+          "slug": "g8-reichsverfassung-bundesrat",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=reichsverfassung",
+          "question": "Wen vertrat der Bundesrat des Deutschen Kaiserreichs?",
+          "concept": "Die Regierungen der Bundesstaaten.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Regierungen der Bundesstaaten.",
+              "Die unmittelbar wahlberechtigten Bürger."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G53K225Z8X0205817F3",
+          "slug": "g8-reichsverfassung-partizipation",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=reichsverfassung",
+          "question": "Warum war der Reichstag an der Gesetzgebung beteiligt, ohne die Regierung zu bestimmen?",
+          "concept": "Reichsgesetze brauchten seine Zustimmung. Der Kaiser ernannte jedoch den Kanzler, der für sein Amt keine Mehrheit im Reichstag brauchte.",
+          "materiality": "material",
+          "sample_solution": "Reichsgesetze brauchten seine Zustimmung. Der Kaiser ernannte jedoch den Kanzler, der für sein Amt keine Mehrheit im Reichstag brauchte."
+        }
+      ]
+    },
+    {
+      "id": "01M8GC4G526FS7J4S1BC64Z6H5",
+      "atom_uri": "urn:zam:atom:01M8GC4G526FS7J4S1BC64Z6H5",
+      "namespace": "zam-academy-geschichte-gymnasium-8",
+      "slug": "g8-bismarck-sozialpolitik",
+      "title": "Bismarcks Sozialpolitik zwischen Schutz und Kontrolle",
+      "domain": "geschichte/kaiserreich",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=bismarck-sozialpolitik",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GC4G52NP4V9XGQHJY0RPKN",
+          "type": "soft",
+          "rationale": "Die frühere Lektion erklärt einen Begriff, eine Methode oder einen historischen Zusammenhang für diese Lektion."
+        },
+        {
+          "atom_id": "01M8GC4G52GV6WXNYPXY6YVFYX",
+          "type": "soft",
+          "rationale": "Die frühere Lektion erklärt einen Begriff, eine Methode oder einen historischen Zusammenhang für diese Lektion."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-8",
+          "topic_code": "lb5",
+          "topic_title": "Das Deutsche Kaiserreich"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "geschichte",
+          "topic_code": "lb5",
+          "topic_title": "Das Deutsche Kaiserreich",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GC4G53RNQNDRMX6W4PDC70",
+          "slug": "g8-bismarck-sozialpolitik-versicherung",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=bismarck-sozialpolitik",
+          "question": "Welche Sozialversicherung führte das Reich 1883 ein?",
+          "concept": "Die Krankenversicherung.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Krankenversicherung.",
+              "Die Invaliditäts- und Altersversicherung."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G538W0AM43065MKZH3Z",
+          "slug": "g8-bismarck-sozialpolitik-sozialistengesetz",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=bismarck-sozialpolitik",
+          "question": "Was sollte das Sozialistengesetz von 1878 unter anderem einschränken?",
+          "concept": "Sozialdemokratische Vereine, Versammlungen und Schriften.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sozialdemokratische Vereine, Versammlungen und Schriften.",
+              "Den Anspruch versicherter Arbeiter auf Krankenunterstützung."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G536YD0HSYC15311BPC",
+          "slug": "g8-bismarck-sozialpolitik-doppelstrategie",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=bismarck-sozialpolitik",
+          "question": "Wie verband Bismarck soziale Absicherung mit politischem Druck?",
+          "concept": "Versicherungen schufen Schutz und sollten Arbeiter an den Staat binden. Das Sozialistengesetz schränkte zugleich die Organisation der politischen Opposition ein.",
+          "materiality": "material",
+          "sample_solution": "Versicherungen schufen Schutz und sollten Arbeiter an den Staat binden. Das Sozialistengesetz schränkte zugleich die Organisation der politischen Opposition ein."
+        }
+      ]
+    },
+    {
+      "id": "01M8GC4G52AA7Z7W1QJ7DAKP04",
+      "atom_uri": "urn:zam:atom:01M8GC4G52AA7Z7W1QJ7DAKP04",
+      "namespace": "zam-academy-geschichte-gymnasium-8",
+      "slug": "g8-massengesellschaft",
+      "title": "Moderner Alltag und alte Macht",
+      "domain": "geschichte/kaiserreich",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=massengesellschaft",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GC4G52GV6WXNYPXY6YVFYX",
+          "type": "soft",
+          "rationale": "Die frühere Lektion erklärt einen Begriff, eine Methode oder einen historischen Zusammenhang für diese Lektion."
+        },
+        {
+          "atom_id": "01M8GC4G52HTX6GTVWKSR1B9Q2",
+          "type": "soft",
+          "rationale": "Die frühere Lektion erklärt einen Begriff, eine Methode oder einen historischen Zusammenhang für diese Lektion."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-8",
+          "topic_code": "lb5",
+          "topic_title": "Das Deutsche Kaiserreich"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "geschichte",
+          "topic_code": "lb5",
+          "topic_title": "Das Deutsche Kaiserreich",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GC4G53R139AA63CD0Y5B1E",
+          "slug": "g8-massengesellschaft-presse",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=massengesellschaft",
+          "question": "Weshalb gehörten Zeitungen zur modernen Massenkultur?",
+          "concept": "Sie erreichten im Kaiserreich ein wachsendes Publikum.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sie erreichten im Kaiserreich ein wachsendes Publikum.",
+              "Sie waren auf Behörden und den Hof beschränkt."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G53T73V08P97DNGPWJ1",
+          "slug": "g8-massengesellschaft-militarismus",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=massengesellschaft",
+          "question": "Was bezeichnet Militarismus im gesellschaftlichen Leben des Kaiserreichs?",
+          "concept": "Das hohe Ansehen militärischer Werte und Ordnung auch im zivilen Leben.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Das hohe Ansehen militärischer Werte und Ordnung auch im zivilen Leben.",
+              "Die Gleichstellung von Männern und Frauen bei Wahlen."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G53FQ4C4XQS3DR6YQZC",
+          "slug": "g8-massengesellschaft-frauenbewegung",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=massengesellschaft",
+          "question": "Was zeigt die Frauenbewegung über Modernisierung und Teilhabe im Kaiserreich?",
+          "concept": "Frauen organisierten sich öffentlich für Bildung und Rechte. Das Reichstagswahlrecht blieb ihnen jedoch versagt. Gesellschaftliche Beteiligung und Wahlrecht entwickelten sich verschieden.",
+          "materiality": "material",
+          "sample_solution": "Frauen organisierten sich öffentlich für Bildung und Rechte. Das Reichstagswahlrecht blieb ihnen jedoch versagt. Gesellschaftliche Beteiligung und Wahlrecht entwickelten sich verschieden."
+        }
+      ]
+    },
+    {
+      "id": "01M8GC4G52NP15BVN4DHRZQYRB",
+      "atom_uri": "urn:zam:atom:01M8GC4G52NP15BVN4DHRZQYRB",
+      "namespace": "zam-academy-geschichte-gymnasium-8",
+      "slug": "g8-imperialismus",
+      "title": "Koloniale Herrschaft und Widerstand",
+      "domain": "geschichte/imperialismus-und-weltkrieg",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=imperialismus",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GC4G52S5T5HY6BPXF4225G",
+          "type": "soft",
+          "rationale": "Die frühere Lektion erklärt einen Begriff, eine Methode oder einen historischen Zusammenhang für diese Lektion."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-8",
+          "topic_code": "lb6",
+          "topic_title": "Imperialismus und Erster Weltkrieg"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "geschichte",
+          "topic_code": "lb6",
+          "topic_title": "Imperialismus und Erster Weltkrieg",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GC4G53WEE57JPJPFKZV96P",
+          "slug": "g8-imperialismus-begriff",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=imperialismus",
+          "question": "Was bedeutet Imperialismus?",
+          "concept": "Das Streben eines Staates nach Herrschaft und Einfluss über andere Gebiete.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Das Streben eines Staates nach Herrschaft und Einfluss über andere Gebiete.",
+              "Die unbeschränkte Selbstbestimmung aller Gebiete eines Reichs."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G537RQ2HT3J2VTV4X17",
+          "slug": "g8-imperialismus-namibia",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=imperialismus",
+          "question": "In welchem heutigen Staat lag der Kern von Deutsch-Südwestafrika?",
+          "concept": "Namibia.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Namibia.",
+              "Äthiopien."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G534Z7ABBF147P7BDWF",
+          "slug": "g8-imperialismus-widerstand",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=imperialismus",
+          "question": "Warum gehört die Perspektive der Ovaherero und Nama zur Geschichte deutscher Kolonialherrschaft?",
+          "concept": "Sie leisteten Widerstand gegen die Herrschaft und wurden Opfer deutscher Verfolgung und eines Völkermords. Eine Karte der Kolonialmacht zeigt diese Erfahrungen kaum.",
+          "materiality": "material",
+          "sample_solution": "Sie leisteten Widerstand gegen die Herrschaft und wurden Opfer deutscher Verfolgung und eines Völkermords. Eine Karte der Kolonialmacht zeigt diese Erfahrungen kaum."
+        }
+      ]
+    },
+    {
+      "id": "01M8GC4G52PDX1K7JCE8DRBPFV",
+      "atom_uri": "urn:zam:atom:01M8GC4G52PDX1K7JCE8DRBPFV",
+      "namespace": "zam-academy-geschichte-gymnasium-8",
+      "slug": "g8-julikrise",
+      "title": "Warum wurde aus einer Krise ein Weltkrieg?",
+      "domain": "geschichte/imperialismus-und-weltkrieg",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=julikrise",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GC4G52NP15BVN4DHRZQYRB",
+          "type": "soft",
+          "rationale": "Die frühere Lektion erklärt einen Begriff, eine Methode oder einen historischen Zusammenhang für diese Lektion."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-8",
+          "topic_code": "lb6",
+          "topic_title": "Imperialismus und Erster Weltkrieg"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "geschichte",
+          "topic_code": "lb6",
+          "topic_title": "Imperialismus und Erster Weltkrieg",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GC4G538B4SS2XFB3XTV4QW",
+          "slug": "g8-julikrise-anlass",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=julikrise",
+          "question": "Welches Ereignis löste im Juni 1914 die Julikrise aus?",
+          "concept": "Die Ermordung Franz Ferdinands in Sarajevo.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Ermordung Franz Ferdinands in Sarajevo.",
+              "Der Kriegseintritt der USA."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G53VWFHQX5KCVQB7CXG",
+          "slug": "g8-julikrise-langfristig",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=julikrise",
+          "question": "Was war eine längerfristige Bedingung für den Kriegsausbruch 1914?",
+          "concept": "Wettrüsten und Rivalität der Großmächte.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Wettrüsten und Rivalität der Großmächte.",
+              "Die österreichisch-ungarische Kriegserklärung vom Juli 1914."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G53QCD2DSBW3HKX2VHW",
+          "slug": "g8-julikrise-ursachenkette",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=julikrise",
+          "question": "Warum erklärt das Attentat von Sarajevo allein den Weltkrieg nicht?",
+          "concept": "Es erklärt den Anlass. Rivalitäten erhöhten das Risiko, und Entscheidungen wie der deutsche Rückhalt für Österreich-Ungarn und dessen Kriegserklärung verschärften die Krise.",
+          "materiality": "material",
+          "sample_solution": "Es erklärt den Anlass. Rivalitäten erhöhten das Risiko, und Entscheidungen wie der deutsche Rückhalt für Österreich-Ungarn und dessen Kriegserklärung verschärften die Krise."
+        }
+      ]
+    },
+    {
+      "id": "01M8GC4G52MW9CA9J84FEEHK6K",
+      "atom_uri": "urn:zam:atom:01M8GC4G52MW9CA9J84FEEHK6K",
+      "namespace": "zam-academy-geschichte-gymnasium-8",
+      "slug": "g8-massenkrieg",
+      "title": "Wie veränderte der Krieg das Leben an Front und Heimat?",
+      "domain": "geschichte/imperialismus-und-weltkrieg",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=massenkrieg",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GC4G52PDX1K7JCE8DRBPFV",
+          "type": "soft",
+          "rationale": "Die frühere Lektion erklärt einen Begriff, eine Methode oder einen historischen Zusammenhang für diese Lektion."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-8",
+          "topic_code": "lb6",
+          "topic_title": "Imperialismus und Erster Weltkrieg"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "geschichte",
+          "topic_code": "lb6",
+          "topic_title": "Imperialismus und Erster Weltkrieg",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GC4G538NW6Z9YNDDNXCEQX",
+          "slug": "g8-massenkrieg-zeitraum",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=massenkrieg",
+          "question": "Wann dauerte der Erste Weltkrieg?",
+          "concept": "1914 bis 1918.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "1914 bis 1918.",
+              "1917 bis 1919."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G53E60EFZNZK1KG3EKV",
+          "slug": "g8-massenkrieg-stellungskrieg",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=massenkrieg",
+          "question": "Was kennzeichnet den Stellungskrieg an der Westfront?",
+          "concept": "Gegner stehen sich lange in befestigten Stellungen gegenüber.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Gegner stehen sich lange in befestigten Stellungen gegenüber.",
+              "Die Front verlagert sich rasch und ohne feste Stellungen."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G53DVVQ23PMXK2BNQ93",
+          "slug": "g8-massenkrieg-quellenwert",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=massenkrieg",
+          "question": "Welche unterschiedliche Aussagekraft haben Feldpost und eine Lebensmittelkarte?",
+          "concept": "Feldpost kann persönliche Erfahrungen und Mitteilungsabsichten zeigen. Eine Lebensmittelkarte belegt Regeln für zivile Zuteilung, aber nicht die tatsächlich verfügbare Menge.",
+          "materiality": "material",
+          "sample_solution": "Feldpost kann persönliche Erfahrungen und Mitteilungsabsichten zeigen. Eine Lebensmittelkarte belegt Regeln für zivile Zuteilung, aber nicht die tatsächlich verfügbare Menge."
+        }
+      ]
+    },
+    {
+      "id": "01M8GC4G529Y06TERX8CENR049",
+      "atom_uri": "urn:zam:atom:01M8GC4G529Y06TERX8CENR049",
+      "namespace": "zam-academy-geschichte-gymnasium-8",
+      "slug": "g8-epochenjahr-1917",
+      "title": "Warum gilt 1917 als Epochenjahr?",
+      "domain": "geschichte/imperialismus-und-weltkrieg",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=epochenjahr-1917",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GC4G52MW9CA9J84FEEHK6K",
+          "type": "soft",
+          "rationale": "Die frühere Lektion erklärt einen Begriff, eine Methode oder einen historischen Zusammenhang für diese Lektion."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-8",
+          "topic_code": "lb6",
+          "topic_title": "Imperialismus und Erster Weltkrieg"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "geschichte",
+          "topic_code": "lb6",
+          "topic_title": "Imperialismus und Erster Weltkrieg",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GC4G53E7XN86QQKGJB4WRS",
+          "slug": "g8-epochenjahr-1917-kriegseintritt",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=epochenjahr-1917",
+          "question": "In welchem Jahr traten die USA in den Ersten Weltkrieg ein?",
+          "concept": "1917.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "1917.",
+              "1918."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G53FJM8GQ8H5DRKZK8X",
+          "slug": "g8-epochenjahr-1917-revolution",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=epochenjahr-1917",
+          "question": "Wer übernahm in Russland bei der Oktoberrevolution die Macht?",
+          "concept": "Die Bolschewiki.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Bolschewiki.",
+              "Die Provisorische Regierung."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G53QS7P2QGGF3K5YEG7",
+          "slug": "g8-epochenjahr-1917-epochenjahr",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=epochenjahr-1917",
+          "question": "Warum kann 1917 als Epochenjahr gelten?",
+          "concept": "Der Kriegseintritt der USA stärkte die Entente. Die russischen Revolutionen veränderten die politische Ordnung Russlands und führten 1918 zu seinem Ausscheiden aus dem Krieg.",
+          "materiality": "material",
+          "sample_solution": "Der Kriegseintritt der USA stärkte die Entente. Die russischen Revolutionen veränderten die politische Ordnung Russlands und führten 1918 zu seinem Ausscheiden aus dem Krieg."
+        }
+      ]
+    },
+    {
+      "id": "01M8GC4G52V1H26DYV2EXTA5W0",
+      "atom_uri": "urn:zam:atom:01M8GC4G52V1H26DYV2EXTA5W0",
+      "namespace": "zam-academy-geschichte-gymnasium-8",
+      "slug": "g8-friedensordnung",
+      "title": "Was regelten die Friedensverträge?",
+      "domain": "geschichte/imperialismus-und-weltkrieg",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=friedensordnung",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GC4G529Y06TERX8CENR049",
+          "type": "soft",
+          "rationale": "Die frühere Lektion erklärt einen Begriff, eine Methode oder einen historischen Zusammenhang für diese Lektion."
+        },
+        {
+          "atom_id": "01M8GC4G52PDX1K7JCE8DRBPFV",
+          "type": "soft",
+          "rationale": "Die frühere Lektion erklärt einen Begriff, eine Methode oder einen historischen Zusammenhang für diese Lektion."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-8",
+          "topic_code": "lb6",
+          "topic_title": "Imperialismus und Erster Weltkrieg"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "geschichte",
+          "topic_code": "lb6",
+          "topic_title": "Imperialismus und Erster Weltkrieg",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GC4G53AB5MG2K340C1NWGH",
+          "slug": "g8-friedensordnung-vertrag",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=friedensordnung",
+          "question": "Welcher Friedensvertrag wurde 1919 mit Deutschland geschlossen?",
+          "concept": "Der Vertrag von Versailles.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Der Vertrag von Versailles.",
+              "Der Vertrag von Brest-Litowsk."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G53DQNYPCBRAZE8RRV7",
+          "slug": "g8-friedensordnung-elsass",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=friedensordnung",
+          "question": "An welchen Staat fiel Elsass-Lothringen nach dem Ersten Weltkrieg?",
+          "concept": "Frankreich.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Frankreich.",
+              "Österreich."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8GC4G53W3FQ1B6CV2NPW6BE",
+          "slug": "g8-friedensordnung-verantwortung",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-8/#lesson=friedensordnung",
+          "question": "Warum ersetzt Artikel 231 des Versailler Vertrags keine historische Erklärung des Kriegsausbruchs?",
+          "concept": "Die Vertragsregel weist Deutschland und seinen Verbündeten Verantwortung für die Schäden zu und begründet Reparationen. Eine historische Erklärung untersucht Ursachen und Entscheidungen mehrerer Akteure.",
+          "materiality": "material",
+          "sample_solution": "Die Vertragsregel weist Deutschland und seinen Verbündeten Verantwortung für die Schäden zu und begründet Reparationen. Eine historische Erklärung untersucht Ursachen und Entscheidungen mehrerer Akteure."
+        }
+      ]
+    }
+  ]
+}
