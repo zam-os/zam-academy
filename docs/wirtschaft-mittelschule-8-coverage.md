@@ -54,7 +54,7 @@ Das Lärmlabor zieht Dämmwerte vereinfacht ab und sagt das; das Kreislauflabor 
 
 [`replaces-de-by.json`](../wirtschaft-mittelschule-8/replaces-de-by.json) ist `"status": "proposal-only"`, `"approved": null`, mit leeren `sources` und `rows`. In `zam-os/zam` (Stand `c92f4e383385ee487cd8b30f73b3bf3cb27b0860`, `tests/fixtures/curriculum/`) gibt es keine `de-by:mittelschule-*`-Zelle; die Wirtschaftszellen gehören zu Realschule und Gymnasium (u. a. `de-by:realschule-8-wirtschaft-recht-konsum-geld-jugend`, `de-by:realschule-10-wirtschaft-recht-strafrecht-arbeitsrecht-sozialstaat`, `de-by:gymnasium-9-wirtschaft-recht-arbeitsrecht-soziale-marktwirtschaft-konjunktur`) und bleiben dort. [`cell.json`](../wirtschaft-mittelschule-8/cell.json) deklariert `31` neue Atome und `62` neue Karten ohne `replaces` oder `retired_items`.
 
-**Offene Frage an Thomas (`AGENTS.md` § 6):** Sollen thematisch benachbarte Zellen anderer Schularten, etwa die Arbeitsrecht-Zellen der Realschule 10 und des Gymnasiums 9, bei ihrer Schulart bleiben und nicht in `wirtschaft-mittelschule-8` gemappt werden?
+**Entscheidung (`AGENTS.md` § 6):** Thematisch benachbarte Zellen anderer Schularten, etwa die Arbeitsrecht-Zellen der Realschule 10 und des Gymnasiums 9, bleiben bei ihrer Schulart und werden nicht in `wirtschaft-mittelschule-8` gemappt. Thomas am 28. November 2026 im Gespräch zu PR #225: „Nachbarzellen bleiben bei ihrer Schulart“. Das Mapping bleibt damit ohne Zeilen und braucht keine Freigabe.
 
 ## 7. Datenschutz
 
