@@ -107,6 +107,16 @@ jobs:
       - name: Check verbatim Englisch 7 Realschule curriculum coverage
         if: matrix.app == 'englisch-realschule-7'
         run: node scripts/check-curriculum.mjs
+      - name: Check Grade 8 Gymnasium German curriculum and offline bundle
+        if: matrix.app == 'deutsch-gymnasium-8'
+        run: |
+          node scripts/check-curriculum.mjs
+          node scripts/verify-release.mjs
+      - name: Check Grade 8 Gymnasium German in headless Chrome
+        if: matrix.app == 'deutsch-gymnasium-8'
+        env:
+          CHROME_BIN: /usr/bin/google-chrome
+        run: node scripts/verify-browser.mjs
       - name: Check Grade 6 German curriculum and offline bundle
         if: matrix.app == 'deutsch-realschule-6' || matrix.app == 'deutsch-gymnasium-6'
         run: |
@@ -363,8 +373,12 @@ jobs:
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node deutsch-realschule-7/scripts/validate-migration.mjs
       - name: Verify Grade 7 Gymnasium German enrolment and recall
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node deutsch-gymnasium-7/scripts/validate-cell.mjs
+      - name: Verify Deutsch 8 Gymnasium cell enrolment
+        run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node deutsch-gymnasium-8/scripts/validate-cell.mjs
       - name: Verify approved deutsch-gymnasium-7 history migration
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node deutsch-gymnasium-7/scripts/validate-migration.mjs
+      - name: Verify approved deutsch-gymnasium-8 history migration
+        run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node deutsch-gymnasium-8/scripts/validate-migration.mjs
       - name: Validate approved migration for biologie-gymnasium-6
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node biologie-gymnasium-6/scripts/validate-migration.mjs
       - name: Validate Grade 6 Gymnasium German cell and preserve legacy history
