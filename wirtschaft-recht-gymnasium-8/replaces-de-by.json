@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "status": "approved",
+  "approved": "2026-11-28",
+  "source": "Thomas, Claude Code (Desktop) chat for zam-os/zam-academy PR #222, 2026-11-28: „J04 stilllegen, J01–J03 aktiv lassen“",
+  "note": "Approved: 0 A, 0 B, 4 C. J04 is retired (cell retired_items); J01 to J03 stay active as standalone reviews. No card of the new cell declares replaces, so no history moves. The old cell follows an older Grade 8 curriculum; legal capacity and the purchase contract belong to WR 9 LB 1, and the market mechanism is in neither Grade 8 nor Grade 9.",
+  "source_repository": "zam-os/zam",
+  "source_commit": "c92f4e383385ee487cd8b30f73b3bf3cb27b0860",
+  "sources": [
+    {
+      "file": "tests/fixtures/de-by-gymnasium-8-wirtschaft-recht-markt-geld-verbraucherschutz-kvt.json",
+      "source_path": "tests/fixtures/curriculum/de-by-gymnasium-8-wirtschaft-recht-markt-geld-verbraucherschutz-kvt.json",
+      "sha256": "fd5ff0b3a092c8c1c68b8ae0e7e43d00759101672147e9b798dfb0c3854e6f5d",
+      "tile_id": "de-by:gymnasium-8-wirtschaft-recht-markt-geld-verbraucherschutz",
+      "version": "2026.08.1"
+    }
+  ],
+  "rows": [
+    {
+      "de_by_cell": "de-by:gymnasium-8-wirtschaft-recht-markt-geld-verbraucherschutz",
+      "de_by_id": "01K8G8S0000000000000000J01",
+      "de_by_question": "Was passiert auf einem vollkommenen Markt mit dem Marktpreis, wenn bei unverändertem Angebot die Nachfrage der Konsumenten plötzlich stark ansteigt (Nachfrageüberhang)?",
+      "category": "C",
+      "academy_slug": null,
+      "action": "keep-active",
+      "reason": "The market mechanism (supply, demand, equilibrium price) is not a competence of the LehrplanPLUS Fachlehrplan WR 8 (WWG) nor of WR 9, so the new cell has no lesson and no card on it. The correct single retrieval stays active as a standalone review."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-8-wirtschaft-recht-markt-geld-verbraucherschutz",
+      "de_by_id": "01K8G8S0000000000000000J02",
+      "de_by_question": "Wirtschaftskreislauf (5 Sektoren), Marktmodell mit Angebots- und Nachfragekurve, Gleichgewichtspreis und Preisfunktionen (tier-2 synthesis without a question text; concept and sample solution only)",
+      "category": "C",
+      "academy_slug": null,
+      "action": "keep-active",
+      "reason": "Multi-part synthesis on the extended circular flow, the market model and the functions of prices. None of these topics is part of WR 8 (WWG) under LehrplanPLUS, and a B successor would have to keep the whole old prompt. Kept active; whether a later Grade 10 to 12 package takes it in is a question for Thomas."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-8-wirtschaft-recht-markt-geld-verbraucherschutz",
+      "de_by_id": "01K8G8S0000000000000000J03",
+      "de_by_question": "Welchen rechtlichen Status haben Kaufverträge, die von beschränkt geschäftsfähigen Minderjährigen (7 bis unter 18 Jahre) ohne vorherige Einwilligung der Eltern und ohne Taschengeldparagraf (§ 110 BGB) geschlossen werden?",
+      "category": "C",
+      "academy_slug": null,
+      "action": "keep-active",
+      "reason": "Legal capacity (Stufen der Geschäftsfähigkeit, rechtliche Handlungsmöglichkeiten des beschränkt Geschäftsfähigen) is a WR 9 LB 1 competence under LehrplanPLUS, not WR 8. The new cell teaches Deliktsfähigkeit and Strafmündigkeit instead, which is a different retrieval. Kept active so a future WR 9 Gymnasium package can propose an A row."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-8-wirtschaft-recht-markt-geld-verbraucherschutz",
+      "de_by_id": "01K8G8S0000000000000000J04",
+      "de_by_question": "Geld (Funktionen, Inflation, EZB), Rechtsfähigkeit und Geschäftsfähigkeit, Kaufvertrag, Sachmängelhaftung und Widerrufsrecht (tier-2 synthesis without a question text; concept and sample solution only)",
+      "category": "C",
+      "academy_slug": null,
+      "action": "retire",
+      "reason": "Multi-part synthesis that mixes WR 8 content (functions of money, inflation and the ECB target, now split across wrg8-ge-geldfunktionen and wrg8-ge-geldwert) with WR 9 content (legal capacity, purchase contract, consumer rights). One history must not be spread over several cards, so no successor declares replaces. Its sample solution also claims that § 110 BGB covers only cash payment, which the Realschule 8 mapping already corrected; retiring it is proposed for Thomas's decision."
+    }
+  ]
+}

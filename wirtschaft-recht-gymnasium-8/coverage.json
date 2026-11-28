@@ -1,0 +1,706 @@
+{
+  "curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/8/wirtschaft-und-recht",
+  "checked": "2026-11-28",
+  "curriculum_sha256": "6050359549218ebd0480cf096a1206bba9deb52b49e1005895241a2ad96996d0",
+  "school_type": "gymnasium",
+  "grade": 8,
+  "subject": "wirtschaft-und-recht",
+  "track": "WWG (Wirtschaftswissenschaftliches Gymnasium); the Fachlehrplan WR 8 applies only to this Ausbildungsrichtung.",
+  "required_hours": 84,
+  "units": [
+    {
+      "unit": "1.1",
+      "hours": 16
+    },
+    {
+      "unit": "1.2",
+      "hours": 12
+    },
+    {
+      "unit": "2.1",
+      "hours": 18
+    },
+    {
+      "unit": "2.2",
+      "hours": 20
+    },
+    {
+      "unit": "3",
+      "hours": 18
+    },
+    {
+      "unit": "4.1",
+      "hours": null
+    },
+    {
+      "unit": "4.2",
+      "hours": null
+    },
+    {
+      "unit": "4.3",
+      "hours": null
+    },
+    {
+      "unit": "4.4",
+      "hours": null
+    }
+  ],
+  "core_lessons": 35,
+  "optional_lessons": [
+    "pr-zeitmanagement",
+    "pr-grafiken",
+    "pr-geldgeschichte",
+    "pr-kredit",
+    "pr-fertigungsverfahren",
+    "pr-marketingformen",
+    "pr-jugendschutz",
+    "pr-gericht",
+    "pr-jugendarbeit",
+    "pr-projekt"
+  ],
+  "optional_note": "LB 4 is the Profilbereich am WWG: the Fachlehrplan lets each class choose areas from 4.1 to 4.4 and gives no hours. Its lessons are shown by default but do not count as core lessons.",
+  "practice_measure": {
+    "status": "supported",
+    "evidence": "The app prepares the company visit (LB 2.1) and the project (LB 4.4) with observation questions and a local practice note. The class carries out both outside the app."
+  },
+  "rows": [
+    {
+      "lb": 1,
+      "unit": "1.1",
+      "track": "WWG",
+      "competence": "treffen reflektierte Konsumentscheidungen in ökonomischen Knappheitssituationen mit Blick auf persönliche Anreizsysteme und das Prinzip der Nachhaltigkeit.",
+      "lessons": [
+        "ko-knappheit",
+        "ko-opportunitaetskosten",
+        "ko-nachhaltigkeit",
+        "ko-information",
+        "ko-entscheidungsmatrix"
+      ],
+      "status": "implemented",
+      "evidence": "Scarcity, opportunity costs, incentives, sustainability and consumer information in four lessons; the decision-matrix lab and generated tasks on two levels let learners weigh criteria and justify a purchase."
+    },
+    {
+      "lb": 1,
+      "unit": "1.1",
+      "track": "WWG",
+      "competence": "analysieren Werbung, verkaufspsychologische Maßnahmen sowie verhaltensökonomische Effekte im Hinblick auf die Beeinflussung ihres Konsumverhaltens",
+      "lessons": [
+        "ko-werbung",
+        "ko-verhaltensoekonomie"
+      ],
+      "status": "implemented",
+      "evidence": "AIDA, emotional and influencer advertising, shop psychology, threshold price, anchor, price-quality illusion and artificial scarcity, with a price-tag lab and cases."
+    },
+    {
+      "lb": 1,
+      "unit": "1.2",
+      "track": "WWG",
+      "competence": "schätzen die Bedeutung der Geldwertstabilität aus der Sicht unterschiedlicher Wirtschaftssubjekte, insbesondere vor dem Hintergrund der Funktionen des Geldes ein.",
+      "lessons": [
+        "ge-geldfunktionen",
+        "ge-geldwert"
+      ],
+      "status": "implemented",
+      "evidence": "Functions of money, inflation and deflation from the view of savers, debtors, employees, firms and the state; purchasing-power lab and generated tasks."
+    },
+    {
+      "lb": 1,
+      "unit": "1.2",
+      "track": "WWG",
+      "competence": "wählen geeignete Zahlungsarten situationsbezogen aus.",
+      "lessons": [
+        "ge-zahlungsarten",
+        "ge-digital"
+      ],
+      "status": "implemented",
+      "evidence": "Overview of payment methods, the criteria security, cost and suitability, and digital payment with its risks, decided in sorting tasks and cases."
+    },
+    {
+      "lb": 1,
+      "unit": "1.2",
+      "track": "WWG",
+      "competence": "planen ihre Ausgaben entsprechend den erwarteten Einnahmen und eigenen Sparzielen mit einem Tabellenkalkulationsprogramm.",
+      "lessons": [
+        "ge-haushaltsplan"
+      ],
+      "status": "supported",
+      "evidence": "A household plan with fixed and variable spending, a savings goal and spreadsheet formulas (=SUMME, cell references) in a modelled sheet with generated tasks. Working in a real spreadsheet program happens in class."
+    },
+    {
+      "lb": 1,
+      "unit": "1.2",
+      "track": "WWG",
+      "competence": "beurteilen die finanziellen Konsequenzen ihres Konsumverhaltens, insbesondere mit Blick auf mögliche Gefahren der Überschuldung.",
+      "lessons": [
+        "ge-ueberschuldung"
+      ],
+      "status": "implemented",
+      "evidence": "Causes, consequences and help for over-indebtedness; instalment lab with total cost and generated tasks on extra cost in euros and per cent."
+    },
+    {
+      "lb": 2,
+      "unit": "2.1",
+      "track": "WWG",
+      "competence": "wenden die Grundprinzipien Spezialisierung, Kooperation und Koordination an, um Abläufe in ihrem eigenen Lebensumfeld durch Arbeitsteilung zu verbessern.",
+      "lessons": [
+        "un-arbeitsteilung"
+      ],
+      "status": "implemented",
+      "evidence": "Specialisation, cooperation and coordination applied to school and family tasks; waffle-stand lab with three assignments."
+    },
+    {
+      "lb": 2,
+      "unit": "2.1",
+      "track": "WWG",
+      "competence": "analysieren Unternehmen im Hinblick auf Kernprozesse der Leistungserstellung. Dabei identifizieren sie auch unterstützende Geschäftsprozesse.",
+      "lessons": [
+        "un-ablauf"
+      ],
+      "status": "implemented",
+      "evidence": "Core and supporting processes, ordering a core process and locating a broken hand-over in a case."
+    },
+    {
+      "lb": 2,
+      "unit": "2.1",
+      "track": "WWG",
+      "competence": "stellen den grundlegenden Aufbau von Unternehmen dar.",
+      "lessons": [
+        "un-aufbau"
+      ],
+      "status": "implemented",
+      "evidence": "Positions, departments, authorities and the functional areas procurement, production, sales, administration and management, with an organisation chart."
+    },
+    {
+      "lb": 2,
+      "unit": "2.1",
+      "track": "WWG",
+      "competence": "analysieren, auch im Rahmen einer Betriebserkundung, grundlegende Abläufe im Unternehmen vor dem Hintergrund der Arbeitsteilung. Dabei identifizieren sie Möglichkeiten der Ausgestaltung der Produktion und erkennen den Mehrwert informationstechnologischer Unterstützung.",
+      "lessons": [
+        "un-arbeitsteilung-folgen",
+        "un-ablauf",
+        "un-fertigungstypen",
+        "un-fertigungsverfahren"
+      ],
+      "status": "supported",
+      "evidence": "Advantages and problems of the division of labour, productivity and economic efficiency, production types and methods, and IT support, with a production lab and generated tasks. The lesson prepares observation questions; the company visit itself happens outside the app."
+    },
+    {
+      "lb": 2,
+      "unit": "2.2",
+      "track": "WWG",
+      "competence": "analysieren Präsentationen von Unternehmen und deren Wirkung auf den Adressaten im Hinblick auf Aspekte einer erfolgreichen Präsentation.",
+      "lessons": [
+        "ma-praesentation"
+      ],
+      "status": "implemented",
+      "evidence": "Target group, reduction, visualisation and language applied to described company presentations in a case and two writing tasks."
+    },
+    {
+      "lb": 2,
+      "unit": "2.2",
+      "track": "WWG",
+      "competence": "schätzen am Beispiel konkreter Produkte aus ihrer Erfahrungswelt die Bedeutung des Marketings für den Unternehmenserfolg ein.",
+      "lessons": [
+        "ma-marketing"
+      ],
+      "status": "implemented",
+      "evidence": "Buyer's and seller's markets, marketing as a market-oriented philosophy and its role for success, judged on products from the learners' world."
+    },
+    {
+      "lb": 2,
+      "unit": "2.2",
+      "track": "WWG",
+      "competence": "analysieren konkrete Maßnahmen aus verschiedenen Marketingbereichen im Hinblick auf deren Ziele, Ausgestaltung und Wirkungsweise.",
+      "lessons": [
+        "ma-marktanalyse",
+        "ma-produkt",
+        "ma-portfolio",
+        "ma-preis",
+        "ma-distribution",
+        "ma-kommunikation"
+      ],
+      "status": "implemented",
+      "evidence": "Market analysis and the marketing mix: product life cycle, portfolio, pricing and calculation, distribution and communication, with three labs and generated tasks on market share and price calculation."
+    },
+    {
+      "lb": 2,
+      "unit": "2.2",
+      "track": "WWG",
+      "competence": "stellen für ausgewählte Produkte aufeinander abgestimmte Maßnahmen als einfaches Marketingkonzept zusammen. Dabei begründen sie ihre Auswahl kriterienbezogen.",
+      "lessons": [
+        "ma-konzept"
+      ],
+      "status": "implemented",
+      "evidence": "A simple marketing concept chosen by target group, market volume and life-cycle phase; the life-cycle lab checks consistent concepts for three phases."
+    },
+    {
+      "lb": 3,
+      "unit": "3",
+      "track": "WWG",
+      "competence": "beurteilen die Notwendigkeit rechtlicher Regelungen vor dem Hintergrund zentraler Funktionen des Rechts.",
+      "lessons": [
+        "re-funktionen"
+      ],
+      "status": "implemented",
+      "evidence": "Functions of law (order, peace, protection, freedom, justice) and the limits of freedom under Art. 2 GG, judged in a case and two writing tasks."
+    },
+    {
+      "lb": 3,
+      "unit": "3",
+      "track": "WWG",
+      "competence": "vollziehen an authentischen Fallbeispielen zur unerlaubten Handlung sowie zum Strafrecht die Anwendung einschlägiger Normen nach. Dazu analysieren sie diese in vereinfachter Form.",
+      "lessons": [
+        "re-zivil-straf",
+        "re-normen",
+        "re-unerlaubte-handlung",
+        "re-straftat"
+      ],
+      "status": "implemented",
+      "evidence": "Civil and criminal law, elements of an offence and legal consequence, subsumption under § 823 BGB and § 242 StGB in simplified form. The cases are realistic invented examples; authentic cases from the news or court reports are added in class."
+    },
+    {
+      "lb": 3,
+      "unit": "3",
+      "track": "WWG",
+      "competence": "schätzen die rechtlichen Konsequenzen widerrechtlichen Handelns ab.",
+      "lessons": [
+        "re-zivil-straf",
+        "re-unerlaubte-handlung",
+        "re-straftat"
+      ],
+      "status": "implemented",
+      "evidence": "Damages, tortious capacity by age, parental supervision, criminal responsibility from 14 and the consequences of juvenile criminal law, with an age lab for both legal areas."
+    },
+    {
+      "lb": 3,
+      "unit": "3",
+      "track": "WWG",
+      "competence": "handeln rechtssicher im Internet, indem sie wesentliche, für sie relevante Rechtsnormen beachten.",
+      "lessons": [
+        "re-internet"
+      ],
+      "status": "implemented",
+      "evidence": "Right to one's own image, insult and defamation online, data protection with the age of 16 for consent, and rules for class chats."
+    },
+    {
+      "lb": 3,
+      "unit": "3",
+      "track": "WWG",
+      "competence": "reflektieren sowohl im privaten als auch im schulischen Alltag den Schutz von geistigem Eigentum und Persönlichkeitsrechten. Dabei beachten sie auch wesentliche Bestimmungen des Urheberrechts.",
+      "lessons": [
+        "re-urheberrecht",
+        "re-internet"
+      ],
+      "status": "implemented",
+      "evidence": "Intellectual property, protected works, the 70-year term, private copy, quotation, teaching use, licences and consequences of infringement, applied to school situations."
+    }
+  ],
+  "optional_rows": [
+    {
+      "lb": 4,
+      "unit": "4.1",
+      "track": "WWG",
+      "competence": "vertiefen ihre Kompetenzen aus dem Lernbereich „8.1 Ökonomisches Handeln im privaten Haushalt“ anhand der folgenden Inhalte.",
+      "lessons": [
+        "pr-zeitmanagement",
+        "pr-grafiken",
+        "pr-geldgeschichte",
+        "pr-kredit"
+      ],
+      "status": "implemented",
+      "evidence": "Personal time management, reading and making charts on consumption with a chart lab, the history and properties of money, and credit with its securities."
+    },
+    {
+      "lb": 4,
+      "unit": "4.2",
+      "track": "WWG",
+      "competence": "vertiefen ihre Kompetenzen aus dem Lernbereich „8.2 Ökonomisches Handeln im Unternehmen“ anhand der folgenden Inhalte.",
+      "lessons": [
+        "pr-fertigungsverfahren",
+        "pr-marketingformen"
+      ],
+      "status": "implemented",
+      "evidence": "Construction-site and group (island) production; viral, neuro and guerrilla marketing with chances and limits."
+    },
+    {
+      "lb": 4,
+      "unit": "4.3",
+      "track": "WWG",
+      "competence": "vertiefen ihre Kompetenzen aus dem Lernbereich „8.3 Rechtlich verantwortliches Handeln“ anhand der folgenden Inhalte.",
+      "lessons": [
+        "pr-jugendschutz",
+        "pr-gericht",
+        "pr-jugendarbeit"
+      ],
+      "status": "supported",
+      "evidence": "Youth protection act with a lab, criminal and civil procedure, and the youth labour protection act, each with cases from civil, juvenile criminal and media law. A visit to a court hearing happens outside the app."
+    },
+    {
+      "lb": 4,
+      "unit": "4.4",
+      "track": "WWG",
+      "competence": "führen ein Projekt zu einer ausgewählten Themenstellung durch.",
+      "lessons": [
+        "pr-projekt"
+      ],
+      "status": "supported",
+      "evidence": "Project phases, research and presentation rules, case study, business game and competitions are explained and prepared; the project itself is carried out by the class outside the app."
+    }
+  ],
+  "contents": [
+    {
+      "unit": "1.1",
+      "content": "Knappheit, Bedürfnisse, Opportunitätskosten, Kosten-Nutzen-Analyse, Wirtschaftlichkeitsprinzip",
+      "lessons": [
+        "ko-knappheit",
+        "ko-opportunitaetskosten"
+      ]
+    },
+    {
+      "unit": "1.1",
+      "content": "Prinzip der Nachhaltigkeit: ökonomische, ökologische und soziale Aspekte",
+      "lessons": [
+        "ko-nachhaltigkeit"
+      ]
+    },
+    {
+      "unit": "1.1",
+      "content": "Informationsmöglichkeiten des Verbrauchers, z. B. Testberichte, Vergleichsportale, Öko- und Soziallabels",
+      "lessons": [
+        "ko-information"
+      ]
+    },
+    {
+      "unit": "1.1",
+      "content": "Methoden der Entscheidungsfindung, z. B. Entscheidungsmatrix",
+      "lessons": [
+        "ko-entscheidungsmatrix"
+      ]
+    },
+    {
+      "unit": "1.1",
+      "content": "Techniken der Werbung, verkaufspsychologische Maßnahmen, verhaltensökonomische Effekte, z. B. Schwelleneffekt bei Preisen, Preis-Qualitäts-Illusion",
+      "lessons": [
+        "ko-werbung",
+        "ko-verhaltensoekonomie"
+      ]
+    },
+    {
+      "unit": "1.2",
+      "content": "Geldwertstabilität, Geldfunktionen",
+      "lessons": [
+        "ge-geldfunktionen",
+        "ge-geldwert"
+      ]
+    },
+    {
+      "unit": "1.2",
+      "content": "Überblick über wichtige Zahlungsarten",
+      "lessons": [
+        "ge-zahlungsarten"
+      ]
+    },
+    {
+      "unit": "1.2",
+      "content": "Kriterien der Auswahl geeigneter Zahlungsarten, z. B. Sicherheit, Kosten, Zweckmäßigkeit",
+      "lessons": [
+        "ge-zahlungsarten"
+      ]
+    },
+    {
+      "unit": "1.2",
+      "content": "aktuelle Entwicklungen im Zahlungsverkehr, insbesondere digitale Zahlungsverfahren: Möglichkeiten und Risiken",
+      "lessons": [
+        "ge-digital"
+      ]
+    },
+    {
+      "unit": "1.2",
+      "content": "Haushaltsplan",
+      "lessons": [
+        "ge-haushaltsplan"
+      ]
+    },
+    {
+      "unit": "1.2",
+      "content": "häufige Ursachen und Folgen von Überschuldung",
+      "lessons": [
+        "ge-ueberschuldung"
+      ]
+    },
+    {
+      "unit": "2.1",
+      "content": "Spezialisierung, Kooperation und Koordination bei der Arbeitsteilung",
+      "lessons": [
+        "un-arbeitsteilung"
+      ]
+    },
+    {
+      "unit": "2.1",
+      "content": "Vorteile und Probleme der Arbeitsteilung",
+      "lessons": [
+        "un-arbeitsteilung-folgen"
+      ]
+    },
+    {
+      "unit": "2.1",
+      "content": "Wirtschaftlichkeitsprinzip im Unternehmen und Arbeitsteilung",
+      "lessons": [
+        "un-arbeitsteilung-folgen"
+      ]
+    },
+    {
+      "unit": "2.1",
+      "content": "Aufbauorganisation eines Unternehmens im Überblick, z. B. Beschaffung, Produktion, Absatz, Leitung und Verwaltung",
+      "lessons": [
+        "un-aufbau"
+      ]
+    },
+    {
+      "unit": "2.1",
+      "content": "Ablauforganisation eines Unternehmens mit Schwerpunkt auf den Kernprozessen",
+      "lessons": [
+        "un-ablauf"
+      ]
+    },
+    {
+      "unit": "2.1",
+      "content": "Zusammenspiel von Ablauf- und Aufbauorganisation",
+      "lessons": [
+        "un-ablauf"
+      ]
+    },
+    {
+      "unit": "2.1",
+      "content": "Fertigungstypen: Einzel-, Varianten-, Massenfertigung",
+      "lessons": [
+        "un-fertigungstypen"
+      ]
+    },
+    {
+      "unit": "2.1",
+      "content": "Fertigungsverfahren: Werkstatt-, Fließfertigung",
+      "lessons": [
+        "un-fertigungsverfahren"
+      ]
+    },
+    {
+      "unit": "2.2",
+      "content": "Aspekte einer erfolgreichen Präsentation, z. B. Zielgruppenorientierung, Reduktion auf das Wesentliche, Visualisierung, Sprache",
+      "lessons": [
+        "ma-praesentation"
+      ]
+    },
+    {
+      "unit": "2.2",
+      "content": "Marketing als marktorientierte Unternehmensphilosophie auf Käufermärkten",
+      "lessons": [
+        "ma-marketing"
+      ]
+    },
+    {
+      "unit": "2.2",
+      "content": "Marktanalyse und Marketing-Mix",
+      "lessons": [
+        "ma-marktanalyse"
+      ]
+    },
+    {
+      "unit": "2.2",
+      "content": "Produkt- und Sortimentspolitik, z. B. Produktlebenszyklus, Vier-Felder-Portfolioanalyse, Produktgestaltung, Produktinnovation, -variation und -elimination, Sortimentsgestaltung, Bedeutung von Marken",
+      "lessons": [
+        "ma-produkt",
+        "ma-portfolio"
+      ]
+    },
+    {
+      "unit": "2.2",
+      "content": "Preispolitik, z. B. Preisstrategien und Konditionengestaltung, Preiskalkulation",
+      "lessons": [
+        "ma-preis"
+      ]
+    },
+    {
+      "unit": "2.2",
+      "content": "Distributionspolitik, z. B. direkte und indirekte Absatzwege",
+      "lessons": [
+        "ma-distribution"
+      ]
+    },
+    {
+      "unit": "2.2",
+      "content": "Kommunikationspolitik, z. B. Werbung, Öffentlichkeitsarbeit, Verkaufsförderung, moderne Kommunikationsmittel",
+      "lessons": [
+        "ma-kommunikation"
+      ]
+    },
+    {
+      "unit": "2.2",
+      "content": "Kriterien zur Auswahl von Marketingmaßnahmen, z. B. Zielgruppe, Marktvolumen, Phase im Produktlebenszyklus",
+      "lessons": [
+        "ma-konzept"
+      ]
+    },
+    {
+      "unit": "3",
+      "content": "Funktionen des Rechts",
+      "lessons": [
+        "re-funktionen"
+      ]
+    },
+    {
+      "unit": "3",
+      "content": "Abgrenzung von Zivil- und Strafrecht",
+      "lessons": [
+        "re-zivil-straf"
+      ]
+    },
+    {
+      "unit": "3",
+      "content": "widerrechtliches Handeln: unerlaubte Handlung, Straftat",
+      "lessons": [
+        "re-unerlaubte-handlung",
+        "re-straftat"
+      ]
+    },
+    {
+      "unit": "3",
+      "content": "Deliktsfähigkeit, Strafmündigkeit",
+      "lessons": [
+        "re-unerlaubte-handlung",
+        "re-straftat"
+      ]
+    },
+    {
+      "unit": "3",
+      "content": "Konsequenzen widerrechtlichen Handelns im Zivil- und im Strafrecht, insbesondere auch im Jugendstrafrecht",
+      "lessons": [
+        "re-zivil-straf",
+        "re-straftat"
+      ]
+    },
+    {
+      "unit": "3",
+      "content": "Rechtsnormen: Tatbestandsmerkmale und Rechtsfolgen",
+      "lessons": [
+        "re-normen"
+      ]
+    },
+    {
+      "unit": "3",
+      "content": "wichtige Bestimmungen des Medien- und Urheberrechts",
+      "lessons": [
+        "re-internet",
+        "re-urheberrecht"
+      ]
+    },
+    {
+      "unit": "4.1",
+      "content": "persönliches Zeitmanagement",
+      "lessons": [
+        "pr-zeitmanagement"
+      ]
+    },
+    {
+      "unit": "4.1",
+      "content": "Auswerten und Erstellen von Grafiken zum Konsumverhalten",
+      "lessons": [
+        "pr-grafiken"
+      ]
+    },
+    {
+      "unit": "4.1",
+      "content": "Geschichte des Geldes, Geldeigenschaften",
+      "lessons": [
+        "pr-geldgeschichte"
+      ]
+    },
+    {
+      "unit": "4.1",
+      "content": "Möglichkeiten der Kreditaufnahme und -sicherung",
+      "lessons": [
+        "pr-kredit"
+      ]
+    },
+    {
+      "unit": "4.2",
+      "content": "weitere Fertigungsverfahren, z. B. Baustellenfertigung, Inselfertigung",
+      "lessons": [
+        "pr-fertigungsverfahren"
+      ]
+    },
+    {
+      "unit": "4.2",
+      "content": "weitere Formen des Marketings, z. B. virales Marketing, Neuromarketing, Guerillamarketing",
+      "lessons": [
+        "pr-marketingformen"
+      ]
+    },
+    {
+      "unit": "4.3",
+      "content": "Jugendschutzgesetz",
+      "lessons": [
+        "pr-jugendschutz"
+      ]
+    },
+    {
+      "unit": "4.3",
+      "content": "Fallbeispiele aus dem Zivilrecht",
+      "lessons": [
+        "pr-gericht",
+        "re-unerlaubte-handlung"
+      ]
+    },
+    {
+      "unit": "4.3",
+      "content": "Fallbeispiele aus dem Jugendstrafrecht",
+      "lessons": [
+        "re-straftat",
+        "pr-gericht"
+      ]
+    },
+    {
+      "unit": "4.3",
+      "content": "Fallbeispiele aus dem Medien- und Urheberrecht",
+      "lessons": [
+        "re-internet",
+        "re-urheberrecht"
+      ]
+    },
+    {
+      "unit": "4.3",
+      "content": "Strafverfahren, Zivilprozess, ggf. Besuch einer Gerichtsverhandlung",
+      "lessons": [
+        "pr-gericht"
+      ]
+    },
+    {
+      "unit": "4.3",
+      "content": "rechtliche Grundlagen für die Beschäftigung von Minderjährigen",
+      "lessons": [
+        "pr-jugendarbeit"
+      ]
+    },
+    {
+      "unit": "4.4",
+      "content": "Erstellen einer adressatengerechten Unternehmenspräsentation unter Verwendung digitaler Medien, u. a. Recherchetechniken, Präsentationstechniken",
+      "lessons": [
+        "pr-projekt"
+      ]
+    },
+    {
+      "unit": "4.4",
+      "content": "Durchführung ökonomischer Fallstudien und Planspiele",
+      "lessons": [
+        "pr-projekt"
+      ]
+    },
+    {
+      "unit": "4.4",
+      "content": "Teilnahme an ökonomischen Wettbewerben, z. B. zu nachhaltigem Verbraucherverhalten",
+      "lessons": [
+        "pr-projekt"
+      ]
+    }
+  ]
+}
