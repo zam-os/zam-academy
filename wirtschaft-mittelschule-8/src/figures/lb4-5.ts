@@ -64,13 +64,13 @@ export const LB4_5_FIGURES: Record<string, ConceptFigure> = {
     caption: "Jana: kleine Schnittwunde, Eintrag ins Verbandbuch, Lehrkraft informiert; Ali: Belehrung nach § 43 IfSG vor der Großküche.",
     parts: [
       { label: "Pflichten", note: "Pünktlich sein, Anweisungen befolgen, Schutzausrüstung tragen (§ 15 ArbSchG), schweigen über Betriebsgeheimnisse und Daten, Krankmeldung an Betrieb und Schule." },
-      { label: "Rechte", note: "Unterweisung über Gefahren (§ 29 JArbSchG), Pausen und Ansprechperson; kein Lohnanspruch, weil Pflichtpraktikum (§ 22 MiLoG)." },
+      { label: "Rechte", note: "Unterweisung über Gefahren (§ 29 JArbSchG), Pausen und Ansprechperson; kein gesetzlicher Mindestlohn, weil Pflichtpraktikum (§ 22 MiLoG)." },
       { label: "Versicherung", note: "Als Schulveranstaltung ist das Praktikum gesetzlich unfallversichert (§ 2 Abs. 1 Nr. 8 SGB VII); Unfälle der Schule melden." },
     ],
     draw: () =>
       triptych([
         ["Pflichten", (x) => `${P(x, 62, "pünktlich · Anweisungen", "v-blue-fill", 28)}${P(x, 96, "Schutzausrüstung tragen", "v-orange-fill", 28)}${P(x, 130, "Verschwiegenheit", "v-purple-fill", 28)}${P(x, 164, "krank: Betrieb + Schule", "v-coral-fill", 28)}`],
-        ["Rechte", (x) => `${checkLine(x + 18, 86, "Unterweisung (§ 29)", true)}${checkLine(x + 18, 114, "Pausen · Ansprechperson", true)}${checkLine(x + 18, 142, "Mindestlohn", false)}${N(x, 184, "Pflichtpraktikum:\nkein Lohnanspruch\n(§ 22 MiLoG)")}`],
+        ["Rechte", (x) => `${checkLine(x + 18, 86, "Unterweisung (§ 29)", true)}${checkLine(x + 18, 114, "Pausen · Ansprechperson", true)}${checkLine(x + 18, 142, "Mindestlohn", false)}${N(x, 184, "Pflichtpraktikum: kein\ngesetzlicher Mindestlohn\n(§ 22 MiLoG)")}`],
         ["Versicherung", (x) => `${shield(x + 112, 96, 1.1, "v-green")}${P(x, 140, "§ 2 Abs. 1 Nr. 8 SGB VII", "v-green-fill")}${sheetDoc(x + 24, 180, 176, 60, "Unfall", ["Verbandbuch · Lehrkraft"])}`],
       ]),
   },

@@ -295,6 +295,36 @@ describe("answer checking and generated exercises", () => {
     }
   });
 
+  it("prints solution paths that reproduce the accepted answer (review of PR 225)", () => {
+    const de = (t: string): number => Number(t.replace(/\./g, "").replace(",", "."));
+    for (let seed = 1; seed <= 200; seed++) {
+      for (const level of [1, 2] as const) {
+        const where = `${level}/${seed}`;
+        // Energiesparen: Cent werden durch 100 in Euro umgerechnet.
+        const eco = makeExercise("ecoSaving", createRng(seed), level);
+        const m = eco.solution.match(/([\d.,]+) kWh · (\d+) ct : 100 = ([\d.,]+) €/);
+        expect(m, where).not.toBeNull();
+        expect(Math.round(de(m![1]) * Number(m![2])) / 100, where).toBeCloseTo(de(m![3]), 2);
+
+        // Nutzwert: die gedruckten Faktoren ergeben den akzeptierten Nutzwert.
+        const nw = makeExercise("weightedDecision", createRng(seed), level);
+        const sum = nw.solution.match(/((?:\d · [\d,]+ \+ ){3}\d · [\d,]+) = ([\d,]+) Punkte/);
+        expect(sum, where).not.toBeNull();
+        const printed = sum![1].split(" + ").reduce((acc, term) => {
+          const [p, w] = term.split(" · ");
+          return acc + Number(p) * de(w);
+        }, 0);
+        expect(printed, where).toBeCloseTo(de(sum![2]), 6);
+      }
+      // Minutenakkord: Stück · Vorgabezeit · Minutenfaktor ist genau der akzeptierte Akkordlohn.
+      const pr = makeExercise("pieceRate", createRng(seed), 2);
+      const a = pr.solution.match(/Akkordlohn = (\d+) · (\d+) Min\. · ([\d,]+) € = ([\d.,]+) €/);
+      expect(a, String(seed)).not.toBeNull();
+      expect(Number(a![1]) * Number(a![2]) * de(a![3]), String(seed)).toBeCloseTo(de(a![4]), 6);
+      expect(pr.solution).not.toContain("≈");
+    }
+  });
+
   it("never counts a shown answer, a repeated submit, or a reloaded solved task twice", () => {
     const p = freshProgress(),
       lesson = LESSONS.find((l) => l.id === "wi-lohnabrechnung");

@@ -19,6 +19,8 @@ import type { Rng } from "./rng";
 const pick = <T,>(rng: Rng, items: readonly T[]): T => items[rng.int(0, items.length - 1)];
 const hourText = (h: number): string => (Number.isInteger(h) ? `${h}` : `${Math.floor(h)}:30`);
 const weeksText = (n: number): string => `${n} ${n === 1 ? "Woche" : "Wochen"}`;
+/** Gewicht als Dezimalzahl mit so vielen Stellen wie nötig: 30 % → 0,3; 25 % → 0,25. */
+const weightText = (pct: number): string => fmt(pct / 100, pct % 10 === 0 ? 1 : 2);
 
 /**
  * Level 1 is guided (values and a hint for one step); level 2 is a transfer task in the style
@@ -215,7 +217,7 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
             { label: "Eingesparte Energie", answer: kwh, unit: "kWh" },
             { label: "Ersparnis", answer: euro, unit: "€" },
           ],
-          solution: `(${oldW} W − ${newW} W) · ${lamps} · ${fmtInt(hours)} h : 1.000 = ${fmt(kwh)} kWh · ${fmt(kwh)} kWh · ${ct} ct = ${fmt(euro)} €.`,
+          solution: `(${oldW} W − ${newW} W) · ${lamps} · ${fmtInt(hours)} h : 1.000 = ${fmt(kwh)} kWh · Ersparnis = ${fmt(kwh)} kWh · ${ct} ct : 100 = ${fmt(euro)} €.`,
         };
       const cost = pick(rng, [600, 800, 1000, 1200]);
       const years = money(cost / euro);
@@ -227,7 +229,7 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
           { label: "Einsparung", answer: pct, unit: "%" },
           { label: "Amortisation", answer: years, unit: "Jahre" },
         ],
-        solution: `Einsparung = (${oldW} − ${newW}) : ${oldW} · 100 = ${fmt(pct)} % · Ersparnis = ${fmt(kwh)} kWh · ${ct} ct = ${fmt(euro)} € pro Jahr · ${fmtInt(cost)} € : ${fmt(euro)} € = ${fmt(years)} Jahre.`,
+        solution: `Einsparung = (${oldW} − ${newW}) : ${oldW} · 100 = ${fmt(pct)} % · Ersparnis = ${fmt(kwh)} kWh · ${ct} ct : 100 = ${fmt(euro)} € pro Jahr · ${fmtInt(cost)} € : ${fmt(euro)} € = ${fmt(years)} Jahre.`,
       };
     }
 
@@ -326,7 +328,9 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
     }
 
     case "pieceRate": {
-      const rate = pick(rng, [15, 16, 18, 20, 24]);
+      // Richtsätze, deren Minutenfaktor (Richtsatz : 60) auf Cent aufgeht, damit der
+      // Weg Stück · Vorgabezeit · Minutenfaktor genau die akzeptierte Antwort ergibt.
+      const rate = pick(rng, [15, 18, 21, 24]);
       const normal = pick(rng, [10, 12, 15, 20]);
       const hours = pick(rng, [7, 8]);
       const actual = normal + pick(rng, [1, 2, 3, 4, 5]);
@@ -349,7 +353,7 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
           { label: "Leistungsgrad", answer: r.performancePct, unit: "%" },
           { label: "Akkordverdienst je Stunde", answer: r.pieceHourly, unit: "€" },
         ],
-        solution: `Vorgabezeit = 60 : ${normal} = ${fmt(60 / normal)} Min. · Minutenfaktor = ${fmt(rate)} : 60 ≈ ${fmt(minuteFactor)} € · Leistungsgrad = ${actual} : ${normal} · 100 = ${fmt(r.performancePct)} % · Akkordlohn = ${r.pieces} · ${fmt(rate)} € : ${normal} = ${fmt(r.pieceWage)} € · je Stunde ${fmt(r.pieceWage)} € : ${hours} = ${fmt(r.pieceHourly)} €.`,
+        solution: `Vorgabezeit = 60 : ${normal} = ${fmtInt(60 / normal)} Min. · Minutenfaktor = ${fmt(rate)} € : 60 = ${fmt(minuteFactor)} € · Leistungsgrad = ${actual} : ${normal} · 100 = ${fmt(r.performancePct)} % · Akkordlohn = ${r.pieces} · ${fmtInt(60 / normal)} Min. · ${fmt(minuteFactor)} € = ${fmt(r.pieceWage)} € · je Stunde ${fmt(r.pieceWage)} € : ${hours} = ${fmt(r.pieceHourly)} €.`,
       };
     }
 
@@ -521,7 +525,7 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
             { label: "Nutzwert Roboter", answer: sa, unit: "Punkte" },
             { label: "Beitrag Gesundheit", answer: weightedScore([a[1]], [weights[1]]), unit: "Punkte" },
           ],
-          solution: `Nutzwert = ${a.map((p, i) => `${p} · ${fmt(weights[i] / 100, 1)}`).join(" + ")} = ${fmt(sa)} Punkte · Gesundheit: ${a[1]} · ${fmt(weights[1] / 100, 1)} = ${fmt(weightedScore([a[1]], [weights[1]]))} Punkte.`,
+          solution: `Nutzwert = ${a.map((p, i) => `${p} · ${weightText(weights[i])}`).join(" + ")} = ${fmt(sa)} Punkte · Gesundheit: ${a[1]} · ${weightText(weights[1])} = ${fmt(weightedScore([a[1]], [weights[1]]))} Punkte.`,
         };
       return {
         prompt: `Ein Betrieb vergleicht Schweißroboter und Handarbeit mit den Gewichten ${desc}. Punkte (1 bis 5) Roboter: ${a.join(", ")}; Handarbeit: ${b.join(", ")}. Berechne den Nutzwert der Handarbeit und den Unterschied zwischen dem höheren und dem niedrigeren Nutzwert.`,
@@ -530,7 +534,7 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
           { label: "Nutzwert Handarbeit", answer: sb, unit: "Punkte" },
           { label: "Unterschied", answer: money(Math.abs(sa - sb)), unit: "Punkte" },
         ],
-        solution: `Roboter: ${fmt(sa)} Punkte · Handarbeit: ${b.map((p, i) => `${p} · ${fmt(weights[i] / 100, 1)}`).join(" + ")} = ${fmt(sb)} Punkte · Unterschied = ${fmt(money(Math.abs(sa - sb)))} Punkte · ${sa === sb ? "Gleichstand: weitere Kriterien klären." : sa > sb ? "Der Roboter liegt vorne." : "Die Handarbeit liegt vorne."}`,
+        solution: `Roboter: ${fmt(sa)} Punkte · Handarbeit: ${b.map((p, i) => `${p} · ${weightText(weights[i])}`).join(" + ")} = ${fmt(sb)} Punkte · Unterschied = ${fmt(money(Math.abs(sa - sb)))} Punkte · ${sa === sb ? "Gleichstand: weitere Kriterien klären." : sa > sb ? "Der Roboter liegt vorne." : "Die Handarbeit liegt vorne."}`,
       };
     }
   }

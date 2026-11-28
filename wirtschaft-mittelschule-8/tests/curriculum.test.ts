@@ -203,6 +203,25 @@ describe("public learning contract", () => {
     });
 });
 
+describe("legal wording (review of PR 225)", () => {
+  it("excludes only the statutory minimum wage in the school internship, never any pay at all", () => {
+    const texts = [
+      JSON.stringify(LESSONS),
+      JSON.stringify(cell),
+      JSON.stringify(FIGURES),
+      renderFigure("re-praktikum-pflichten-versicherung"),
+    ];
+    for (const text of texts) {
+      expect(text).not.toMatch(/kein(en)? Lohnanspruch|keinen Lohn\b|bekommst keinen Lohn/);
+    }
+    const card = cell.atoms
+      .flatMap((a) => a.practice_items)
+      .find((i) => i.slug === "wib8-re-praktikum-pflichten-versicherung-kern")!;
+    expect(card.sample_solution).toMatch(/pünktlich/);
+    expect(card.sample_solution).not.toMatch(/MiLoG/);
+  });
+});
+
 describe("existing ZAM cards (proposal-only inventory)", () => {
   it("documents no existing Mittelschule WiB cell and proposes no replacements", () => {
     expect(mapping.status).toBe("proposal-only");
