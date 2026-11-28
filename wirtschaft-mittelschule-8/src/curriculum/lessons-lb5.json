@@ -1,0 +1,335 @@
+[
+  {
+    "id": "te-produktionsverfahren",
+    "lb": 5,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 8 · LB 5 · R8 & M8",
+    "title": "Technische Verfahren und Mittel der Produktion erkunden",
+    "intro": "Ob ein Schrank einzeln nach Maß oder Schrauben zu Millionen entstehen: Betriebe wählen ihr Produktionsverfahren und ihre Produktionsmittel nach Menge und Produkt.",
+    "paragraphs": [
+      "Nach der Stückzahl unterscheidet man Einzelfertigung, bei der ein Produkt nach Kundenwunsch entsteht, Serienfertigung, bei der eine begrenzte Anzahl gleicher Produkte hergestellt wird, und Massenfertigung, bei der sehr große Mengen ohne Unterbrechung entstehen. Nach der Organisation unterscheidet man zum Beispiel Werkstattfertigung, bei der gleiche Maschinen in einem Raum stehen und das Werkstück wandert, und Fließfertigung, bei der die Arbeitsplätze in der Reihenfolge der Arbeitsschritte angeordnet sind. Produktionsmittel reichen vom handgeführten Werkzeug über die Maschine mit Antrieb bis zur programmgesteuerten CNC-Maschine und zum Industrieroboter. Bei Betriebserkundung und Praktikum kannst du genau diese Verfahren und Mittel zum Erkundungsschwerpunkt machen.",
+      "Beispiel Möbelbau: Die Schreinerei Lang fertigt einen Einbauschrank für eine Dachschräge, das ist Einzelfertigung in Werkstattfertigung. Für eine Schule stellt sie 120 gleiche Stühle her, das ist Serienfertigung. Früher sägten 3 Beschäftigte in 8 Stunden 48 Stuhlteile von Hand, also 48 : 24 = 2 Teile je Arbeitsstunde. Heute programmiert eine Fachkraft die CNC-Fräse, die in 8 Stunden 64 Teile fräst: 8 Teile je Arbeitsstunde. Die Arbeitsproduktivität ist um (8 − 2) : 2 · 100 % = 300 % gestiegen. Ein Schraubenhersteller dagegen produziert in Massenfertigung auf Automaten."
+    ],
+    "takeaway": "Produktionsverfahren unterscheiden sich nach Stückzahl (Einzel-, Serien-, Massenfertigung) und Organisation (Werkstatt-, Fließfertigung); Produktionsmittel reichen vom Werkzeug über die Maschine bis zur CNC-Maschine und zum Roboter.",
+    "sourceIds": ["lpr", "lpm", "profil"],
+    "quiz": {
+      "question": "Eine Schreinerei stellt 120 gleiche Stühle für eine Schule her. Welche Fertigungsart liegt vor?",
+      "answer": "Serienfertigung.",
+      "wrong": ["Einzelfertigung.", "Massenfertigung."],
+      "explanation": "Eine begrenzte Anzahl gleicher Produkte ist Serienfertigung. Einzelfertigung stellt ein Einzelstück her, Massenfertigung sehr große Mengen ohne Unterbrechung."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fertigungsarten erkennen",
+      "instruction": "Ordne jedes Beispiel der passenden Fertigungsart zu.",
+      "categories": ["Einzelfertigung", "Serienfertigung", "Massenfertigung"],
+      "entries": [
+        { "text": "Ein Einbauschrank genau passend für eine Dachschräge", "target": 0, "feedback": "Ein Einzelstück nach Kundenwunsch ist Einzelfertigung." },
+        { "text": "Ein Automat stellt täglich 500.000 Schrauben her.", "target": 2, "feedback": "Sehr große Mengen ohne Unterbrechung sind Massenfertigung." },
+        { "text": "Eine Druckerei druckt 2.000 Flyer für ein Stadtfest.", "target": 1, "feedback": "Eine begrenzte Anzahl gleicher Produkte ist Serienfertigung." },
+        { "text": "Ein Goldschmied fertigt einen Verlobungsring nach Entwurf des Paares.", "target": 0, "feedback": "Ein individuelles Einzelstück ist Einzelfertigung." },
+        { "text": "Eine Getränkefirma füllt rund um die Uhr Flaschen ab.", "target": 2, "feedback": "Ununterbrochene Großproduktion ist Massenfertigung." },
+        { "text": "Ein Autohersteller baut 3.000 Fahrzeuge eines Sondermodells.", "target": 1, "feedback": "Eine begrenzte Stückzahl gleicher Produkte ist Serienfertigung." }
+      ],
+      "conclusion": "Die Stückzahl entscheidet mit, welche Organisation und welche Produktionsmittel sich lohnen."
+    },
+    "practice": "productivity",
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe für einen Betrieb deiner Wahl, welche Fertigungsart und welche Produktionsmittel er einsetzt, und begründe, warum diese zu seinen Produkten passen.",
+        "hints": [
+          "Wie viele gleiche Produkte stellt der Betrieb her?",
+          "Welche Werkzeuge, Maschinen oder Roboter siehst du?"
+        ],
+        "model": "Eine Bäckerei stellt Brötchen in Serienfertigung her: jeden Morgen mehrere hundert gleiche Brötchen, dazu Torten in Einzelfertigung auf Bestellung. Als Produktionsmittel nutzt sie eine Knetmaschine, eine Teigteilmaschine und einen Etagenofen, für Torten auch Handwerkzeuge wie Spritzbeutel. Die Maschinen lohnen sich bei den großen Brötchenmengen, für individuelle Torten ist Handarbeit nötig.",
+        "criteria": [
+          "Du nennst die Fertigungsart richtig.",
+          "Du nennst passende Produktionsmittel.",
+          "Du begründest den Zusammenhang von Menge und Produktionsmittel."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Betrieb überlegt, von Werkstattfertigung auf Fließfertigung umzustellen. Erläutere, für welche Produktionsmengen das sinnvoll ist, und nenne je einen Vor- und Nachteil für die Beschäftigten.",
+        "hints": [
+          "Fließfertigung braucht gleiche Arbeitsschritte in fester Reihenfolge.",
+          "Wie verändert sich die Arbeit am einzelnen Arbeitsplatz?"
+        ],
+        "model": "Fließfertigung lohnt sich bei großen Serien oder Massenfertigung, wenn viele gleiche Produkte in derselben Reihenfolge entstehen. Für die Beschäftigten ist ein Vorteil, dass Abläufe klar und Wege kurz sind. Ein Nachteil ist, dass sich Arbeitsschritte stark wiederholen und der Takt das Tempo vorgibt, was eintönig und belastend sein kann. Bei Einzelstücken bleibt die Werkstattfertigung besser.",
+        "criteria": [
+          "Du verbindest Fließfertigung mit passenden Mengen.",
+          "Du nennst einen Vor- und einen Nachteil für Beschäftigte.",
+          "Du ziehst eine begründete Folgerung."
+        ]
+      }
+    }
+  },
+  {
+    "id": "te-erkundungsmethoden",
+    "lb": 5,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 8 · LB 5 · R8 & M8",
+    "title": "Erkundungsmethoden: Befragen, Beobachten und Protokollieren",
+    "intro": "Bei einer Betriebserkundung oder im Praktikum sammelst du Informationen über technische Verfahren. Drei Methoden helfen dir, gezielt und vollständig vorzugehen.",
+    "paragraphs": [
+      "Befragen: Mit einem Interviewleitfaden stellst du vorbereitete Fragen an Fachleute. Offene Fragen wie Wie funktioniert diese Maschine? bringen ausführliche Antworten, geschlossene Fragen wie Wie viele Teile schafft die Maschine pro Stunde? bringen genaue Zahlen. Beobachten: Mit einem Beobachtungsbogen achtest du gezielt auf festgelegte Punkte, etwa Arbeitsschritte, Zeiten, Werkzeuge und Schutzmaßnahmen, und störst die Arbeit nicht. Protokollieren: Du notierst Datum, Ort, Gesprächspartner und Ergebnisse in Stichpunkten, ergänzt Skizzen und machst Fotos nur mit Erlaubnis des Betriebs. In der Regelklasse wendest du die Methoden weitgehend selbständig an, im M-Zug selbständig.",
+      "Beispiel Erkundung in einem Metallbaubetrieb mit Schwerpunkt Laserschneiden: Die Gruppe befragt die Meisterin mit fünf Fragen aus ihrem Leitfaden. Ein Mitglied beobachtet die Maschine und stoppt die Zeit: 90 Sekunden je Blechteil, also 40 Teile pro Stunde. Es notiert, dass die Bedienerin eine Schutzbrille trägt und die Maschine eine geschlossene Kabine hat. Ein drittes Mitglied führt Protokoll mit Stichpunkten und einer Skizze vom Ablauf. Zurück in der Schule fügt die Gruppe alles zu einer Präsentation zusammen und vergleicht Befragung und Beobachtung."
+    ],
+    "takeaway": "Befragen bringt Wissen von Fachleuten, Beobachten liefert eigene Belege zu Abläufen und Schutzmaßnahmen, Protokollieren sichert alles mit Datum, Stichpunkten und Skizzen.",
+    "sourceIds": ["lpr", "lpm", "profil"],
+    "quiz": {
+      "question": "Welche Frage ist eine offene Frage für einen Interviewleitfaden?",
+      "answer": "Wie hat sich Ihre Arbeit seit der Anschaffung des Roboters verändert?",
+      "wrong": [
+        "Arbeiten Sie gern an dieser Maschine?",
+        "Wie viele Teile schafft die Maschine pro Stunde?"
+      ],
+      "explanation": "Offene Fragen lassen sich nicht mit Ja, Nein oder einer Zahl beantworten und bringen ausführliche Antworten. Die beiden anderen Fragen sind geschlossen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Welche Methode wird genutzt?",
+      "instruction": "Ordne jede Tätigkeit der Erkundungsgruppe der passenden Methode zu.",
+      "categories": ["Befragen", "Beobachten", "Protokollieren"],
+      "entries": [
+        { "text": "Die Gruppe fragt die Meisterin, welche Ausbildung man für die Laseranlage braucht.", "target": 0, "feedback": "Fragen an Fachleute sind Befragen." },
+        { "text": "Ein Mitglied stoppt, wie lange die Maschine für ein Teil braucht.", "target": 1, "feedback": "Eigene Messung am Ablauf ist Beobachten." },
+        { "text": "Datum, Betrieb und Name der Meisterin werden oben auf dem Blatt notiert.", "target": 2, "feedback": "Rahmenangaben gehören ins Protokoll." },
+        { "text": "Die Gruppe hält fest, welche Schutzausrüstung die Bedienerin trägt.", "target": 1, "feedback": "Gezieltes Hinsehen auf festgelegte Punkte ist Beobachten." },
+        { "text": "Eine Skizze zeigt, wie Blech eingelegt, geschnitten und entnommen wird.", "target": 2, "feedback": "Skizzen ergänzen das Protokoll." },
+        { "text": "Die Gruppe fragt, wie viele Teile die Anlage am Tag schneidet.", "target": 0, "feedback": "Auch eine geschlossene Frage an Fachleute ist Befragen." }
+      ],
+      "conclusion": "Die drei Methoden ergänzen sich: Befragung und Beobachtung liefern Informationen, das Protokoll sichert sie."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erstelle für eine Erkundung mit Schwerpunkt technische Verfahren einen kurzen Interviewleitfaden mit zwei offenen und zwei geschlossenen Fragen und einen Beobachtungsbogen mit drei Beobachtungspunkten.",
+        "hints": [
+          "Offene Fragen beginnen oft mit Wie oder Warum.",
+          "Beobachtungspunkte müssen vor Ort sichtbar sein."
+        ],
+        "model": "Offene Fragen: Wie läuft die Herstellung eines Teils von Anfang bis Ende ab? Warum haben Sie sich für diese Maschine entschieden? Geschlossene Fragen: Wie viele Teile stellt die Maschine pro Stunde her? Wie viele Personen bedienen sie? Beobachtungsbogen: 1. Arbeitsschritte in der Reihenfolge, 2. Zeit je Teil, 3. Schutzmaßnahmen an der Maschine und an der Person.",
+        "criteria": [
+          "Du formulierst zwei offene und zwei geschlossene Fragen.",
+          "Dein Beobachtungsbogen hat drei sichtbare Punkte.",
+          "Fragen und Punkte passen zum Schwerpunkt technische Verfahren."
+        ]
+      },
+      "2": {
+        "prompt": "In der Befragung sagt der Betriebsleiter, an der Maschine sei Gehörschutz Pflicht. In der Beobachtung siehst du, dass eine Person ihn nicht trägt. Erkläre, wie du mit dem Widerspruch in deinem Protokoll und in der Präsentation umgehst.",
+        "hints": [
+          "Was ist der Unterschied zwischen Aussage und Beobachtung?",
+          "Wie bleibst du sachlich und fair gegenüber dem Betrieb?"
+        ],
+        "model": "Im Protokoll trenne ich klar: Aussage des Betriebsleiters, Gehörschutz ist Pflicht; eigene Beobachtung, eine Person trug zum Zeitpunkt X keinen Gehörschutz. In der Präsentation stelle ich beides sachlich dar und bewerte vorsichtig, weil eine einzelne Beobachtung kein vollständiges Bild ergibt. Gerade der Vergleich zeigt aber, warum man mehrere Methoden nutzt: Regeln und Alltag können voneinander abweichen.",
+        "criteria": [
+          "Du trennst Aussage und Beobachtung im Protokoll.",
+          "Du gehst sachlich und fair mit dem Widerspruch um.",
+          "Du erklärst den Nutzen mehrerer Methoden."
+        ]
+      }
+    }
+  },
+  {
+    "id": "te-ergonomie-arbeitssicherheit",
+    "lb": 5,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 8 · LB 5 · R8 & M8",
+    "title": "Technik am Arbeitsplatz: Ergonomie, Arbeitssicherheit und Arbeitsschutz",
+    "intro": "Technik kann die Arbeit erleichtern, aber auch neue Gefahren bringen. Ergonomie, Arbeitssicherheit und Arbeitsschutz sorgen dafür, dass Menschen gesund bleiben.",
+    "paragraphs": [
+      "Ergonomie passt den Arbeitsplatz an den Menschen an: höhenverstellbare Tische, gute Beleuchtung, Hebehilfen für schwere Lasten oder ein richtig eingestellter Bildschirmarbeitsplatz. Arbeitssicherheit soll Unfälle verhindern, etwa durch Schutzhauben, Not-Aus-Schalter und persönliche Schutzausrüstung. Arbeitsschutz ist durch Gesetze geregelt: Der Arbeitgeber beurteilt die Gefährdungen (§ 5 ArbSchG), bekämpft Gefahren an ihrer Quelle, und individuelle Schutzmaßnahmen sind nachrangig (§ 4 ArbSchG). Zuerst kommen also technische, dann organisatorische, zuletzt persönliche Maßnahmen. Beim Lärm gelten Auslösewerte: Ab 80 dB(A) muss der Arbeitgeber Gehörschutz bereitstellen, ab 85 dB(A) muss er dafür sorgen, dass er getragen wird (§§ 6, 8 LärmVibrationsArbSchV).",
+      "Beispiel Kreissäge in einer Schreinerei, vereinfacht gerechnet: Die Säge erreicht am Arbeitsplatz 95 dB(A). Zuerst wird eine Schallschutzhaube eingebaut, die den Pegel um 10 dB auf 85 dB(A) senkt. Das ist immer noch der obere Auslösewert, also besteht Tragepflicht für Gehörschutz. Ein Gehörschutz mit 20 dB Dämmung senkt den Pegel am Ohr im Modell auf 65 dB(A). Dazu gehören Sicherheitszeichen: Gebotszeichen sind blau, Verbotszeichen rot, Warnzeichen gelb und Rettungszeichen grün. Wer die Technik bedient, wird regelmäßig unterwiesen und trägt Schutzbrille und Sicherheitsschuhe."
+    ],
+    "takeaway": "Ergonomie passt die Arbeit an den Menschen an, Arbeitssicherheit verhindert Unfälle, und der Arbeitsschutz verlangt: Gefahren zuerst technisch an der Quelle bekämpfen, persönliche Schutzausrüstung kommt zuletzt.",
+    "sourceIds": ["lpr", "lpm", "arbschg4", "arbschg5", "arbschg15", "laerm6", "laerm8", "arbstaettv"],
+    "quiz": {
+      "question": "Eine Maschine ist sehr laut. Welche Maßnahme kommt nach dem Arbeitsschutzgesetz zuerst?",
+      "answer": "Den Lärm an der Quelle verringern, zum Beispiel mit einer Schallschutzhaube.",
+      "wrong": [
+        "Allen Beschäftigten sofort Gehörschutz geben und sonst nichts ändern.",
+        "Ein Schild aufhängen, dass man an der Maschine nicht reden soll."
+      ],
+      "explanation": "Gefahren sind an ihrer Quelle zu bekämpfen, individuelle Schutzmaßnahmen sind nachrangig (§ 4 ArbSchG). Gehörschutz ergänzt technische Maßnahmen, ersetzt sie aber nicht."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Maßnahmen ordnen",
+      "instruction": "Ordne jede Maßnahme in der Schreinerei der passenden Art zu.",
+      "categories": ["Technische Maßnahme", "Organisatorische Maßnahme", "Persönliche Schutzmaßnahme", "Ergonomische Gestaltung"],
+      "entries": [
+        { "text": "Schallschutzhaube an der Kreissäge", "target": 0, "feedback": "Eine Änderung an der Maschine ist eine technische Maßnahme." },
+        { "text": "Absauganlage für Holzstaub", "target": 0, "feedback": "Auch die Absaugung bekämpft die Gefahr an der Quelle." },
+        { "text": "Lärmintensive Arbeiten nur vormittags und im Wechsel", "target": 1, "feedback": "Eine andere Arbeitseinteilung ist eine organisatorische Maßnahme." },
+        { "text": "Halbjährliche Unterweisung über Gefahren an den Maschinen", "target": 1, "feedback": "Unterweisungen gehören zu den organisatorischen Maßnahmen." },
+        { "text": "Gehörschutz und Schutzbrille tragen", "target": 2, "feedback": "Schutzausrüstung am Körper ist eine persönliche Schutzmaßnahme." },
+        { "text": "Höhenverstellbare Werkbank für große und kleine Beschäftigte", "target": 3, "feedback": "Die Anpassung des Arbeitsplatzes an den Menschen ist Ergonomie." },
+        { "text": "Hebehilfe für schwere Plattenwerkstoffe", "target": 3, "feedback": "Hebehilfen entlasten den Körper und gehören zur ergonomischen Gestaltung." }
+      ],
+      "conclusion": "Technisch vor organisatorisch vor persönlich: Diese Rangfolge schützt am wirksamsten."
+    },
+    "lab": "noiseProtection",
+    "practice": "noiseCheck",
+    "tasks": {
+      "1": {
+        "prompt": "Untersuche einen Arbeitsplatz aus deinem Praktikum oder deiner Erkundung: Nenne je eine Maßnahme der Ergonomie, der Arbeitssicherheit und des Arbeitsschutzes, die du dort beobachtet hast oder vorschlagen würdest.",
+        "hints": [
+          "Ergonomie betrifft Haltung, Höhe, Licht und Heben.",
+          "Arbeitssicherheit verhindert Unfälle, Arbeitsschutz umfasst auch Regeln und Unterweisung."
+        ],
+        "model": "Arbeitsplatz: Kasse im Supermarkt. Ergonomie: Der Stuhl ist höhenverstellbar, und das Förderband bringt die Waren nah heran. Arbeitssicherheit: Am Lager gibt es eine Trittleiter statt Kisten zum Draufsteigen. Arbeitsschutz: Neue Beschäftigte werden unterwiesen, und es gibt feste Pausen. Vorschlag: eine Matte gegen Ermüdung für Tätigkeiten im Stehen.",
+        "criteria": [
+          "Du nennst eine passende ergonomische Maßnahme.",
+          "Du nennst eine Maßnahme zur Arbeitssicherheit.",
+          "Du nennst eine Maßnahme des Arbeitsschutzes."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Betrieb will den Lärm an einer Presse mit 92 dB(A) nur dadurch lösen, dass alle Gehörschutz bekommen. Beurteile diesen Plan mit den Regeln des Arbeitsschutzes und schlage eine bessere Reihenfolge der Maßnahmen vor.",
+        "hints": [
+          "Welche Rangfolge schreibt § 4 ArbSchG vor?",
+          "Welche Auslösewerte nach der LärmVibrationsArbSchV sind überschritten?"
+        ],
+        "model": "Mit 92 dB(A) ist der obere Auslösewert von 85 dB(A) überschritten, Gehörschutz muss also getragen werden. Der Plan greift aber zu kurz, weil Gefahren zuerst an der Quelle zu bekämpfen sind und persönliche Schutzmaßnahmen nachrangig sind. Bessere Reihenfolge: technisch eine Kapselung oder leisere Presse, organisatorisch kürzere Aufenthaltszeiten und Lärmbereich kennzeichnen, persönlich zusätzlich passender Gehörschutz mit Unterweisung.",
+        "criteria": [
+          "Du ordnest den Pegel den Auslösewerten richtig zu.",
+          "Du beurteilst den Plan mit der Rangfolge nach § 4 ArbSchG.",
+          "Du schlägst technische, organisatorische und persönliche Maßnahmen in sinnvoller Reihenfolge vor."
+        ]
+      }
+    }
+  },
+  {
+    "id": "te-qualifikation-arbeitsprozess",
+    "lb": 5,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 8 · LB 5 · R8 & M8",
+    "title": "Technik verändert Arbeitsprozesse und Qualifikationsanforderungen",
+    "intro": "Wo früher Papierlisten und Handsägen waren, stehen heute Scanner und CNC-Maschinen. Mit der Technik verändern sich Abläufe und das, was Beschäftigte können müssen.",
+    "paragraphs": [
+      "Technikeinsatz wirkt auf den Menschen am Arbeitsplatz auf mehreren Ebenen. Arbeitsprozesse ändern sich: Arbeitsschritte werden automatisiert, beschleunigt oder digital gesteuert, und Tätigkeiten verlagern sich vom Herstellen zum Einrichten, Überwachen und Warten. Qualifikationsanforderungen steigen in vielen Berufen: Gefragt sind Kenntnisse in Programmierung und Bedienung, das Lesen von Daten, Fehlersuche und die Bereitschaft zur Weiterbildung. Einfache, sich wiederholende Tätigkeiten fallen eher weg, neue Aufgaben entstehen. Für die Gesundheit kann Technik entlasten, etwa durch Hebehilfen, aber auch neue Belastungen wie Bildschirmarbeit oder hohen Takt bringen.",
+      "Beispiel Lager eines Versandhändlers: Früher suchte ein Lagerarbeiter die Waren mit einer Papierliste und schrieb Bestände von Hand nach. Heute zeigt ihm ein Handscanner den kürzesten Weg, bucht jede Entnahme sofort und meldet Fehlbestände. Die Fachkraft für Lagerlogistik muss deshalb mit der Lagerverwaltungssoftware umgehen und Fehlermeldungen verstehen. Beispiel Schreinerei: Die Tischlerin programmiert die CNC-Fräse am Computer und prüft die Maße der Teile. Das schwere Sägen von Hand entfällt, dafür besucht sie eine Weiterbildung in CAD-Konstruktion."
+    ],
+    "takeaway": "Technik verlagert Arbeit vom Ausführen zum Einrichten, Überwachen und Programmieren; dadurch steigen die Qualifikationsanforderungen, und Weiterbildung wird zur Daueraufgabe.",
+    "sourceIds": ["lpr", "lpm", "berufenet", "bibb"],
+    "quiz": {
+      "question": "Wie verändert eine CNC-Fräse die Qualifikationsanforderungen in einer Schreinerei?",
+      "answer": "Die Fachkräfte müssen die Maschine programmieren, einrichten und die Ergebnisse prüfen können.",
+      "wrong": [
+        "Es werden gar keine Fachkräfte mehr gebraucht, weil die Maschine alles allein macht.",
+        "Die Anforderungen sinken, weil niemand mehr etwas über Holz wissen muss."
+      ],
+      "explanation": "Die Maschine übernimmt das Fräsen, aber Menschen planen, programmieren, überwachen und kontrollieren. Holzfachwissen bleibt nötig, dazu kommen digitale Kenntnisse."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Was ändert sich durch Technik?",
+      "instruction": "Ordne jede Veränderung der passenden Wirkung des Technikeinsatzes zu.",
+      "categories": ["Veränderter Arbeitsprozess", "Neue Qualifikationsanforderung", "Wirkung auf die Gesundheit"],
+      "entries": [
+        { "text": "Der Handscanner bucht jede Entnahme sofort, Bestandslisten von Hand entfallen.", "target": 0, "feedback": "Ein digitaler statt eines manuellen Ablaufs verändert den Arbeitsprozess." },
+        { "text": "Die Tischlerin besucht eine Weiterbildung in CAD-Konstruktion.", "target": 1, "feedback": "Neues Wissen für die Arbeit mit Technik ist eine neue Qualifikationsanforderung." },
+        { "text": "Eine Hebehilfe nimmt schwere Pakete ab.", "target": 2, "feedback": "Körperliche Entlastung wirkt auf die Gesundheit." },
+        { "text": "Die Lagerkraft muss Fehlermeldungen der Software verstehen.", "target": 1, "feedback": "Umgang mit Software ist eine neue Anforderung." },
+        { "text": "Die Fräse arbeitet nachts, morgens werden die Teile nur noch geprüft.", "target": 0, "feedback": "Vom Herstellen zum Prüfen: Der Arbeitsprozess verändert sich." },
+        { "text": "Längere Bildschirmarbeit belastet Augen und Rücken.", "target": 2, "feedback": "Auch neue Belastungen sind Wirkungen auf die Gesundheit." }
+      ],
+      "conclusion": "Technik verändert Abläufe, Anforderungen und Belastungen zugleich; eine Beurteilung muss alle drei betrachten."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe an einem Beruf deiner Wahl, wie sich ein Arbeitsprozess durch Technik verändert hat, und nenne zwei neue Qualifikationsanforderungen.",
+        "hints": [
+          "Vergleiche früher und heute.",
+          "Was müssen Beschäftigte heute zusätzlich können?"
+        ],
+        "model": "Beruf Kfz-Mechatroniker: Früher suchten Mechaniker Fehler vor allem durch Hören und Ausprobieren. Heute schließen sie ein Diagnosegerät an, das Fehlercodes aus der Fahrzeugelektronik ausliest. Neue Anforderungen sind der Umgang mit Diagnose-Software und Kenntnisse in Elektronik und Hochvolttechnik bei Elektroautos, für die es eigene Schulungen gibt.",
+        "criteria": [
+          "Du vergleichst den Arbeitsprozess früher und heute.",
+          "Du nennst zwei neue Qualifikationsanforderungen.",
+          "Dein Beispiel ist konkret und stimmig."
+        ]
+      },
+      "2": {
+        "prompt": "Beurteile die Aussage: Durch Technik werden Berufe mit Mittelschulabschluss bald überflüssig. Beziehe Arbeitsprozesse, Qualifikationsanforderungen und Weiterbildung in dein Urteil ein.",
+        "hints": [
+          "Welche Tätigkeiten fallen weg, welche entstehen neu?",
+          "Welche Rolle spielt die duale Ausbildung?"
+        ],
+        "model": "Die Aussage ist zu pauschal. Zwar fallen einfache, sich wiederholende Tätigkeiten weg, aber gleichzeitig entstehen Aufgaben im Einrichten, Warten, Prüfen und Reparieren von Technik, die gut ausgebildete Fachkräfte übernehmen. Viele dieser Berufe erlernt man in einer dualen Ausbildung, die gerade für Absolventinnen und Absolventen der Mittelschule offensteht. Entscheidend ist die Bereitschaft, sich ständig weiterzubilden.",
+        "criteria": [
+          "Du nennst wegfallende und neue Tätigkeiten.",
+          "Du beziehst Qualifikation und Weiterbildung ein.",
+          "Du formulierst ein begründetes Urteil."
+        ]
+      }
+    }
+  },
+  {
+    "id": "te-vor-nachteile-abwaegen",
+    "lb": 5,
+    "tracks": ["M"],
+    "lehrplan": "WiB 8 · LB 5 · M8",
+    "title": "Vor- und Nachteile des Technikeinsatzes an Arbeitsplätzen abwägen",
+    "intro": "Soll ein Betrieb einen Roboter anschaffen? Wer abwägt, betrachtet Kosten, Gesundheit, Qualität und Arbeitsplätze und kommt zu einem begründeten Urteil.",
+    "paragraphs": [
+      "Technikeinsatz hat an jedem Arbeitsplatz Vor- und Nachteile. Mögliche Vorteile sind Entlastung von schwerer, gefährlicher oder gesundheitsschädlicher Arbeit, gleichmäßige Qualität und eine höhere Stückzahl. Mögliche Nachteile sind hohe Anschaffungskosten, weniger Arbeitsplätze für einfache Tätigkeiten, Abhängigkeit von störungsanfälliger Technik und neue Belastungen wie eintönige Überwachung. Zum Abwägen eignen sich eine Pro-und-Contra-Tabelle und eine Nutzwertanalyse: Du legst Kriterien mit Gewichten fest, vergibst für jede Möglichkeit Punkte und vergleichst die gewichteten Summen. Für die Kosten kannst du berechnen, ab welcher Jahresmenge sich eine Maschine lohnt.",
+      "Beispiel Schweißroboter in einem Metallbaubetrieb: Gewichte: Kosten 30 %, Gesundheit 30 %, Qualität 20 %, Arbeitsplätze 20 %. Punkte von 1 bis 5 für den Roboter: 2, 5, 5, 2; gewichtete Summe 2 · 0,3 + 5 · 0,3 + 5 · 0,2 + 2 · 0,2 = 3,5. Für das Schweißen von Hand: 4, 2, 3, 4; Summe 1,2 + 0,6 + 0,6 + 0,8 = 3,2. Der Roboter liegt knapp vorne. Kostenrechnung im Modell: 120.000 € Anschaffung über 8 Jahre sind 15.000 € im Jahr. Spart der Roboter je Teil 2,40 € Lohnkosten, lohnt er sich ab 15.000 € : 2,40 € = 6.250 Teilen im Jahr."
+    ],
+    "takeaway": "Beim Abwägen des Technikeinsatzes vergleichst du Vor- und Nachteile nach festgelegten, gewichteten Kriterien wie Kosten, Gesundheit, Qualität und Arbeitsplätzen und begründest dein Urteil, statt nur auf einen Aspekt zu schauen.",
+    "sourceIds": ["lpm", "profil", "arbschg4"],
+    "quiz": {
+      "question": "Wozu dienen Gewichte in einer Nutzwertanalyse?",
+      "answer": "Sie legen fest, wie wichtig jedes Kriterium für die Entscheidung ist.",
+      "wrong": [
+        "Sie geben an, wie schwer die Maschine in Kilogramm ist.",
+        "Sie sorgen dafür, dass am Ende immer die Technik gewinnt."
+      ],
+      "explanation": "Gewichte machen sichtbar, welche Kriterien dem Betrieb wichtiger sind. Wer die Gewichte ändert, kann zu einem anderen Ergebnis kommen; deshalb müssen sie begründet werden."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Pro und Contra Schweißroboter",
+      "instruction": "Entscheide, ob die Aussage aus Sicht der Beschäftigten eher ein Vorteil oder ein Nachteil des Roboters ist.",
+      "categories": ["Vorteil", "Nachteil"],
+      "entries": [
+        { "text": "Niemand muss mehr stundenlang Schweißrauch und Hitze ausgesetzt sein.", "target": 0, "feedback": "Entlastung von gesundheitsschädlicher Arbeit ist ein Vorteil." },
+        { "text": "Zwei Helferstellen werden nicht nachbesetzt.", "target": 1, "feedback": "Wegfallende einfache Arbeitsplätze sind ein Nachteil." },
+        { "text": "Alle Schweißnähte haben gleich hohe Qualität, Nacharbeit entfällt.", "target": 0, "feedback": "Gleichmäßige Qualität ist ein Vorteil." },
+        { "text": "Fällt der Roboter aus, steht die ganze Fertigung still.", "target": 1, "feedback": "Abhängigkeit von störungsanfälliger Technik ist ein Nachteil." },
+        { "text": "Eine Fachkraft lernt in einer Weiterbildung, den Roboter zu programmieren.", "target": 0, "feedback": "Eine neue Qualifikation kann ein Vorteil für die Beschäftigten sein." },
+        { "text": "Die Überwachung des Roboters ist eintönig.", "target": 1, "feedback": "Monotone Überwachung ist eine neue Belastung." }
+      ],
+      "conclusion": "Vorteile und Nachteile treffen oft dieselben Menschen; ein gutes Urteil nennt beide Seiten."
+    },
+    "lab": "productionCompare",
+    "practice": "weightedDecision",
+    "tasks": {
+      "1": {
+        "prompt": "Erstelle für einen beispielhaften Arbeitsplatz, an dem Technik eingeführt wird, eine Pro-und-Contra-Tabelle mit je drei Argumenten aus Sicht der Beschäftigten und des Betriebs.",
+        "hints": [
+          "Denke an Kosten, Gesundheit, Qualität, Arbeitsplätze und Abhängigkeit.",
+          "Kennzeichne, wessen Sicht ein Argument betrifft."
+        ],
+        "model": "Arbeitsplatz: Kasse mit Selbstbedienungskassen. Pro: Der Betrieb spart langfristig Personalkosten; Kundinnen müssen weniger warten; Beschäftigte werden von monotoner Kassenarbeit entlastet und können beraten. Contra: hohe Anschaffungskosten für den Betrieb; weniger Kassenarbeitsplätze für Beschäftigte; mehr Kontrollaufwand gegen Diebstahl und Störungen bei Technikausfall.",
+        "criteria": [
+          "Deine Tabelle hat je drei Pro- und Contra-Argumente.",
+          "Du berücksichtigst Beschäftigte und Betrieb.",
+          "Die Argumente passen zum gewählten Arbeitsplatz."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Betriebsrat findet, in der Nutzwertanalyse für den Schweißroboter müsste das Kriterium Arbeitsplätze 40 % statt 20 % zählen, die Kosten dafür nur 10 %. Berechne mit den Punkten aus dem Beispiel neu und beurteile, wie die Wahl der Gewichte das Ergebnis beeinflusst.",
+        "hints": [
+          "Neue Gewichte: Kosten 10 %, Gesundheit 30 %, Qualität 20 %, Arbeitsplätze 40 %.",
+          "Roboter 2, 5, 5, 2; von Hand 4, 2, 3, 4."
+        ],
+        "model": "Roboter: 2 · 0,1 + 5 · 0,3 + 5 · 0,2 + 2 · 0,4 = 0,2 + 1,5 + 1,0 + 0,8 = 3,5. Von Hand: 4 · 0,1 + 2 · 0,3 + 3 · 0,2 + 4 · 0,4 = 0,4 + 0,6 + 0,6 + 1,6 = 3,2. Der Roboter bleibt vorne, weil Gesundheit und Qualität stark für ihn sprechen. Trotzdem zeigt die Rechnung, dass die Gewichte das Ergebnis verschieben können; deshalb müssen alle Beteiligten offenlegen und begründen, welche Kriterien ihnen wie wichtig sind.",
+        "criteria": [
+          "Du berechnest beide Summen richtig.",
+          "Du erklärst, warum das Ergebnis gleich bleibt oder sich ändert.",
+          "Du beurteilst die Bedeutung begründeter Gewichte."
+        ]
+      }
+    }
+  }
+]
