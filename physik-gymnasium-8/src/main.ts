@@ -30,6 +30,9 @@ import {
   freshProgress,
   isComplete,
   loadProgress,
+  PRACTICE_LEVELS,
+  practiceStatus,
+  REQUIRED_CORRECT,
   saveProgress,
   writingKey,
 } from "./storage/progress";
@@ -86,7 +89,7 @@ function renderCalculation(lesson: Lesson): string {
   const key = writingKey(lesson.id, progress.level),
     entry = exerciseFor(lesson),
     task = entry.task;
-  return `<section class="panel calculation"><div class="panel-heading">${step(ICONS.calculator, `SELBST RECHNEN · LEVEL ${progress.level}`)}<span class="done-mark">${progress.calculationDone[key] ?? 0} / 3 eigenständig gelöst</span></div><h2>Mit Einheiten rechnen</h2><p>${esc(task.prompt)}</p>${progress.level === 1 ? `<details><summary>Formelhilfe</summary><p>${esc(task.formulaHint ?? "")}</p></details>` : ""}<form id="calculation-form"><label for="calculation-answer">Dein Ergebnis in ${esc(task.unit)}</label><div class="calculation-input"><input id="calculation-answer" type="text" inputmode="decimal" autocomplete="off" ${entry.finished ? "disabled" : ""}><span>${esc(task.unit)}</span><button type="submit" class="button accent" ${entry.finished ? "disabled" : ""}>Prüfen</button></div></form><p class="small">Dezimalkomma oder Dezimalpunkt sind möglich. Runde auf drei Nachkommastellen; ein passendes genaueres Ergebnis wird ebenfalls akzeptiert.</p>${entry.message ? `<p role="status" class="feedback ${entry.finished && !entry.assisted ? "success" : "hint"}">${esc(entry.message)}</p>` : ""}<div class="self-actions"><button type="button" id="show-calculation" class="text-button" ${entry.solution ? "disabled" : ""}>Lösung ansehen</button><button type="button" id="next-calculation" class="button secondary">Neue Aufgabe</button></div>${entry.solution ? `<div class="model-answer"><h3>Rechenweg</h3><p>${task.solutionHtml}</p><p class="small">Eine vor dem Lösen geöffnete Musterlösung zählt nicht als eigenständig gelöste Aufgabe.</p></div>` : ""}</section>`;
+  return `<section class="panel calculation"><div class="panel-heading">${step(ICONS.calculator, `SELBST RECHNEN · LEVEL ${progress.level}`)}<span class="done-mark">${progress.calculationDone[key] ?? 0} / ${REQUIRED_CORRECT} eigenständig gelöst</span></div><h2>Mit Einheiten rechnen</h2><p>${esc(task.prompt)}</p>${progress.level === 1 ? `<details><summary>Formelhilfe</summary><p>${esc(task.formulaHint ?? "")}</p></details>` : ""}<form id="calculation-form"><label for="calculation-answer">Dein Ergebnis in ${esc(task.unit)}</label><div class="calculation-input"><input id="calculation-answer" type="text" inputmode="decimal" autocomplete="off" ${entry.finished ? "disabled" : ""}><span>${esc(task.unit)}</span><button type="submit" class="button accent" ${entry.finished ? "disabled" : ""}>Prüfen</button></div></form><p class="small">Dezimalkomma oder Dezimalpunkt sind möglich. Runde auf drei Nachkommastellen; ein passendes genaueres Ergebnis wird ebenfalls akzeptiert.</p>${entry.message ? `<p role="status" class="feedback ${entry.finished && !entry.assisted ? "success" : "hint"}">${esc(entry.message)}</p>` : ""}<div class="self-actions"><button type="button" id="show-calculation" class="text-button" ${entry.solution ? "disabled" : ""}>Lösung ansehen</button><button type="button" id="next-calculation" class="button secondary">Neue Aufgabe</button></div>${entry.solution ? `<div class="model-answer"><h3>Rechenweg</h3><p>${task.solutionHtml}</p><p class="small">Eine vor dem Lösen geöffnete Musterlösung zählt nicht als eigenständig gelöste Aufgabe.</p></div>` : ""}</section>`;
 }
 function bindCalculation(lesson: Lesson): void {
   if (!lesson.calculation) return;
@@ -209,19 +212,40 @@ function lessonModel(lesson: Lesson): string {
     modelStates.get(lesson.id)!,
   );
 }
+function lessonChecklist(lesson: Lesson): string {
+  const check = (done: boolean, label: string) =>
+    `<li${done ? ' class="done"' : ""}>${done ? "✓" : "○"} ${label}</li>`;
+  const model = lesson.model
+    ? check(
+        modelReady(lesson.model, progress.explored[lesson.id] ?? []),
+        "Modellziele erreicht",
+      )
+    : "";
+  const quiz = check(progress.quizDone.includes(lesson.id), "Schnellcheck");
+  const workshop = check(
+    progress.workshopDone.includes(lesson.id),
+    "Werkstatt gelöst",
+  );
+  const practice = PRACTICE_LEVELS.map((level) => {
+    const { writingDone, solved, complete } = practiceStatus(
+      progress,
+      lesson,
+      level,
+    );
+    const writing = writingDone
+      ? "Begründung eingeschätzt"
+      : "Begründung offen";
+    const calculation = lesson.calculation
+      ? ` · ${solved} / ${REQUIRED_CORRECT} Rechenaufgaben`
+      : "";
+    return check(complete, `Level ${level} · ${writing}${calculation}`);
+  }).join("");
+  return model + quiz + workshop + practice;
+}
+
 function refreshLessonStatus(lesson: Lesson): void {
-  const model = main.querySelector("#aside-model");
-  if (model && lesson.model) {
-    const ready = modelReady(lesson.model, progress.explored[lesson.id] ?? []);
-    model.textContent = `${ready ? "✓" : "○"} Modellziele erreicht`;
-    model.classList.toggle("done", ready);
-  }
-  const calculation = main.querySelector("#aside-calculation");
-  if (calculation && lesson.calculation) {
-    const solved = progress.calculationDone[writingKey(lesson.id, 1)] ?? 0;
-    calculation.textContent = `${solved} / 3 Rechenaufgaben in Level 1`;
-    calculation.classList.toggle("done", solved >= 3);
-  }
+  const checklist = main.querySelector("#lesson-checklist");
+  if (checklist) checklist.innerHTML = lessonChecklist(lesson);
   const notice = main.querySelector("#lesson-status");
   if (notice)
     notice.textContent = isComplete(progress, lesson.id)
@@ -307,7 +331,7 @@ function status(lesson: Lesson): string {
 function renderPath(): string {
   const stats = completion(progress);
   const resume = pathLesson(progress);
-  return `<section class="hero"><div class="hero-copy"><span class="eyebrow">PHYSIK 8 · GYMNASIUM BAYERN</span><h1><span data-lb="1">Strom,</span> <span data-lb="2">Licht</span> und <span data-lb="3">Kräfte</span></h1><p>Warum leuchten Lampen unabhängig voneinander? Wo entsteht ein Spiegelbild? Warum schützt ein Airbag? Stell eine Vermutung auf, verändere das Modell und erkläre, was du beobachtest.</p><div class="hero-actions"><button type="button" class="button accent large" data-open="${esc(resume.id)}">${ICONS.play}${stats.completed ? "Weiterlernen" : "Loslegen"}</button><span class="hero-resume">${stats.completed ? "Weiter mit" : "Start mit"}: ${esc(resume.title)}</span></div></div><aside class="hero-card">${HERO_ART}<strong class="hero-steps"><span>Vorhersagen</span><span>Prüfen</span><span>Begründen</span></strong><ul class="hero-facts"><li><b>${lessonsFor("ANDERE").length}</b> Lektionen für alle, ${lessonsFor("NTG", true).length} mit NTG-Profil</li><li><b>${LESSONS.filter((l) => l.model).length}</b> Modelle mit Zeichnung zum Verändern</li><li><b>2</b> Stufen: geführt und Transfer</li></ul><p class="small">Drei Lernbereiche für alle, dazu der Profilbereich am NTG. Ein Abschluss verbindet Schnellcheck, Werkstatt und eine selbst eingeschätzte Begründung. Modelllektionen verlangen erreichte Modellziele, Rechenlektionen drei eigenständig gelöste Aufgaben in Level 1.</p></aside></section>
+  return `<section class="hero"><div class="hero-copy"><span class="eyebrow">PHYSIK 8 · GYMNASIUM BAYERN</span><h1><span data-lb="1">Strom,</span> <span data-lb="2">Licht</span> und <span data-lb="3">Kräfte</span></h1><p>Warum leuchten Lampen unabhängig voneinander? Wo entsteht ein Spiegelbild? Warum schützt ein Airbag? Stell eine Vermutung auf, verändere das Modell und erkläre, was du beobachtest.</p><div class="hero-actions"><button type="button" class="button accent large" data-open="${esc(resume.id)}">${ICONS.play}${stats.completed ? "Weiterlernen" : "Loslegen"}</button><span class="hero-resume">${stats.completed ? "Weiter mit" : "Start mit"}: ${esc(resume.title)}</span></div></div><aside class="hero-card">${HERO_ART}<strong class="hero-steps"><span>Vorhersagen</span><span>Prüfen</span><span>Begründen</span></strong><ul class="hero-facts"><li><b>${lessonsFor("ANDERE").length}</b> Lektionen für alle, ${lessonsFor("NTG", true).length} mit NTG-Profil</li><li><b>${LESSONS.filter((l) => l.model).length}</b> Modelle mit Zeichnung zum Verändern</li><li><b>2</b> Stufen: geführt und Transfer</li></ul><p class="small">Drei Lernbereiche für alle, dazu der Profilbereich am NTG. Für den Abschluss löst du Schnellcheck, Werkstatt und Modellziele. In beiden Levels schätzt du deine Begründung selbst ein und löst bei Rechenlektionen jeweils drei Aufgaben.</p></aside></section>
   <div class="path-heading"><div><h2>Dein Lernpfad</h2><p>Alle Lektionen sind frei zugänglich. Wähle deine Ausbildungsrichtung; dein Fortschritt bleibt beim Wechsel erhalten.</p></div><div class="path-filters"><label>Ausbildungsrichtung <select id="track"><option value="ANDERE" ${progress.track === "ANDERE" ? "selected" : ""}>Alle außer NTG · Lernbereiche 1 bis 3</option><option value="NTG" ${progress.track === "NTG" ? "selected" : ""}>NTG · mit Profilbereich</option></select></label>${progress.track === "NTG" ? `<label class="filter-check"><input id="include-extra" type="checkbox" ${progress.includeExtra ? "checked" : ""}> Forschungsauftrag einblenden</label>` : ""}</div></div>
   <div class="stages">${STAGES.map((stage) => {
     const lessons = visibleLessons().filter((l) => l.lb === stage.lb);
@@ -378,20 +402,12 @@ function renderLesson(): string {
         ? "Du siehst eine Zusatzlektion. Deine Auswahl im Lernpfad bleibt unverändert."
         : "Diese Lektion gehört zum Profilbereich des NTG. Dein Lernpfad bleibt bei deiner Ausbildungsrichtung; du kannst hier zusätzlich üben."
       : "";
-  const check = (done: boolean, id = "") =>
-    `<li${id ? ` id="${id}"` : ""}${done ? ' class="done"' : ""}>`;
-  const modelDone = lesson.model
-      ? modelReady(lesson.model, progress.explored[lesson.id] ?? [])
-      : false,
-    solved = progress.calculationDone[writingKey(lesson.id, 1)] ?? 0,
-    quizDone = progress.quizDone.includes(lesson.id),
-    workshopDone = progress.workshopDone.includes(lesson.id),
-    writingDone = progress.writingDone.includes(writingKey(lesson.id, 1));
+  const quizDone = progress.quizDone.includes(lesson.id);
   return `<article lang="de" data-lb="${lesson.lb}"><div class="lesson-top"><button type="button" class="text-button" data-view="path">← Zum Lernpfad</button><label class="level-select">Arbeitsweise <select id="level"><option value="1" ${progress.level === 1 ? "selected" : ""}>Level 1 · mit Leitfragen</option><option value="2" ${progress.level === 2 ? "selected" : ""}>Level 2 · Transfer</option></select></label></div>
   <header class="lesson-heading"><div class="lesson-kicker"><span class="stage-icon" aria-hidden="true">${stageIcon(lesson.lb)}</span><span class="eyebrow">Lernbereich ${lesson.lb} · ${esc(stage.shortTitle)}${lesson.optional ? " · ZUSATZ" : ""}</span>${index >= 0 ? `<span class="lesson-count">Lektion ${inStage.indexOf(lesson) + 1} von ${inStage.length}</span>` : ""}</div><h1 lang="${"de"}">${esc(lesson.title)}</h1><p class="period">${esc(lesson.period)}</p><p class="intro">${esc(lesson.intro)}</p>${scopeNotice ? `<p class="feedback hint">${esc(scopeNotice)}</p>` : ""}</header>
   <div class="lesson-columns"><div class="lesson-content"><section class="panel reading" lang="${"de"}">${step(ICONS.book, "01 · VERSTEHEN")}${lesson.paragraphs.map(paragraph).join("")}<p class="takeaway"><span class="step-icon" aria-hidden="true">${ICONS.bulb}</span><strong>Merke</strong><span>${esc(lesson.takeaway)}</span></p>${lesson.formulas?.length ? `<div class="formula-strip"><span class="eyebrow">Formeln und Begriffe</span><ul>${lesson.formulas.map((formula) => `<li>${esc(formula)}</li>`).join("")}</ul></div>` : ""}</section>
   <section class="panel quiz" lang="${"de"}"><div class="panel-heading"><h2 class="icon-heading"><span class="step-icon" aria-hidden="true">${ICONS.quiz}</span>Schnellcheck</h2><span class="done-mark">${quizDone ? "✓ Einmal richtig" : ""}</span></div><p>${esc(lesson.quiz.question)}</p><div class="quiz-options">${options.map((i, position) => `<button type="button" data-choice="${i}" class="quiz-choice ${selected === i ? `selected ${i === 0 ? "correct" : "wrong"}` : ""}" aria-pressed="${selected === i}"><span class="choice-key" aria-hidden="true">${selected === i ? (i === 0 ? "✓" : "✗") : "ABC"[position]}</span><span>${esc(labels[i])}</span></button>`).join("")}</div>${selected !== undefined ? `<p class="feedback ${selected === 0 ? "success" : "hint"}" role="status"><strong>${selected === 0 ? "Richtig. " : "Prüfe noch einmal. "}</strong>${esc(lesson.quiz.explanation)}</p>` : ""}</section>
-  ${lessonModel(lesson)}${renderWorkshop(lesson)}${renderCalculation(lesson)}${renderWriting(lesson)}</div><aside class="lesson-aside"><section class="aside-card"><h2>Dein Lernschritt</h2><ul class="checklist">${lesson.model ? `${check(modelDone, "aside-model")}${modelDone ? "✓" : "○"} Modellziele erreicht</li>` : ""}${lesson.calculation ? `${check(solved >= 3, "aside-calculation")}${solved} / 3 Rechenaufgaben in Level 1</li>` : ""}${check(quizDone)}${quizDone ? "✓" : "○"} Schnellcheck</li>${check(workshopDone)}${workshopDone ? "✓" : "○"} Werkstatt gelöst</li>${check(writingDone, "aside-writing")}${writingDone ? "✓" : "○"} Level 1 selbst eingeschätzt</li></ul><p class="small" id="lesson-status">${isComplete(progress, lesson.id) ? "✓ Diese Lektion ist abgeschlossen." : "Bearbeite die offenen Lernschritte. Deine Texte schätzt du selbst ein."}</p><p class="small">Level 2 ist eine zusätzliche Vertiefung. Die Kernfortschritte zählen Level 1.</p></section><section class="aside-card"><h2>Belege & weiterlernen</h2><ul class="source-list">${lesson.sourceIds
+  ${lessonModel(lesson)}${renderWorkshop(lesson)}${renderCalculation(lesson)}${renderWriting(lesson)}</div><aside class="lesson-aside"><section class="aside-card"><h2>Dein Lernschritt</h2><ul class="checklist" id="lesson-checklist">${lessonChecklist(lesson)}</ul><p class="small" id="lesson-status">${isComplete(progress, lesson.id) ? "✓ Diese Lektion ist abgeschlossen." : "Bearbeite die offenen Lernschritte. Deine Texte schätzt du selbst ein."}</p></section><section class="aside-card"><h2>Belege & weiterlernen</h2><ul class="source-list">${lesson.sourceIds
     .map((id) => SOURCES.find((source) => source.id === id)!)
     .map(
       (source) =>
@@ -553,11 +569,6 @@ function bindLesson(lesson: Lesson): void {
       ? ""
       : "Schreibe zunächst mindestens 20 Zeichen.";
     main.querySelector("#writing-done")!.textContent = "";
-    if (progress.level === 1) {
-      const aside = main.querySelector("#aside-writing")!;
-      aside.textContent = "○ Level 1 selbst eingeschätzt";
-      aside.classList.remove("done");
-    }
     persist();
     refreshLessonStatus(lesson);
   });
@@ -597,7 +608,7 @@ function bindLesson(lesson: Lesson): void {
     render();
     showToast(
       isComplete(progress, lesson.id)
-        ? "Lektion abgeschlossen. Du kannst weiterlernen oder Level 2 vertiefen."
+        ? "Lektion abgeschlossen. Du kannst im Lernpfad weiterlernen."
         : "Deine Selbsteinschätzung wurde gespeichert.",
       "info",
     );

@@ -25,5 +25,5 @@ export function fmt(value: number, digits = 2): string {
   return formatter(digits)
     .format(rounded === 0 ? 0 : rounded)
     .replaceAll(".", " ")
-    .replace("-", "−");
+    .replaceAll("-", "−");
 }

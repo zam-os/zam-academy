@@ -10,7 +10,7 @@ export default defineConfig({
   // Tests read the stylesheet to check the contrast of the colour system.
   test: { css: true },
   server: {
-    port: 5304,
+    port: 5305,
     open: false,
   },
   build: {

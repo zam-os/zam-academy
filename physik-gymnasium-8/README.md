@@ -13,6 +13,8 @@ A German-language learning package based on Bavarian LehrplanPLUS Grade 8 Physic
 
 Every lesson includes a worked example, a quick check, a workshop, an adjustable diagram with two observable goals, and written practice at two levels. Twelve lessons also generate numerical exercises at both levels. A local notebook records the six common experiments and two NTG investigations. The app provides model data and preparation. Learners do their physical measurements, sketches, independent searches and presentations in class. Lesson and notebook progress stay in the browser.
 
+Completing a lesson requires the model goals, the quick check, the workshop and a self-assessed answer at each level. Calculation lessons also require three independently solved exercises at each level.
+
 The ZIP includes a self-contained HTML app and start files for macOS, Windows and Linux. The Academy catalogue exposes the 60-card ZAM cell after publication. See the [coverage and legacy-card notes](../docs/physik-gymnasium-8-coverage.md) for scope and evidence.
 
 ## For parents and teachers
@@ -23,7 +25,7 @@ Progress, written answers and experiment notes stay in local browser storage. De
 
 ```sh
 npm ci
-npm run dev         # http://localhost:5304/physik-gymnasium-8/
+npm run dev         # http://localhost:5305/physik-gymnasium-8/
 npm run typecheck
 npm test
 npm run package:zip # release/ZAM-Academy-Physik-8-Gymnasium-offline.zip

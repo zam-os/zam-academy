@@ -1,5 +1,9 @@
 import type { ExerciseTask, Lesson, Level } from "../model/types";
-import { type Progress, writingKey } from "../storage/progress";
+import {
+  type Progress,
+  REQUIRED_CORRECT,
+  writingKey,
+} from "../storage/progress";
 import { checkAnswer } from "./checker";
 import { makeExercise } from "./generators";
 import { createRng, seedFrom } from "./rng";
@@ -53,7 +57,7 @@ export function submitAnswer(
     attempt.finished = true;
     attempt.solution = true;
     progress.calculationDone[attempt.key] = Math.min(
-      3,
+      REQUIRED_CORRECT,
       (progress.calculationDone[attempt.key] ?? 0) + 1,
     );
     advance(progress, attempt);

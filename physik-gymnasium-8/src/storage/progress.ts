@@ -1,7 +1,9 @@
 import { findLesson, LESSONS, lessonsFor } from "../curriculum";
-import type { Level, Track } from "../model/types";
+import type { Lesson, Level, Track } from "../model/types";
 import { MODEL_SCENARIOS, modelReady } from "../models";
 export const STORAGE_KEY = "physik_gym8_academy_progress_v1";
+export const PRACTICE_LEVELS = [1, 2] as const;
+export const REQUIRED_CORRECT = 3;
 /** A notebook slot for each of the six common experiments and the NTG investigations. */
 export const EXPERIMENT_SLOTS = [
   { lb: 1, title: "Kennlinien von Widerstand und Glühlampe" },
@@ -147,7 +149,7 @@ export function parseProgress(raw: string | null): Progress {
       writingDone: strings(v.writingDone, keys).filter(
         (key) => (drafts[key]?.trim().length ?? 0) >= 20,
       ),
-      calculationDone: counters(v.calculationDone, 3),
+      calculationDone: counters(v.calculationDone, REQUIRED_CORRECT),
       exerciseSerial: counters(v.exerciseSerial, 1_000_000),
     };
   } catch {
@@ -169,16 +171,32 @@ export function saveProgress(progress: Progress): boolean {
     return false;
   }
 }
+export function practiceStatus(
+  progress: Progress,
+  lesson: Lesson,
+  level: Level,
+) {
+  const key = writingKey(lesson.id, level);
+  const writingDone = progress.writingDone.includes(key);
+  const solved = progress.calculationDone[key] ?? 0;
+  return {
+    writingDone,
+    solved,
+    complete:
+      writingDone && (!lesson.calculation || solved >= REQUIRED_CORRECT),
+  };
+}
+
 export function isComplete(progress: Progress, id: string): boolean {
   const lesson = findLesson(id);
   if (!lesson) return false;
   return (
     (!lesson.model || modelReady(lesson.model, progress.explored[id] ?? [])) &&
-    (!lesson.calculation ||
-      (progress.calculationDone[writingKey(id, 1)] ?? 0) >= 3) &&
     progress.quizDone.includes(id) &&
     progress.workshopDone.includes(id) &&
-    progress.writingDone.includes(writingKey(id, 1))
+    PRACTICE_LEVELS.every(
+      (level) => practiceStatus(progress, lesson, level).complete,
+    )
   );
 }
 export function completion(progress: Progress) {

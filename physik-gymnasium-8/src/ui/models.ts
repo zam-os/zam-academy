@@ -233,7 +233,10 @@ function lens(g: number): string {
     readouts(
       ["Brennweite", "10 cm"],
       ["Gegenstandsweite", quantity(g, "cm")],
-      ["Bildweite (Abstand)", b === null ? "–" : quantity(Math.abs(b), "cm")],
+      [
+        "Bildweite (Abstand)",
+        b === null ? "Kein endliches Bild" : quantity(Math.abs(b), "cm"),
+      ],
     )
   );
 }

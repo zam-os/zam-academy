@@ -51,16 +51,23 @@ describe("Curriculum and practice", () => {
     expect(lessonsFor("ANDERE")).toHaveLength(17);
     expect(lessonsFor("NTG")).toHaveLength(19);
     expect(lessonsFor("NTG", true).map((l) => l.id)).toEqual(pinned);
-    expect(coverage.competencies).toHaveLength(33);
+    expect(coverage.schema).toBe(1);
+    expect(coverage.core_lessons).toBe(19);
+    expect(coverage.rows).toHaveLength(33);
+    expect(coverage.optional_lessons).toEqual(
+      LESSONS.filter((lesson) => lesson.optional).map((lesson) => lesson.id),
+    );
     expect(coverage.learning_areas.map((l) => l.hours)).toEqual([
       14, 14, 17, 11, 10, 18,
     ]);
     const covered = new Set([
       ...coverage.optional_lessons,
-      ...coverage.competencies.flatMap((c) => c.lessons),
+      ...coverage.rows.flatMap((c) => c.lessons),
     ]);
     expect([...covered].sort()).toEqual([...pinned].sort());
-    for (const row of coverage.competencies) {
+    for (const row of coverage.rows) {
+      expect(row.track).toBe(row.lb.startsWith("4") ? "NTG" : "alle");
+      expect(["implemented", "supported"]).toContain(row.status);
       expect(row.evidence.length).toBeGreaterThan(40);
       expect(row.lessons.length).toBeGreaterThan(0);
       expect(row.lessons.every((id) => pinned.includes(id))).toBe(true);
@@ -164,6 +171,27 @@ describe("Curriculum and practice", () => {
 });
 
 describe("ZAM", () => {
+  it("matches the byte hashes of the recorded legacy snapshots", async () => {
+    const fixtures = import.meta.glob<string>("./fixtures/*.json", {
+      eager: true,
+      import: "default",
+      query: "?raw",
+    });
+    expect(Object.keys(fixtures)).toHaveLength(mapping.sources.length);
+    for (const source of mapping.sources) {
+      const contents = fixtures[source.file.replace(/^tests/, ".")];
+      expect(contents, source.file).toBeDefined();
+      const digest = await crypto.subtle.digest(
+        "SHA-256",
+        new TextEncoder().encode(contents),
+      );
+      const hex = Array.from(new Uint8Array(digest), (byte) =>
+        byte.toString(16).padStart(2, "0"),
+      ).join("");
+      expect(hex, source.file).toBe(source.sha256);
+    }
+  });
+
   it("links one atom and three distinct stable cards to each lesson", () => {
     expect(tile.tile_id).toBe("zam-academy:physik-gymnasium-8");
     expect(tile.atoms.map((atom) => atom.source_link)).toEqual(
@@ -217,6 +245,13 @@ describe("ZAM", () => {
     );
     expect(mapping.status).toBe("proposal-only");
     expect(mapping.approved).toBeNull();
+    for (const row of mapping.rows) {
+      expect(row.reason.length).toBeGreaterThan(20);
+      expect(row.action).toBe(
+        row.category === "A" ? "propose-replace-after-approval" : "keep-active",
+      );
+      expect(row.academy_slug === null).toBe(row.category === "C");
+    }
     expect(mapping.rows.map((row) => row.de_by_id).sort()).toEqual(
       oldIds.sort(),
     );

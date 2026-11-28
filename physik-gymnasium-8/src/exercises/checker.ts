@@ -93,13 +93,13 @@ export function wrongAnswerHint(
   const ratio = result.parsed / task.answer;
   const near = (target: number) => Math.abs(ratio - target) / target < 0.03;
   if (near(1000) || near(1 / 1000)) {
-    return "Der Wert liegt um den Faktor 1000 daneben. Prüfe die Einheit: kilo, milli oder Grundeinheit?";
+    return "Prüfe die Umrechnung mit dem Faktor 1000, etwa zwischen Milliampere und Ampere, Gramm und Kilogramm oder Millisekunden und Sekunden.";
   }
   if (near(100) || near(1 / 100)) {
-    return "Der Wert liegt um den Faktor 100 daneben. Prüfe die Umrechnung, zum Beispiel cm² in m² oder Prozent.";
+    return "Prüfe den Faktor 100: 1 m entspricht 100 cm.";
   }
-  if (near(10000) || near(1 / 10000)) {
-    return "Der Wert liegt um den Faktor 10 000 daneben: 1 m² = 10 000 cm².";
+  if (near(3.6) || near(1 / 3.6)) {
+    return "Prüfe die Tempoeinheit: Von m/s zu km/h multiplizierst du mit 3,6. In der Gegenrichtung teilst du.";
   }
   if (near(60) || near(1 / 60) || near(3600) || near(1 / 3600)) {
     return "Der Wert liegt um einen Zeitfaktor daneben. Rechne Minuten oder Stunden in Sekunden um, oder umgekehrt.";

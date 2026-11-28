@@ -225,7 +225,7 @@ export const MODEL_SCENARIOS: Record<ModelKind, Goal[]> = {
   ]),
   sammellinse: goals([
     ["Erzeuge ein gleich großes, reelles Bild.", (v) => v.g === 20],
-    ["Erzeuge ein aufrechtes Lupenbild.", (v) => v.g <= 8],
+    ["Erzeuge ein aufrechtes Lupenbild.", (v) => v.g < focalLength],
   ]),
   auge: goals([
     ["Korrigiere Kurzsichtigkeit.", (v) => v.eye === 1 && v.glass === 1],

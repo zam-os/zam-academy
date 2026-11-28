@@ -65,3 +65,8 @@ it("uses physical values for the selected teaching models", () => {
   expect(sourceCurrent(4.5, 2, 20, 0)).toBe(0);
   expect(sourceCurrent(4.5, 2, 20, 1)).toBeCloseTo(4.5 / 22);
 });
+
+it("credits a virtual magnifier image anywhere inside the focal length", () => {
+  expect(recordExploration("sammellinse", [], { g: 9 })).toContain("2");
+  expect(recordExploration("sammellinse", [], { g: 10 })).not.toContain("2");
+});

@@ -1,0 +1,269 @@
+[
+  {
+    "id": "pr-komplexe-aufgabe",
+    "lb": 1,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 8 · LB 1 · R8 & M8",
+    "title": "Komplexe Projektaufgaben als vollständige Handlung",
+    "intro": "In der 8. Klasse werden Projekte größer: Ein Produkt wird geplant, gefertigt und verkauft, vom ersten Auftrag bis zur gemeinsamen Auswertung.",
+    "paragraphs": [
+      "Eine komplexe Projektaufgabe verbindet mehrere Teilaufgaben, zum Beispiel aus den Themen Mensch und Technik oder Markt. Ihr arbeitet nach dem Prinzip der vollständigen Handlung: Projektinitiative, Projektplanung, Projektdurchführung, Projektpräsentation und Projektreflexion. Neu gegenüber der 7. Klasse ist, dass ihr mehr selbst entscheidet: Ihr zerlegt die Aufgabe in Arbeitspakete, verteilt Verantwortung und plant Material, Kosten und Zeit. Projektspezifische Arbeitsweisen wie Absprachen im Team, Protokolle und Zwischenkontrollen gehören dazu.",
+      "Beispiel Klasse 8b: Die Klasse fertigt 40 Handyhalter aus Holz für den Schulbasar. In der Initiative klärt sie Auftrag und Ziel. In der Planung entstehen eine Materialliste mit 1,20 € Holz und Lack je Stück und ein Kostenplan mit 30,00 € für Schleifpapier und Leim. Die Gesamtkosten betragen 40 · 1,20 € + 30,00 € = 78,00 €, also 1,95 € je Stück. Bei einem Verkaufspreis von 4,00 € bringen 40 verkaufte Halter 160,00 € Einnahmen und 82,00 € Überschuss. In Durchführung, Präsentation und Reflexion zeigt sich, ob Qualität, Zeit und Kosten wie geplant eingehalten wurden."
+    ],
+    "takeaway": "Eine komplexe Projektaufgabe gelingt, wenn ihr sie in Arbeitspakete zerlegt und alle fünf Phasen der vollständigen Handlung mit Blick auf Kosten, Zeit und Qualität durchlauft.",
+    "sourceIds": ["lpr", "lpm", "profil"],
+    "quiz": {
+      "question": "Woran erkennst du, dass ein Projekt eine komplexe Aufgabe im Sinne der vollständigen Handlung ist?",
+      "answer": "Es besteht aus mehreren Teilaufgaben, die das Team selbst plant, verteilt, umsetzt, präsentiert und auswertet.",
+      "wrong": [
+        "Die Lehrkraft gibt jeden Handgriff einzeln vor, das Team führt nur noch aus.",
+        "Ein Projekt ist dann komplex, wenn möglichst viel Geld für Material ausgegeben wird."
+      ],
+      "explanation": "Komplex heißt: mehrere zusammenhängende Teilaufgaben. Das Team übernimmt Planung, Umsetzung, Präsentation und Reflexion selbst und behält dabei Zeit, Kosten und Qualität im Blick."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Handyhalter-Projekt der 8b",
+      "instruction": "Ordne jeden Arbeitsschritt der Klasse 8b der passenden Phase der vollständigen Handlung zu.",
+      "categories": ["Projektinitiative", "Projektplanung", "Projektdurchführung", "Projektpräsentation", "Projektreflexion"],
+      "entries": [
+        { "text": "Die Schülermitverwaltung fragt, ob die 8b für den Basar ein Produkt herstellt; die Klasse sammelt Ideen und entscheidet sich für Handyhalter.", "target": 0, "feedback": "Auftrag klären und Ziel festlegen gehört zur Projektinitiative." },
+        { "text": "Das Team erstellt eine Materialliste, rechnet 78,00 € Gesamtkosten aus und verteilt die Arbeitspakete Sägen, Schleifen und Lackieren.", "target": 1, "feedback": "Material, Kosten und Aufgabenverteilung werden in der Projektplanung festgelegt." },
+        { "text": "In der Werkstatt sägen zwei Gruppen die Teile zu, eine dritte Gruppe schleift und lackiert.", "target": 2, "feedback": "Jetzt wird gefertigt: Das ist die Projektdurchführung." },
+        { "text": "Am Elternabend zeigt die Klasse Fotos vom Fertigungsablauf und die Abrechnung des Basars.", "target": 3, "feedback": "Ergebnisse und Ablauf für andere sichtbar machen ist die Projektpräsentation." },
+        { "text": "Die Klasse vergleicht geplante und tatsächliche Arbeitszeit und notiert, dass das Lackieren einen Tag länger dauerte.", "target": 4, "feedback": "Soll und Ist vergleichen und Verbesserungen ableiten gehört zur Projektreflexion." },
+        { "text": "Für den nächsten Basar beschließt die Klasse, früher mit dem Trocknen der Lackschicht zu beginnen.", "target": 4, "feedback": "Auch Folgerungen fürs nächste Projekt sind Teil der Projektreflexion." }
+      ],
+      "conclusion": "Jede Phase hat ihre eigene Aufgabe; erst alle fünf zusammen machen das Projekt zu einer vollständigen Handlung."
+    },
+    "practice": "projectCost",
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe für ein eigenes Projekt (zum Beispiel Vogelhäuschen oder Basarstand) zu jeder der fünf Phasen der vollständigen Handlung einen konkreten Arbeitsschritt.",
+        "hints": [
+          "Beginne mit der Frage, wer den Auftrag gibt und was am Ende fertig sein soll.",
+          "Denke an Material, Kosten, Zeit, Präsentation und an das, was ihr nächstes Mal besser macht."
+        ],
+        "model": "Initiative: Wir klären mit der Lehrkraft, dass wir zehn Vogelhäuschen für den Schulgarten bauen. Planung: Wir erstellen eine Materialliste, rechnen die Kosten und verteilen Sägen, Bohren und Streichen. Durchführung: In vier Werkstattstunden fertigen wir die Häuschen. Präsentation: Wir zeigen sie mit Fotos beim Schulfest. Reflexion: Wir vergleichen Plan und Ergebnis und notieren, dass wir mehr Zeit für das Streichen einplanen.",
+        "criteria": [
+          "Du nennst alle fünf Phasen in der richtigen Reihenfolge.",
+          "Jeder Phase ist ein konkreter, passender Arbeitsschritt zugeordnet.",
+          "Kosten, Zeit oder Qualität kommen in deiner Planung vor."
+        ]
+      },
+      "2": {
+        "prompt": "Beim Basar blieben 20 der 40 Handyhalter der 8b unverkauft, obwohl die Qualität gut war. Werte das Projekt in einer kurzen Projektreflexion aus: Nenne zwei mögliche Ursachen und leite zwei Verbesserungen für das nächste Projekt ab.",
+        "hints": [
+          "Prüfe Preis, Werbung, Standort und die Frage, ob die Käufer das Produkt überhaupt brauchten.",
+          "Verbesserungen sollten sich an einer Phase der vollständigen Handlung festmachen lassen."
+        ],
+        "model": "Mögliche Ursachen: In der Initiative hat niemand gefragt, ob Eltern und Schüler Handyhalter brauchen, und der Stand lag in einer ruhigen Ecke ohne Werbeplakat. Verbesserungen: Vor dem nächsten Projekt machen wir in der Planung eine kurze Umfrage zur Nachfrage, und wir planen Werbung und einen besseren Standplatz fest als Arbeitspaket ein. So hängen Produkt, Menge und Absatz besser zusammen.",
+        "criteria": [
+          "Du nennst zwei nachvollziehbare Ursachen für den geringen Verkauf.",
+          "Du leitest zwei konkrete Verbesserungen ab.",
+          "Du ordnest die Verbesserungen einer Projektphase zu."
+        ]
+      }
+    }
+  },
+  {
+    "id": "pr-leittext-weitgehend",
+    "lb": 1,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 8 · LB 1 · R8 & M8",
+    "title": "Die Leittextmethode weitgehend selbständig anwenden",
+    "intro": "Leitfragen führen dein Team durch ein Projekt. In der 8. Klasse arbeitet ihr sie weitgehend allein ab, die Lehrkraft berät euch an wichtigen Stellen.",
+    "paragraphs": [
+      "Die Leittextmethode gliedert eine Projektaufgabe in sechs Schritte: Informieren, Planen, Entscheiden, Ausführen, Kontrollieren und Bewerten. Leitfragen helfen euch, die nötigen Informationen selbst zu beschaffen, etwa über Material, Werkzeuge, Sicherheitsregeln oder Kosten. Weitgehend selbständig heißt: Die Leitfragen und der Rahmen kommen meist noch von der Lehrkraft, aber ihr beantwortet sie im Team, erstellt euren Arbeitsplan selbst und holt euch nur beim Entscheiden in einem Fachgespräch Rückmeldung.",
+      "Beispiel Insektenhotel: Beim Informieren klärt das Team mit den Leitfragen, welche Materialien Wildbienen brauchen und welche Maße die Rückwand hat. Beim Planen entsteht ein Arbeitsplan mit 6 Werkstattstunden. Beim Entscheiden vergleicht das Team im Fachgespräch zwei Varianten: Bambusröhrchen für 6,40 € oder Schilfrohr für 4,80 €, und es wählt Schilfrohr. Danach wird ausgeführt. Beim Kontrollieren prüft das Team mit einem Kontrollbogen die Maße und die Befestigung. Beim Bewerten vergleichen alle ihre Selbsteinschätzung mit der Rückmeldung der Lehrkraft."
+    ],
+    "takeaway": "Bei der Leittextmethode führen Leitfragen durch Informieren, Planen, Entscheiden, Ausführen, Kontrollieren und Bewerten; weitgehend selbständig heißt, dass das Team arbeitet und die Lehrkraft berät.",
+    "sourceIds": ["lpr", "lpm", "profil"],
+    "quiz": {
+      "question": "Welche Rolle hat die Lehrkraft, wenn ihr die Leittextmethode weitgehend selbständig anwendet?",
+      "answer": "Sie gibt Leitfragen und Rahmen vor und berät das Team vor allem im Fachgespräch beim Entscheiden.",
+      "wrong": [
+        "Sie erledigt das Informieren für das Team, damit es sofort ausführen kann.",
+        "Sie hat keine Aufgabe mehr, weil auch die Kontrolle ganz wegfällt."
+      ],
+      "explanation": "Das Team beschafft Informationen, plant und führt selbst aus. Die Lehrkraft setzt den Rahmen und prüft im Fachgespräch, ob der Plan tragfähig ist, bevor ausgeführt wird."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Insektenhotel nach Leittext",
+      "instruction": "Bringe die Arbeitsschritte des Teams in die Reihenfolge der Leittextmethode.",
+      "categories": ["1 · Informieren", "2 · Planen", "3 · Entscheiden", "4 · Ausführen", "5 · Kontrollieren", "6 · Bewerten"],
+      "entries": [
+        { "text": "Das Team liest die Leitfragen und recherchiert, welche Röhrchen Wildbienen nutzen.", "target": 0, "feedback": "Informationen mithilfe der Leitfragen beschaffen ist Schritt 1." },
+        { "text": "Das Team legt einen Arbeitsplan mit Arbeitsschritten, Werkzeugen und 6 Werkstattstunden an.", "target": 1, "feedback": "Arbeitsschritte, Material und Zeit ordnen heißt Planen." },
+        { "text": "Im Fachgespräch mit der Lehrkraft wählt das Team Schilfrohr statt Bambus.", "target": 2, "feedback": "Beim Entscheiden wird der Plan besprochen und eine Variante festgelegt." },
+        { "text": "Die Gruppe sägt die Rückwand zu und füllt die Fächer.", "target": 3, "feedback": "Jetzt setzt das Team den Plan um: Ausführen." },
+        { "text": "Mit dem Kontrollbogen werden Maße und Befestigung abgehakt.", "target": 4, "feedback": "Ergebnis gegen Vorgaben prüfen ist Kontrollieren." },
+        { "text": "Alle vergleichen ihre Selbsteinschätzung mit der Rückmeldung der Lehrkraft.", "target": 5, "feedback": "Beim Bewerten blickt das Team auf Ergebnis und Zusammenarbeit zurück." }
+      ],
+      "conclusion": "Die feste Reihenfolge sorgt dafür, dass erst informiert und entschieden und dann ausgeführt wird."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Formuliere für ein Projekt deiner Wahl zu den Schritten Informieren und Kontrollieren je zwei Leitfragen.",
+        "hints": [
+          "Leitfragen beim Informieren fragen nach Material, Werkzeug, Regeln oder Kosten.",
+          "Leitfragen beim Kontrollieren fragen, ob ein bestimmtes Ziel erreicht wurde."
+        ],
+        "model": "Projekt Insektenhotel. Informieren: Welche Röhrchendurchmesser nutzen Wildbienen? Welche Sicherheitsregeln gelten an der Säge? Kontrollieren: Stimmen die Maße der Rückwand mit dem Plan überein? Sind alle Röhrchen glatt geschnitten und sitzen fest?",
+        "criteria": [
+          "Du formulierst zwei Leitfragen zum Informieren.",
+          "Du formulierst zwei Leitfragen zum Kontrollieren.",
+          "Die Fragen passen zu einem konkreten Projekt."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Team überspringt beim Projekt das Fachgespräch und fängt direkt mit dem Ausführen an. Begründe, welche Folgen das haben kann und warum der Schritt Entscheiden wichtig ist.",
+        "hints": [
+          "Was passiert, wenn ein Fehler im Plan erst beim Bauen auffällt?",
+          "Denke an Material, Kosten und Sicherheit."
+        ],
+        "model": "Ohne Entscheiden fehlt die Prüfung des Plans. Fehler wie falsche Maße oder zu teures Material fallen erst beim Ausführen auf; dann ist Material verbraucht und Zeit verloren. Außerdem kann niemand prüfen, ob Sicherheitsregeln eingeplant sind. Der Schritt Entscheiden ist deshalb die letzte Kontrolle vor dem Handeln und spart am Ende Zeit und Geld.",
+        "criteria": [
+          "Du nennst mindestens zwei Folgen des übersprungenen Schritts.",
+          "Du erklärst die Aufgabe des Fachgesprächs.",
+          "Du ziehst ein begründetes Fazit."
+        ]
+      }
+    }
+  },
+  {
+    "id": "pr-projektsteuerung",
+    "lb": 1,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 8 · LB 1 · R8 & M8",
+    "title": "Projekte steuern: Zeitplan, Meilensteine und Puffer",
+    "intro": "Ein Projekt braucht einen Zeitplan, der auch dann noch hält, wenn etwas schiefgeht. Meilensteine und ein Puffer machen das möglich.",
+    "paragraphs": [
+      "In der Projektplanung zerlegt ihr die Aufgabe in Arbeitspakete und schätzt für jedes die Zeit. Ein Balkenplan zeigt, wann welches Paket bearbeitet wird. Meilensteine sind überprüfbare Zwischenziele, zum Beispiel Material bestellt, Prototyp fertig oder Probeverkauf geschafft. Weil fast immer etwas länger dauert als gedacht, plant ihr zusätzlich einen Zeitpuffer ein. Bei jedem Meilenstein vergleicht ihr Soll und Ist und steuert nach, etwa indem ihr Aufgaben umverteilt oder eine zusätzliche Arbeitsstunde einplant.",
+      "Beispiel Basarprojekt: Planung 6 Stunden, Durchführung 14 Stunden, Präsentation und Reflexion 4 Stunden ergeben 24 Stunden Arbeitszeit. Mit 20 % Puffer kommen 4,8 Stunden dazu, also 28,8 Stunden. Stehen dem Team 2 Projektstunden pro Woche zur Verfügung, braucht es 15 Wochen; der Basar ist aber schon in 8 Wochen. Mit 4 Projektstunden pro Woche reichen 28,8 : 4 = 7,2, also 8 Wochen. Der Plan hält, und der Puffer fängt Verzögerungen auf."
+    ],
+    "takeaway": "Ein guter Projektplan legt Arbeitspakete, Meilensteine und einen Zeitpuffer fest; der Soll-Ist-Vergleich an jedem Meilenstein zeigt früh, wann ihr nachsteuern müsst.",
+    "sourceIds": ["lpr", "lpm", "profil"],
+    "quiz": {
+      "question": "Wozu dient ein Meilenstein im Projektplan?",
+      "answer": "Er ist ein überprüfbares Zwischenziel, an dem das Team Soll und Ist vergleicht und bei Bedarf nachsteuert.",
+      "wrong": [
+        "Er ist der letzte Tag des Projekts, an dem alles fertig sein muss.",
+        "Er ersetzt den Zeitpuffer, weil danach keine Verzögerung mehr möglich ist."
+      ],
+      "explanation": "Meilensteine teilen das Projekt in prüfbare Etappen. So fällt eine Verzögerung schon früh auf und nicht erst am Präsentationstag."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Planungsbausteine erkennen",
+      "instruction": "Ordne jede Aussage dem passenden Baustein der Projektsteuerung zu.",
+      "categories": ["Arbeitspaket", "Meilenstein", "Zeitpuffer", "Nachsteuern"],
+      "entries": [
+        { "text": "Zwei Personen schleifen und lackieren alle Halter; geschätzt 5 Stunden.", "target": 0, "feedback": "Eine abgegrenzte Aufgabe mit Zuständigkeit und Zeitschätzung ist ein Arbeitspaket." },
+        { "text": "Bis Ende der 3. Woche ist ein fertiger Prototyp abgenommen.", "target": 1, "feedback": "Ein überprüfbares Zwischenziel mit Termin ist ein Meilenstein." },
+        { "text": "Zusätzlich zu den 24 geplanten Stunden werden 20 % Reserve eingeplant.", "target": 2, "feedback": "Reservezeit für Unvorhergesehenes ist der Zeitpuffer." },
+        { "text": "Weil das Lackieren hinterherhinkt, hilft die Sägegruppe beim Lackieren mit.", "target": 3, "feedback": "Aufgaben umzuverteilen, wenn das Ist vom Soll abweicht, heißt nachsteuern." },
+        { "text": "Material bestellt und geliefert: Das wird in Woche 1 abgehakt.", "target": 1, "feedback": "Auch dieses prüfbare Zwischenziel ist ein Meilenstein." },
+        { "text": "Die Klasse vereinbart eine zusätzliche Projektstunde, weil der Termin sonst nicht hält.", "target": 3, "feedback": "Zusätzliche Zeit einplanen ist eine Form des Nachsteuerns." }
+      ],
+      "conclusion": "Arbeitspakete, Meilensteine und Puffer bilden den Plan; Nachsteuern hält ihn im Lauf des Projekts auf Kurs."
+    },
+    "lab": "projectPlan",
+    "practice": "projectSchedule",
+    "tasks": {
+      "1": {
+        "prompt": "Lege für ein Projekt mit fester Präsentation in 6 Wochen drei Meilensteine fest und begründe, warum du einen Zeitpuffer einplanst.",
+        "hints": [
+          "Meilensteine sind prüfbar: Am Termin kann man klar sagen, ob sie erreicht sind.",
+          "Überlege, was in einem Projekt typischerweise länger dauert als geplant."
+        ],
+        "model": "Meilenstein 1 (Ende Woche 1): Materialliste fertig und Material bestellt. Meilenstein 2 (Ende Woche 3): Prototyp gebaut und von der Lehrkraft abgenommen. Meilenstein 3 (Ende Woche 5): alle Produkte fertig und Präsentation geprobt. Einen Puffer plane ich ein, weil Lieferungen, Krankheit oder Trockenzeiten den Plan verzögern können; ohne Reserve würde der Präsentationstermin platzen.",
+        "criteria": [
+          "Du nennst drei prüfbare Meilensteine mit Termin.",
+          "Die Meilensteine liegen sinnvoll vor dem Präsentationstermin.",
+          "Du begründest den Puffer mit einem konkreten Risiko."
+        ]
+      },
+      "2": {
+        "prompt": "Beim zweiten Meilenstein liegt dein Team zwei Projektstunden hinter dem Plan. Der Puffer beträgt noch eine Stunde. Entwickle zwei Möglichkeiten zum Nachsteuern und bewerte, welche du wählen würdest.",
+        "hints": [
+          "Ihr könnt Zeit gewinnen, Aufgaben anders verteilen oder den Umfang anpassen.",
+          "Bewerte die Folgen für Qualität und Termin."
+        ],
+        "model": "Möglichkeit 1: Wir verteilen Aufgaben um, sodass die schnellere Gruppe beim Engpass hilft; das kostet keine zusätzliche Zeit, aber Absprachen. Möglichkeit 2: Wir vereinbaren eine zusätzliche Projektstunde; das hält Qualität und Menge, braucht aber die Zustimmung der Lehrkraft. Ich wähle zuerst das Umverteilen, weil es sofort wirkt, und plane die Zusatzstunde nur, wenn der Rückstand danach noch größer ist als der Puffer.",
+        "criteria": [
+          "Du beschreibst zwei unterschiedliche Möglichkeiten zum Nachsteuern.",
+          "Du nennst Vor- und Nachteile der Möglichkeiten.",
+          "Du triffst eine begründete Entscheidung."
+        ]
+      }
+    }
+  },
+  {
+    "id": "pr-leittext-selbstaendig",
+    "lb": 1,
+    "tracks": ["M"],
+    "lehrplan": "WiB 8 · LB 1 · M8",
+    "title": "Leittextmethode selbständig: eigene Leitfragen und Kontrollbögen",
+    "intro": "Im M-Zug steuert ihr die Leittextmethode selbst: Ihr formuliert eigene Leitfragen, legt Kontrollkriterien fest und bewertet euer Projekt.",
+    "paragraphs": [
+      "Selbständig anwenden bedeutet in der Mittlere-Reife-Klasse: Das Team bekommt nur noch den Projektauftrag und schreibt den Leittext selbst. Ihr formuliert Leitfragen für das Informieren, erstellt den Arbeitsplan, entscheidet über Varianten und bittet die Lehrkraft nur bei Bedarf um ein Fachgespräch. Vor dem Ausführen legt ihr fest, woran ihr Erfolg messt. Messbare Kontrollkriterien nennen einen Wert und eine erlaubte Abweichung, damit jedes Teammitglied gleich prüfen kann.",
+      "Beispiel Smoothie-Stand beim Sportfest: Das Team schreibt Leitfragen wie: Welche Hygieneregeln gelten für offene Lebensmittel? Wie viel Obst brauchen wir für 80 Becher? Im Kontrollbogen steht: Füllmenge 0,3 l mit höchstens 10 ml Abweichung, Preisschild aus 2 m Entfernung lesbar, Kühlkette unter 7 °C. Nach dem Verkauf bewertet jedes Mitglied Ergebnis und Zusammenarbeit auf einer Skala von 1 bis 4. Weichen Selbst- und Fremdbewertung stark ab, bespricht das Team die Gründe und hält Folgerungen fest."
+    ],
+    "takeaway": "Wer die Leittextmethode selbständig anwendet, schreibt eigene Leitfragen, legt messbare Kontrollkriterien fest und bewertet Ergebnis und Vorgehen ohne fremde Vorgaben.",
+    "sourceIds": ["lpm", "profil"],
+    "quiz": {
+      "question": "Welches Kontrollkriterium ist messbar formuliert?",
+      "answer": "Jeder Becher enthält 0,3 l, höchstens 10 ml mehr oder weniger.",
+      "wrong": [
+        "Die Becher sollen ordentlich aussehen und gut schmecken.",
+        "Wir geben uns beim Abfüllen möglichst viel Mühe."
+      ],
+      "explanation": "Messbar ist ein Kriterium, wenn es einen Wert und eine Toleranz nennt. Dann prüfen alle gleich, und die Kontrolle hängt nicht vom Geschmack einzelner ab."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Eigenen Leittext prüfen",
+      "instruction": "Entscheide für jeden Baustein aus dem Leittext des Smoothie-Teams, zu welchem Schritt er gehört.",
+      "categories": ["Leitfrage zum Informieren", "Messbares Kontrollkriterium", "Bewertung"],
+      "entries": [
+        { "text": "Welche Hygieneregeln gelten für den Verkauf offener Lebensmittel?", "target": 0, "feedback": "Eine offene Frage, die Wissen beschafft, ist eine Leitfrage zum Informieren." },
+        { "text": "Kühlbox-Temperatur stündlich messen: höchstens 7 °C.", "target": 1, "feedback": "Wert und Grenze machen das Kriterium messbar." },
+        { "text": "Wie viel Obst brauchen wir für 80 Becher?", "target": 0, "feedback": "Auch diese Rechenfrage dient dem Informieren vor der Planung." },
+        { "text": "Preisschild aus 2 m Entfernung lesbar.", "target": 1, "feedback": "Die Entfernung macht die Lesbarkeit prüfbar." },
+        { "text": "Jedes Mitglied schätzt die Zusammenarbeit auf einer Skala von 1 bis 4 ein und begründet seine Zahl.", "target": 2, "feedback": "Rückblick auf Ergebnis und Zusammenarbeit ist Bewertung." },
+        { "text": "Das Team vergleicht Selbst- und Fremdbewertung und notiert zwei Folgerungen.", "target": 2, "feedback": "Auch das Auswerten der Einschätzungen gehört zur Bewertung." }
+      ],
+      "conclusion": "Ein selbst geschriebener Leittext braucht beides: Fragen, die Wissen beschaffen, und Kriterien, die Ergebnisse prüfbar machen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Schreibe für ein Projekt deiner Wahl drei eigene Leitfragen und zwei messbare Kontrollkriterien.",
+        "hints": [
+          "Leitfragen beginnen oft mit Welche, Wie viel oder Wie.",
+          "Ein messbares Kriterium nennt einen Wert und eine erlaubte Abweichung."
+        ],
+        "model": "Projekt: Schlüsselanhänger aus Acryl. Leitfragen: Welche Schutzausrüstung brauchen wir an der Laserschneidmaschine? Wie viel Material benötigen wir für 50 Anhänger? Wie hoch muss der Verkaufspreis sein, damit die Kosten gedeckt sind? Kontrollkriterien: Kantenlänge 40 mm mit höchstens 1 mm Abweichung; kein Anhänger mit sichtbaren Brandspuren.",
+        "criteria": [
+          "Du formulierst drei passende Leitfragen.",
+          "Deine zwei Kontrollkriterien sind messbar.",
+          "Fragen und Kriterien passen zum selben Projekt."
+        ]
+      },
+      "2": {
+        "prompt": "In deinem Team gibt ein Mitglied der Zusammenarbeit eine 4, die anderen geben eine 2. Erkläre, wie das Team mit dieser Abweichung umgehen sollte und welchen Nutzen das für das nächste Projekt hat.",
+        "hints": [
+          "Unterschiedliche Bewertungen zeigen unterschiedliche Wahrnehmungen.",
+          "Welche Regeln helfen bei einem fairen Feedback?"
+        ],
+        "model": "Das Team sollte die Abweichung offen ansprechen: Jedes Mitglied begründet seine Zahl mit konkreten Beobachtungen, ohne Vorwürfe. Vielleicht hat das Mitglied mit der 4 nicht bemerkt, dass andere mehr Aufgaben übernehmen mussten. Daraus entsteht eine klare Folgerung, etwa eine feste Aufgabenliste mit Namen. So wird die Zusammenarbeit im nächsten Projekt fairer und besser planbar.",
+        "criteria": [
+          "Du beschreibst ein faires Vorgehen bei der Aussprache.",
+          "Du nennst eine mögliche Ursache für die Abweichung.",
+          "Du leitest eine konkrete Folgerung für das nächste Projekt ab."
+        ]
+      }
+    }
+  }
+]

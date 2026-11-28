@@ -131,20 +131,20 @@ export function makeExercise(
             `${a} · ${b} m/s`,
           )
         : task(
-            `Du willst für eine neue Skizze ${fmt(3.6 * a)} km/h im Maßstab 1 cm für ${b} m/s zeichnen. Wie lang wird der Pfeil?`,
-            a / b,
+            `Du willst für eine neue Skizze ${fmt(3.6 * a)} km/h im Maßstab 2 cm für ${b} m/s zeichnen. Wie lang wird der Pfeil?`,
+            (2 * a) / b,
             "cm",
-            "Zuerst durch 3,6 teilen. Dann mit dem Pfeilmaßstab umrechnen.",
-            `${a} m/s / (${b} m/s pro cm)`,
+            "Zuerst durch 3,6 teilen. Dann den Pfeilmaßstab mit 2 cm anwenden.",
+            `(${a} m/s / ${b} m/s) · 2 cm`,
           );
     case "kraftstoss":
       return level === 1
         ? task(
-            `Eine resultierende Kraft von ${a} N wirkt ${fmt(b / 10)} s auf einen Puck mit ${fmt(c / 10)} kg. Bestimme den Betrag von Δv.`,
-            (a * b) / c,
+            `Eine resultierende Kraft von ${a} N wirkt ${fmt(b / 40, 3)} s auf einen Puck mit ${fmt(c / 10)} kg. Bestimme den Betrag von Δv.`,
+            (a * b) / (4 * c),
             "m/s",
             "Δv = F · Δt / m",
-            `${a} · ${fmt(b / 10)} / ${fmt(c / 10)} in m/s`,
+            `${a} · ${fmt(b / 40, 3)} / ${fmt(c / 10)} in m/s`,
           )
         : task(
             `Ein Spielzeug mit ${100 * a} g wird in ${100 * b} ms um ${c} m/s schneller. Wie groß ist die mittlere resultierende Kraft?`,

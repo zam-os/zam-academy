@@ -1,0 +1,731 @@
+[
+  {
+    "id": "bo-berufsberatung-angebote",
+    "lb": 2,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 8 · LB 2 · R8 & M8",
+    "title": "Angebote der Berufsberatung und weitere Informationsquellen",
+    "intro": "Für deine Berufswahl musst du nicht alles allein herausfinden. Berufsberatung, Online-Portale, Kammern und Messen helfen dir, gezielt zu suchen.",
+    "paragraphs": [
+      "Die Agentur für Arbeit bietet Berufsberatung an: Sie informiert und berät dich zur Berufswahl, zu Ausbildungsberufen, zu Wegen in der Schule und zur Suche nach einem Ausbildungsplatz (§ 29 SGB III). Im Berufsinformationszentrum (BIZ) findest du Infomaterial und Computerplätze. Online helfen dir die Portale der Bundesagentur für Arbeit: meinBERUF unter arbeitsagentur.de/bildung für den Einstieg, BERUFENET mit genauen Steckbriefen zu Tätigkeiten und Anforderungen und Check-U als Test zu Interessen und Fähigkeiten. Dazu kommen die für die Berufsbildung zuständigen Stellen, also Kammern wie IHK und Handwerkskammer, sowie Ausbildungsmessen, auf denen du Auszubildende direkt fragen kannst.",
+      "Beispiel Can, 14 Jahre: Er bastelt gern an Elektronik. In BERUFENET liest er den Steckbrief Elektroniker/in und notiert, dass Mathematik und Physik wichtig sind. Auf der regionalen Ausbildungsmesse spricht er mit zwei Auszubildenden über ihren Alltag. Bei der Handwerkskammer erfährt er, welche Betriebe in seiner Nähe ausbilden. Mit diesen Notizen vereinbart er einen Termin bei der Berufsberatung. Jede Quelle beantwortet eine andere Frage: Was tut man in dem Beruf, wie fühlt er sich an, wo gibt es Plätze und was passt zu mir?"
+    ],
+    "takeaway": "Nutze mehrere Informationsquellen gezielt: Berufsberatung und BIZ für Beratung, BERUFENET und meinBERUF für Berufsinformationen, Kammern für Ausbildungsbetriebe und Messen für Eindrücke aus erster Hand.",
+    "sourceIds": ["lpr", "lpm", "sgb3_29", "meinberuf", "berufenet", "checku"],
+    "quiz": {
+      "question": "Welche Quelle passt am besten, wenn du genau wissen willst, welche Tätigkeiten und Anforderungen ein Ausbildungsberuf hat?",
+      "answer": "BERUFENET der Bundesagentur für Arbeit mit seinen ausführlichen Berufssteckbriefen.",
+      "wrong": [
+        "Eine Werbeanzeige eines einzelnen Betriebs in einer Zeitschrift.",
+        "Die Meinung eines Freundes, der den Beruf selbst nicht kennt."
+      ],
+      "explanation": "BERUFENET beschreibt Tätigkeiten, Ausbildungsdauer, Anforderungen und Perspektiven neutral und für jeden anerkannten Beruf. Werbung und Meinungen zeigen nur einen Ausschnitt."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Wer hilft wobei?",
+      "instruction": "Ordne jede Frage der Informationsquelle zu, die sie am besten beantwortet.",
+      "categories": ["Berufsberatung / BIZ", "Online-Portal der BA", "Kammer (IHK, HWK)", "Ausbildungsmesse"],
+      "entries": [
+        { "text": "Ich weiß noch gar nicht, was zu mir passt, und möchte persönlich beraten werden.", "target": 0, "feedback": "Persönliche, neutrale Beratung bietet die Berufsberatung der Agentur für Arbeit." },
+        { "text": "Welche Tätigkeiten hat eine Fachkraft für Lagerlogistik und wie lange dauert die Ausbildung?", "target": 1, "feedback": "Berufssteckbriefe mit Tätigkeiten und Dauer stehen in BERUFENET." },
+        { "text": "Welche Handwerksbetriebe in meinem Landkreis bilden Anlagenmechaniker aus?", "target": 2, "feedback": "Die Handwerkskammer ist zuständige Stelle und kennt die Ausbildungsbetriebe." },
+        { "text": "Ich möchte Auszubildende fragen, wie ihr Arbeitstag wirklich aussieht.", "target": 3, "feedback": "Auf Ausbildungsmessen triffst du Auszubildende und Betriebe direkt." },
+        { "text": "Ich will online einen Test zu meinen Interessen und Stärken machen.", "target": 1, "feedback": "Check-U ist ein Testangebot der Bundesagentur für Arbeit." },
+        { "text": "Im BIZ suche ich Infomappen und Filme zu Berufsfeldern.", "target": 0, "feedback": "Das Berufsinformationszentrum gehört zur Agentur für Arbeit." }
+      ],
+      "conclusion": "Jede Quelle hat eine eigene Stärke; wer sie kombiniert, bekommt ein vollständiges Bild."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Wähle einen Beruf, der dich interessiert. Nenne drei Informationsquellen und schreibe zu jeder auf, welche Frage du dort klären willst.",
+        "hints": [
+          "Denke an Berufsberatung, Online-Portale, Kammern und Messen.",
+          "Formuliere die Fragen so genau, dass du danach etwas Neues weißt."
+        ],
+        "model": "Beruf: Zahnmedizinische Fachangestellte. In BERUFENET kläre ich, welche Tätigkeiten und Schulfächer wichtig sind. Auf der Ausbildungsmesse frage ich Auszubildende, wie stressig der Praxisalltag ist. Bei der Berufsberatung bespreche ich, ob meine Noten und Stärken passen und welche Alternativen es gibt.",
+        "criteria": [
+          "Du nennst drei verschiedene, passende Informationsquellen.",
+          "Zu jeder Quelle formulierst du eine konkrete Frage.",
+          "Die Fragen passen zur Stärke der jeweiligen Quelle."
+        ]
+      },
+      "2": {
+        "prompt": "Dein Freund sagt: Für die Berufswahl reicht es, ein paar Videos von Influencern anzuschauen. Beurteile diese Aussage und begründe, welche Quellen du ihm zusätzlich empfiehlst.",
+        "hints": [
+          "Wer steht hinter einer Quelle, und welches Interesse hat sie?",
+          "Welche Quellen sind neutral und vollständig?"
+        ],
+        "model": "Videos können einen ersten Eindruck geben, zeigen aber oft nur schöne oder spannende Seiten und sind manchmal bezahlte Werbung. Für eine sichere Entscheidung braucht es neutrale und vollständige Informationen. Ich empfehle BERUFENET für Tätigkeiten und Anforderungen, ein Gespräch bei der Berufsberatung und ein Praktikum, um den Beruf selbst zu erleben. Die Aussage greift deshalb zu kurz.",
+        "criteria": [
+          "Du nennst Vor- und Nachteile von Videos als Quelle.",
+          "Du empfiehlst mindestens zwei neutrale Quellen mit Begründung.",
+          "Du formulierst ein klares Urteil."
+        ]
+      }
+    }
+  },
+  {
+    "id": "bo-berufswahlprozess-verwalten",
+    "lb": 2,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 8 · LB 2 · R8 & M8",
+    "title": "Den eigenen Berufswahlprozess dokumentieren und verwalten",
+    "intro": "Dein Berufswahlportfolio ist dein Werkzeug: Darin hältst du fest, was du über dich und über Berufe herausgefunden hast und was als Nächstes ansteht.",
+    "paragraphs": [
+      "Im Berufswahlportfolio sammelst du Ergebnisse aus Tests, Erkundungen, Praktika und Beratungsgesprächen, dazu Zeugnisse, Bescheinigungen und deine Selbst- und Fremdeinschätzungen. Aktuell halten heißt: Neue Ergebnisse kommen sofort hinein, veraltete Pläne werden markiert. Überprüfen heißt: Du fragst dich regelmäßig, ob dein Berufswunsch noch zu deinen Erfahrungen passt. Verwalten heißt: Du hast eine feste Gliederung, eine Liste mit Terminen und Fristen und, wenn du digital arbeitest, sinnvolle Dateinamen und eine Sicherungskopie.",
+      "Beispiel Lara: Ihr Portfolio hat fünf Register: Ich, Berufe, Praktika, Bewerbung, Termine. Nach dem ersten Praktikum in einer Kita trägt sie ein, dass ihr die Arbeit mit Kindern gefällt, die Lautstärke aber anstrengend war. In ihrem Berufswahlfahrplan stehen die Fristen: Praktikumsplatz bis zum 15. Januar sichern, Beratungstermin im März, Bewerbungen für Ausbildungsplätze ab Herbst der 9. Klasse. Rechnet sie von einem Bewerbungsschluss in 10 Wochen zurück und braucht 3 Wochen für Unterlagen, muss sie spätestens in 7 Wochen damit beginnen."
+    ],
+    "takeaway": "Ein gut geführtes Berufswahlportfolio ist geordnet, aktuell und mit einem Fahrplan aus Terminen und Fristen verbunden, sodass du deinen Berufswunsch regelmäßig überprüfen kannst.",
+    "sourceIds": ["lpr", "lpm", "meinberuf"],
+    "quiz": {
+      "question": "Was gehört zum Verwalten deines Berufswahlprozesses?",
+      "answer": "Eine feste Gliederung des Portfolios und eine Liste mit Terminen und Fristen, die du laufend aktualisierst.",
+      "wrong": [
+        "Alle Unterlagen erst kurz vor der Bewerbung zusammenzusuchen.",
+        "Nur die Ergebnisse aufzuheben, die zu deinem ersten Berufswunsch passen."
+      ],
+      "explanation": "Verwalten bedeutet Ordnung und Überblick über Fristen. Auch Ergebnisse, die gegen einen Wunsch sprechen, gehören ins Portfolio, weil sie die Entscheidung verbessern."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Laras Portfolio sortieren",
+      "instruction": "Ordne jede Unterlage dem passenden Register in Laras Portfolio zu.",
+      "categories": ["Ich (Stärken, Interessen)", "Berufe", "Praktika", "Bewerbung", "Termine und Fristen"],
+      "entries": [
+        { "text": "Ergebnis ihres Interessentests mit den Bereichen Soziales und Gestalten", "target": 0, "feedback": "Testergebnisse über dich selbst gehören ins Register Ich." },
+        { "text": "Ausgedruckter Steckbrief Erzieher/in mit Notizen", "target": 1, "feedback": "Berufsinformationen gehören ins Register Berufe." },
+        { "text": "Praktikumsbescheinigung und Tagesberichte aus der Kita", "target": 2, "feedback": "Unterlagen aus dem Betriebspraktikum gehören ins Register Praktika." },
+        { "text": "Entwurf ihres tabellarischen Lebenslaufs", "target": 3, "feedback": "Bewerbungsunterlagen gehören ins Register Bewerbung." },
+        { "text": "Berufswahlfahrplan mit Bewerbungsschluss und Beratungstermin", "target": 4, "feedback": "Fristen und Termine stehen im Fahrplan." },
+        { "text": "Rückmeldung ihrer Praktikumsanleiterin zu Teamfähigkeit und Zuverlässigkeit", "target": 0, "feedback": "Eine Fremdeinschätzung deiner Stärken gehört zu dir selbst ins Register Ich." }
+      ],
+      "conclusion": "Eine feste Ordnung macht das Portfolio schnell nutzbar, zum Beispiel vor einem Beratungsgespräch."
+    },
+    "practice": "applicationTimeline",
+    "tasks": {
+      "1": {
+        "prompt": "Entwirf eine Gliederung für dein eigenes Berufswahlportfolio mit mindestens vier Registern und nenne zu jedem Register eine Unterlage.",
+        "hints": [
+          "Was weißt du über dich, über Berufe, aus Praktika?",
+          "Wo hältst du Termine und Fristen fest?"
+        ],
+        "model": "Register 1, Ich: Ergebnis von Check-U und meine Selbsteinschätzung. Register 2, Berufe: Steckbriefe von zwei Wunschberufen aus BERUFENET. Register 3, Praktika: Tagesberichte und Bescheinigung. Register 4, Bewerbung: Lebenslauf und Musteranschreiben. Register 5, Termine: Berufswahlfahrplan mit Fristen.",
+        "criteria": [
+          "Deine Gliederung hat mindestens vier sinnvolle Register.",
+          "Zu jedem Register nennst du eine passende Unterlage.",
+          "Termine oder Fristen sind berücksichtigt."
+        ]
+      },
+      "2": {
+        "prompt": "Nach einem Praktikum merkst du, dass dein Wunschberuf doch nicht zu dir passt. Erkläre, wie du dein Portfolio jetzt überprüfst und aktualisierst, und warum dieses Ergebnis trotzdem wertvoll ist.",
+        "hints": [
+          "Was trägst du ein, was markierst du als veraltet?",
+          "Welche nächsten Schritte planst du?"
+        ],
+        "model": "Ich trage meine Erfahrungen und die Gründe ein, warum der Beruf nicht passt, zum Beispiel zu wenig Kontakt mit Menschen. Den alten Berufswunsch markiere ich als geprüft, nicht gelöscht. Dann suche ich in BERUFENET verwandte Berufe, die meine Stärken nutzen, und plane einen Beratungstermin und ein zweites Praktikum. Das Ergebnis ist wertvoll, weil ich eine Fehlentscheidung vor der Ausbildung vermieden habe.",
+        "criteria": [
+          "Du beschreibst konkret, was du einträgst und änderst.",
+          "Du planst sinnvolle nächste Schritte.",
+          "Du begründest, warum ein negatives Ergebnis nützt."
+        ]
+      }
+    }
+  },
+  {
+    "id": "bo-beratungsgespraech",
+    "lb": 2,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 8 · LB 2 · R8 & M8",
+    "title": "Beratungsgespräche mit der Berufsberatung vorbereiten und führen",
+    "intro": "Ein Beratungsgespräch bringt dir am meisten, wenn du gut vorbereitet bist und das Gespräch selbst steuerst.",
+    "paragraphs": [
+      "Vor dem Gespräch klärst du, was du wissen willst: Notiere deine Interessen, Stärken, Noten und zwei bis drei konkrete Fragen. Nimm dein Berufswahlportfolio mit, zum Beispiel Testergebnisse, Praktikumsberichte und das letzte Zeugnis. Im Gespräch erzählst du offen von dir, stellst deine Fragen, fragst nach, wenn etwas unklar ist, und machst dir Notizen. Am Ende vereinbarst du nächste Schritte. Nach dem Gespräch trägst du die Ergebnisse ins Portfolio ein und erledigst die vereinbarten Aufgaben.",
+      "Beispiel Mia: Sie interessiert sich für Gestalten und Computer. Vor dem Termin schreibt sie drei Fragen auf: Welche Ausbildungsberufe verbinden Gestaltung und Technik? Reicht dafür mein Abschluss? Welche Betriebe in der Region bilden aus? Die Beraterin nennt Mediengestalter/in Digital und Print und Technische/r Produktdesigner/in. Mia notiert zwei nächste Schritte: beide Steckbriefe lesen und sich für ein Praktikum in einer Druckerei bewerben. Zu Hause trägt sie das Ergebnis mit Datum in ihren Berufswahlfahrplan ein."
+    ],
+    "takeaway": "Ein gutes Beratungsgespräch hat drei Teile: vorbereiten mit Fragen und Portfolio, selbst aktiv führen mit Notizen und nachbereiten mit klaren nächsten Schritten.",
+    "sourceIds": ["lpr", "lpm", "sgb3_29"],
+    "quiz": {
+      "question": "Was solltest du am Ende eines Beratungsgesprächs tun?",
+      "answer": "Konkrete nächste Schritte vereinbaren und sie mit den Ergebnissen notieren.",
+      "wrong": [
+        "Darauf warten, dass die Beraterin dir einen Ausbildungsplatz zuteilt.",
+        "Das Gespräch möglichst schnell beenden, ohne nachzufragen."
+      ],
+      "explanation": "Die Berufsberatung berät und informiert, die Entscheidung und die nächsten Schritte liegen bei dir. Notierte Vereinbarungen helfen, dranzubleiben."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Vor, während oder nach dem Gespräch?",
+      "instruction": "Ordne jede Handlung von Mia der passenden Gesprächsphase zu.",
+      "categories": ["Vorbereiten", "Gespräch führen", "Nachbereiten"],
+      "entries": [
+        { "text": "Mia schreibt drei Fragen auf eine Karteikarte.", "target": 0, "feedback": "Fragen notieren gehört zur Vorbereitung." },
+        { "text": "Sie legt Testergebnis und Praktikumsbericht in eine Mappe.", "target": 0, "feedback": "Unterlagen zusammenstellen ist Vorbereitung." },
+        { "text": "Sie fragt nach, was genau ein Technischer Produktdesigner tut.", "target": 1, "feedback": "Nachfragen bei Unklarheiten zeigt, dass Mia das Gespräch aktiv führt." },
+        { "text": "Sie notiert die beiden vorgeschlagenen Berufe mit.", "target": 1, "feedback": "Notizen während des Gesprächs sichern die Ergebnisse." },
+        { "text": "Zu Hause liest sie die Steckbriefe in BERUFENET.", "target": 2, "feedback": "Vereinbarte Aufgaben erledigen ist Nachbereitung." },
+        { "text": "Sie trägt das Ergebnis mit Datum in ihren Berufswahlfahrplan ein.", "target": 2, "feedback": "Ergebnisse ins Portfolio übertragen gehört zur Nachbereitung." }
+      ],
+      "conclusion": "Vorbereitung und Nachbereitung sind genauso wichtig wie das Gespräch selbst."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Bereite ein Beratungsgespräch vor: Notiere zwei Stärken, ein Interesse und drei Fragen, die du der Berufsberatung stellen würdest.",
+        "hints": [
+          "Stärken können aus Noten, Hobbys oder Rückmeldungen anderer kommen.",
+          "Gute Fragen sind offen und betreffen dich persönlich."
+        ],
+        "model": "Stärken: Ich bin handwerklich geschickt und arbeite genau. Interesse: Autos und Technik. Fragen: Welche Ausbildungsberufe passen zu Technik und Genauigkeit außer Kfz-Mechatroniker? Welche Noten sind in diesen Berufen besonders wichtig? Wie finde ich Betriebe in meiner Nähe, die ausbilden?",
+        "criteria": [
+          "Du nennst zwei Stärken und ein Interesse.",
+          "Du formulierst drei offene, persönliche Fragen.",
+          "Die Fragen passen zu deinen Stärken und Interessen."
+        ]
+      },
+      "2": {
+        "prompt": "Jonas geht ohne Vorbereitung zur Berufsberatung und sagt nur: Ich weiß nicht, was ich werden soll. Beurteile, was er aus dem Gespräch mitnehmen kann, und schlage ihm eine bessere Vorbereitung vor.",
+        "hints": [
+          "Was kann die Beraterin ohne Informationen über Jonas leisten?",
+          "Welche Unterlagen und Fragen helfen beim nächsten Termin?"
+        ],
+        "model": "Ohne Vorbereitung kann die Beraterin nur allgemeine Informationen geben, weil sie Jonas' Stärken und Interessen nicht kennt. Er nimmt vielleicht einen Testvorschlag mit, aber keine konkreten Berufe. Besser wäre: vorher Check-U machen, das Portfolio mit Zeugnis und Praktikumsbericht mitbringen und zwei Fragen notieren. Dann kann die Beratung gezielt passende Berufe und nächste Schritte vorschlagen.",
+        "criteria": [
+          "Du beurteilst, was ein unvorbereitetes Gespräch leisten kann.",
+          "Du schlägst konkrete Vorbereitungsschritte vor.",
+          "Du begründest, warum die Vorbereitung das Ergebnis verbessert."
+        ]
+      }
+    }
+  },
+  {
+    "id": "bo-stellenmarkt-recherche",
+    "lb": 2,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 8 · LB 2 · R8 & M8",
+    "title": "Den lokalen Stellen- und Ausbildungsmarkt erkunden",
+    "intro": "Welche Ausbildungsplätze gibt es in deiner Region, was verlangen die Betriebe und welcher Schulabschluss wird erwartet? Das findest du mit den richtigen Medien heraus.",
+    "paragraphs": [
+      "Ausbildungsangebote findest du in der Jobsuche der Bundesagentur für Arbeit, in den Lehrstellenbörsen der Kammern (IHK-Lehrstellenbörse, Lehrstellenradar der Handwerkskammern), in regionalen Zeitungen, auf den Internetseiten von Betrieben und auf Ausbildungsmessen. Lies jedes Angebot genau: Beruf, Beginn, Dauer, Ort, verlangter Schulabschluss, Ausbildungsvergütung und Bewerbungsfrist. Manche Berufe setzen häufig den mittleren Schulabschluss voraus, andere stehen dir mit dem erfolgreichen oder qualifizierenden Abschluss der Mittelschule offen. Für Auszubildende gilt eine Mindestvergütung, die im 2. Jahr um 18 %, im 3. Jahr um 35 % und im 4. Jahr um 40 % über dem Betrag des 1. Jahres liegt (§ 17 BBiG).",
+      "Beispiel Recherche im Landkreis: Emre sucht in der Jobsuche der BA nach Fachkraft für Lagerlogistik im Umkreis von 25 km und findet sechs Angebote. Er legt eine Tabelle an mit Betrieb, Entfernung, Schulabschluss, Vergütung und Frist. Ein Angebot nennt 1.050 € im 1. Ausbildungsjahr und verlangt den mittleren Schulabschluss, ein anderes nennt 980 € und den erfolgreichen Abschluss der Mittelschule. Rechenbeispiel zur Mindestvergütung mit einem angenommenen Betrag von 700 € im 1. Jahr: 2. Jahr 700 € · 1,18 = 826 €, 3. Jahr 700 € · 1,35 = 945 €. Den aktuell gültigen Betrag recherchierst du selbst."
+    ],
+    "takeaway": "Recherchiere Ausbildungsangebote in mehreren Medien und vergleiche sie in einer Tabelle nach Beruf, Ort, Schulabschluss, Vergütung und Bewerbungsfrist.",
+    "sourceIds": ["lpr", "lpm", "jobsuche", "ihklehrstellen", "lehrstellenradar", "bbig17"],
+    "quiz": {
+      "question": "Welche Angabe in einer Ausbildungsanzeige ist für deine Bewerbungsplanung besonders wichtig?",
+      "answer": "Der verlangte Schulabschluss und die Bewerbungsfrist.",
+      "wrong": [
+        "Die Farbe des Firmenlogos und die Schriftart der Anzeige.",
+        "Wie viele Mitarbeitende der Betrieb vor zehn Jahren hatte."
+      ],
+      "explanation": "Abschluss und Frist entscheiden, ob und bis wann du dich bewerben kannst. Weitere wichtige Punkte sind Beruf, Ort, Beginn und Vergütung."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Wo suche ich?",
+      "instruction": "Ordne jede Suchsituation dem passenden Medium zu.",
+      "categories": ["Jobsuche der BA", "Lehrstellenbörse einer Kammer", "Betriebs-Internetseite", "Ausbildungsmesse"],
+      "entries": [
+        { "text": "Emre sucht alle gemeldeten Ausbildungsstellen im Umkreis von 25 km mit Filter nach Beruf.", "target": 0, "feedback": "Die Jobsuche der Bundesagentur für Arbeit bündelt gemeldete Ausbildungsstellen mit Umkreisfilter." },
+        { "text": "Lea sucht freie Plätze in Handwerksbetrieben in ihrem Landkreis.", "target": 1, "feedback": "Das Lehrstellenradar der Handwerkskammern zeigt Plätze im Handwerk." },
+        { "text": "Tim will wissen, wie die Ausbildung bei einem bestimmten Autohaus abläuft.", "target": 2, "feedback": "Details zu einem einzelnen Betrieb stehen auf dessen Internetseite." },
+        { "text": "Sara möchte mehrere Betriebe an einem Tag kennenlernen und Fragen stellen.", "target": 3, "feedback": "Auf einer Ausbildungsmesse triffst du viele Betriebe an einem Ort." },
+        { "text": "Ali sucht Ausbildungsplätze in Industrie- und Handelsbetrieben.", "target": 1, "feedback": "Die IHK-Lehrstellenbörse listet Plätze aus Industrie und Handel." }
+      ],
+      "conclusion": "Wer mehrere Medien nutzt, findet mehr Angebote und kann sie besser vergleichen."
+    },
+    "practice": "trainingPay",
+    "tasks": {
+      "1": {
+        "prompt": "Recherchiere zu einem Wunschberuf zwei Ausbildungsangebote in deiner Region und vergleiche sie in einer Tabelle nach Ort, Schulabschluss, Vergütung und Bewerbungsfrist.",
+        "hints": [
+          "Nutze die Jobsuche der BA oder eine Lehrstellenbörse.",
+          "Schreibe auf, welches Angebot für dich besser passt und warum."
+        ],
+        "model": "Beruf Kaufmann im Einzelhandel. Angebot A: Supermarkt im Nachbarort, 8 km, erfolgreicher Abschluss der Mittelschule, Vergütung im 1. Jahr laut Anzeige 1.000 €, Frist 31. März. Angebot B: Elektronikmarkt in der Kreisstadt, 22 km, mittlerer Schulabschluss erwünscht, Vergütung nicht angegeben, Frist 28. Februar. Für mich passt A besser, weil der Weg kürzer ist und mein Abschluss sicher reicht.",
+        "criteria": [
+          "Du vergleichst zwei Angebote nach allen vier Merkmalen.",
+          "Du nennst die Quelle deiner Recherche.",
+          "Du triffst eine begründete Auswahl."
+        ]
+      },
+      "2": {
+        "prompt": "Erkläre, warum der Schulabschluss bei der Suche nach einem Ausbildungsplatz eine Rolle spielt, und beurteile, was ein höherer Abschluss wie der mittlere Schulabschluss für deine Möglichkeiten bedeutet.",
+        "hints": [
+          "Welche Angebote verlangen ausdrücklich einen bestimmten Abschluss?",
+          "Denke auch an Wege nach der Ausbildung, zum Beispiel Weiterbildung."
+        ],
+        "model": "Viele Betriebe nennen in ihren Anzeigen einen Mindestabschluss, weil die Berufsschule bestimmte Vorkenntnisse erwartet. Mit dem mittleren Schulabschluss stehen mir mehr Ausbildungsberufe offen, etwa in Banken oder in der Verwaltung, und später Wege wie die Fachoberschule. Ein höherer Abschluss ist aber keine Garantie: Auch Motivation, Praktika und Noten zählen, und viele Handwerksberufe sind mit dem Abschluss der Mittelschule sehr gut erreichbar.",
+        "criteria": [
+          "Du erklärst, warum Betriebe einen Abschluss verlangen.",
+          "Du nennst Chancen eines höheren Abschlusses.",
+          "Du beurteilst ausgewogen, was neben dem Abschluss zählt."
+        ]
+      }
+    }
+  },
+  {
+    "id": "bo-kompetenzprofil",
+    "lb": 2,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 8 · LB 2 · R8 & M8",
+    "title": "Kompetenzprofil und Anforderungen der Arbeitswelt vergleichen",
+    "intro": "Was kannst du gut, was interessiert dich, was liegt dir? Wenn du dein Kompetenzprofil mit den Anforderungen eines Berufs vergleichst, siehst du, was passt.",
+    "paragraphs": [
+      "Dein Kompetenzprofil beschreibt deine Stärken, Interessen und Neigungen. Dazu gehören fachliche Stärken wie Rechnen oder Deutsch, methodische wie genaues Arbeiten, soziale wie Teamfähigkeit und persönliche wie Zuverlässigkeit. Du ermittelst sie mit Selbsteinschätzung, Rückmeldungen anderer, Tests und Erfahrungen aus Praktika. Jeder Beruf hat ein Anforderungsprofil, das zum Beispiel in BERUFENET beschrieben ist. Vergleichst du beide Profile Punkt für Punkt, siehst du, welche Berufsbilder gut zu dir passen und wo du noch Lücken hast.",
+      "Beispiel Profilvergleich auf einer Skala von 1 bis 6: Niklas schätzt sich so ein: Technik 5, Kommunikation 3, Sorgfalt 5, Rechnen 4. Kfz-Mechatroniker/in verlangt im Modell Technik 6, Kommunikation 3, Sorgfalt 5, Rechnen 4. Der Abstand beträgt 1 + 0 + 0 + 0 = 1 Punkt; bei höchstens 20 Punkten Abstand entspricht das einer Passung von 100 % − 5 % = 95 %. Für Kaufmann/-frau im Einzelhandel (2, 6, 4, 4) beträgt der Abstand 3 + 3 + 1 + 0 = 7 Punkte, also nur 65 %. Ein solches Modell ersetzt keine Entscheidung, zeigt aber, wo es sich lohnt, genauer hinzusehen."
+    ],
+    "takeaway": "Vergleiche dein Kompetenzprofil aus Stärken, Interessen und Neigungen Punkt für Punkt mit dem Anforderungsprofil eines Berufs, um passende Berufsbilder zu finden und Lücken zu erkennen.",
+    "sourceIds": ["lpr", "lpm", "berufenet", "checku"],
+    "quiz": {
+      "question": "Wie ordnest du deine persönlichen Voraussetzungen einem Berufsbild zu?",
+      "answer": "Du vergleichst dein Kompetenzprofil Punkt für Punkt mit dem Anforderungsprofil des Berufs.",
+      "wrong": [
+        "Du wählst den Beruf, in dem man am Anfang am meisten verdient.",
+        "Du nimmst den Beruf, den die meisten deiner Freunde wählen."
+      ],
+      "explanation": "Nur der Vergleich von eigenen Stärken und Interessen mit den Anforderungen zeigt, ob ein Beruf zu dir passt. Verdienst und Freunde sind Nebenaspekte."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Kompetenzen sortieren",
+      "instruction": "Ordne jede Aussage aus Niklas' Profil der richtigen Kompetenzart zu.",
+      "categories": ["Fachliche Stärke", "Methodische Stärke", "Soziale Stärke", "Persönliche Stärke"],
+      "entries": [
+        { "text": "In Mathematik steht er seit zwei Jahren auf einer 2.", "target": 0, "feedback": "Leistungen in einem Fach sind fachliche Stärken." },
+        { "text": "Er plant seine Arbeitsschritte vorher und arbeitet sehr genau.", "target": 1, "feedback": "Genaues, geplantes Arbeiten ist eine methodische Stärke." },
+        { "text": "Im Projekt hilft er anderen und hört im Team gut zu.", "target": 2, "feedback": "Teamfähigkeit ist eine soziale Stärke." },
+        { "text": "Er kommt immer pünktlich und hält Absprachen ein.", "target": 3, "feedback": "Zuverlässigkeit ist eine persönliche Stärke." },
+        { "text": "Er kann technische Zeichnungen lesen.", "target": 0, "feedback": "Technisches Fachwissen ist eine fachliche Stärke." }
+      ],
+      "conclusion": "Ein vollständiges Kompetenzprofil umfasst alle vier Kompetenzarten, nicht nur Noten."
+    },
+    "lab": "careerMatch",
+    "practice": "profileMatch",
+    "tasks": {
+      "1": {
+        "prompt": "Erstelle ein kurzes Kompetenzprofil von dir mit je einer fachlichen, methodischen, sozialen und persönlichen Stärke sowie einem Interesse. Nenne einen Beruf, zu dem es passen könnte.",
+        "hints": [
+          "Nutze Noten, Rückmeldungen und Erfahrungen als Belege.",
+          "Prüfe in BERUFENET, welche Anforderungen der Beruf stellt."
+        ],
+        "model": "Fachlich: gute Noten in Biologie. Methodisch: Ich arbeite sorgfältig und ordentlich. Sozial: Ich gehe freundlich auf andere zu. Persönlich: Ich bin geduldig. Interesse: Gesundheit und Menschen helfen. Passender Beruf: Medizinische/r Fachangestellte/r, weil dort Sorgfalt, Freundlichkeit und Interesse an Gesundheit verlangt werden.",
+        "criteria": [
+          "Du nennst je eine Stärke aus allen vier Kompetenzarten.",
+          "Du nennst ein Interesse.",
+          "Du begründest den Beruf mit seinen Anforderungen."
+        ]
+      },
+      "2": {
+        "prompt": "Dein Profil passt im Vergleich nur zu 60 % zu deinem Wunschberuf, weil dir eine wichtige Anforderung fehlt. Beurteile, welche Möglichkeiten du hast, und triff eine begründete Entscheidung.",
+        "hints": [
+          "Lässt sich die Lücke durch Üben, Kurse oder Praktika schließen?",
+          "Gibt es verwandte Berufe mit ähnlichen Tätigkeiten?"
+        ],
+        "model": "Fehlt mir zum Beispiel Sicherheit im Rechnen, kann ich gezielt üben und meine Note verbessern; dann steigt die Passung. Ich kann aber auch verwandte Berufe prüfen, die meine Stärken besser nutzen. Ich entscheide mich, ein halbes Jahr gezielt an der Lücke zu arbeiten und gleichzeitig ein Praktikum im Wunschberuf zu machen. Danach vergleiche ich erneut, statt den Wunsch sofort aufzugeben.",
+        "criteria": [
+          "Du nennst mindestens zwei Möglichkeiten.",
+          "Du wägst die Möglichkeiten ab.",
+          "Du triffst eine begründete Entscheidung."
+        ]
+      }
+    }
+  },
+  {
+    "id": "bo-praktikum-erproben",
+    "lb": 2,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 8 · LB 2 · R8 & M8",
+    "title": "Im Betriebspraktikum Tätigkeiten erproben und den Berufswunsch prüfen",
+    "intro": "Im Betriebspraktikum arbeitest du eine Woche oder länger in einem echten Betrieb mit. So erfährst du, ob ein Beruf im Alltag zu dir passt.",
+    "paragraphs": [
+      "In der Regelklasse machst du in der 8. Jahrgangsstufe zwei jeweils mindestens einwöchige Betriebspraktika, im M-Zug ein mindestens einwöchiges Praktikum. Unter Anleitung erprobst du berufliche Tätigkeiten und lernst die Vielfalt beruflicher Arbeit kennen. Dabei prüfst du deinen Berufswunsch: Machen mir die Tätigkeiten Spaß, komme ich mit Arbeitszeit, Lautstärke und Umgangston zurecht, und welche Stärken brauche ich? Deine Erfahrungen und Beobachtungen hältst du mit geeigneten Mitteln fest, etwa in einem Praktikumstagebuch mit Tagesberichten, einem Beobachtungsbogen oder Fotos, die du nur mit Erlaubnis des Betriebs machst.",
+      "Beispiel Leonie: Ihr erstes Praktikum macht sie in einer Zahnarztpraxis. Sie hilft beim Desinfizieren der Instrumente, begleitet Patienten zum Behandlungsstuhl und schaut bei der Terminvergabe zu. In ihr Tagebuch schreibt sie jeden Tag drei Tätigkeiten, eine Beobachtung und eine Einschätzung. Ihr Fazit: Der Kontakt mit Menschen gefällt ihr, das lange Stehen ist anstrengend. Ihr zweites Praktikum macht sie bewusst in einer Gärtnerei, um einen Gegenvergleich zu haben. Danach weiß sie: Ein Beruf mit Menschen und Gesundheit bleibt ihr erster Wunsch."
+    ],
+    "takeaway": "Im Betriebspraktikum erprobst du unter Anleitung echte Tätigkeiten, prüfst deinen Berufswunsch an der Wirklichkeit und hältst Erfahrungen und Beobachtungen regelmäßig schriftlich fest.",
+    "sourceIds": ["lpr", "lpm", "jarbschg5"],
+    "quiz": {
+      "question": "Ein Praktikum zeigt dir, dass ein Beruf nicht zu dir passt. Wie bewertest du dieses Ergebnis?",
+      "answer": "Als wichtiges Ergebnis, weil du deinen Berufswunsch an der Wirklichkeit geprüft hast.",
+      "wrong": [
+        "Als verlorene Zeit, weil das Praktikum nichts gebracht hat.",
+        "Als Zeichen, dass Praktika für die Berufswahl unwichtig sind."
+      ],
+      "explanation": "Ein Praktikum soll den Berufswunsch prüfen. Auch die Erkenntnis, dass etwas nicht passt, spart dir eine falsche Ausbildungsentscheidung."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Leonies Tagebuch",
+      "instruction": "Ordne jeden Eintrag aus Leonies Praktikumstagebuch der passenden Art zu.",
+      "categories": ["Tätigkeit", "Beobachtung", "Persönliche Einschätzung"],
+      "entries": [
+        { "text": "Ich habe Instrumente in den Thermodesinfektor eingeräumt.", "target": 0, "feedback": "Was du selbst getan hast, ist eine Tätigkeit." },
+        { "text": "Die Auszubildende im 3. Jahr plant die Termine für den nächsten Tag am Computer.", "target": 1, "feedback": "Was du bei anderen siehst, ist eine Beobachtung." },
+        { "text": "Mir gefällt es, Patienten zu beruhigen.", "target": 2, "feedback": "Wie du etwas erlebst, ist eine persönliche Einschätzung." },
+        { "text": "Ich habe Patienten vom Wartezimmer zum Behandlungsstuhl begleitet.", "target": 0, "feedback": "Auch das ist eine eigene Tätigkeit." },
+        { "text": "Das lange Stehen am Nachmittag finde ich anstrengend.", "target": 2, "feedback": "Ein Eindruck über deine Belastung ist eine persönliche Einschätzung." },
+        { "text": "Vor jeder Behandlung wird die Arbeitsfläche gewischt und desinfiziert.", "target": 1, "feedback": "Ein festgestellter Ablauf ist eine Beobachtung." }
+      ],
+      "conclusion": "Tätigkeiten, Beobachtungen und Einschätzungen zusammen machen ein Tagebuch aussagekräftig."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Schreibe einen Tagesbericht für einen Praktikumstag mit drei Tätigkeiten, einer Beobachtung und einer persönlichen Einschätzung.",
+        "hints": [
+          "Beschreibe Tätigkeiten genau, nicht nur mit einem Wort.",
+          "Die Einschätzung sagt, was dir gefallen hat oder schwerfiel."
+        ],
+        "model": "Dienstag, Praktikum in der Schreinerei. Tätigkeiten: Ich habe Bretter nach Plan abgemessen, mit dem Schleifgerät Kanten geglättet und die Werkstatt aufgeräumt. Beobachtung: Der Geselle programmiert die CNC-Fräse am Computer, bevor sie schneidet. Einschätzung: Das genaue Arbeiten mit Holz macht mir Spaß, der Staub stört mich trotz Maske etwas.",
+        "criteria": [
+          "Du beschreibst drei Tätigkeiten genau.",
+          "Du trennst Beobachtung und Einschätzung.",
+          "Dein Bericht ist sachlich und vollständig."
+        ]
+      },
+      "2": {
+        "prompt": "Begründe, warum es sinnvoll sein kann, das zweite Praktikum bewusst in einem ganz anderen Berufsfeld zu machen als das erste.",
+        "hints": [
+          "Was lernst du durch einen Vergleich?",
+          "Denke an Interessen, die du vielleicht noch nicht kennst."
+        ],
+        "model": "Ein zweites Praktikum in einem anderen Berufsfeld schafft einen Vergleich: Erst im Kontrast merke ich, was mir an der ersten Stelle wirklich gefallen hat. Außerdem entdecke ich vielleicht Interessen, die ich noch nicht kannte. Wenn mein erster Wunsch danach immer noch vorne liegt, ist meine Entscheidung sicherer; wenn nicht, habe ich eine Alternative gefunden.",
+        "criteria": [
+          "Du erklärst den Nutzen eines Vergleichs.",
+          "Du nennst mindestens zwei Gründe.",
+          "Du beziehst die Gründe auf deine Berufswahl."
+        ]
+      }
+    }
+  },
+  {
+    "id": "bo-praktikum-dokumentieren",
+    "lb": 2,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 8 · LB 2 · R8 & M8",
+    "title": "Das Betriebspraktikum vorbereiten, dokumentieren und präsentieren",
+    "intro": "Ein Praktikum beginnt lange vor dem ersten Arbeitstag und endet erst mit der Präsentation. Gute Vor- und Nachbereitung machen es wertvoll.",
+    "paragraphs": [
+      "Inhaltlich bereitest du dich vor, indem du dich über den Beruf und den Betrieb informierst und Erkundungsaufträge oder Fragen notierst. Organisatorisch klärst du Weg, Arbeitszeit, Kleidung, Ansprechpartner und was du bei Krankheit tust. Während des Praktikums dokumentierst du deine Tätigkeiten und Beobachtungen. In der Nachbereitung erstellst du einen Praktikumsbericht oder eine Mappe, präsentierst deine Erfahrungen der Klasse und wertest aus, was das Praktikum für deinen Berufswahlprozess bedeutet. Die Praktikumsbescheinigung kommt ins Portfolio.",
+      "Beispiel Ben, Praktikum im Autohaus: Eine Woche vorher fährt er den Weg mit dem Bus ab und plant 35 Minuten Fahrzeit ein. Er notiert vier Fragen an den Werkstattmeister. Jeden Abend schreibt er einen Tagesbericht. Nach dem Praktikum gestaltet er eine Präsentation mit fünf Folien: Betrieb, Tätigkeiten, ein Arbeitsablauf, was mir gefallen hat, mein Fazit. Sein Fazit für den Berufswahlprozess: Kfz-Mechatroniker bleibt sein Wunsch, er will sich aber mehr über die Ausbildung zum Karosseriebauer informieren."
+    ],
+    "takeaway": "Ein Betriebspraktikum braucht inhaltliche und organisatorische Vorbereitung, eine laufende Dokumentation und eine Nachbereitung mit Präsentation und Folgerungen für deinen Berufswahlprozess.",
+    "sourceIds": ["lpr", "lpm"],
+    "quiz": {
+      "question": "Was gehört zur organisatorischen Vorbereitung eines Praktikums?",
+      "answer": "Weg, Arbeitszeit, Kleidung, Ansprechpartner und das Vorgehen bei Krankheit klären.",
+      "wrong": [
+        "Den Praktikumsbericht schreiben und der Klasse präsentieren.",
+        "Die Fragen an den Betrieb erst am letzten Praktikumstag überlegen."
+      ],
+      "explanation": "Organisatorische Vorbereitung regelt die Abläufe, damit du pünktlich, passend gekleidet und erreichbar bist. Bericht und Präsentation gehören zur Nachbereitung."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Bens Praktikumsplan",
+      "instruction": "Ordne jeden Schritt von Ben der richtigen Phase zu.",
+      "categories": ["Inhaltlich vorbereiten", "Organisatorisch vorbereiten", "Dokumentieren", "Nachbereiten und präsentieren"],
+      "entries": [
+        { "text": "Ben liest den Steckbrief Kfz-Mechatroniker/in und notiert vier Fragen.", "target": 0, "feedback": "Informationen und Fragen zum Beruf sind inhaltliche Vorbereitung." },
+        { "text": "Er fährt den Weg mit dem Bus ab und plant 35 Minuten ein.", "target": 1, "feedback": "Weg und Zeit klären ist organisatorische Vorbereitung." },
+        { "text": "Er fragt, ob Arbeitsschuhe gestellt werden.", "target": 1, "feedback": "Kleidung klären gehört zur organisatorischen Vorbereitung." },
+        { "text": "Jeden Abend schreibt er einen Tagesbericht.", "target": 2, "feedback": "Laufende Aufzeichnungen sind Dokumentation." },
+        { "text": "Er gestaltet fünf Folien und stellt sie der Klasse vor.", "target": 3, "feedback": "Die Präsentation gehört zur Nachbereitung." },
+        { "text": "Er notiert im Portfolio, welche Folgerung er für seine Berufswahl zieht.", "target": 3, "feedback": "Erfahrungen in den Berufswahlprozess einbeziehen ist Nachbereitung." }
+      ],
+      "conclusion": "Vorbereitung, Dokumentation und Nachbereitung greifen ineinander: Ohne Notizen gibt es keine gute Präsentation."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erstelle eine Checkliste mit je drei Punkten für die inhaltliche und die organisatorische Vorbereitung deines nächsten Praktikums.",
+        "hints": [
+          "Inhaltlich: Beruf, Betrieb, Fragen.",
+          "Organisatorisch: Weg, Zeit, Kleidung, Ansprechpartner, Krankheit."
+        ],
+        "model": "Inhaltlich: Steckbrief des Berufs lesen; Internetseite des Betriebs anschauen; drei Fragen an meine Betreuerin notieren. Organisatorisch: Weg und Fahrzeit testen; Arbeitsbeginn, Pausen und passende Kleidung erfragen; Telefonnummer des Betriebs speichern, um mich bei Krankheit vor Arbeitsbeginn abzumelden und auch die Schule zu informieren.",
+        "criteria": [
+          "Deine Checkliste hat je drei inhaltliche und organisatorische Punkte.",
+          "Die Punkte sind konkret formuliert.",
+          "Das Vorgehen bei Krankheit ist berücksichtigt."
+        ]
+      },
+      "2": {
+        "prompt": "Gliedere eine Kurzpräsentation über dein Praktikum mit fünf Teilen und erkläre, warum der letzte Teil für deine Berufswahl der wichtigste ist.",
+        "hints": [
+          "Wer, was, wie, wie war es, was folgt daraus?",
+          "Wie fließt das Praktikum in deinen Berufswahlprozess ein?"
+        ],
+        "model": "Gliederung: 1. Der Betrieb kurz vorgestellt; 2. meine Tätigkeiten; 3. ein Arbeitsablauf genauer erklärt; 4. was mir gefallen hat und was schwer war; 5. mein Fazit für die Berufswahl. Der letzte Teil ist der wichtigste, weil ich dort meine Erfahrungen mit meinem Kompetenzprofil verbinde und entscheide, ob ich den Beruf weiterverfolge oder Alternativen prüfe.",
+        "criteria": [
+          "Deine Gliederung hat fünf sinnvolle Teile.",
+          "Das Fazit verbindet Praktikum und Berufswahl.",
+          "Du begründest die Bedeutung des Fazits."
+        ]
+      }
+    }
+  },
+  {
+    "id": "bo-bewerbung-praktikum",
+    "lb": 2,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 8 · LB 2 · R8 & M8",
+    "title": "Sich um einen Praktikumsplatz bewerben",
+    "intro": "Für viele Praktikumsplätze brauchst du eine Bewerbung. Mit Anschreiben und Lebenslauf zeigst du, dass du den Platz wirklich willst.",
+    "paragraphs": [
+      "Eine vollständige Bewerbung für einen Praktikumsplatz besteht meist aus einem Anschreiben und einem tabellarischen Lebenslauf, oft zusammen mit einer Kopie des letzten Zeugnisses. Das Anschreiben passt auf eine Seite und ist klar gegliedert: Absender, Empfänger mit Ansprechpartner, Ort und Datum, Betreff, persönliche Anrede, Einleitung mit dem Praktikumszeitraum, Hauptteil mit deinem Interesse und deinen Stärken, Schluss mit der Bitte um Rückmeldung, Grußformel und Unterschrift. Der Lebenslauf nennt persönliche Daten, Schulbildung, Praktika, Kenntnisse und Interessen. Vorher kannst du telefonisch nachfragen, ob und wann der Betrieb Praktikantinnen und Praktikanten nimmt.",
+      "Beispiel Aylin: Sie ruft in einer Apotheke an und erfährt, dass Frau Berger die Praktika betreut. Im Betreff ihres Anschreibens steht: Bewerbung um ein Betriebspraktikum vom 9. bis 13. März. Im Hauptteil schreibt sie, dass sie sich für Gesundheit interessiert, in Biologie gute Noten hat und im Schulsanitätsdienst mitarbeitet. Sie bittet um eine Rückmeldung und unterschreibt. Vor dem Absenden prüft sie mit einer Checkliste Rechtschreibung, Datum, Namen und Anlagen. Eine Woche später hakt sie freundlich telefonisch nach."
+    ],
+    "takeaway": "Eine vollständige Praktikumsbewerbung besteht aus einem einseitigen, klar gegliederten Anschreiben und einem tabellarischen Lebenslauf, die fehlerfrei und auf den Betrieb zugeschnitten sind.",
+    "sourceIds": ["lpr", "lpm", "meinberuf"],
+    "quiz": {
+      "question": "Was gehört in den Hauptteil eines Anschreibens für einen Praktikumsplatz?",
+      "answer": "Warum du dich für den Beruf und den Betrieb interessierst und welche Stärken du mitbringst.",
+      "wrong": [
+        "Deine vollständige Schullaufbahn mit allen Noten seit der Grundschule.",
+        "Eine Liste deiner Lieblingsfilme und Hobbys ohne Bezug zum Beruf."
+      ],
+      "explanation": "Der Hauptteil begründet dein Interesse und zeigt passende Stärken. Die Schullaufbahn steht übersichtlich im Lebenslauf."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Aufbau eines Anschreibens",
+      "instruction": "Bringe die Bausteine von Aylins Anschreiben in die richtige Reihenfolge.",
+      "categories": ["1", "2", "3", "4", "5", "6"],
+      "entries": [
+        { "text": "Absender und Empfänger mit Ansprechpartnerin Frau Berger", "target": 0, "feedback": "Oben stehen Absender und Empfänger." },
+        { "text": "Betreff: Bewerbung um ein Betriebspraktikum vom 9. bis 13. März", "target": 1, "feedback": "Nach Ort und Datum folgt der Betreff." },
+        { "text": "Sehr geehrte Frau Berger,", "target": 2, "feedback": "Die persönliche Anrede steht nach dem Betreff." },
+        { "text": "Ihre Apotheke wurde mir am Telefon empfohlen; ich interessiere mich für Gesundheit und arbeite im Schulsanitätsdienst mit.", "target": 3, "feedback": "Einleitung und Hauptteil begründen das Interesse." },
+        { "text": "Über eine Rückmeldung freue ich mich sehr.", "target": 4, "feedback": "Der Schluss bittet um Rückmeldung." },
+        { "text": "Mit freundlichen Grüßen und Unterschrift, darunter Anlagen: Lebenslauf, Zeugniskopie", "target": 5, "feedback": "Grußformel, Unterschrift und Anlagen bilden das Ende." }
+      ],
+      "conclusion": "Eine feste Reihenfolge macht das Anschreiben übersichtlich und professionell."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Schreibe den Hauptteil eines Anschreibens für einen Praktikumsplatz in einem Beruf deiner Wahl mit zwei Stärken und einem Grund für dein Interesse.",
+        "hints": [
+          "Belege jede Stärke mit einem Beispiel aus Schule oder Freizeit.",
+          "Warum gerade dieser Beruf, warum gerade dieser Betrieb?"
+        ],
+        "model": "Ich interessiere mich für den Beruf Tischler, weil ich in Werken gern mit Holz arbeite und gesehen habe, wie Ihre Werkstatt Möbel nach Maß fertigt. Ich arbeite genau: Mein Insektenhotel im Projekt war maßgenau auf den Millimeter. Außerdem bin ich zuverlässig, denn ich trage seit einem Jahr jeden Samstag Zeitungen aus. In einem Praktikum möchte ich herausfinden, ob der Beruf zu mir passt.",
+        "criteria": [
+          "Du nennst einen Grund für dein Interesse.",
+          "Du nennst zwei Stärken mit Beleg.",
+          "Der Text bezieht sich auf Beruf und Betrieb."
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe das folgende Anschreiben-Ende und verbessere es: Hallo, ich will bei euch ein Praktikum machen, schreibt mal zurück. Tschüss, Max. Begründe deine Änderungen.",
+        "hints": [
+          "Welche Form von Anrede und Gruß ist im Geschäftsbrief üblich?",
+          "Was fehlt am Ende eines vollständigen Anschreibens?"
+        ],
+        "model": "Verbesserte Fassung: Sehr geehrte Damen und Herren, über die Möglichkeit eines Praktikums in Ihrem Betrieb würde ich mich sehr freuen. Für Rückfragen bin ich gern erreichbar. Mit freundlichen Grüßen, Unterschrift, Max Muster, Anlagen: Lebenslauf. Begründung: Ein Anschreiben ist ein Geschäftsbrief, deshalb siezt man, nutzt eine höfliche Anrede und Grußformel, unterschreibt mit vollem Namen und nennt die Anlagen.",
+        "criteria": [
+          "Du verbesserst Anrede, Schluss und Grußformel.",
+          "Du ergänzt Unterschrift mit Namen und Anlagen.",
+          "Du begründest die Änderungen mit den Regeln des Geschäftsbriefs."
+        ]
+      }
+    }
+  },
+  {
+    "id": "bo-bewerbungsmappe-ausbildung",
+    "lb": 2,
+    "tracks": ["R"],
+    "lehrplan": "WiB 8 · LB 2 · R8",
+    "title": "Eine vollständige Bewerbungsmappe für einen Ausbildungsplatz",
+    "intro": "Für einen Ausbildungsplatz verlangen Betriebe eine vollständige Bewerbung, oft auch online. Ihre Teile und ihre Reihenfolge sind klar festgelegt.",
+    "paragraphs": [
+      "Eine vollständige Bewerbungsmappe für einen Ausbildungsplatz enthält in dieser Reihenfolge: das Anschreiben, optional ein Deckblatt, den tabellarischen Lebenslauf und die Anlagen, also die letzten beiden Zeugnisse, Praktikumsbescheinigungen und Nachweise wie einen Erste-Hilfe-Kurs. Ein Bewerbungsfoto ist freiwillig. Online bewirbst du dich per E-Mail oder über ein Bewerbungsformular des Betriebs: Dann fasst du alle Unterlagen in einer einzigen PDF-Datei mit eindeutigem Namen zusammen, nutzt eine seriöse E-Mail-Adresse und schreibst einen kurzen Begleittext. Jede Bewerbung schneidest du auf den Betrieb zu, statt einen Serienbrief zu verschicken.",
+      "Beispiel Jonas bewirbt sich online als Anlagenmechaniker: Er speichert Anschreiben, Lebenslauf, zwei Zeugnisse und zwei Praktikumsbescheinigungen als eine Datei mit dem Namen Bewerbung_Anlagenmechaniker_Jonas_Weber.pdf. Statt seiner Spaß-Adresse legt er eine Adresse mit Vor- und Nachnamen an. In den Betreff der E-Mail schreibt er: Bewerbung um einen Ausbildungsplatz als Anlagenmechaniker ab September. Bevor er auf Senden klickt, lässt er seine Lehrkraft die Unterlagen auf Fehler prüfen und schickt sich die E-Mail zur Probe selbst."
+    ],
+    "takeaway": "Eine vollständige Bewerbungsmappe besteht aus Anschreiben, Lebenslauf und Anlagen wie Zeugnissen und Praktikumsnachweisen; online gehören alle Teile in eine PDF-Datei mit klarem Namen.",
+    "sourceIds": ["lpr", "agg1", "meinberuf"],
+    "quiz": {
+      "question": "Was ist bei einer Online-Bewerbung per E-Mail richtig?",
+      "answer": "Alle Unterlagen in einer PDF-Datei mit eindeutigem Namen und eine seriöse E-Mail-Adresse verwenden.",
+      "wrong": [
+        "Jedes Zeugnis als eigenes Handyfoto in voller Größe anhängen.",
+        "Einen leeren Begleittext schicken, weil im Anhang ja alles steht."
+      ],
+      "explanation": "Eine einzige, gut benannte PDF-Datei ist für den Betrieb leicht zu öffnen und weiterzuleiten. Eine seriöse Adresse und ein kurzer Begleittext wirken professionell."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Gehört das in die Mappe?",
+      "instruction": "Entscheide, wie Jonas mit jedem Teil umgehen soll.",
+      "categories": ["Pflichtteil der Mappe", "Sinnvolle Anlage", "Gehört nicht hinein"],
+      "entries": [
+        { "text": "Ein auf den Betrieb zugeschnittenes Anschreiben", "target": 0, "feedback": "Das Anschreiben ist Pflichtteil jeder Bewerbung." },
+        { "text": "Tabellarischer Lebenslauf mit Datum und Unterschrift", "target": 0, "feedback": "Der Lebenslauf ist Pflichtteil." },
+        { "text": "Die beiden letzten Zeugnisse", "target": 0, "feedback": "Zeugnisse verlangen Betriebe fast immer." },
+        { "text": "Praktikumsbescheinigung eines Heizungsbaubetriebs", "target": 1, "feedback": "Ein passender Praktikumsnachweis stärkt die Bewerbung." },
+        { "text": "Bescheinigung über einen Erste-Hilfe-Kurs", "target": 1, "feedback": "Zusätzliche Nachweise sind sinnvolle Anlagen." },
+        { "text": "Ein Urlaubsfoto vom Strand als Bewerbungsbild", "target": 2, "feedback": "Ein Foto ist freiwillig; ein privates Urlaubsfoto gehört nicht in eine Bewerbung." },
+        { "text": "Das Zeugnis der 2. Klasse Grundschule", "target": 2, "feedback": "Verlangt werden die letzten beiden Zeugnisse, nicht alle." }
+      ],
+      "conclusion": "Vollständig heißt: alle Pflichtteile, passende Anlagen und nichts Überflüssiges."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erstelle die Gliederung deines tabellarischen Lebenslaufs mit allen üblichen Abschnitten und fülle sie mit deinen Daten in Stichpunkten aus.",
+        "hints": [
+          "Persönliche Daten, Schulbildung, Praktika, Kenntnisse, Interessen.",
+          "Ort, Datum und Unterschrift nicht vergessen."
+        ],
+        "model": "Persönliche Daten: Name, Anschrift, Telefon, E-Mail, Geburtsdatum. Schulbildung: seit 2022 Mittelschule Musterstadt, angestrebter Abschluss; davor Grundschule. Praktika: Heizungsbau Huber (1 Woche), Elektro Meier (1 Woche). Kenntnisse: Office-Programme, Englisch Grundkenntnisse, Erste-Hilfe-Kurs. Interessen: Fahrradreparatur, Fußball im Verein. Ort, Datum, Unterschrift.",
+        "criteria": [
+          "Dein Lebenslauf enthält alle üblichen Abschnitte.",
+          "Die Angaben sind vollständig und übersichtlich.",
+          "Ort, Datum und Unterschrift sind vorgesehen."
+        ]
+      },
+      "2": {
+        "prompt": "Dein Mitschüler schickt dieselbe Bewerbung mit der Anrede Sehr geehrte Damen und Herren an 30 Betriebe. Beurteile dieses Vorgehen und schlage eine bessere Strategie vor.",
+        "hints": [
+          "Wie wirkt ein Serienbrief auf den Betrieb?",
+          "Wie kannst du zeigen, dass du dich mit dem Betrieb beschäftigt hast?"
+        ],
+        "model": "Ein Serienbrief wirkt unpersönlich: Der Betrieb merkt, dass sich der Bewerber nicht mit ihm beschäftigt hat, und sortiert ihn oft schnell aus. Besser ist es, sich auf weniger, gut ausgewählte Betriebe zu konzentrieren, den Ansprechpartner telefonisch zu erfragen und im Anschreiben zu nennen, was einen gerade an diesem Betrieb interessiert. Das kostet mehr Zeit, erhöht aber die Chance auf eine Einladung.",
+        "criteria": [
+          "Du beurteilst die Wirkung eines Serienbriefs.",
+          "Du schlägst eine konkrete bessere Strategie vor.",
+          "Du wägst Aufwand und Erfolgschance ab."
+        ]
+      }
+    }
+  },
+  {
+    "id": "bo-vorstellungsgespraech",
+    "lb": 2,
+    "tracks": ["R"],
+    "lehrplan": "WiB 8 · LB 2 · R8",
+    "title": "Vorstellungsgespräche erproben: Vorbereitung und persönliche Wirkung",
+    "intro": "Eine Einladung zum Vorstellungsgespräch ist ein großer Schritt. Wer vorbereitet ist und weiß, wie er wirkt, kann gelassen auftreten.",
+    "paragraphs": [
+      "Inhaltlich bereitest du dich vor, indem du dich über den Betrieb informierst, Antworten auf typische Fragen überlegst, etwa warum du diesen Beruf willst und was deine Stärken und Schwächen sind, und eigene Fragen notierst. Organisatorisch klärst du den Weg, planst etwa zehn Minuten Puffer ein und nimmst deine Unterlagen mit. Deine persönliche Wirkung entsteht aus Kleidung, Gestik, Mimik und Sprache: saubere, zum Beruf passende Kleidung, eine offene Haltung, Blickkontakt, ein freundliches Gesicht und eine klare, höfliche Sprache ohne Jugendsprache. Im Rollenspiel kannst du das erproben und dir Rückmeldung holen.",
+      "Beispiel Rollenspiel in der Klasse: Elif spielt die Bewerberin, Paul den Ausbildungsleiter einer Bank, zwei Beobachter haben einen Bogen mit den Punkten Kleidung, Gestik, Mimik, Sprache und Inhalt. Elif begrüßt Paul mit Blickkontakt, setzt sich erst nach der Aufforderung und beantwortet die Frage nach ihren Stärken mit einem Beispiel aus ihrem Praktikum. Die Beobachter notieren: Inhalt gut vorbereitet, beim Nachdenken spielt sie mit dem Kugelschreiber. Beim zweiten Durchgang legt Elif den Stift weg und wirkt deutlich ruhiger."
+    ],
+    "takeaway": "Für ein Vorstellungsgespräch bereitest du Inhalt und Organisation vor und achtest auf deine Wirkung durch Kleidung, Gestik, Mimik und Sprache; im Rollenspiel kannst du beides üben.",
+    "sourceIds": ["lpr", "meinberuf"],
+    "quiz": {
+      "question": "Welches Verhalten wirkt im Vorstellungsgespräch positiv?",
+      "answer": "Blickkontakt halten, offen sitzen und Fragen in ganzen, höflichen Sätzen beantworten.",
+      "wrong": [
+        "Die Arme verschränken und möglichst kurz mit Ja oder Nein antworten.",
+        "Das Handy auf den Tisch legen, um wichtige Nachrichten nicht zu verpassen."
+      ],
+      "explanation": "Blickkontakt, offene Haltung und eine klare Sprache zeigen Interesse und Respekt. Verschränkte Arme und ein sichtbares Handy wirken abweisend oder abgelenkt."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Beobachtungsbogen im Rollenspiel",
+      "instruction": "Ordne jede Beobachtung dem passenden Merkmal der persönlichen Wirkung zu.",
+      "categories": ["Kleidung", "Gestik", "Mimik", "Sprache"],
+      "entries": [
+        { "text": "Saubere Hose und Hemd, passend für eine Bank", "target": 0, "feedback": "Das betrifft die Kleidung." },
+        { "text": "Spielt beim Nachdenken mit dem Kugelschreiber", "target": 1, "feedback": "Bewegungen der Hände gehören zur Gestik." },
+        { "text": "Lächelt bei der Begrüßung freundlich", "target": 2, "feedback": "Der Gesichtsausdruck ist Mimik." },
+        { "text": "Sagt: Ich habe im Praktikum gelernt, Kunden geduldig zu beraten.", "target": 3, "feedback": "Wortwahl und ganze Sätze betreffen die Sprache." },
+        { "text": "Schaut beim Zuhören immer wieder auf den Boden", "target": 2, "feedback": "Blickverhalten gehört zur Mimik." },
+        { "text": "Benutzt Wörter wie krass und Digga", "target": 3, "feedback": "Jugendsprache ist eine Frage der Sprache und wirkt im Gespräch unpassend." }
+      ],
+      "conclusion": "Ein Beobachtungsbogen macht die eigene Wirkung sichtbar, und gezieltes Üben verbessert sie."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Bereite dich auf ein Vorstellungsgespräch vor: Beantworte die Fragen Warum möchtest du diesen Beruf lernen? und Was ist eine deiner Stärken? in je zwei ganzen Sätzen und notiere eine eigene Frage an den Betrieb.",
+        "hints": [
+          "Belege deine Antworten mit einem Beispiel aus Praktikum oder Schule.",
+          "Eine gute eigene Frage zeigt Interesse an der Ausbildung."
+        ],
+        "model": "Warum dieser Beruf: Im Praktikum in der Schreinerei habe ich gemerkt, wie gern ich mit Holz und Maschinen arbeite. Mir gefällt, dass am Ende ein sichtbares Stück entsteht. Stärke: Ich arbeite sehr genau. Bei unserem Schulprojekt habe ich die Maße kontrolliert, und alle Teile passten beim ersten Versuch. Eigene Frage: Welche Aufgaben übernehmen Auszubildende im ersten Jahr?",
+        "criteria": [
+          "Du beantwortest beide Fragen in ganzen Sätzen.",
+          "Du belegst deine Antworten mit Beispielen.",
+          "Deine eigene Frage zeigt Interesse an der Ausbildung."
+        ]
+      },
+      "2": {
+        "prompt": "Im Rollenspiel bekommt deine Mitschülerin die Rückmeldung: Inhalt gut, aber leise und ohne Blickkontakt. Erkläre, warum die Wirkung trotz guter Inhalte wichtig ist, und gib ihr zwei konkrete Tipps.",
+        "hints": [
+          "Was denkt ein Ausbildungsleiter bei fehlendem Blickkontakt?",
+          "Tipps sollten im nächsten Durchgang sofort umsetzbar sein."
+        ],
+        "model": "Der erste Eindruck entsteht in wenigen Sekunden, oft noch bevor die Inhalte zählen. Leises Sprechen ohne Blickkontakt kann als Unsicherheit oder Desinteresse gedeutet werden, obwohl die Antworten gut sind. Tipp 1: Beim Antworten bewusst die Person anschauen, die gefragt hat. Tipp 2: Die wichtigsten Antworten vorher laut üben, damit die Stimme sicherer und lauter wird.",
+        "criteria": [
+          "Du erklärst die Bedeutung der persönlichen Wirkung.",
+          "Du gibst zwei konkrete, umsetzbare Tipps.",
+          "Deine Rückmeldung ist freundlich und sachlich."
+        ]
+      }
+    }
+  },
+  {
+    "id": "bo-lebensplan-schullaufbahn",
+    "lb": 2,
+    "tracks": ["M"],
+    "lehrplan": "WiB 8 · LB 2 · M8",
+    "title": "Lebensplanentwurf, Schullaufbahn und Alternativen zur Berufswahl",
+    "intro": "Wie willst du in zehn Jahren leben, und welcher Weg führt dorthin? Ein Lebensplanentwurf hilft, Berufswunsch und Schullaufbahn zusammenzudenken.",
+    "paragraphs": [
+      "Ein Lebensplanentwurf beschreibt, wie du dir dein Leben in einigen Jahren vorstellst: Beruf, Wohnen, Familie, Freizeit und Geld. Vergleichst du deinen Entwurf mit den Entwürfen anderer, erkennst du, was dir besonders wichtig ist. Dann prüfst du ehrlich dein schulisches Leistungsvermögen: Passen deine Noten zum Ziel des mittleren Schulabschlusses am Ende der 10. Klasse und zu den Anforderungen deines Wunschberufs? Gegebenenfalls überarbeitest du deine Überlegungen zur Schullaufbahn. Zur Planung gehören immer Alternativen, also ein zweiter Wunschberuf oder ein anderer Weg zum selben Ziel.",
+      "Beispiel Sophie: In ihrem Entwurf arbeitet sie mit 25 Jahren als Bauzeichnerin, lebt in einer eigenen Wohnung und spielt weiter Volleyball. Ihre Freundin Lina möchte dagegen nach dem mittleren Abschluss die Fachoberschule besuchen. Sophie prüft ihr Zeugnis: Mathematik 2, Deutsch 4. Für eine Ausbildung mit mittlerem Abschluss will sie in Deutsch gezielt üben. Als Alternative notiert sie Technische Systemplanerin, eine verwandte Ausbildung, und als Plan B den Weg über eine Ausbildung mit späterer Weiterbildung zur Technikerin."
+    ],
+    "takeaway": "Ein Lebensplanentwurf verbindet Berufswunsch, Schullaufbahn und Leistungsvermögen; wer ihn mit anderen vergleicht und Alternativen formuliert, plant realistisch und flexibel.",
+    "sourceIds": ["lpm", "meinberuf", "berufenet"],
+    "quiz": {
+      "question": "Warum solltest du in deinem Lebensplanentwurf Alternativen zur Berufswahl formulieren?",
+      "answer": "Weil sich Wünsche, Noten oder das Angebot an Ausbildungsplätzen ändern können und du dann einen vorbereiteten Weg hast.",
+      "wrong": [
+        "Weil ein einziger Berufswunsch grundsätzlich nicht erlaubt ist.",
+        "Weil Alternativen die Entscheidung überflüssig machen."
+      ],
+      "explanation": "Ein Plan B nimmt Druck heraus: Klappt der erste Weg nicht, kannst du ohne Zeitverlust auf eine durchdachte Alternative umsteigen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Sophies Lebensplan",
+      "instruction": "Ordne jede Notiz von Sophie dem passenden Baustein ihres Lebensplanentwurfs zu.",
+      "categories": ["Ziel im Lebensplan", "Leistungsvermögen prüfen", "Schullaufbahn anpassen", "Alternative"],
+      "entries": [
+        { "text": "Mit 25 Jahren arbeite ich als Bauzeichnerin und wohne allein.", "target": 0, "feedback": "Das beschreibt ein Ziel im Lebensplan." },
+        { "text": "In Mathematik habe ich eine 2, in Deutsch eine 4.", "target": 1, "feedback": "Noten ehrlich ansehen heißt Leistungsvermögen prüfen." },
+        { "text": "Ich übe ab sofort zweimal pro Woche Deutsch, um den mittleren Abschluss sicher zu schaffen.", "target": 2, "feedback": "Eine Änderung im Lernplan für den Abschluss passt die Schullaufbahn an." },
+        { "text": "Falls es mit der Bauzeichnerin nicht klappt, bewerbe ich mich als Technische Systemplanerin.", "target": 3, "feedback": "Ein verwandter Beruf ist eine Alternative." },
+        { "text": "Mir ist wichtig, weiter Volleyball zu spielen.", "target": 0, "feedback": "Auch Freizeitwünsche gehören zu den Zielen im Lebensplan." },
+        { "text": "Plan B: Ausbildung und später Weiterbildung zur Technikerin", "target": 3, "feedback": "Ein anderer Weg zum ähnlichen Ziel ist eine Alternative." }
+      ],
+      "conclusion": "Ziele, ehrliche Selbstprüfung, angepasste Schritte und Alternativen machen einen Lebensplan tragfähig."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Skizziere deinen eigenen Lebensplanentwurf für die Zeit in zehn Jahren mit Angaben zu Beruf, Wohnen, Freizeit und Geld und nenne einen Berufswunsch mit einer Alternative.",
+        "hints": [
+          "Schreibe in Stichpunkten, was dir in jedem Bereich wichtig ist.",
+          "Die Alternative sollte zu deinen Stärken passen."
+        ],
+        "model": "In zehn Jahren arbeite ich als Industriekauffrau in einem mittelgroßen Betrieb in meiner Region. Ich wohne mit einer Freundin in einer Wohnung in der Stadt, spiele weiter Gitarre in einer Band und möchte jeden Monat etwas Geld für eine Reise sparen. Berufswunsch: Industriekauffrau. Alternative: Kauffrau für Büromanagement, weil sie ähnliche Stärken wie Ordnung und Kommunikation verlangt.",
+        "criteria": [
+          "Dein Entwurf umfasst Beruf, Wohnen, Freizeit und Geld.",
+          "Du nennst einen Berufswunsch und eine Alternative.",
+          "Die Alternative ist begründet."
+        ]
+      },
+      "2": {
+        "prompt": "Vergleiche deinen Lebensplanentwurf mit dem einer Mitschülerin oder eines Mitschülers. Reflektiere, was du daraus über deine eigenen Prioritäten lernst und ob du deine Überlegungen zur Schullaufbahn anpassen solltest.",
+        "hints": [
+          "Wo unterscheiden sich die Entwürfe, wo ähneln sie sich?",
+          "Passen deine Noten zu deinem Ziel?"
+        ],
+        "model": "Mein Mitschüler stellt Geld und ein eigenes Auto an die erste Stelle, mir sind Freizeit und ein sicherer Arbeitsplatz wichtiger. Der Vergleich zeigt mir, dass ich lieber einen Beruf mit geregelten Arbeitszeiten suche. Mein Ziel braucht den mittleren Schulabschluss; da meine Englischnote schwankt, plane ich Nachhilfe und spreche mit meiner Lehrkraft. Meine Schullaufbahn im M-Zug behalte ich bei, ergänze aber einen konkreten Lernplan.",
+        "criteria": [
+          "Du vergleichst beide Entwürfe konkret.",
+          "Du benennst deine eigenen Prioritäten.",
+          "Du ziehst eine begründete Folgerung für deine Schullaufbahn."
+        ]
+      }
+    }
+  }
+]
