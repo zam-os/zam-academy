@@ -1,0 +1,55 @@
+{
+	"schema": 1,
+	"status": "proposal-only",
+	"approved": null,
+	"source_repository": "https://github.com/zam-os/zam",
+	"source_commit": "c92f4e383385ee487cd8b30f73b3bf3cb27b0860",
+	"source": "Proposal by the package author (2026-11-27). Not approved; only Thomas approves a card-history mapping.",
+	"neighbouring_grade_review": "Both neighbouring de-by cells from zam-os/zam (same commit) were checked: (1) de-by:gymnasium-7-englisch-grammar-present-perfect-modals-conditionals is already mapped in englisch-2fs-gymnasium-7/replaces-de-by.json (approved 2026-11-26): J01 sits in englisch-gymnasium-7, J03 in englisch-2fs-gymnasium-7, J02 stays keep-active (C), and J04 stays keep-active (C) rather than being claimed here because it merges Grade 7 modal substitutes and Conditional I with Grade 8 Conditional II into one composite. (2) de-by:gymnasium-9-englisch-participles-gerund-british-empire-commonwealth: J01 asks about stop smoking vs. stop to smoke, which appears in Grade 8 for English as second foreign language (LB 1.2) whereas J02-J04 belong to Grade 9 (participle clauses, modal auxiliaries in the past, British Empire/Commonwealth). Both neighbouring-grade questions (Grade 7 J04 and Grade 9 J01) remain open for Thomas.",
+	"sources": [
+		{
+			"file": "tests/fixtures/de-by-gymnasium-8-englisch-past-perfect-passive-indirect-speech-usa-kvt.json",
+			"tile_id": "de-by:gymnasium-8-englisch-past-perfect-passive-indirect-speech-usa",
+			"version": "2026.08.1",
+			"sha256": "40e20c194aaf41e16fe7bed855338388b9c046acd57f91884c9ea8fd6d48adb4"
+		}
+	],
+	"rows": [
+		{
+			"de_by_cell": "de-by:gymnasium-8-englisch-past-perfect-passive-indirect-speech-usa",
+			"de_by_id": "01K8G8J0000000000000000J01",
+			"de_by_question": "Wie wird der Satz in die indirekte Rede gesetzt, wenn das Einleitungswort in der Vergangenheit steht: Peter said: 'I bought a new car yesterday.'?",
+			"category": "C",
+			"academy_slug": null,
+			"action": "keep-active",
+			"reason": "Full indirect speech with backshift of tenses (Simple Past -> Past Perfect, yesterday -> the day before) belongs to Grade 9 in English as second foreign language (E9 LB 1.2: 'indirekte Rede in allen Zeitstufen'); Grade 8 E2 LB 5 includes only 'erste Einblicke in indirekte Aussagesätze'."
+		},
+		{
+			"de_by_cell": "de-by:gymnasium-8-englisch-past-perfect-passive-indirect-speech-usa",
+			"de_by_id": "01K8G8J0000000000000000J02",
+			"de_by_question": "Systematisiere drei zentrale Grammatikkapitel des 8. Schuljahres Gymnasium Englisch: 1. Past Perfect Simple ... 2. Passive Voice ... 3. Indirect Speech (Backshift of Tenses ...)",
+			"category": "C",
+			"academy_slug": null,
+			"action": "keep-active",
+			"reason": "The composite asks for Past Perfect, Passive Voice across tenses, and full Indirect Speech with backshift and adverb shifts. No single card here preserves the whole composite, and backshift belongs to Grade 9 in E2."
+		},
+		{
+			"de_by_cell": "de-by:gymnasium-8-englisch-past-perfect-passive-indirect-speech-usa",
+			"de_by_id": "01K8G8J0000000000000000J03",
+			"de_by_question": "Which historic civil rights leader delivered the famous 'I Have a Dream' speech during the March on Washington in 1963?",
+			"category": "C",
+			"academy_slug": null,
+			"action": "keep-active",
+			"reason": "The 1963 March on Washington and Civil Rights Movement are outside the Grade 8 E2 topics (LB 5 covers colonization/Mayflower, Boston Tea Party, Declaration of Independence, and westward expansion)."
+		},
+		{
+			"de_by_cell": "de-by:gymnasium-8-englisch-past-perfect-passive-indirect-speech-usa",
+			"de_by_id": "01K8G8J0000000000000000J04",
+			"de_by_question": "Analyse the key historical and cultural milestones of the United States of America in 4 dimensions: 1. Founding & Independence ... 2. Civil War (1861–1865) ... 3. The Civil Rights Movement ... 4. Modern American Society & Geography ...",
+			"category": "C",
+			"academy_slug": null,
+			"action": "keep-active",
+			"reason": "The composite combines Grade 8 E2 topics (Pilgrim Fathers, Boston Tea Party, Declaration of Independence) with Civil War, Civil Rights Movement, and modern US diversity models outside the E2 Grade 8 curriculum."
+		}
+	]
+}
