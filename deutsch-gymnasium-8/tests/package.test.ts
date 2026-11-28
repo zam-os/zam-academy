@@ -97,11 +97,14 @@ describe("Grade 8 Gymnasium package", () => {
 		expect(coverage.neighbours.map(({ grade }) => grade)).toEqual([7, 9]);
 	});
 
-	it("keeps the four legacy cards inventoried as a proposal with no active migration", () => {
+	it("transfers the approved 3B item and keeps the other three legacy items active", () => {
 		const old = legacy.atoms.flatMap<{ id: string }>(
 			(atom) => atom.practice_items,
 		);
-		expect(mapping).toMatchObject({ status: "proposal-only", approved: null });
+		expect(mapping).toMatchObject({
+			status: "approved",
+			approved: "2026-11-28",
+		});
 		expect(mapping.rows.map((row) => row.de_by_id).sort()).toEqual(
 			old.map((item) => item.id).sort(),
 		);
@@ -110,7 +113,7 @@ describe("Grade 8 Gymnasium package", () => {
 		for (const row of mapping.rows) {
 			expect(row.reason.length).toBeGreaterThan(40);
 			if (row.category === "A") {
-				expect(row.action).toBe("propose-replace-after-approval");
+				expect(row.action).toBe("replace");
 				expect(
 					items.filter((item) => item.slug === row.academy_slug),
 				).toHaveLength(1);
@@ -121,7 +124,12 @@ describe("Grade 8 Gymnasium package", () => {
 		}
 		expect(cell).not.toHaveProperty("retired_items");
 		for (const item of items) {
-			expect(item).not.toHaveProperty("replaces");
+			const row = mapping.rows.find(
+				(entry) => entry.academy_slug === item.slug,
+			);
+			if (row?.category === "A")
+				expect(item).toHaveProperty("replaces", [row.de_by_id]);
+			else expect(item).not.toHaveProperty("replaces");
 			expect(old.some(({ id }) => id === item.id)).toBe(false);
 		}
 	});

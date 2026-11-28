@@ -377,6 +377,8 @@ jobs:
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node deutsch-gymnasium-8/scripts/validate-cell.mjs
       - name: Verify approved deutsch-gymnasium-7 history migration
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node deutsch-gymnasium-7/scripts/validate-migration.mjs
+      - name: Verify approved deutsch-gymnasium-8 history migration
+        run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node deutsch-gymnasium-8/scripts/validate-migration.mjs
       - name: Validate approved migration for biologie-gymnasium-6
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node biologie-gymnasium-6/scripts/validate-migration.mjs
       - name: Validate Grade 6 Gymnasium German cell and preserve legacy history
