@@ -1,8 +1,9 @@
 {
   "schema": 1,
-  "status": "proposal-only",
-  "approved": null,
-  "note": "Proposal for Thomas: 0 A, 0 B, 4 C rows. The old cell follows an older Grade 8 curriculum (market mechanism, legal capacity, consumer rights). Under LehrplanPLUS, Wirtschaft und Recht 8 at the WWG teaches consumption, money, business processes, marketing and tort and criminal law; legal capacity and the purchase contract belong to WR 9 LB 1, and the market mechanism is in neither Grade 8 nor Grade 9. No single card of the new cell asks exactly what an old card asks, so no successor declares replaces and the cell declares no retired_items until Thomas decides.",
+  "status": "approved",
+  "approved": "2026-11-28",
+  "source": "Thomas, Claude Code (Desktop) chat for zam-os/zam-academy PR #222, 2026-11-28: „J04 stilllegen, J01–J03 aktiv lassen“",
+  "note": "Approved: 0 A, 0 B, 4 C. J04 is retired (cell retired_items); J01 to J03 stay active as standalone reviews. No card of the new cell declares replaces, so no history moves. The old cell follows an older Grade 8 curriculum; legal capacity and the purchase contract belong to WR 9 LB 1, and the market mechanism is in neither Grade 8 nor Grade 9.",
   "source_repository": "zam-os/zam",
   "source_commit": "c92f4e383385ee487cd8b30f73b3bf3cb27b0860",
   "sources": [
@@ -48,7 +49,7 @@
       "de_by_question": "Geld (Funktionen, Inflation, EZB), Rechtsfähigkeit und Geschäftsfähigkeit, Kaufvertrag, Sachmängelhaftung und Widerrufsrecht (tier-2 synthesis without a question text; concept and sample solution only)",
       "category": "C",
       "academy_slug": null,
-      "action": "propose-retire-after-approval",
+      "action": "retire",
       "reason": "Multi-part synthesis that mixes WR 8 content (functions of money, inflation and the ECB target, now split across wrg8-ge-geldfunktionen and wrg8-ge-geldwert) with WR 9 content (legal capacity, purchase contract, consumer rights). One history must not be spread over several cards, so no successor declares replaces. Its sample solution also claims that § 110 BGB covers only cash payment, which the Realschule 8 mapping already corrected; retiring it is proposed for Thomas's decision."
     }
   ]

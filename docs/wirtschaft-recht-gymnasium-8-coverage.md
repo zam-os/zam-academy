@@ -36,19 +36,16 @@ Alle Paragrafen, die Lektionen, Labore und Karten nennen, wurden am 2026-11-28 a
 - **Einzige betroffene Zelle:** `de-by:gymnasium-8-wirtschaft-recht-markt-geld-verbraucherschutz` (Version 2026.08.1, 4 Karten, in `src/kernel/library/bundled-cells.ts` gebündelt). Byte-genauer Snapshot: [`tests/fixtures/de-by-gymnasium-8-wirtschaft-recht-markt-geld-verbraucherschutz-kvt.json`](../wirtschaft-recht-gymnasium-8/tests/fixtures/de-by-gymnasium-8-wirtschaft-recht-markt-geld-verbraucherschutz-kvt.json), SHA-256 `fd5ff0b3a092c8c1c68b8ae0e7e43d00759101672147e9b798dfb0c3854e6f5d`.
 - Kein anderes Academy-Paket mappt diese Zelle (`politik-gymnasium-8` und `wirtschaft-mittelschule-7` erwähnen sie nur als unberührt).
 
-| Alte Karte | Inhalt | Kategorie | Vorschlag |
+| Alte Karte | Inhalt | Kategorie | Entscheidung |
 | --- | --- | --- | --- |
 | `…J01` | Nachfrageüberhang lässt den Preis steigen | C | `keep-active`: Marktmechanismus ist weder in WR 8 (WWG) noch in WR 9 Kompetenz |
 | `…J02` | Wirtschaftskreislauf, Marktmodell, Preisfunktionen (Synthese) | C | `keep-active`: mehrteilig, Themen außerhalb von WR 8 |
 | `…J03` | Kaufvertrag eines beschränkt Geschäftsfähigen ist schwebend unwirksam | C | `keep-active`: Geschäftsfähigkeit gehört zu WR 9 LB 1 |
-| `…J04` | Geld, Inflation, Geschäftsfähigkeit, Kaufvertrag, Verbraucherrechte (Synthese) | C | `propose-retire-after-approval`: mischt WR 8 und WR 9, die Geldteile verteilen sich auf zwei neue Atome; die Musterlösung behauptet, § 110 BGB gelte nur bei Barzahlung |
+| `…J04` | Geld, Inflation, Geschäftsfähigkeit, Kaufvertrag, Verbraucherrechte (Synthese) | C | `retire`: mischt WR 8 und WR 9, die Geldteile verteilen sich auf zwei neue Atome; die Musterlösung behauptet, § 110 BGB gelte nur bei Barzahlung |
 
-**Zusammenfassung zur Genehmigung:** 0 A, 0 B, 4 C (3 `keep-active`, 1 Stilllegung vorgeschlagen). Bis Thomas entscheidet, gilt `"status": "proposal-only"`, `"approved": null`, und `cell.json` deklariert weder `replaces` noch `retired_items`. Weil keine Karte ersetzt wird, braucht das Paket kein `validate-migration.mjs`; ein Lernender mit Karten aus beiden Zellen bekommt keinen Konflikt.
+**Genehmigt am 2026-11-28** von Thomas im Claude-Code-Chat zu PR #222: „J04 stilllegen, J01–J03 aktiv lassen“. Ergebnis: 0 A, 0 B, 4 C. `cell.json` führt `…J04` in `retired_items`; `…J01`–`…J03` bleiben aktive Einzelkarten, bis ein späteres Paket (WR 9 für die Geschäftsfähigkeit, ein höherer Jahrgang für den Marktmechanismus) sie übernimmt. Keine Karte deklariert `replaces`, es wandert also keine Lernhistorie.
 
-**Offene Fragen an Thomas:**
-
-1. Soll `…J04` stillgelegt werden (Fehler zu § 110 BGB, Inhalte verteilt) oder aktiv bleiben?
-2. Sollen `…J01`–`…J03` aktiv bleiben, bis ein späteres Paket (WR 9 für die Geschäftsfähigkeit, ein höherer Jahrgang für den Marktmechanismus) sie übernimmt?
+[`scripts/validate-migration.mjs`](../wirtschaft-recht-gymnasium-8/scripts/validate-migration.mjs) prüft das in CI mit dem gepinnten zam-core: Alte Karten und Reviews bleiben unverändert, `…J04` verlässt die aktiven Wiederholungen, `…J01`–`…J03` bleiben fällig, eine erneute Installation ändert nichts, und Lernende ohne die alte Zelle behalten ihren Fortschritt.
 
 ## 5. Prüfungen
 

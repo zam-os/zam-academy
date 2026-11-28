@@ -176,7 +176,7 @@ describe("curriculum coverage", () => {
   });
 });
 
-describe("proposal for the old Grade 8 cell", () => {
+describe("approved mapping of the old Grade 8 cell", () => {
   const oldIds = legacy.atoms.flatMap((a) => a.practice_items.map((i) => i.id));
 
   it("accounts for each of the four old cards once, against a snapshot that has not changed", async () => {
@@ -194,17 +194,21 @@ describe("proposal for the old Grade 8 cell", () => {
     expect(mapping.source_repository).toBe("zam-os/zam");
     expect(mapping.source_commit).toMatch(/^[0-9a-f]{40}$/);
   });
-  it("stays a proposal: no approval, no replaces and no retired items in the cell", () => {
-    expect(mapping.status).toBe("proposal-only");
-    expect(mapping.approved).toBeNull();
+  it("activates exactly the decision Thomas approved: retire J04, keep J01 to J03", () => {
+    expect(mapping.status).toBe("approved");
+    expect(mapping.approved).toBe("2026-11-28");
+    expect(mapping.source).toContain("J04 stilllegen, J01–J03 aktiv lassen");
     for (const row of mapping.rows) {
-      expect(["A", "B", "C"]).toContain(row.category);
-      expect(["propose-replace-after-approval", "keep-active", "propose-retire-after-approval"]).toContain(row.action);
+      expect(row.category).toBe("C");
+      expect(row.academy_slug).toBeNull();
       expect(row.reason.length).toBeGreaterThan(60);
-      if (row.category === "C") expect(row.academy_slug).toBeNull();
-      else expect(ITEMS.filter((i) => i.slug === row.academy_slug)).toHaveLength(1);
     }
+    const retired = mapping.rows.filter((row) => row.action === "retire");
+    const kept = mapping.rows.filter((row) => row.action === "keep-active");
+    expect(retired.map((row) => row.de_by_id)).toEqual(["01K8G8S0000000000000000J04"]);
+    expect(kept.map((row) => row.de_by_id)).toEqual(oldIds.slice(0, 3));
+    // C rows never transfer a history; only the retirement reaches the cell.
     expect(ITEMS.some((item) => "replaces" in item)).toBe(false);
-    expect("retired_items" in cell).toBe(false);
+    expect(cell.retired_items).toEqual(retired.map((row) => ({ id: row.de_by_id, reason: row.reason })));
   });
 });
