@@ -235,7 +235,7 @@ const exParamsFromGraph: ExerciseGenerator = {
 const exPointOnHyperbola: ExerciseGenerator = {
   id: "gr-punkt-auf-hyperbel",
   make(rng, level) {
-    const a = rng.pick([6, 8, 12]);
+    const a = rng.pick([6, 12, 18]);
     const b = rng.pick([-2, -1, 1, 2]);
     const c = level === 1 ? 0 : rng.int(1, 3);
     const d = rng.pick([2, 3]);
@@ -249,7 +249,7 @@ const exPointOnHyperbola: ExerciseGenerator = {
       `Prüfe rechnerisch, ob der Punkt P(${fmt(xP, 0)} | ${fmt(yP, 0)}) auf dem Graphen von f(x) = ${hypHtml(a, b, c)} liegt.`,
       `Liegt der gemessene Punkt P(${fmt(xP, 0)} | ${fmt(yP, 0)}) exakt auf der Hyperbel f(x) = ${hypHtml(a, b, c)}? Berechne f(${fmt(xP, 0)}) und entscheide.`,
       [
-        numberField(`f(${fmt(xP, 0)}) =`, yExact, "", 1),
+        numberField(`f(${fmt(xP, 0)}) =`, yExact, "", 0),
         choiceField(
           "Punktprobe",
           onCurve ? ["Ja, P liegt auf dem Graphen", "Nein, P liegt nicht auf dem Graphen"] : ["Nein, P liegt nicht auf dem Graphen", "Ja, P liegt auf dem Graphen"],
@@ -257,7 +257,7 @@ const exPointOnHyperbola: ExerciseGenerator = {
         ),
       ],
       `Setze x = ${fmt(xP, 0)} in f(x) ein und vergleiche f(${fmt(xP, 0)}) mit y_P = ${fmt(yP, 0)}.`,
-      `f(${fmt(xP, 0)}) = ${fmt(a, 0)} / ${fmt(d, 0)}${c === 0 ? "" : signed(c, 0)} = ${fmt(yExact, 1)}.`,
+      `f(${fmt(xP, 0)}) = ${fmt(a, 0)} / ${fmt(d, 0)}${c === 0 ? "" : signed(c, 0)} = ${fmt(yExact, 0)}.`,
       `Vergleich mit y_P = ${fmt(yP, 0)}: <strong>${onCurve ? "Ja, P liegt auf dem Graphen" : "Nein, y_P weicht ab"}</strong>.`,
       { a, b, c, xP, yExact, yP },
     );

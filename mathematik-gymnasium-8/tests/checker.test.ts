@@ -61,6 +61,53 @@ describe("Zahlenprüfung und Hinweise", () => {
     expect(checkTask(exercise, ["12 €"]).status).toBe("correct");
     expect(checkTask(exercise, ["13 €"]).status).toBe("wrong");
   });
+
+  it("accepts pi expressions and warns when pi is missing or doubled", () => {
+    expect(parseNumberCandidates("4π")).toEqual([4 * Math.PI]);
+    expect(parseNumberCandidates("π/2")).toEqual([Math.PI / 2]);
+    expect(parseNumberCandidates("2,5π")).toEqual([2.5 * Math.PI]);
+    expect(parseNumberCandidates("4pi")).toEqual([4 * Math.PI]);
+    expect(parseNumberCandidates("−π")).toEqual([-Math.PI]);
+
+    const area = task([field(4 * Math.PI, 2, "A =")]);
+    expect(checkTask(area, ["4π"]).status).toBe("correct");
+    expect(wrongAnswerHint(area, checkTask(area, ["4"]))).toContain("π vergessen");
+    expect(
+      wrongAnswerHint(area, checkTask(area, [String(4 * Math.PI * Math.PI)])),
+    ).toContain("π vergessen");
+
+    const radius = task([field(4, 0, "r =")]);
+    expect(wrongAnswerHint(radius, checkTask(radius, ["12,57"]))).toContain("π vergessen");
+  });
+
+  it("matches exact and rounded task slips via wrongAnswerHint", () => {
+    const withSlips = task([
+      {
+        ...field(10 * Math.PI, 2, "A ="),
+        slips: [{ value: 5 * Math.PI, hint: "Halbiere oder verdopple den Faktor nicht." }],
+      },
+      {
+        ...field(12, 0, "k ="),
+        slips: [{ value: 24, hint: "Teile hier durch 2 statt zu verdoppeln." }],
+      },
+    ]);
+    expect(wrongAnswerHint(withSlips, checkTask(withSlips, ["15,71", "12"]))).toBe(
+      "Halbiere oder verdopple den Faktor nicht.",
+    );
+    expect(wrongAnswerHint(withSlips, checkTask(withSlips, ["10π", "24"]))).toBe(
+      "Teile hier durch 2 statt zu verdoppeln.",
+    );
+  });
+
+  it("accepts swapped values when anyOrder includes both fields", () => {
+    const unordered: ExerciseTask = {
+      ...task([field(-1, 0, "x₁ ="), field(5, 0, "x₂ =")]),
+      anyOrder: [0, 1],
+    };
+    expect(checkTask(unordered, ["5", "−1"]).status).toBe("correct");
+    expect(checkTask(unordered, ["−1", "5"]).status).toBe("correct");
+    expect(checkTask(unordered, ["5", "0"]).status).toBe("wrong");
+  });
 });
 
 describe("Exact answers of any size", () => {

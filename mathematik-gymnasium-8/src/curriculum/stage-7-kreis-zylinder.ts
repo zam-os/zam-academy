@@ -322,7 +322,7 @@ const exPrismVolume: ExerciseGenerator = {
     }
 
     // Level 2: height from volume and base area
-    const b1 = rng.int(4, 8);
+    const b1 = rng.pick([4, 6, 8]);
     const b2 = rng.int(3, 6);
     const baseTri = (b1 * b2) / 2;
     const hPrism = rng.int(5, 10);
@@ -332,12 +332,12 @@ const exPrismVolume: ExerciseGenerator = {
       "",
       `Ein gerades Dreiecksprisma hat ein rechtwinkliges Dreieck (Katheten ${fmt(b1, 0)} cm und ${fmt(b2, 0)} cm) als Grundfläche und ein Volumen von V = ${fmt(vTri, 0)} cm³. Berechne seine Höhe h.`,
       [
-        numberField("Grundfläche G =", baseTri, "cm²", 1),
-        numberField("Höhe h =", hPrism, "cm", 1),
+        numberField("Grundfläche G =", baseTri, "cm²", 0),
+        numberField("Höhe h =", hPrism, "cm", 0),
       ],
       "",
-      `G = (${fmt(b1, 0)} · ${fmt(b2, 0)}) / 2 = ${fmt(baseTri, 1)} cm².`,
-      `Aus V = G · h folgt h = ${fmt(vTri, 0)} / ${fmt(baseTri, 1)} = <strong>${fmt(hPrism, 1)} cm</strong>.`,
+      `G = (${fmt(b1, 0)} · ${fmt(b2, 0)}) / 2 = ${fmt(baseTri, 0)} cm².`,
+      `Aus V = G · h folgt h = ${fmt(vTri, 0)} / ${fmt(baseTri, 0)} = <strong>${fmt(hPrism, 0)} cm</strong>.`,
       { b1, b2, baseTri, hPrism, vTri },
     );
   },
@@ -437,7 +437,7 @@ ${CONCEPT_DIAGRAMS.kz1}
 <p class="formula-line">A = (π · r) · r = π · r²</p>
 <p>Im Unterschied zum Umfang (linear) ist <strong>r ↦ π · r²</strong> eine <strong>nicht lineare Zuordnung</strong>: Verdoppelt sich der Radius r, vervierfacht (2² = 4) sich der Flächeninhalt!</p>
 ${CONCEPT_DIAGRAMS.kz2}
-<div class="example"><strong>Beispiel:</strong> r = 3 cm → A = π · 3² = 9π ≈ 28,27 cm².<br>Verdoppelter Radius r = 6 cm → A = π · 6² = 36π ≈ 113,10 cm² (= 4 · 28,27 cm²!).</div>
+<div class="example"><strong>Beispiel:</strong> r = 3 cm → A = π · 3² = 9π ≈ 28,27 cm².<br>Verdoppelter Radius r = 6 cm → A = π · 6² = 36π ≈ 113,10 cm² (= 4 · 9π, etwa viermal 28,27 cm²!).</div>
 <div class="merke"><strong>Merke:</strong> Umfang U = 2πr (Einheit cm), Flächeninhalt A = πr² (Einheit cm²). Achte bei gegebenem Durchmesser d immer darauf, zuerst r = d / 2 zu halbieren!</div>`,
     formulas: [
       { name: "Kreisfläche", html: `A = π · r² = ${frac("1", "4")} · π · d²`, quantities: "nicht lineare Zuordnung: r ↦ π·r²" },

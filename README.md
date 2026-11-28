@@ -233,7 +233,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Wirtschaft und Beruf 7 Mittelschule: cd wirtschaft-mittelschule-7 (dev server on :5278)
 # Wirtschaft und Beruf 8 Mittelschule: cd wirtschaft-mittelschule-8 (dev server on :5304)
 # Mathematik 7 Gymnasium: cd mathematik-gymnasium-7 (dev server on :5242)
-# Mathematik 8 Gymnasium: cd mathematik-gymnasium-8 (dev server on :5304)
+# Mathematik 8 Gymnasium: cd mathematik-gymnasium-8 (dev server on :5305)
 # Geographie 5 Gymnasium: cd geographie-gymnasium-5 (dev server on :5244)
 # English 5 Gymnasium: cd englisch-gymnasium-5 (dev server on :5247)
 # English 6 Gymnasium: cd englisch-gymnasium-6 (dev server on :5256)

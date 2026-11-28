@@ -29,7 +29,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-1",
+          "topic_code": "stage-1-funktionen",
           "topic_title": "Etappe 1: Funktion und Term"
         },
         {
@@ -89,7 +89,6 @@
               "reason": "Feste Zahlen rechnen bei veränderten Eingaben nicht automatisch neu."
             }
           ],
-          "question": "Wie berechnest du in der Tabellenkalkulation zu einer x-Spalte ab A2 den Wert K(x) = 10 + 0,5·x in B2 zum Herunterziehen?",
           "concept": "Man trägt die Formel =10+0,5*A2 ein, damit sich der relative Zellbezug A2 je Zeile anpasst.",
           "fast_check": {
             "type": "binary_choice",
@@ -99,7 +98,31 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=ft-1-zusammenhaenge"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=ft-1-zusammenhaenge",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie berechnest du in der Tabellenkalkulation zu einer "
+            },
+            {
+              "type": "math",
+              "tex": "x",
+              "speech": "x"
+            },
+            {
+              "type": "text",
+              "text": "-Spalte ab A2 den Wert "
+            },
+            {
+              "type": "math",
+              "tex": "K(x) = 10 + 0{,}5 \\cdot x",
+              "speech": "K von x gleich 10 plus 0 komma 5 mal x"
+            },
+            {
+              "type": "text",
+              "text": " in B2 zum Herunterziehen?"
+            }
+          ]
         },
         {
           "id": "01M8HA8FAEMHTVRKKR2MBB9EBB",
@@ -118,10 +141,56 @@
               "reason": "Der variable Preis 2 € gehört als Faktor zu x, während 8 € konstant bleibt."
             }
           ],
-          "question": "Ein Tarif berechnet 8 € monatliche Grundgebühr plus 2 € pro Stunde Nutzung x. Gib den Term K(x) an und berechne die Kosten für 6 Stunden.",
-          "concept": "Der Term lautet K(x) = 8 + 2·x; nach Einsetzen von x = 6 ergeben sich Gesamtkosten von 20 €.",
           "sample_solution": "1. Fester Anteil = 8 €, variabler Anteil je Stunde x = 2 · x.\n2. Term: K(x) = 8 + 2 · x.\n3. Für x = 6 einsetzen: K(6) = 8 + 2 · 6 = 8 + 12 = 20 €.",
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=ft-1-zusammenhaenge"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=ft-1-zusammenhaenge",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Ein Tarif berechnet 8 € monatliche Grundgebühr plus 2 € pro Stunde Nutzung "
+            },
+            {
+              "type": "math",
+              "tex": "x",
+              "speech": "x"
+            },
+            {
+              "type": "text",
+              "text": ". Gib den Term "
+            },
+            {
+              "type": "math",
+              "tex": "K(x)",
+              "speech": "K von x"
+            },
+            {
+              "type": "text",
+              "text": " an und berechne die Kosten für 6 Stunden."
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Der Term lautet "
+            },
+            {
+              "type": "math",
+              "tex": "K(x) = 8 + 2 \\cdot x",
+              "speech": "K von x gleich 8 plus 2 mal x"
+            },
+            {
+              "type": "text",
+              "text": "; nach Einsetzen von "
+            },
+            {
+              "type": "math",
+              "tex": "x = 6",
+              "speech": "x gleich 6"
+            },
+            {
+              "type": "text",
+              "text": " ergeben sich Gesamtkosten von 20 €."
+            }
+          ]
         }
       ]
     },
@@ -145,7 +214,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-1",
+          "topic_code": "stage-1-funktionen",
           "topic_title": "Etappe 1: Funktion und Term"
         },
         {
@@ -234,10 +303,65 @@
               "reason": "Der Kreis x² + y² = 25 schneidet die x-Achse bei −5 und 5, scheitert aber an doppelten y-Werten."
             }
           ],
-          "question": "Begründe anhand der Gleichung x² + y² = 25, warum ein voller Kreis im Koordinatensystem kein Graph einer Funktion x ↦ y ist.",
-          "concept": "Zu x = 3 erfüllen sowohl y = 4 als auch y = −4 die Gleichung, also ist die Zuordnung nicht eindeutig.",
           "sample_solution": "1. Setze x = 3 ein: 3² + y² = 25 ⇒ y² = 16.\n2. Sowohl y₁ = 4 als auch y₂ = −4 erfüllen die Gleichung.\n3. Da dem einen Argument x = 3 zwei y-Werte zugehören, liegt keine Funktion vor.",
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=ft-2-eindeutigkeit"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=ft-2-eindeutigkeit",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Begründe anhand der Gleichung "
+            },
+            {
+              "type": "math",
+              "tex": "x^2 + y^2 = 25",
+              "speech": "x Quadrat plus y Quadrat gleich 25"
+            },
+            {
+              "type": "text",
+              "text": ", warum ein voller Kreis im Koordinatensystem kein Graph einer Funktion "
+            },
+            {
+              "type": "math",
+              "tex": "x \\mapsto y",
+              "speech": "x wird zugeordnet y"
+            },
+            {
+              "type": "text",
+              "text": " ist."
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Zu "
+            },
+            {
+              "type": "math",
+              "tex": "x = 3",
+              "speech": "x gleich 3"
+            },
+            {
+              "type": "text",
+              "text": " erfüllen sowohl "
+            },
+            {
+              "type": "math",
+              "tex": "y = 4",
+              "speech": "y gleich 4"
+            },
+            {
+              "type": "text",
+              "text": " als auch "
+            },
+            {
+              "type": "math",
+              "tex": "y = -4",
+              "speech": "y gleich minus 4"
+            },
+            {
+              "type": "text",
+              "text": " die Gleichung, also ist die Zuordnung nicht eindeutig."
+            }
+          ]
         }
       ]
     },
@@ -261,7 +385,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-1",
+          "topic_code": "stage-1-funktionen",
           "topic_title": "Etappe 1: Funktion und Term"
         },
         {
@@ -321,8 +445,6 @@
               "reason": "Beim Quadrieren reeller Zahlen gilt immer das Pluszeichen, also stets ≥ 0."
             }
           ],
-          "question": "Welche Wertemenge W gehört zu f(x) = x² auf der Definitionsmenge D = [−2; 3]?",
-          "concept": "Die Wertemenge lautet W = [0; 9], weil x² bei x = 0 minimal 0 und bei x = 3 maximal 9 wird.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -331,7 +453,82 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=ft-3-fachbegriffe"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=ft-3-fachbegriffe",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Welche Wertemenge "
+            },
+            {
+              "type": "math",
+              "tex": "W",
+              "speech": "W"
+            },
+            {
+              "type": "text",
+              "text": " gehört zu "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = x^2",
+              "speech": "f von x gleich x Quadrat"
+            },
+            {
+              "type": "text",
+              "text": " auf der Definitionsmenge "
+            },
+            {
+              "type": "math",
+              "tex": "D = [-2; 3]",
+              "speech": "D gleich abgeschlossenes Intervall von minus 2 bis 3"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Die Wertemenge lautet "
+            },
+            {
+              "type": "math",
+              "tex": "W = [0; 9]",
+              "speech": "W gleich abgeschlossenes Intervall von 0 bis 9"
+            },
+            {
+              "type": "text",
+              "text": ", weil "
+            },
+            {
+              "type": "math",
+              "tex": "x^2",
+              "speech": "x Quadrat"
+            },
+            {
+              "type": "text",
+              "text": " bei "
+            },
+            {
+              "type": "math",
+              "tex": "x = 0",
+              "speech": "x gleich 0"
+            },
+            {
+              "type": "text",
+              "text": " minimal 0 und bei "
+            },
+            {
+              "type": "math",
+              "tex": "x = 3",
+              "speech": "x gleich 3"
+            },
+            {
+              "type": "text",
+              "text": " maximal 9 wird."
+            }
+          ]
         },
         {
           "id": "01M8HA8FAEV6FPVBRANPA387CG",
@@ -350,10 +547,42 @@
               "reason": "Definitions- und Wertemenge sind hier genau vertauscht angegeben."
             }
           ],
-          "question": "Grenze für f: x ↦ 2x + 1 auf D = {1; 2; 3} die Begriffe Funktionsterm, Wertemenge W und Graph sauber ab.",
           "concept": "Der Term ist 2x + 1, die Wertemenge ist W = {3; 5; 7} und der Graph besteht aus drei Punkten.",
           "sample_solution": "1. Funktionsterm: 2x + 1.\n2. Wertemenge: W = {f(1); f(2); f(3)} = {3; 5; 7}.\n3. Graph: G_f = {(1 | 3); (2 | 5); (3 | 7)} als drei Punkte im Koordinatensystem.",
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=ft-3-fachbegriffe"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=ft-3-fachbegriffe",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Grenze für "
+            },
+            {
+              "type": "math",
+              "tex": "f\\colon x \\mapsto 2x + 1",
+              "speech": "f mit x wird zugeordnet 2 x plus 1"
+            },
+            {
+              "type": "text",
+              "text": " auf "
+            },
+            {
+              "type": "math",
+              "tex": "D = \\{1; 2; 3\\}",
+              "speech": "D gleich Menge 1, 2, 3"
+            },
+            {
+              "type": "text",
+              "text": " die Begriffe Funktionsterm, Wertemenge "
+            },
+            {
+              "type": "math",
+              "tex": "W",
+              "speech": "W"
+            },
+            {
+              "type": "text",
+              "text": " und Graph sauber ab."
+            }
+          ]
         }
       ]
     },
@@ -377,7 +606,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-1",
+          "topic_code": "stage-1-funktionen",
           "topic_title": "Etappe 1: Funktion und Term"
         },
         {
@@ -466,10 +695,51 @@
               "reason": "Beide Achsenschnitte tragen falsche Vorzeichen und bei x = 4 ist y gleich 2."
             }
           ],
-          "question": "Bestimme für f(x) = 2x − 6 beide Achsenschnittpunkte Sy und Sx und prüfe per Punktprobe, ob P(4 | 3) auf dem Graphen liegt.",
           "concept": "Sy ist 0 | −6 und Sx ist 3 | 0; der Punkt P liegt wegen f(4) = 2 streng oberhalb des Graphen.",
           "sample_solution": "1. y-Achse (x = 0): f(0) = 2·0 − 6 = −6 ⇒ Sy(0 | −6).\n2. x-Achse (f(x) = 0): 2x − 6 = 0 ⇒ x = 3 ⇒ Sx(3 | 0).\n3. Punktprobe P(4 | 3): f(4) = 2·4 − 6 = 2 ≠ 3; da y_P = 3 > 2, liegt P oberhalb.",
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=ft-4-achsen-punkte"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=ft-4-achsen-punkte",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Bestimme für "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = 2x - 6",
+              "speech": "f von x gleich 2 x minus 6"
+            },
+            {
+              "type": "text",
+              "text": " beide Achsenschnittpunkte "
+            },
+            {
+              "type": "math",
+              "tex": "S_y",
+              "speech": "S y"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "S_x",
+              "speech": "S x"
+            },
+            {
+              "type": "text",
+              "text": " und prüfe per Punktprobe, ob "
+            },
+            {
+              "type": "math",
+              "tex": "P(4 \\mid 3)",
+              "speech": "P mit Koordinaten 4 und 3"
+            },
+            {
+              "type": "text",
+              "text": " auf dem Graphen liegt."
+            }
+          ]
         }
       ]
     },
@@ -493,7 +763,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-1",
+          "topic_code": "stage-1-funktionen",
           "topic_title": "Etappe 1: Funktion und Term"
         },
         {
@@ -554,7 +824,6 @@
             }
           ],
           "question": "Was unterscheidet lineares von quadratischem Wachstum bei gleichen x-Schritten Δx?",
-          "concept": "Lineares Wachstum zeigt stets gleiche Zuwächse Δy; bei x² werden die Zuwächse Δy immer größer.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -563,7 +832,40 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=ft-5-aenderung"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=ft-5-aenderung",
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Lineares Wachstum zeigt stets gleiche Zuwächse "
+            },
+            {
+              "type": "math",
+              "tex": "\\Delta y",
+              "speech": "Delta y"
+            },
+            {
+              "type": "text",
+              "text": "; bei "
+            },
+            {
+              "type": "math",
+              "tex": "x^2",
+              "speech": "x Quadrat"
+            },
+            {
+              "type": "text",
+              "text": " werden die Zuwächse "
+            },
+            {
+              "type": "math",
+              "tex": "\\Delta y",
+              "speech": "Delta y"
+            },
+            {
+              "type": "text",
+              "text": " immer größer."
+            }
+          ]
         },
         {
           "id": "01M8HA8FAEX4Y2DRJXBCDSWZ72",
@@ -582,10 +884,42 @@
               "reason": "Geraden wachsen in gleichen x-Schritten stets konstant und ändern ihre Schrittweite nicht."
             }
           ],
-          "question": "Vergleiche die Funktionswert-Änderung Δy = f(x + 2) − f(x) für g(x) = 3x − 1 und h(x) = x² beim Schritt von 1 auf 3 sowie von 3 auf 5.",
           "concept": "Bei g bleibt Δy zweimal konstant gleich +6; bei h steigt Δy erst um 8 und danach um 16.",
           "sample_solution": "1. Gerade g: g(3) − g(1) = 8 − 2 = 6; g(5) − g(3) = 14 − 8 = 6 (konstant 3 · 2 = 6).\n2. Quadratisch h: h(3) − h(1) = 9 − 1 = 8; h(5) − h(3) = 25 − 9 = 16.\n3. Im Gegensatz zur Geraden verdoppelt sich hier der Zuwachs von 8 auf 16.",
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=ft-5-aenderung"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=ft-5-aenderung",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Vergleiche die Funktionswert-Änderung "
+            },
+            {
+              "type": "math",
+              "tex": "\\Delta y = f(x + 2) - f(x)",
+              "speech": "Delta y gleich f von x plus 2 minus f von x"
+            },
+            {
+              "type": "text",
+              "text": " für "
+            },
+            {
+              "type": "math",
+              "tex": "g(x) = 3x - 1",
+              "speech": "g von x gleich 3 x minus 1"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "h(x) = x^2",
+              "speech": "h von x gleich x Quadrat"
+            },
+            {
+              "type": "text",
+              "text": " beim Schritt von 1 auf 3 sowie von 3 auf 5."
+            }
+          ]
         }
       ]
     },
@@ -609,7 +943,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-2",
+          "topic_code": "stage-2-linear",
           "topic_title": "Etappe 2: Lineare Funktionen"
         },
         {
@@ -640,7 +974,6 @@
               "reason": "t gehört zum Schnittpunkt auf der y-Achse, niemals auf der x-Achse."
             }
           ],
-          "question": "Welche geometrische Bedeutung haben m und t in der Geradengleichung y = m·x + t?",
           "concept": "m gibt die Steigung der Geraden an und t die y-Koordinate des Schnittpunkts mit der y-Achse.",
           "fast_check": {
             "type": "binary_choice",
@@ -650,7 +983,40 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-1-parameter"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-1-parameter",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Welche geometrische Bedeutung haben "
+            },
+            {
+              "type": "math",
+              "tex": "m",
+              "speech": "m"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "t",
+              "speech": "t"
+            },
+            {
+              "type": "text",
+              "text": " in der Geradengleichung "
+            },
+            {
+              "type": "math",
+              "tex": "y = m \\cdot x + t",
+              "speech": "y gleich m mal x plus t"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ]
         },
         {
           "id": "01M8HA8FAEYM5RTVD88SX1641K",
@@ -669,7 +1035,6 @@
               "reason": "Nur m entscheidet über Steigen oder Fallen; t verschiebt lediglich nach oben oder unten."
             }
           ],
-          "question": "Wie verläuft der Graph einer linearen Funktion für m > 0, m < 0 bzw. m = 0?",
           "concept": "Für m > 0 steigt die Gerade nach rechts, für m < 0 fällt sie, für m = 0 läuft sie waagrecht.",
           "fast_check": {
             "type": "binary_choice",
@@ -679,7 +1044,40 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-1-parameter"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-1-parameter",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie verläuft der Graph einer linearen Funktion für "
+            },
+            {
+              "type": "math",
+              "tex": "m > 0",
+              "speech": "m größer 0"
+            },
+            {
+              "type": "text",
+              "text": ", "
+            },
+            {
+              "type": "math",
+              "tex": "m < 0",
+              "speech": "m kleiner 0"
+            },
+            {
+              "type": "text",
+              "text": " bzw. "
+            },
+            {
+              "type": "math",
+              "tex": "m = 0",
+              "speech": "m gleich 0"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ]
         },
         {
           "id": "01M8HA8FAEZ85V31C6J9T2Q5C7",
@@ -698,10 +1096,33 @@
               "reason": "Die Parameter +2 und −3 sind Achsenabschnitte auf der y-Achse, nicht die Steigungen."
             }
           ],
-          "question": "Vergleiche die Geraden g: y = −1,5x + 2 und h: y = −1,5x − 3 hinsichtlich Steigung, Verlauf und gegenseitiger Lage.",
           "concept": "Beide Geraden fallen mit gleicher Steigung m = −1,5 und verlaufen echt parallel im senkrechten Abstand 5.",
           "sample_solution": "1. Steigungen vergleichen: m_g = m_h = −1,5 < 0 → beide Geraden fallen gleich steil.\n2. y-Achsenabschnitte: t_g = 2, t_h = −3 ⇒ Sy_g(0 | 2), Sy_h(0 | −3).\n3. Wegen gleicher Steigung m und t_g ≠ t_h sind g und h echt parallel.",
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-1-parameter"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-1-parameter",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Vergleiche die Geraden "
+            },
+            {
+              "type": "math",
+              "tex": "g\\colon y = -1{,}5x + 2",
+              "speech": "g mit y gleich minus 1 komma 5 x plus 2"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "h\\colon y = -1{,}5x - 3",
+              "speech": "h mit y gleich minus 1 komma 5 x minus 3"
+            },
+            {
+              "type": "text",
+              "text": " hinsichtlich Steigung, Verlauf und gegenseitiger Lage."
+            }
+          ]
         }
       ]
     },
@@ -725,7 +1146,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-2",
+          "topic_code": "stage-2-linear",
           "topic_title": "Etappe 2: Lineare Funktionen"
         },
         {
@@ -757,7 +1178,6 @@
             }
           ],
           "question": "Wie bestimmst du mithilfe eines Steigungsdreiecks zwischen zwei Punkten auf einer Geraden die Steigung m?",
-          "concept": "Man teilt die senkrechte Höhendifferenz Δy durch die waagrechte Schrittweite Δx: m = Δy / Δx.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -766,7 +1186,40 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-2-zeichnen-ablesen"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-2-zeichnen-ablesen",
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Man teilt die senkrechte Höhendifferenz "
+            },
+            {
+              "type": "math",
+              "tex": "\\Delta y",
+              "speech": "Delta y"
+            },
+            {
+              "type": "text",
+              "text": " durch die waagrechte Schrittweite "
+            },
+            {
+              "type": "math",
+              "tex": "\\Delta x",
+              "speech": "Delta x"
+            },
+            {
+              "type": "text",
+              "text": ": "
+            },
+            {
+              "type": "math",
+              "tex": "m = \\frac{\\Delta y}{\\Delta x}",
+              "speech": "m gleich Delta y durch Delta x"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
         },
         {
           "id": "01M8HA8FAE5YCWA3ZX5AYS2DQR",
@@ -785,7 +1238,6 @@
               "reason": "Man darf Zähler −3 in y-Richtung und Nenner 4 in x-Richtung nicht miteinander vertauschen."
             }
           ],
-          "question": "Wie zeichnest du y = −3/4 · x + 2 ohne große Wertetabelle sicher ins Koordinatensystem?",
           "concept": "Beim Startpunkt x = 0, y = 2 markieren, danach 4 nach rechts und 3 nach unten wandern.",
           "fast_check": {
             "type": "binary_choice",
@@ -795,7 +1247,22 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-2-zeichnen-ablesen"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-2-zeichnen-ablesen",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie zeichnest du "
+            },
+            {
+              "type": "math",
+              "tex": "y = -\\frac{3}{4} x + 2",
+              "speech": "y gleich minus drei Viertel x plus 2"
+            },
+            {
+              "type": "text",
+              "text": " ohne große Wertetabelle sicher ins Koordinatensystem?"
+            }
+          ]
         },
         {
           "id": "01M8HA8FAED2PDJ9YGVZDXNXJK",
@@ -814,10 +1281,92 @@
               "reason": "t wird bei x = 0 abgelesen und beträgt −1; die Steigung beträgt 3 geteilt durch 4."
             }
           ],
-          "question": "Eine Gerade schneidet die y-Achse bei (0 | −1) und verläuft durch (4 | 2). Lies t ab, berechne m mit dem Steigungsdreieck und gib y = m·x + t an.",
-          "concept": "Es ergibt sich t = −1 und m = 3 / 4 = 0,75, also lautet die Gleichung y = 0,75x − 1.",
           "sample_solution": "1. y-Achsenabschnitt bei x = 0 ablesen: t = −1.\n2. Steigungsdreieck zwischen (0 | −1) und (4 | 2): Δx = 4, Δy = 2 − (−1) = 3.\n3. m = Δy / Δx = 3 / 4 = 0,75 ⇒ y = 0,75x − 1.",
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-2-zeichnen-ablesen"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-2-zeichnen-ablesen",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Eine Gerade schneidet die y-Achse bei "
+            },
+            {
+              "type": "math",
+              "tex": "(0 \\mid -1)",
+              "speech": "0 und minus 1"
+            },
+            {
+              "type": "text",
+              "text": " und verläuft durch "
+            },
+            {
+              "type": "math",
+              "tex": "(4 \\mid 2)",
+              "speech": "4 und 2"
+            },
+            {
+              "type": "text",
+              "text": ". Lies "
+            },
+            {
+              "type": "math",
+              "tex": "t",
+              "speech": "t"
+            },
+            {
+              "type": "text",
+              "text": " ab, berechne "
+            },
+            {
+              "type": "math",
+              "tex": "m",
+              "speech": "m"
+            },
+            {
+              "type": "text",
+              "text": " mit dem Steigungsdreieck und gib "
+            },
+            {
+              "type": "math",
+              "tex": "y = m \\cdot x + t",
+              "speech": "y gleich m mal x plus t"
+            },
+            {
+              "type": "text",
+              "text": " an."
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Es ergibt sich "
+            },
+            {
+              "type": "math",
+              "tex": "t = -1",
+              "speech": "t gleich minus 1"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "m = \\frac{3}{4} = 0{,}75",
+              "speech": "m gleich 3 Viertel gleich 0 komma 75"
+            },
+            {
+              "type": "text",
+              "text": ", also lautet die Gleichung "
+            },
+            {
+              "type": "math",
+              "tex": "y = 0{,}75x - 1",
+              "speech": "y gleich 0 komma 75 x minus 1"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
         }
       ]
     },
@@ -841,7 +1390,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-2",
+          "topic_code": "stage-2-linear",
           "topic_title": "Etappe 2: Lineare Funktionen"
         },
         {
@@ -872,8 +1421,6 @@
               "reason": "Vertauscht man nur im Nenner P und Q, dreht sich das Vorzeichen von m fälschlich um."
             }
           ],
-          "question": "Mit welcher Formel berechnest du die Steigung m einer Geraden durch die Punkte P(x₁ | y₁) und Q(x₂ | y₂)?",
-          "concept": "m = (y₂ − y₁) / (x₂ − x₁), wobei x₁ ≠ x₂ gelten muss und in Zähler wie Nenner die gleiche Reihenfolge steht.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -882,7 +1429,60 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-3-aufstellen"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-3-aufstellen",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Mit welcher Formel berechnest du die Steigung "
+            },
+            {
+              "type": "math",
+              "tex": "m",
+              "speech": "m"
+            },
+            {
+              "type": "text",
+              "text": " einer Geraden durch die Punkte "
+            },
+            {
+              "type": "math",
+              "tex": "P(x_1 \\mid y_1)",
+              "speech": "P mit x eins und y eins"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "Q(x_2 \\mid y_2)",
+              "speech": "Q mit x zwei und y zwei"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "m = \\frac{y_2 - y_1}{x_2 - x_1}",
+              "speech": "m gleich Bruch y zwei minus y eins durch x zwei minus x eins"
+            },
+            {
+              "type": "text",
+              "text": ", wobei "
+            },
+            {
+              "type": "math",
+              "tex": "x_1 \\neq x_2",
+              "speech": "x eins ungleich x zwei"
+            },
+            {
+              "type": "text",
+              "text": " gelten muss und in Zähler wie Nenner die gleiche Reihenfolge steht."
+            }
+          ]
         },
         {
           "id": "01M8HA8FAE8H635K8CZF6V17ZV",
@@ -930,10 +1530,65 @@
               "reason": "y = 5 gehört zu x = −2, nicht zu x = 0; t folgt erst nach dem Einsetzen."
             }
           ],
-          "question": "Stelle rechnerisch die Gleichung der Geraden durch A(−2 | 5) und B(4 | −7) auf.",
-          "concept": "Zuerst m = (−7 − 5) / (4 − (−2)) = −2 berechnen, dann A einsetzen → t = 1 ⇒ y = −2x + 1.",
           "sample_solution": "1. Steigung: m = (−7 − 5) / (4 − (−2)) = −12 / 6 = −2.\n2. Punkt A(−2 | 5) in y = m·x + t einsetzen: 5 = (−2) · (−2) + t ⇒ 5 = 4 + t.\n3. Nach t auflösen: t = 1. Gleichung: y = −2x + 1.",
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-3-aufstellen"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-3-aufstellen",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Stelle rechnerisch die Gleichung der Geraden durch "
+            },
+            {
+              "type": "math",
+              "tex": "A(-2 \\mid 5)",
+              "speech": "A mit minus 2 und 5"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "B(4 \\mid -7)",
+              "speech": "B mit 4 und minus 7"
+            },
+            {
+              "type": "text",
+              "text": " auf."
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Zuerst "
+            },
+            {
+              "type": "math",
+              "tex": "m = \\frac{-7 - 5}{4 - (-2)} = -2",
+              "speech": "m gleich minus 7 minus 5 durch 4 minus minus 2 gleich minus 2"
+            },
+            {
+              "type": "text",
+              "text": " berechnen, dann A einsetzen ergibt "
+            },
+            {
+              "type": "math",
+              "tex": "t = 1",
+              "speech": "t gleich 1"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "y = -2x + 1",
+              "speech": "y gleich minus 2 x plus 1"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
         }
       ]
     },
@@ -957,7 +1612,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-2",
+          "topic_code": "stage-2-linear",
           "topic_title": "Etappe 2: Lineare Funktionen"
         },
         {
@@ -988,8 +1643,6 @@
               "reason": "Nullstelle bedeutet, dass der Funktionswert selbst gleich 0 werden muss."
             }
           ],
-          "question": "Welcher Rechenansatz liefert die Nullstelle x₀ einer linearen Funktion f(x) = m·x + t?",
-          "concept": "Man setzt f(x) gleich 0, also m·x + t = 0, und erhält x₀ = −t / m.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -998,7 +1651,64 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-4-nullstellen"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-4-nullstellen",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Welcher Rechenansatz liefert die Nullstelle "
+            },
+            {
+              "type": "math",
+              "tex": "x_0",
+              "speech": "x Null"
+            },
+            {
+              "type": "text",
+              "text": " einer linearen Funktion "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = m \\cdot x + t",
+              "speech": "f von x gleich m mal x plus t"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Man setzt "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = 0",
+              "speech": "f von x gleich 0"
+            },
+            {
+              "type": "text",
+              "text": ", also "
+            },
+            {
+              "type": "math",
+              "tex": "m \\cdot x + t = 0",
+              "speech": "m mal x plus t gleich 0"
+            },
+            {
+              "type": "text",
+              "text": ", und erhält "
+            },
+            {
+              "type": "math",
+              "tex": "x_0 = -\\frac{t}{m}",
+              "speech": "x Null gleich minus t durch m"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
         },
         {
           "id": "01M8HA8FAE9P9SNAXJRVZPNZM3",
@@ -1017,8 +1727,6 @@
               "reason": "Bei t = 0 geht die Gerade durch den Ursprung, hat also die Nullstelle x₀ = 0."
             }
           ],
-          "question": "Wann besitzt eine lineare Funktion f(x) = m·x + t KEINE Nullstelle?",
-          "concept": "Wenn m = 0 und t ≠ 0 gilt, verläuft der Graph echt parallel zur x-Achse ohne jeden Schnittpunkt.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -1027,7 +1735,46 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-4-nullstellen"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-4-nullstellen",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wann besitzt eine lineare Funktion "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = m \\cdot x + t",
+              "speech": "f von x gleich m mal x plus t"
+            },
+            {
+              "type": "text",
+              "text": " KEINE Nullstelle?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Wenn "
+            },
+            {
+              "type": "math",
+              "tex": "m = 0",
+              "speech": "m gleich 0"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "t \\neq 0",
+              "speech": "t ungleich 0"
+            },
+            {
+              "type": "text",
+              "text": " gilt, verläuft der Graph echt parallel zur x-Achse ohne jeden Schnittpunkt."
+            }
+          ]
         },
         {
           "id": "01M8HA8FAEPXP4FTT6F7ZDF6EE",
@@ -1046,10 +1793,51 @@
               "reason": "Nur bei y = 0 liegen alle x-Werte auf der x-Achse; bei y = 4 kein einziger."
             }
           ],
-          "question": "Bestimme die Nullstelle N(x₀ | 0) der Funktion f(x) = −2,5x + 10 und überprüfe den Parameterfall m = 0; t = 4.",
           "concept": "Für f gilt −2,5x + 10 = 0 ⇒ x₀ = 4, also N(4 | 0); für y = 4 gibt es wegen 4 ≠ 0 keine Nullstelle.",
           "sample_solution": "1. Ansatz f(x) = 0: −2,5x + 10 = 0 ⇒ −2,5x = −10 ⇒ x₀ = 4 → N(4 | 0).\n2. Für m = 0, t = 4 wird f(x) = 4 = 0 falsch → L = ∅.",
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-4-nullstellen"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-4-nullstellen",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Bestimme die Nullstelle "
+            },
+            {
+              "type": "math",
+              "tex": "N(x_0 \\mid 0)",
+              "speech": "N mit x Null und 0"
+            },
+            {
+              "type": "text",
+              "text": " der Funktion "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = -2{,}5x + 10",
+              "speech": "f von x gleich minus 2 komma 5 x plus 10"
+            },
+            {
+              "type": "text",
+              "text": " und überprüfe den Parameterfall "
+            },
+            {
+              "type": "math",
+              "tex": "m = 0",
+              "speech": "m gleich 0"
+            },
+            {
+              "type": "text",
+              "text": "; "
+            },
+            {
+              "type": "math",
+              "tex": "t = 4",
+              "speech": "t gleich 4"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
         }
       ]
     },
@@ -1073,7 +1861,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-2",
+          "topic_code": "stage-2-linear",
           "topic_title": "Etappe 2: Lineare Funktionen"
         },
         {
@@ -1104,7 +1892,6 @@
               "reason": "Nullstellen gehören zu y = 0 und liegen im Allgemeinen nicht beim Schnittpunkt."
             }
           ],
-          "question": "Wie berechnest du die Koordinaten des Schnittpunkts S zweier Geraden g: y = m₁x + t₁ und h: y = m₂x + t₂?",
           "concept": "Man setzt beide Funktionsterme gleich (m₁x + t₁ = m₂x + t₂), löst nach x_S auf und bestimmt y_S = g(x_S).",
           "fast_check": {
             "type": "binary_choice",
@@ -1114,7 +1901,40 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-5-schnittpunkt"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-5-schnittpunkt",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie berechnest du die Koordinaten des Schnittpunkts "
+            },
+            {
+              "type": "math",
+              "tex": "S",
+              "speech": "S"
+            },
+            {
+              "type": "text",
+              "text": " zweier Geraden "
+            },
+            {
+              "type": "math",
+              "tex": "g\\colon y = m_1 x + t_1",
+              "speech": "g mit y gleich m eins x plus t eins"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "h\\colon y = m_2 x + t_2",
+              "speech": "h mit y gleich m zwei x plus t zwei"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ]
         },
         {
           "id": "01M8HA8FAEREM2D8TW397AFQN4",
@@ -1162,10 +1982,42 @@
               "reason": "y_S berechnet man durch Einsetzen von x_S = 3 in den Funktionsterm: 2·3 − 3 = 3."
             }
           ],
-          "question": "Berechne den Schnittpunkt S der Geraden g(x) = 2x − 3 und h(x) = −x + 6 und kontrolliere beide Koordinaten.",
           "concept": "2x − 3 = −x + 6 liefert x_S = 3; Einsetzen ergibt y_S = 3 und somit den Schnittpunkt S bei 3 und 3.",
           "sample_solution": "1. Gleichsetzen: 2x − 3 = −x + 6 ⇒ 3x = 9 ⇒ x_S = 3.\n2. Einsetzen in g: y_S = 2·3 − 3 = 3; Kontrolle h(3) = −3 + 6 = 3 ⇒ S(3 | 3).",
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-5-schnittpunkt"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-5-schnittpunkt",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Berechne den Schnittpunkt "
+            },
+            {
+              "type": "math",
+              "tex": "S",
+              "speech": "S"
+            },
+            {
+              "type": "text",
+              "text": " der Geraden "
+            },
+            {
+              "type": "math",
+              "tex": "g(x) = 2x - 3",
+              "speech": "g von x gleich 2 x minus 3"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "h(x) = -x + 6",
+              "speech": "h von x gleich minus x plus 6"
+            },
+            {
+              "type": "text",
+              "text": " und kontrolliere beide Koordinaten."
+            }
+          ]
         }
       ]
     },
@@ -1189,7 +2041,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-2",
+          "topic_code": "stage-2-linear",
           "topic_title": "Etappe 2: Lineare Funktionen"
         },
         {
@@ -1220,7 +2072,6 @@
               "reason": "Ohne Obergrenze beschreibt K mit m > 0 unbegrenzt steigende Kosten ab dem Startwert t."
             }
           ],
-          "question": "Was bedeuten Steigung m und Achsenabschnitt t bei einem Handytarif K(x) = m·x + t (x = verbrauchte GB)?",
           "concept": "t ist die feste monatliche Grundgebühr bei 0 GB, m der gleichbleibende Preis pro zusätzlichem GB.",
           "fast_check": {
             "type": "binary_choice",
@@ -1230,7 +2081,49 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-6-sachkontext"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-6-sachkontext",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Was bedeuten Steigung "
+            },
+            {
+              "type": "math",
+              "tex": "m",
+              "speech": "m"
+            },
+            {
+              "type": "text",
+              "text": " und Achsenabschnitt "
+            },
+            {
+              "type": "math",
+              "tex": "t",
+              "speech": "t"
+            },
+            {
+              "type": "text",
+              "text": " bei einem Handytarif "
+            },
+            {
+              "type": "math",
+              "tex": "K(x) = m \\cdot x + t",
+              "speech": "K von x gleich m mal x plus t"
+            },
+            {
+              "type": "text",
+              "text": " ("
+            },
+            {
+              "type": "math",
+              "tex": "x",
+              "speech": "x"
+            },
+            {
+              "type": "text",
+              "text": " = verbrauchte GB)?"
+            }
+          ]
         },
         {
           "id": "01M8HA8FAETGRYJ6GX3H5Z6K76",
@@ -1249,7 +2142,6 @@
               "reason": "Die niedrigere Änderungsrate von 0,25 € je Einheit holt den höheren Startpreis nach 40 Einheiten ein."
             }
           ],
-          "question": "Wann lohnt sich Tarif B: y = 0,25x + 20 gegenüber Tarif A: y = 0,50x + 10?",
           "concept": "Ab über 40 Einheiten wird Tarif B billiger; bei genau 40 Einheiten kosten beide Tarife 30 €.",
           "fast_check": {
             "type": "binary_choice",
@@ -1259,7 +2151,31 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-6-sachkontext"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-6-sachkontext",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wann lohnt sich Tarif B: "
+            },
+            {
+              "type": "math",
+              "tex": "y = 0{,}25x + 20",
+              "speech": "y gleich 0 komma 25 x plus 20"
+            },
+            {
+              "type": "text",
+              "text": " gegenüber Tarif A: "
+            },
+            {
+              "type": "math",
+              "tex": "y = 0{,}50x + 10",
+              "speech": "y gleich 0 komma 50 x plus 10"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ]
         },
         {
           "id": "01M8HA8FAETX7DE8Z6CKDF3584",
@@ -1305,7 +2221,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-2",
+          "topic_code": "stage-2-linear",
           "topic_title": "Etappe 2: Lineare Funktionen"
         },
         {
@@ -1394,10 +2310,74 @@
               "reason": "Da in der Aufgabe ≥ steht, bleibt auch beim umgedrehten Zeichen ≤ der Randwert −3 eingeschlossen."
             }
           ],
-          "question": "Löse die lineare Ungleichung −3x + 6 ≥ 15 über ℚ und notiere das Ergebnis als Lösungsintervall.",
-          "concept": "Nach −3x ≥ 9 und Teilen durch −3 dreht sich ≥ um zu x ≤ −3, also L = ]−∞; −3].",
           "sample_solution": "1. −3x + 6 ≥ 15 | − 6 ⇒ −3x ≥ 9.\n2. : (−3) mit Inversionsregel: x ≤ −3.\n3. Intervallschreibweise: L = ]−∞; −3].",
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-7-ungleichungen"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-7-ungleichungen",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Löse die lineare Ungleichung "
+            },
+            {
+              "type": "math",
+              "tex": "-3x + 6 \\ge 15",
+              "speech": "minus 3 x plus 6 größer gleich 15"
+            },
+            {
+              "type": "text",
+              "text": " über "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbb{Q}",
+              "speech": "Q"
+            },
+            {
+              "type": "text",
+              "text": " und notiere das Ergebnis als Lösungsintervall."
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Nach "
+            },
+            {
+              "type": "math",
+              "tex": "-3x \\ge 9",
+              "speech": "minus 3 x größer gleich 9"
+            },
+            {
+              "type": "text",
+              "text": " und Teilen durch "
+            },
+            {
+              "type": "math",
+              "tex": "-3",
+              "speech": "minus 3"
+            },
+            {
+              "type": "text",
+              "text": " dreht sich das Zeichen um zu "
+            },
+            {
+              "type": "math",
+              "tex": "x \\le -3",
+              "speech": "x kleiner gleich minus 3"
+            },
+            {
+              "type": "text",
+              "text": ", also "
+            },
+            {
+              "type": "math",
+              "tex": "L = ]-\\infty; -3]",
+              "speech": "L gleich links offenes Intervall von minus unendlich bis minus 3"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
         }
       ]
     },
@@ -1421,7 +2401,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-2",
+          "topic_code": "stage-2-linear",
           "topic_title": "Etappe 2: Lineare Funktionen"
         },
         {
@@ -1452,8 +2432,6 @@
               "reason": "Jeder konstante Faktor a ≠ 0 liefert mit y = a·x eine direkt proportionale Zuordnung."
             }
           ],
-          "question": "Wann beschreibt eine lineare Funktion y = m·x + t eine direkt proportionale Zuordnung zwischen x und y?",
-          "concept": "Genau dann, wenn t = 0 gilt: Die Ursprungsgerade y = a·x verdoppelt y bei Verdopplung von x.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -1462,7 +2440,82 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-8-proportional"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-8-proportional",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wann beschreibt eine lineare Funktion "
+            },
+            {
+              "type": "math",
+              "tex": "y = m \\cdot x + t",
+              "speech": "y gleich m mal x plus t"
+            },
+            {
+              "type": "text",
+              "text": " eine direkt proportionale Zuordnung zwischen "
+            },
+            {
+              "type": "math",
+              "tex": "x",
+              "speech": "x"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "y",
+              "speech": "y"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Genau dann, wenn "
+            },
+            {
+              "type": "math",
+              "tex": "t = 0",
+              "speech": "t gleich 0"
+            },
+            {
+              "type": "text",
+              "text": " gilt: Die Ursprungsgerade "
+            },
+            {
+              "type": "math",
+              "tex": "y = a \\cdot x",
+              "speech": "y gleich a mal x"
+            },
+            {
+              "type": "text",
+              "text": " verdoppelt "
+            },
+            {
+              "type": "math",
+              "tex": "y",
+              "speech": "y"
+            },
+            {
+              "type": "text",
+              "text": " bei Verdopplung von "
+            },
+            {
+              "type": "math",
+              "tex": "x",
+              "speech": "x"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
         },
         {
           "id": "01M8HA8FAEVGSV5NDY8BQPP6PR",
@@ -1482,7 +2535,6 @@
             }
           ],
           "question": "Wie prüfst du an einer Messreihe (x | y) aus der Physik, ob y direkt proportional zu x ist?",
-          "concept": "Für alle Wertepaare mit x ≠ 0 muss der Quotient y / x stets denselben konstanten Faktor a ergeben.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -1491,7 +2543,40 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-8-proportional"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-8-proportional",
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Für alle Wertepaare mit "
+            },
+            {
+              "type": "math",
+              "tex": "x \\neq 0",
+              "speech": "x ungleich 0"
+            },
+            {
+              "type": "text",
+              "text": " muss der Quotient "
+            },
+            {
+              "type": "math",
+              "tex": "\\frac{y}{x}",
+              "speech": "y durch x"
+            },
+            {
+              "type": "text",
+              "text": " stets denselben konstanten Faktor "
+            },
+            {
+              "type": "math",
+              "tex": "a",
+              "speech": "a"
+            },
+            {
+              "type": "text",
+              "text": " ergeben."
+            }
+          ]
         },
         {
           "id": "01M8HA8FAEYN0ZS8NBSCXGNQX5",
@@ -1510,10 +2595,69 @@
               "reason": "Direkte Proportionalität vervielfacht mit dem Faktor 2,5, statt Konstanten zu addieren."
             }
           ],
-          "question": "Bei einer Schraubenfeder gilt bis zur Elastizitätsgrenze F(s) = D·s. Bei s₁ = 4 cm dehnt sich die Feder mit F₁ = 10 N. Berechne D und F für s₂ = 10 cm.",
           "concept": "Die Federkonstante beträgt D = 10 / 4 = 2,5 N/cm; bei 10 cm Dehnung wirkt F₂ = 25 N.",
           "sample_solution": "1. Direkt proportional ⇒ D = F / s = 10 N / 4 cm = 2,5 N/cm.\n2. F(s) = 2,5 N/cm · s ⇒ F(10) = 25 N.",
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-8-proportional"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lf-8-proportional",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Bei einer Schraubenfeder gilt bis zur Elastizitätsgrenze "
+            },
+            {
+              "type": "math",
+              "tex": "F(s) = D \\cdot s",
+              "speech": "F von s gleich D mal s"
+            },
+            {
+              "type": "text",
+              "text": ". Bei "
+            },
+            {
+              "type": "math",
+              "tex": "s_1 = 4",
+              "speech": "s eins gleich 4"
+            },
+            {
+              "type": "text",
+              "text": " cm dehnt sich die Feder mit "
+            },
+            {
+              "type": "math",
+              "tex": "F_1 = 10",
+              "speech": "F eins gleich 10"
+            },
+            {
+              "type": "text",
+              "text": " N. Berechne "
+            },
+            {
+              "type": "math",
+              "tex": "D",
+              "speech": "D"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "F",
+              "speech": "F"
+            },
+            {
+              "type": "text",
+              "text": " für "
+            },
+            {
+              "type": "math",
+              "tex": "s_2 = 10",
+              "speech": "s zwei gleich 10"
+            },
+            {
+              "type": "text",
+              "text": " cm."
+            }
+          ]
         }
       ]
     },
@@ -1537,7 +2681,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-3",
+          "topic_code": "stage-3-gebrochen",
           "topic_title": "Etappe 3: Elementare gebrochen-rationale Funktionen"
         },
         {
@@ -1568,8 +2712,6 @@
               "reason": "Weder Zähler a noch Summand c können eine Definitionslücke erzeugen."
             }
           ],
-          "question": "Wie findest du bei der gebrochen-rationalen Funktion f(x) = a/(x + b) + c die maximal zulässige Definitionsmenge D?",
-          "concept": "Man setzt den Nenner x + b gleich Null und schließt die Lösung x = −b aus: D = ℚ \\ {−b}.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -1578,7 +2720,64 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=gr-1-defmenge"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=gr-1-defmenge",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie findest du bei der gebrochen-rationalen Funktion "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = \\frac{a}{x + b} + c",
+              "speech": "f von x gleich Bruch a durch x plus b, plus c"
+            },
+            {
+              "type": "text",
+              "text": " die maximal zulässige Definitionsmenge "
+            },
+            {
+              "type": "math",
+              "tex": "D",
+              "speech": "D"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Man setzt den Nenner "
+            },
+            {
+              "type": "math",
+              "tex": "x + b = 0",
+              "speech": "x plus b gleich 0"
+            },
+            {
+              "type": "text",
+              "text": " und schließt die Lösung "
+            },
+            {
+              "type": "math",
+              "tex": "x = -b",
+              "speech": "x gleich minus b"
+            },
+            {
+              "type": "text",
+              "text": " aus: "
+            },
+            {
+              "type": "math",
+              "tex": "D = \\mathbb{Q} \\setminus \\{-b\\}",
+              "speech": "D gleich Q ohne minus b"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
         },
         {
           "id": "01M8HA8FAEBFWQESDY86ETYAWX",
@@ -1597,7 +2796,6 @@
               "reason": "An einer Definitionslücke besitzt kein Funktionsgraph einen definierten Punkt."
             }
           ],
-          "question": "Was passiert mit den Funktionswerten f(x) = 4 / (x − 2), wenn x sich der Definitionslücke x = 2 dicht annähert?",
           "concept": "Der Nenner wird winzig klein und der Betrag von f wächst über jede endliche Grenze hinaus.",
           "fast_check": {
             "type": "binary_choice",
@@ -1607,7 +2805,40 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=gr-1-defmenge"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=gr-1-defmenge",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Was passiert mit den Funktionswerten "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = \\frac{4}{x - 2}",
+              "speech": "f von x gleich Bruch 4 durch x minus 2"
+            },
+            {
+              "type": "text",
+              "text": ", wenn "
+            },
+            {
+              "type": "math",
+              "tex": "x",
+              "speech": "x"
+            },
+            {
+              "type": "text",
+              "text": " sich der Definitionslücke "
+            },
+            {
+              "type": "math",
+              "tex": "x = 2",
+              "speech": "x gleich 2"
+            },
+            {
+              "type": "text",
+              "text": " dicht annähert?"
+            }
+          ]
         },
         {
           "id": "01M8HA8FAEW3TVYYJJ670PN2XQ",
@@ -1626,10 +2857,101 @@
               "reason": "Die Konstante −2 erzeugt keine Lücke, und 6/3 − 2 ergibt 0."
             }
           ],
-          "question": "Gib für f(x) = 6 / (x + 3) − 2 die maximale Definitionsmenge D an und berechne f(0) sowie f(−6).",
-          "concept": "Wegen x + 3 = 0 bei x = −3 gilt D = ℚ \\ {−3}, dazu f(0) = 0 und f(−6) = −4.",
           "sample_solution": "1. Nenner gleich Null: x + 3 = 0 ⇒ x = −3 ⇒ D = ℚ \\ {−3}.\n2. f(0) = 6 / 3 − 2 = 0.\n3. f(−6) = 6 / (−3) − 2 = −2 − 2 = −4.",
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=gr-1-defmenge"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=gr-1-defmenge",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Gib für "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = \\frac{6}{x + 3} - 2",
+              "speech": "f von x gleich Bruch 6 durch x plus 3, minus 2"
+            },
+            {
+              "type": "text",
+              "text": " die maximale Definitionsmenge "
+            },
+            {
+              "type": "math",
+              "tex": "D",
+              "speech": "D"
+            },
+            {
+              "type": "text",
+              "text": " an und berechne "
+            },
+            {
+              "type": "math",
+              "tex": "f(0)",
+              "speech": "f von 0"
+            },
+            {
+              "type": "text",
+              "text": " sowie "
+            },
+            {
+              "type": "math",
+              "tex": "f(-6)",
+              "speech": "f von minus 6"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Wegen "
+            },
+            {
+              "type": "math",
+              "tex": "x + 3 = 0",
+              "speech": "x plus 3 gleich 0"
+            },
+            {
+              "type": "text",
+              "text": " bei "
+            },
+            {
+              "type": "math",
+              "tex": "x = -3",
+              "speech": "x gleich minus 3"
+            },
+            {
+              "type": "text",
+              "text": " gilt "
+            },
+            {
+              "type": "math",
+              "tex": "D = \\mathbb{Q} \\setminus \\{-3\\}",
+              "speech": "D gleich Q ohne minus 3"
+            },
+            {
+              "type": "text",
+              "text": ", dazu "
+            },
+            {
+              "type": "math",
+              "tex": "f(0) = 0",
+              "speech": "f von 0 gleich 0"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "f(-6) = -4",
+              "speech": "f von minus 6 gleich minus 4"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
         }
       ]
     },
@@ -1653,7 +2975,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-3",
+          "topic_code": "stage-3-gebrochen",
           "topic_title": "Etappe 3: Elementare gebrochen-rationale Funktionen"
         },
         {
@@ -1684,8 +3006,6 @@
               "reason": "a streckt oder spiegelt die Äste, bestimmt aber nicht die Position der Asymptoten."
             }
           ],
-          "question": "Welche Asymptoten besitzt die Hyperbel f(x) = a / (x + b) + c (a ≠ 0)?",
-          "concept": "Die senkrechte Asymptote liegt bei x = −b, die waagrechte Asymptote liegt bei y = c.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -1694,7 +3014,55 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=gr-2-verschieben"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=gr-2-verschieben",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Welche Asymptoten besitzt die Hyperbel "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = \\frac{a}{x + b} + c",
+              "speech": "f von x gleich Bruch a durch x plus b, plus c"
+            },
+            {
+              "type": "text",
+              "text": " ("
+            },
+            {
+              "type": "math",
+              "tex": "a \\neq 0",
+              "speech": "a ungleich 0"
+            },
+            {
+              "type": "text",
+              "text": ")?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Die senkrechte Asymptote liegt bei "
+            },
+            {
+              "type": "math",
+              "tex": "x = -b",
+              "speech": "x gleich minus b"
+            },
+            {
+              "type": "text",
+              "text": ", die waagrechte Asymptote liegt bei "
+            },
+            {
+              "type": "math",
+              "tex": "y = c",
+              "speech": "y gleich c"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
         },
         {
           "id": "01M8HA8FAEMQ030BKV0F36P7S5",
@@ -1713,7 +3081,6 @@
               "reason": "2 ist der Zähler a; verschoben wird gemäß x_A = −b = +3 und c = +1."
             }
           ],
-          "question": "Wie verschiebt sich der Graph von g(x) = 2/x, wenn im Term zu f(x) = 2/(x − 3) + 1 übergegangen wird?",
           "concept": "Er verschiebt sich um 3 Einheiten nach rechts zu x = 3 und um 1 Einheit nach oben zu y = 1.",
           "fast_check": {
             "type": "binary_choice",
@@ -1723,7 +3090,31 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=gr-2-verschieben"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=gr-2-verschieben",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie verschiebt sich der Graph von "
+            },
+            {
+              "type": "math",
+              "tex": "g(x) = \\frac{2}{x}",
+              "speech": "g von x gleich 2 durch x"
+            },
+            {
+              "type": "text",
+              "text": ", wenn im Term zu "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = \\frac{2}{x - 3} + 1",
+              "speech": "f von x gleich Bruch 2 durch x minus 3, plus 1"
+            },
+            {
+              "type": "text",
+              "text": " übergegangen wird?"
+            }
+          ]
         },
         {
           "id": "01M8HA8FAEW0XM95XEMYDBX8TH",
@@ -1742,10 +3133,33 @@
               "reason": "Die waagrechte Asymptote ist y = −1, und a < 0 spiegelt den Graphen."
             }
           ],
-          "question": "Vergleiche f(x) = −4 / (x + 2) − 1 mit der Grundhyperbel g(x) = 4/x hinsichtlich Asymptoten und Lage der Äste.",
           "concept": "Asymptoten bei x = −2 und y = −1; durch a = −4 liegen die Äste oben links und unten rechts.",
           "sample_solution": "1. b = +2 → senkrechte Asymptote x = −2; c = −1 → waagrechte Asymptote y = −1.\n2. a = −4 < 0 → Äste gegenüber 4/x gespiegelt (oben links und unten rechts vom Kreuz).",
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=gr-2-verschieben"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=gr-2-verschieben",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Vergleiche "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = \\frac{-4}{x + 2} - 1",
+              "speech": "f von x gleich Bruch minus 4 durch x plus 2, minus 1"
+            },
+            {
+              "type": "text",
+              "text": " mit der Grundhyperbel "
+            },
+            {
+              "type": "math",
+              "tex": "g(x) = \\frac{4}{x}",
+              "speech": "g von x gleich 4 durch x"
+            },
+            {
+              "type": "text",
+              "text": " hinsichtlich Asymptoten und Lage der Äste."
+            }
+          ]
         }
       ]
     },
@@ -1769,7 +3183,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-3",
+          "topic_code": "stage-3-gebrochen",
           "topic_title": "Etappe 3: Elementare gebrochen-rationale Funktionen"
         },
         {
@@ -1858,10 +3272,88 @@
               "reason": "Asymptoten sind keine Schnittpunkte; diese berechnet man über f(0) und f(x) = 0."
             }
           ],
-          "question": "Berechne für f(x) = 6 / (x + 2) − 1 beide Achsenschnittpunkte Sy und Sx.",
-          "concept": "x = 0 liefert Sy(0 | 2); die Gleichung 6/(x + 2) − 1 = 0 liefert x + 2 = 6, also Sx(4 | 0).",
           "sample_solution": "1. Schnitt mit y-Achse (x = 0): f(0) = 6 / 2 − 1 = 2 ⇒ Sy(0 | 2).\n2. Nullstelle (f(x) = 0): 6 / (x + 2) = 1 ⇒ x + 2 = 6 ⇒ x₀ = 4 ⇒ Sx(4 | 0).",
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=gr-3-achsen"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=gr-3-achsen",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Berechne für "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = \\frac{6}{x + 2} - 1",
+              "speech": "f von x gleich Bruch 6 durch x plus 2, minus 1"
+            },
+            {
+              "type": "text",
+              "text": " beide Achsenschnittpunkte "
+            },
+            {
+              "type": "math",
+              "tex": "S_y",
+              "speech": "S y"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "S_x",
+              "speech": "S x"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "x = 0",
+              "speech": "x gleich 0"
+            },
+            {
+              "type": "text",
+              "text": " liefert "
+            },
+            {
+              "type": "math",
+              "tex": "S_y(0 \\mid 2)",
+              "speech": "S y bei 0 und 2"
+            },
+            {
+              "type": "text",
+              "text": "; die Gleichung "
+            },
+            {
+              "type": "math",
+              "tex": "\\frac{6}{x + 2} - 1 = 0",
+              "speech": "Bruch 6 durch x plus 2 minus 1 gleich 0"
+            },
+            {
+              "type": "text",
+              "text": " liefert "
+            },
+            {
+              "type": "math",
+              "tex": "x + 2 = 6",
+              "speech": "x plus 2 gleich 6"
+            },
+            {
+              "type": "text",
+              "text": ", also "
+            },
+            {
+              "type": "math",
+              "tex": "S_x(4 \\mid 0)",
+              "speech": "S x bei 4 und 0"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
         }
       ]
     },
@@ -1885,7 +3377,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-3",
+          "topic_code": "stage-3-gebrochen",
           "topic_title": "Etappe 3: Elementare gebrochen-rationale Funktionen"
         },
         {
@@ -1974,10 +3466,119 @@
               "reason": "Es gilt 3 = a/(4 − 2) + 1 ⇒ 2 = a/2 ⇒ a = 2·2 = 4."
             }
           ],
-          "question": "Eine Hyperbel hat die Asymptoten x = 2 und y = 1 und geht durch den Punkt P(4 | 3). Bestimme die Funktionsgleichung f(x) = a/(x + b) + c.",
-          "concept": "Aus x = 2 folgt b = −2 und aus y = 1 folgt c = 1; Einsetzen von P(4 | 3) liefert a = 4, also f(x) = 4/(x − 2) + 1.",
           "sample_solution": "1. b = −2, c = 1 ⇒ f(x) = a/(x − 2) + 1.\n2. P(4 | 3) einsetzen: 3 = a/2 + 1 ⇒ a = 4 ⇒ f(x) = 4/(x − 2) + 1.",
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=gr-4-graph-parameter"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=gr-4-graph-parameter",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Eine Hyperbel hat die Asymptoten "
+            },
+            {
+              "type": "math",
+              "tex": "x = 2",
+              "speech": "x gleich 2"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "y = 1",
+              "speech": "y gleich 1"
+            },
+            {
+              "type": "text",
+              "text": " und geht durch den Punkt "
+            },
+            {
+              "type": "math",
+              "tex": "P(4 \\mid 3)",
+              "speech": "P mit 4 und 3"
+            },
+            {
+              "type": "text",
+              "text": ". Bestimme die Funktionsgleichung "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = \\frac{a}{x + b} + c",
+              "speech": "f von x gleich a durch x plus b, plus c"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Aus "
+            },
+            {
+              "type": "math",
+              "tex": "x = 2",
+              "speech": "x gleich 2"
+            },
+            {
+              "type": "text",
+              "text": " folgt "
+            },
+            {
+              "type": "math",
+              "tex": "b = -2",
+              "speech": "b gleich minus 2"
+            },
+            {
+              "type": "text",
+              "text": " und aus "
+            },
+            {
+              "type": "math",
+              "tex": "y = 1",
+              "speech": "y gleich 1"
+            },
+            {
+              "type": "text",
+              "text": " folgt "
+            },
+            {
+              "type": "math",
+              "tex": "c = 1",
+              "speech": "c gleich 1"
+            },
+            {
+              "type": "text",
+              "text": "; Einsetzen von "
+            },
+            {
+              "type": "math",
+              "tex": "P(4 \\mid 3)",
+              "speech": "P mit 4 und 3"
+            },
+            {
+              "type": "text",
+              "text": " liefert "
+            },
+            {
+              "type": "math",
+              "tex": "a = 4",
+              "speech": "a gleich 4"
+            },
+            {
+              "type": "text",
+              "text": ", also "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = \\frac{4}{x - 2} + 1",
+              "speech": "f von x gleich Bruch 4 durch x minus 2, plus 1"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
         }
       ]
     },
@@ -2005,7 +3606,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-3",
+          "topic_code": "stage-3-gebrochen",
           "topic_title": "Etappe 3: Elementare gebrochen-rationale Funktionen"
         },
         {
@@ -2036,8 +3637,6 @@
               "reason": "Bei indirekter Proportionalität bleiben Produkte gleich, während sich die Summe ändert."
             }
           ],
-          "question": "Woran erkennt man anhand einer Wertetabelle eindeutig eine indirekte Proportionalität y = a / x?",
-          "concept": "Das Produkt x · y ist bei allen Paaren konstant gleich a; doppeltes x halbiert y.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -2046,7 +3645,55 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=gr-5-indirekt"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=gr-5-indirekt",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Woran erkennt man anhand einer Wertetabelle eindeutig eine indirekte Proportionalität "
+            },
+            {
+              "type": "math",
+              "tex": "y = \\frac{a}{x}",
+              "speech": "y gleich a durch x"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Das Produkt "
+            },
+            {
+              "type": "math",
+              "tex": "x \\cdot y = a",
+              "speech": "x mal y gleich a"
+            },
+            {
+              "type": "text",
+              "text": " ist bei allen Paaren konstant; doppeltes "
+            },
+            {
+              "type": "math",
+              "tex": "x",
+              "speech": "x"
+            },
+            {
+              "type": "text",
+              "text": " halbiert "
+            },
+            {
+              "type": "math",
+              "tex": "y",
+              "speech": "y"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
         },
         {
           "id": "01M8HA8FAER3N11D7B49GDC4G1",
@@ -2066,7 +3713,6 @@
             }
           ],
           "question": "Warum führt das Boyle-Mariotte-Gesetz p · V = konst. bei konstanter Temperatur in der Physik zu einer Hyperbel?",
-          "concept": "Löst man nach dem Druck auf, entsteht p(V) = a / V; halbiertes Volumen verdoppelt den Druck.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -2075,7 +3721,22 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=gr-5-indirekt"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=gr-5-indirekt",
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Löst man nach dem Druck auf, entsteht "
+            },
+            {
+              "type": "math",
+              "tex": "p(V) = \\frac{a}{V}",
+              "speech": "p von V gleich a durch V"
+            },
+            {
+              "type": "text",
+              "text": "; halbiertes Volumen verdoppelt den Druck."
+            }
+          ]
         },
         {
           "id": "01M8HA8FAE8ZHD6NWJ863S9DRK",
@@ -2121,7 +3782,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-4",
+          "topic_code": "stage-4-bruchterme",
           "topic_title": "Etappe 4: Bruchterme und Bruchgleichungen"
         },
         {
@@ -2152,7 +3813,6 @@
               "reason": "Die Lücke x = −2 liegt schon vor; verboten ist das Streichen einzelner Summanden."
             }
           ],
-          "question": "Warum darf man bei (x + 4) / (x + 2) NICHT einfach das x im Zähler und Nenner herauskürzen?",
           "concept": "Kürzen darf man nur gemeinsame Faktoren eines Produkts, niemals einzelne Summanden aus Summen.",
           "fast_check": {
             "type": "binary_choice",
@@ -2162,7 +3822,31 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=bt-1-erweitern-kuerzen"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=bt-1-erweitern-kuerzen",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Warum darf man bei "
+            },
+            {
+              "type": "math",
+              "tex": "\\frac{x + 4}{x + 2}",
+              "speech": "Bruch x plus 4 durch x plus 2"
+            },
+            {
+              "type": "text",
+              "text": " NICHT einfach das "
+            },
+            {
+              "type": "math",
+              "tex": "x",
+              "speech": "x"
+            },
+            {
+              "type": "text",
+              "text": " im Zähler und Nenner herauskürzen?"
+            }
+          ]
         },
         {
           "id": "01M8HA8FAE9DFYY2KZ15596G6J",
@@ -2210,10 +3894,65 @@
               "reason": "Durch das Kürzen verschwindet −2 aus dem Nenner, gehört aber trotzdem nicht zu D."
             }
           ],
-          "question": "Bestimme für T(x) = (3x + 6) / (x² − 4) die Definitionsmenge D und kürze den Bruchterm vollständig.",
-          "concept": "Faktorisieren ergibt 3(x + 2) / ((x − 2)(x + 2)); mit D = ℚ \\ {−2; 2} kürzt sich der Term zu 3 / (x − 2).",
           "sample_solution": "1. Nenner: (x − 2)(x + 2) ⇒ D = ℚ \\ {−2; 2}.\n2. Zähler: 3(x + 2) ⇒ Kürzen mit (x + 2) ergibt 3 / (x − 2).",
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=bt-1-erweitern-kuerzen"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=bt-1-erweitern-kuerzen",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Bestimme für "
+            },
+            {
+              "type": "math",
+              "tex": "T(x) = \\frac{3x + 6}{x^2 - 4}",
+              "speech": "T von x gleich Bruch 3 x plus 6 durch x Quadrat minus 4"
+            },
+            {
+              "type": "text",
+              "text": " die Definitionsmenge "
+            },
+            {
+              "type": "math",
+              "tex": "D",
+              "speech": "D"
+            },
+            {
+              "type": "text",
+              "text": " und kürze den Bruchterm vollständig."
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Faktorisieren ergibt "
+            },
+            {
+              "type": "math",
+              "tex": "\\frac{3(x + 2)}{(x - 2)(x + 2)}",
+              "speech": "3 mal Klammer x plus 2 durch x minus 2 mal x plus 2"
+            },
+            {
+              "type": "text",
+              "text": "; mit "
+            },
+            {
+              "type": "math",
+              "tex": "D = \\mathbb{Q} \\setminus \\{-2; 2\\}",
+              "speech": "D gleich Q ohne minus 2 und 2"
+            },
+            {
+              "type": "text",
+              "text": " kürzt sich der Term zu "
+            },
+            {
+              "type": "math",
+              "tex": "\\frac{3}{x - 2}",
+              "speech": "Bruch 3 durch x minus 2"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
         }
       ]
     },
@@ -2237,7 +3976,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-4",
+          "topic_code": "stage-4-bruchterme",
           "topic_title": "Etappe 4: Bruchterme und Bruchgleichungen"
         },
         {
@@ -2326,10 +4065,47 @@
               "reason": "Zunächst auf den Hauptnenner (x − 1)(x + 1) erweitern, erst dann die Zähler subtrahieren."
             }
           ],
-          "question": "Fasse 3 / (x − 1) − 2 / (x + 1) über dem Hauptnenner (x − 1)(x + 1) zu einem einzigen Bruchterm zusammen.",
-          "concept": "Erweitern liefert (3(x + 1) − 2(x − 1)) / ((x − 1)(x + 1)) = (x + 5) / (x² − 1).",
           "sample_solution": "1. HN = (x − 1)(x + 1).\n2. Zähler: 3(x + 1) − 2(x − 1) = 3x + 3 − 2x + 2 = x + 5 ⇒ (x + 5) / (x² − 1).",
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=bt-2-add-sub"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=bt-2-add-sub",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Fasse "
+            },
+            {
+              "type": "math",
+              "tex": "\\frac{3}{x - 1} - \\frac{2}{x + 1}",
+              "speech": "3 durch x minus 1 minus 2 durch x plus 1"
+            },
+            {
+              "type": "text",
+              "text": " über dem Hauptnenner "
+            },
+            {
+              "type": "math",
+              "tex": "(x - 1)(x + 1)",
+              "speech": "x minus 1 mal x plus 1"
+            },
+            {
+              "type": "text",
+              "text": " zu einem einzigen Bruchterm zusammen."
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Erweitern liefert "
+            },
+            {
+              "type": "math",
+              "tex": "\\frac{3(x + 1) - 2(x - 1)}{(x - 1)(x + 1)} = \\frac{x + 5}{x^2 - 1}",
+              "speech": "Bruch 3 mal x plus 1 minus 2 mal x minus 1 durch x minus 1 mal x plus 1 gleich x plus 5 durch x Quadrat minus 1"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
         }
       ]
     },
@@ -2353,7 +4129,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-4",
+          "topic_code": "stage-4-bruchterme",
           "topic_title": "Etappe 4: Bruchterme und Bruchgleichungen"
         },
         {
@@ -2413,7 +4189,6 @@
               "reason": "Definitionslücken müssen stets am ursprünglichen Ausdruck vor dem Kürzen geprüft werden."
             }
           ],
-          "question": "Welche Werte musst du bei der Division A(x) / B(x) : C(x) / D(x) aus D ausschließen?",
           "concept": "Alle x, für die B(x) gleich 0, D(x) gleich 0 oder C(x) gleich 0 ist, bleiben ausgeschlossen.",
           "fast_check": {
             "type": "binary_choice",
@@ -2423,7 +4198,31 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=bt-3-mul-div"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=bt-3-mul-div",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Welche Werte musst du bei der Division "
+            },
+            {
+              "type": "math",
+              "tex": "\\frac{A(x)}{B(x)} : \\frac{C(x)}{D(x)}",
+              "speech": "A von x durch B von x geteilt durch C von x durch D von x"
+            },
+            {
+              "type": "text",
+              "text": " aus "
+            },
+            {
+              "type": "math",
+              "tex": "D",
+              "speech": "D"
+            },
+            {
+              "type": "text",
+              "text": " ausschließen?"
+            }
+          ]
         },
         {
           "id": "01M8HA8FAEGTM13MFARCFZDE7V",
@@ -2442,10 +4241,56 @@
               "reason": "Erst den Kehrwert bilden und faktorisieren, dann vollständig kürzen und Definitionslücken beachten."
             }
           ],
-          "question": "Berechne und vereinfache (4x / (x + 2)) : (2x / (x² − 4)) mit Angabe der ausgeschlossenen Werte.",
-          "concept": "Durch den Kehrwert (x − 2)(x + 2) / (2x) kürzt sich alles zu 2(x − 2) mit D = ℚ \\ {−2; 0; 2}.",
           "sample_solution": "1. D = ℚ \\ {−2; 0; 2}.\n2. (4x / (x + 2)) · ((x − 2)(x + 2) / (2x)) = 2(x − 2) = 2x − 4.",
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=bt-3-mul-div"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=bt-3-mul-div",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Berechne und vereinfache "
+            },
+            {
+              "type": "math",
+              "tex": "\\frac{4x}{x + 2} : \\frac{2x}{x^2 - 4}",
+              "speech": "4 x durch x plus 2 geteilt durch 2 x durch x Quadrat minus 4"
+            },
+            {
+              "type": "text",
+              "text": " mit Angabe der ausgeschlossenen Werte."
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Durch den Kehrwert "
+            },
+            {
+              "type": "math",
+              "tex": "\\frac{(x - 2)(x + 2)}{2x}",
+              "speech": "Bruch x minus 2 mal x plus 2 durch 2 x"
+            },
+            {
+              "type": "text",
+              "text": " kürzt sich alles zu "
+            },
+            {
+              "type": "math",
+              "tex": "2(x - 2)",
+              "speech": "2 mal Klammer x minus 2"
+            },
+            {
+              "type": "text",
+              "text": " mit "
+            },
+            {
+              "type": "math",
+              "tex": "D = \\mathbb{Q} \\setminus \\{-2; 0; 2\\}",
+              "speech": "D gleich Q ohne minus 2, 0 und 2"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
         }
       ]
     },
@@ -2469,7 +4314,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-4",
+          "topic_code": "stage-4-bruchterme",
           "topic_title": "Etappe 4: Bruchterme und Bruchgleichungen"
         },
         {
@@ -2500,8 +4345,6 @@
               "reason": "Potenzen stehen für Multiplikation bzw. Kehrwertbildung, niemals für Addition."
             }
           ],
-          "question": "Welche Bedeutung hat eine Potenz a hoch −n für eine Basis a ≠ 0 und eine natürliche Zahl n?",
-          "concept": "Sie bezeichnet stets den positiven Kehrwert 1 / a^n, niemals eine negative Zahl.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -2510,7 +4353,55 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=bt-4-potenzen-z"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=bt-4-potenzen-z",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Welche Bedeutung hat eine Potenz "
+            },
+            {
+              "type": "math",
+              "tex": "a^{-n}",
+              "speech": "a hoch minus n"
+            },
+            {
+              "type": "text",
+              "text": " für eine Basis "
+            },
+            {
+              "type": "math",
+              "tex": "a \\neq 0",
+              "speech": "a ungleich 0"
+            },
+            {
+              "type": "text",
+              "text": " und eine natürliche Zahl "
+            },
+            {
+              "type": "math",
+              "tex": "n",
+              "speech": "n"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Sie bezeichnet stets den positiven Kehrwert "
+            },
+            {
+              "type": "math",
+              "tex": "\\frac{1}{a^n}",
+              "speech": "1 durch a hoch n"
+            },
+            {
+              "type": "text",
+              "text": ", niemals eine negative Zahl."
+            }
+          ]
         },
         {
           "id": "01M8HA8FAEFQKDF2FB0DK74S9G",
@@ -2529,7 +4420,6 @@
               "reason": "Die Potenz a¹ ist gleich a; nochmaliges Teilen durch a führt auf den Wert 1."
             }
           ],
-          "question": "Warum ist für jede Basis a ≠ 0 die Potenz a⁰ nach dem Permanenzprinzip gleich 1?",
           "concept": "Weil jedes Verkleinern des Exponenten um 1 durch a teilt, also a¹ geteilt durch a gleich 1 ist.",
           "fast_check": {
             "type": "binary_choice",
@@ -2539,7 +4429,31 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=bt-4-potenzen-z"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=bt-4-potenzen-z",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Warum ist für jede Basis "
+            },
+            {
+              "type": "math",
+              "tex": "a \\neq 0",
+              "speech": "a ungleich 0"
+            },
+            {
+              "type": "text",
+              "text": " die Potenz "
+            },
+            {
+              "type": "math",
+              "tex": "a^0",
+              "speech": "a hoch 0"
+            },
+            {
+              "type": "text",
+              "text": " nach dem Permanenzprinzip gleich 1?"
+            }
+          ]
         },
         {
           "id": "01M8HA8FAE785RP9DRY1AB6RKW",
@@ -2558,10 +4472,24 @@
               "reason": "Bei gleicher Basis werden Exponenten beim Multiplizieren addiert, nicht multipliziert."
             }
           ],
-          "question": "Vereinfache den Ausdruck 2⁵ · 2^(−7) / 2^(−3) mit den Potenzgesetzen für ganzzahlige Exponenten und berechne den Wert.",
           "concept": "Zähler wird 2^(5 + (−7)) = 2^(−2); Teilen durch 2^(−3) gibt 2^(−2 − (−3)) = 2¹ = 2.",
           "sample_solution": "1. Zähler: 2^(5 − 7) = 2^(−2).\n2. Nenner abziehen: 2^(−2 − (−3)) = 2¹ = 2.",
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=bt-4-potenzen-z"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=bt-4-potenzen-z",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Vereinfache den Ausdruck "
+            },
+            {
+              "type": "math",
+              "tex": "\\frac{2^5 \\cdot 2^{-7}}{2^{-3}}",
+              "speech": "2 hoch 5 mal 2 hoch minus 7 geteilt durch 2 hoch minus 3"
+            },
+            {
+              "type": "text",
+              "text": " mit den Potenzgesetzen für ganzzahlige Exponenten und berechne den Wert."
+            }
+          ]
         }
       ]
     },
@@ -2585,7 +4513,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-4",
+          "topic_code": "stage-4-bruchterme",
           "topic_title": "Etappe 4: Bruchterme und Bruchgleichungen"
         },
         {
@@ -2674,10 +4602,52 @@
               "reason": "4(x − 4) = 2(x − 2) führt zu 4x − 16 = 2x − 4 ⇒ 2x = 12 ⇒ x = 6 ∈ D."
             }
           ],
-          "question": "Bestimme Definitions- und Lösungsmenge der Bruchgleichung 4 / (x − 2) = 2 / (x − 4).",
-          "concept": "D = ℚ \\ {2; 4}; nach Über-Kreuz-Multiplizieren folgt x = 6, also L = {6}.",
           "sample_solution": "1. D = ℚ \\ {2; 4}.\n2. 4(x − 4) = 2(x − 2) ⇒ 4x − 16 = 2x − 4 ⇒ x = 6 ∈ D ⇒ L = {6}.",
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=bt-5-bruchgleichungen"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=bt-5-bruchgleichungen",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Bestimme Definitions- und Lösungsmenge der Bruchgleichung "
+            },
+            {
+              "type": "math",
+              "tex": "\\frac{4}{x - 2} = \\frac{2}{x - 4}",
+              "speech": "4 durch x minus 2 gleich 2 durch x minus 4"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "D = \\mathbb{Q} \\setminus \\{2; 4\\}",
+              "speech": "D gleich Q ohne 2 und 4"
+            },
+            {
+              "type": "text",
+              "text": "; nach Über-Kreuz-Multiplizieren folgt "
+            },
+            {
+              "type": "math",
+              "tex": "x = 6",
+              "speech": "x gleich 6"
+            },
+            {
+              "type": "text",
+              "text": ", also "
+            },
+            {
+              "type": "math",
+              "tex": "L = \\{6\\}",
+              "speech": "L gleich Menge 6"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
         }
       ]
     },
@@ -2705,7 +4675,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-4",
+          "topic_code": "stage-4-bruchterme",
           "topic_title": "Etappe 4: Bruchterme und Bruchgleichungen"
         },
         {
@@ -2794,10 +4764,33 @@
               "reason": "Die Linearfaktoren (x − 2)(x + 3) = 0 haben Nullstellen mit umgedrehten Vorzeichen +2 und −3."
             }
           ],
-          "question": "Deute 6 / x = x + 1 als Schnittproblem zweier Funktionen und bestimme alle Schnittstellen über die gegebene Zerlegung (x − 2)(x + 3) = 0.",
           "concept": "Schnitt von f(x) = 6/x und g(x) = x + 1 ergibt x₁ = −3 und x₂ = 2 ⇒ S₁(−3 | −2) und S₂(2 | 3).",
           "sample_solution": "1. f(x) = 6/x, g(x) = x + 1.\n2. Aus (x − 2)(x + 3) = 0 folgen S₁(−3 | −2) und S₂(2 | 3).",
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=bt-6-schnittproblem"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=bt-6-schnittproblem",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Deute "
+            },
+            {
+              "type": "math",
+              "tex": "\\frac{6}{x} = x + 1",
+              "speech": "6 durch x gleich x plus 1"
+            },
+            {
+              "type": "text",
+              "text": " als Schnittproblem zweier Funktionen und bestimme alle Schnittstellen über die gegebene Zerlegung "
+            },
+            {
+              "type": "math",
+              "tex": "(x - 2)(x + 3) = 0",
+              "speech": "x minus 2 mal x plus 3 gleich 0"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
         }
       ]
     },
@@ -2821,7 +4814,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-4",
+          "topic_code": "stage-4-bruchterme",
           "topic_title": "Etappe 4: Bruchterme und Bruchgleichungen"
         },
         {
@@ -2881,8 +4874,6 @@
               "reason": "R · I = U bleibt ein Produkt auf der I-Seite; erst das Teilen durch R isoliert I."
             }
           ],
-          "question": "Wie lautet das Ohmsche Gesetz R = U / I korrekt nach der elektrischen Stromstärke I aufgelöst?",
-          "concept": "Die Stromstärke lautet I = U / R, da zunächst mal I und dann durch R geteilt wird.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -2891,7 +4882,64 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=bt-7-formeln"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=bt-7-formeln",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie lautet das Ohmsche Gesetz "
+            },
+            {
+              "type": "math",
+              "tex": "R = \\frac{U}{I}",
+              "speech": "R gleich U durch I"
+            },
+            {
+              "type": "text",
+              "text": " korrekt nach der elektrischen Stromstärke "
+            },
+            {
+              "type": "math",
+              "tex": "I",
+              "speech": "I"
+            },
+            {
+              "type": "text",
+              "text": " aufgelöst?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Die Stromstärke lautet "
+            },
+            {
+              "type": "math",
+              "tex": "I = \\frac{U}{R}",
+              "speech": "I gleich U durch R"
+            },
+            {
+              "type": "text",
+              "text": ", da zunächst mal "
+            },
+            {
+              "type": "math",
+              "tex": "I",
+              "speech": "I"
+            },
+            {
+              "type": "text",
+              "text": " und dann durch "
+            },
+            {
+              "type": "math",
+              "tex": "R",
+              "speech": "R"
+            },
+            {
+              "type": "text",
+              "text": " geteilt wird."
+            }
+          ]
         },
         {
           "id": "01M8HA8FAE685G2HBCP6W80JAV",
@@ -2902,18 +4950,91 @@
           "materiality": "material",
           "choice_distractors": [
             {
-              "text": "Umstellen ergibt g = A / 2·h; Einsetzen der Zahlen liefert eine Grundseite von g = 3 cm.",
-              "reason": "Beim Entfernen der 2 im Nenner wird A mit 2 multipliziert, nicht geteilt."
+              "text": "Umstellen ergibt g = A / (2·h); Einsetzen der Zahlen liefert eine Grundseite von g = 3 cm.",
+              "reason": "Der Bruchstrich verlangt Multiplikation mit 2 auf der anderen Seite, nicht Division."
             },
             {
-              "text": "Umstellen ergibt g = 2·A − h; Einsetzen der Zahlen liefert eine Grundseite von g = 55 cm.",
-              "reason": "Faktor h ist mit g multipliziert und wird durch Teilen entfernt, nicht durch Subtrahieren."
+              "text": "Umstellen ergibt g = (2·A) − h; Einsetzen der Zahlen liefert eine Grundseite von g = 55 cm.",
+              "reason": "Ein Produkt löst man durch Dividieren auf, nicht durch Subtrahieren."
             }
           ],
-          "question": "Löse die Dreiecksformel A = (g · h) / 2 nach der Grundseite g auf und berechne g für A = 30 cm² und h = 5 cm.",
-          "concept": "Umstellen ergibt g = 2·A / h; Einsetzen der Zahlen liefert eine Grundseite von g = 12 cm.",
           "sample_solution": "1. 2 · A = g · h ⇒ g = (2 · A) / h.\n2. g = (2 · 30) / 5 = 12 cm.",
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=bt-7-formeln"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=bt-7-formeln",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Löse die Dreiecksformel "
+            },
+            {
+              "type": "math",
+              "tex": "A = \\frac{g \\cdot h}{2}",
+              "speech": "A gleich g mal h durch 2"
+            },
+            {
+              "type": "text",
+              "text": " nach der Grundseite "
+            },
+            {
+              "type": "math",
+              "tex": "g",
+              "speech": "g"
+            },
+            {
+              "type": "text",
+              "text": " auf und berechne "
+            },
+            {
+              "type": "math",
+              "tex": "g",
+              "speech": "g"
+            },
+            {
+              "type": "text",
+              "text": " für "
+            },
+            {
+              "type": "math",
+              "tex": "A = 30",
+              "speech": "A gleich 30"
+            },
+            {
+              "type": "text",
+              "text": " cm² und "
+            },
+            {
+              "type": "math",
+              "tex": "h = 5",
+              "speech": "h gleich 5"
+            },
+            {
+              "type": "text",
+              "text": " cm."
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Umstellen ergibt "
+            },
+            {
+              "type": "math",
+              "tex": "g = \\frac{2 \\cdot A}{h}",
+              "speech": "g gleich 2 mal A durch h"
+            },
+            {
+              "type": "text",
+              "text": "; Einsetzen der Zahlen liefert eine Grundseite von "
+            },
+            {
+              "type": "math",
+              "tex": "g = 12",
+              "speech": "g gleich 12"
+            },
+            {
+              "type": "text",
+              "text": " cm."
+            }
+          ]
         }
       ]
     },
@@ -2932,7 +5053,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-5",
+          "topic_code": "stage-5-laplace",
           "topic_title": "Etappe 5: Laplace-Experimente"
         },
         {
@@ -3021,10 +5142,51 @@
               "reason": "Ereignis E und Gegenereignis Ē überschneiden sich niemals und bilden zusammen Ω."
             }
           ],
-          "question": "Bei einem Wurf mit einem achtseitigen Würfel (Ω = {1; …; 8}) lautet E: „Zahl größer als 5“. Gib E, Ē und |Ē| an.",
           "concept": "E ist {6; 7; 8} und das Gegenereignis Ē ist {1; 2; 3; 4; 5}, also |Ē| = 5.",
           "sample_solution": "1. Ω = {1; …; 8}; E = {6; 7; 8}.\n2. Ē = {1; 2; 3; 4; 5} mit |Ē| = 5.",
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=la-1-zufall"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=la-1-zufall",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Bei einem Wurf mit einem achtseitigen Würfel ("
+            },
+            {
+              "type": "math",
+              "tex": "\\Omega = \\{1; \\ldots; 8\\}",
+              "speech": "Omega gleich Menge 1 bis 8"
+            },
+            {
+              "type": "text",
+              "text": ") lautet E: „Zahl größer als 5“. Gib "
+            },
+            {
+              "type": "math",
+              "tex": "E",
+              "speech": "E"
+            },
+            {
+              "type": "text",
+              "text": ", "
+            },
+            {
+              "type": "math",
+              "tex": "\\overline{E}",
+              "speech": "Gegenereignis E quer"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "|\\overline{E}|",
+              "speech": "Mächtigkeit von E quer"
+            },
+            {
+              "type": "text",
+              "text": " an."
+            }
+          ]
         }
       ]
     },
@@ -3048,7 +5210,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-5",
+          "topic_code": "stage-5-laplace",
           "topic_title": "Etappe 5: Laplace-Experimente"
         },
         {
@@ -3079,8 +5241,6 @@
               "reason": "n − k liefert die absolute Häufigkeit des Gegenereignisses, keinen relativen Anteil."
             }
           ],
-          "question": "Wie berechnest du aus der absoluten Trefferzahl k bei n Durchführungen die relative Häufigkeit h_n?",
-          "concept": "Man teilt die absolute Trefferzahl durch die Versuchszahl: h_n = k / n zwischen 0 und 1.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -3089,7 +5249,55 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=la-2-haeufigkeit"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=la-2-haeufigkeit",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie berechnest du aus der absoluten Trefferzahl "
+            },
+            {
+              "type": "math",
+              "tex": "k",
+              "speech": "k"
+            },
+            {
+              "type": "text",
+              "text": " bei "
+            },
+            {
+              "type": "math",
+              "tex": "n",
+              "speech": "n"
+            },
+            {
+              "type": "text",
+              "text": " Durchführungen die relative Häufigkeit "
+            },
+            {
+              "type": "math",
+              "tex": "h_n",
+              "speech": "h n"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Man teilt die absolute Trefferzahl durch die Versuchszahl: "
+            },
+            {
+              "type": "math",
+              "tex": "h_n = \\frac{k}{n}",
+              "speech": "h n gleich k durch n"
+            },
+            {
+              "type": "text",
+              "text": " zwischen 0 und 1."
+            }
+          ]
         },
         {
           "id": "01M8HA8FAEPD093DVT7JS5EAMN",
@@ -3168,7 +5376,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-5",
+          "topic_code": "stage-5-laplace",
           "topic_title": "Etappe 5: Laplace-Experimente"
         },
         {
@@ -3284,7 +5492,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-5",
+          "topic_code": "stage-5-laplace",
           "topic_title": "Etappe 5: Laplace-Experimente"
         },
         {
@@ -3400,7 +5608,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-5",
+          "topic_code": "stage-5-laplace",
           "topic_title": "Etappe 5: Laplace-Experimente"
         },
         {
@@ -3431,8 +5639,6 @@
               "reason": "Bezugsgröße im Nenner ist immer der gesamte Ergebnisraum, nicht das Gegenereignis."
             }
           ],
-          "question": "Wie lautet die Laplace-Formel zur Berechnung der Wahrscheinlichkeit P(E) bei einem Laplace-Experiment?",
-          "concept": "P(E) = |E| / |Ω|, also die Zahl günstiger Ergebnisse geteilt durch alle möglichen.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -3441,7 +5647,33 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=la-5-laplace-rechnen"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=la-5-laplace-rechnen",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie lautet die Laplace-Formel zur Berechnung der Wahrscheinlichkeit "
+            },
+            {
+              "type": "math",
+              "tex": "P(E)",
+              "speech": "P von E"
+            },
+            {
+              "type": "text",
+              "text": " bei einem Laplace-Experiment?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "P(E) = \\frac{|E|}{|\\Omega|}",
+              "speech": "P von E gleich Betrag von E durch Betrag von Omega"
+            },
+            {
+              "type": "text",
+              "text": ", also die Zahl günstiger Ergebnisse geteilt durch alle möglichen."
+            }
+          ]
         },
         {
           "id": "01M8HA8FAEHCZX3Y3AY4R3CFYQ",
@@ -3460,8 +5692,6 @@
               "reason": "P(Ω) ist schon 1; mehr als 1 kann keine Wahrscheinlichkeit annehmen."
             }
           ],
-          "question": "Wie berechnest du P(E) geschickt mithilfe der Gegenwahrscheinlichkeit P(Ē)?",
-          "concept": "P(E) = 1 − P(Ē), da E und Ē zusammen alle möglichen Ausgänge genau abdecken.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -3470,7 +5700,60 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=la-5-laplace-rechnen"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=la-5-laplace-rechnen",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie berechnest du "
+            },
+            {
+              "type": "math",
+              "tex": "P(E)",
+              "speech": "P von E"
+            },
+            {
+              "type": "text",
+              "text": " geschickt mithilfe der Gegenwahrscheinlichkeit "
+            },
+            {
+              "type": "math",
+              "tex": "P(\\overline{E})",
+              "speech": "P von Gegenereignis E quer"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "P(E) = 1 - P(\\overline{E})",
+              "speech": "P von E gleich 1 minus P von E quer"
+            },
+            {
+              "type": "text",
+              "text": ", da "
+            },
+            {
+              "type": "math",
+              "tex": "E",
+              "speech": "E"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "\\overline{E}",
+              "speech": "E quer"
+            },
+            {
+              "type": "text",
+              "text": " zusammen alle möglichen Ausgänge genau abdecken."
+            }
+          ]
         },
         {
           "id": "01M8HA8FAEJVFWH71Y8AYNG3RZ",
@@ -3516,7 +5799,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-5",
+          "topic_code": "stage-5-laplace",
           "topic_title": "Etappe 5: Laplace-Experimente"
         },
         {
@@ -3547,8 +5830,6 @@
               "reason": "Jede neue Verzweigung vervielfacht die Pfadzahl statt nur ein Maximum auszuwählen."
             }
           ],
-          "question": "Wie bestimmt man mit dem Zählprinzip die Gesamtzahl möglicher Kombinationen bei n₁ Wahlen in Stufe 1 und n₂ Wahlen je Zweig in Stufe 2?",
-          "concept": "Man multipliziert die Anzahlen der Möglichkeiten je Stufe miteinander: Gesamtzahl = n₁ · n₂.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -3557,7 +5838,46 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=la-6-zaehlprinzip-baum"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=la-6-zaehlprinzip-baum",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie bestimmt man mit dem Zählprinzip die Gesamtzahl möglicher Kombinationen bei "
+            },
+            {
+              "type": "math",
+              "tex": "n_1",
+              "speech": "n eins"
+            },
+            {
+              "type": "text",
+              "text": " Wahlen in Stufe 1 und "
+            },
+            {
+              "type": "math",
+              "tex": "n_2",
+              "speech": "n zwei"
+            },
+            {
+              "type": "text",
+              "text": " Wahlen je Zweig in Stufe 2?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Man multipliziert die Anzahlen der Möglichkeiten je Stufe miteinander: Gesamtzahl gleich "
+            },
+            {
+              "type": "math",
+              "tex": "n_1 \\cdot n_2",
+              "speech": "n eins mal n zwei"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
         },
         {
           "id": "01M8HA8FAETP22P3M0H7FZA2YH",
@@ -3606,9 +5926,32 @@
             }
           ],
           "question": "Erst wird eine faire Münze (K, Z) geworfen, dann ein fairer Würfel (1..6). Bestimme die Pfadanzahl |Ω| und die Wahrscheinlichkeit für „Kopf und Zahl ≥ 5“.",
-          "concept": "Es entstehen |Ω| = 2 · 6 = 12 Pfade und mit zwei günstigen Ausgängen gilt P = 2 / 12 = 1 / 6.",
           "sample_solution": "1. Zählprinzip: |Ω| = 2 · 6 = 12 Pfade.\n2. Günstig: (K; 5) und (K; 6) ⇒ P = 2 / 12 = 1/6.",
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=la-6-zaehlprinzip-baum"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=la-6-zaehlprinzip-baum",
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Es entstehen "
+            },
+            {
+              "type": "math",
+              "tex": "|\\Omega| = 2 \\cdot 6 = 12",
+              "speech": "Betrag von Omega gleich 2 mal 6 gleich 12"
+            },
+            {
+              "type": "text",
+              "text": " Pfade und mit zwei günstigen Ausgängen gilt "
+            },
+            {
+              "type": "math",
+              "tex": "P = \\frac{2}{12} = \\frac{1}{6}",
+              "speech": "P gleich 2 Zwölftel gleich 1 Sechstel"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
         }
       ]
     },
@@ -3632,7 +5975,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-6",
+          "topic_code": "stage-6-lgs",
           "topic_title": "Etappe 6: Lineare Gleichungssysteme"
         },
         {
@@ -3752,7 +6095,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-6",
+          "topic_code": "stage-6-lgs",
           "topic_title": "Etappe 6: Lineare Gleichungssysteme"
         },
         {
@@ -3783,7 +6126,6 @@
               "reason": "Koeffizienten wie a, b, c sind keine Punkte auf den zugehörigen Geraden."
             }
           ],
-          "question": "Wie bereitest du zwei allgemeine Gleichungen a·x + b·y = c für das graphische Lösen im Koordinatensystem vor?",
           "concept": "Man löst beide Gleichungen nach y auf, um Steigung m und y-Achsenabschnitt t abzulesen.",
           "fast_check": {
             "type": "binary_choice",
@@ -3793,7 +6135,22 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lg-2-graphisch"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lg-2-graphisch",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie bereitest du zwei allgemeine Gleichungen "
+            },
+            {
+              "type": "math",
+              "tex": "a \\cdot x + b \\cdot y = c",
+              "speech": "a mal x plus b mal y gleich c"
+            },
+            {
+              "type": "text",
+              "text": " für das graphische Lösen im Koordinatensystem vor?"
+            }
+          ]
         },
         {
           "id": "01M8HA8FAE69YPQERN7VA7SCSJ",
@@ -3841,10 +6198,33 @@
               "reason": "Probe in II verlangt −x + y = 1: für (2 | 3) gilt −2 + 3 = 1."
             }
           ],
-          "question": "Löse I: x + y = 5 und II: −x + y = 1 über die Geradenform und überprüfe die abgelesene Lösung durch Probe.",
           "concept": "I: y = −x + 5 und II: y = x + 1 schneiden sich in S(2 | 3); Probe: 2 + 3 = 5 und −2 + 3 = 1.",
           "sample_solution": "1. I: y = −x + 5; II: y = x + 1.\n2. Schnittpunkt S(2 | 3); Probe: 2+3=5 und −2+3=1.",
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lg-2-graphisch"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lg-2-graphisch",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Löse I: "
+            },
+            {
+              "type": "math",
+              "tex": "x + y = 5",
+              "speech": "x plus y gleich 5"
+            },
+            {
+              "type": "text",
+              "text": " und II: "
+            },
+            {
+              "type": "math",
+              "tex": "-x + y = 1",
+              "speech": "minus x plus y gleich 1"
+            },
+            {
+              "type": "text",
+              "text": " über die Geradenform und überprüfe die abgelesene Lösung durch Probe."
+            }
+          ]
         }
       ]
     },
@@ -3868,7 +6248,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-6",
+          "topic_code": "stage-6-lgs",
           "topic_title": "Etappe 6: Lineare Gleichungssysteme"
         },
         {
@@ -3957,10 +6337,33 @@
               "reason": "Nach y = 2 setzt man stets in I ein: x = 2·2 − 1 = 3."
             }
           ],
-          "question": "Löse I: x = 2y − 1 und II: 3x + y = 11 mit dem Einsetzungsverfahren.",
           "concept": "3(2y − 1) + y = 11 liefert 7y − 3 = 11 ⇒ y = 2 und über I sofort x = 3 ⇒ L = {(3 | 2)}.",
           "sample_solution": "1. 3(2y − 1) + y = 11 ⇒ 7y = 14 ⇒ y = 2.\n2. x = 2·2 − 1 = 3 ⇒ L = {(3 | 2)}.",
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lg-3-einsetzung"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lg-3-einsetzung",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Löse I: "
+            },
+            {
+              "type": "math",
+              "tex": "x = 2y - 1",
+              "speech": "x gleich 2 y minus 1"
+            },
+            {
+              "type": "text",
+              "text": " und II: "
+            },
+            {
+              "type": "math",
+              "tex": "3x + y = 11",
+              "speech": "3 x plus y gleich 11"
+            },
+            {
+              "type": "text",
+              "text": " mit dem Einsetzungsverfahren."
+            }
+          ]
         }
       ]
     },
@@ -3984,7 +6387,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-6",
+          "topic_code": "stage-6-lgs",
           "topic_title": "Etappe 6: Lineare Gleichungssysteme"
         },
         {
@@ -4044,7 +6447,6 @@
               "reason": "Bei allgemeinen Koeffizienten sind rechnerische Verfahren stets schneller und exakt."
             }
           ],
-          "question": "Welches Lösungsverfahren eignet sich am besten für I: 3x + 2y = 13 und II: 5x − 2y = 11?",
           "concept": "Das Additionsverfahren, weil +2y und −2y beim unmittelbaren Addieren ohne Umformen wegfallen.",
           "fast_check": {
             "type": "binary_choice",
@@ -4054,7 +6456,31 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lg-4-addition-vergleich"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lg-4-addition-vergleich",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Welches Lösungsverfahren eignet sich am besten für I: "
+            },
+            {
+              "type": "math",
+              "tex": "3x + 2y = 13",
+              "speech": "3 x plus 2 y gleich 13"
+            },
+            {
+              "type": "text",
+              "text": " und II: "
+            },
+            {
+              "type": "math",
+              "tex": "5x - 2y = 11",
+              "speech": "5 x minus 2 y gleich 11"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ]
         },
         {
           "id": "01M8HA8FAFY7ETA9D748KAA7G2",
@@ -4073,10 +6499,33 @@
               "reason": "Ohne Angleichung der Vorzahlen zu +3y und −3y fällt keine Variable weg."
             }
           ],
-          "question": "Löse I: 2x + 3y = 13 und II: 3x − y = 3 geschickt mit dem Additionsverfahren.",
           "concept": "I + 3·II gibt 11x = 22 ⇒ x = 2; eingesetzt folgt y = 3, somit ist L = {2 und 3}.",
           "sample_solution": "1. III = 3·II: 9x − 3y = 9.\n2. I + III: 11x = 22 ⇒ x = 2; y = 3 ⇒ L = {(2 | 3)}.",
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lg-4-addition-vergleich"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lg-4-addition-vergleich",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Löse I: "
+            },
+            {
+              "type": "math",
+              "tex": "2x + 3y = 13",
+              "speech": "2 x plus 3 y gleich 13"
+            },
+            {
+              "type": "text",
+              "text": " und II: "
+            },
+            {
+              "type": "math",
+              "tex": "3x - y = 3",
+              "speech": "3 x minus y gleich 3"
+            },
+            {
+              "type": "text",
+              "text": " geschickt mit dem Additionsverfahren."
+            }
+          ]
         }
       ]
     },
@@ -4100,7 +6549,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-6",
+          "topic_code": "stage-6-lgs",
           "topic_title": "Etappe 6: Lineare Gleichungssysteme"
         },
         {
@@ -4189,10 +6638,51 @@
               "reason": "Die linken Seiten stimmen bei a = 4 überein, doch rechts entsteht 5 ungleich 8 als Widerspruch."
             }
           ],
-          "question": "Gegeben ist I: 2x − y = 4 und II: a·x − 2y = 5. Welcher Wert von a führt zu keiner Lösung, und warum gibt es keinen Wert a für unendlich viele Lösungen?",
           "concept": "a = 4 erzeugt parallele Geraden ohne Lösung; identische Geraden sind ausgeschlossen, da 5 ungleich 8 ist.",
           "sample_solution": "1. 2·I ergibt 4x − 2y = 8.\n2. Für a = 4 steht 4x − 2y = 5 gegen 8 (Widerspruch → L = ∅; nie identisch).",
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lg-5-loesbarkeit"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=lg-5-loesbarkeit",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Gegeben ist I: "
+            },
+            {
+              "type": "math",
+              "tex": "2x - y = 4",
+              "speech": "2 x minus y gleich 4"
+            },
+            {
+              "type": "text",
+              "text": " und II: "
+            },
+            {
+              "type": "math",
+              "tex": "a \\cdot x - 2y = 5",
+              "speech": "a mal x minus 2 y gleich 5"
+            },
+            {
+              "type": "text",
+              "text": ". Welcher Wert von "
+            },
+            {
+              "type": "math",
+              "tex": "a",
+              "speech": "a"
+            },
+            {
+              "type": "text",
+              "text": " führt zu keiner Lösung, und warum gibt es keinen Wert "
+            },
+            {
+              "type": "math",
+              "tex": "a",
+              "speech": "a"
+            },
+            {
+              "type": "text",
+              "text": " für unendlich viele Lösungen?"
+            }
+          ]
         }
       ]
     },
@@ -4216,7 +6706,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-7",
+          "topic_code": "stage-7-kreis-zylinder",
           "topic_title": "Etappe 7: Kreis und Zylinder"
         },
         {
@@ -4247,8 +6737,6 @@
               "reason": "U / r liefert den doppelten Wert 2·π ≈ 6,28, nicht π."
             }
           ],
-          "question": "Welcher konstante Quotient liefert bei jedem Kreis unabhängig von seiner Größe die Kreiszahl π?",
-          "concept": "Der Quotient aus Kreisumfang U und Durchmesser d (U / d = π ≈ 3,14159).",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -4257,7 +6745,37 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=kz-1-pi-umfang"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=kz-1-pi-umfang",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Welcher konstante Quotient liefert bei jedem Kreis unabhängig von seiner Größe die Kreiszahl "
+            },
+            {
+              "type": "math",
+              "tex": "\\pi",
+              "speech": "pi"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Der Quotient aus Kreisumfang U und Durchmesser d ("
+            },
+            {
+              "type": "math",
+              "tex": "\\frac{U}{d} = \\pi \\approx 3{,}14159",
+              "speech": "U durch d gleich pi ist ungefähr 3 komma 1 4 1 5 9"
+            },
+            {
+              "type": "text",
+              "text": ")."
+            }
+          ]
         },
         {
           "id": "01M8HA8FAFY1505ZFJ67SRPS92",
@@ -4276,8 +6794,6 @@
               "reason": "Da d = 2·r gilt, braucht man mit r den Faktor 2: U = 2 · π · r."
             }
           ],
-          "question": "Mit welcher Formel berechnet man den Umfang U eines Kreises aus dem Radius r?",
-          "concept": "U = 2 · π · r (gleichbedeutend mit U = π · d, weil d = 2·r gilt).",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -4286,7 +6802,60 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=kz-1-pi-umfang"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=kz-1-pi-umfang",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Mit welcher Formel berechnet man den Umfang "
+            },
+            {
+              "type": "math",
+              "tex": "U",
+              "speech": "U"
+            },
+            {
+              "type": "text",
+              "text": " eines Kreises aus dem Radius "
+            },
+            {
+              "type": "math",
+              "tex": "r",
+              "speech": "r"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "U = 2 \\cdot \\pi \\cdot r",
+              "speech": "U gleich 2 mal pi mal r"
+            },
+            {
+              "type": "text",
+              "text": " (gleichbedeutend mit "
+            },
+            {
+              "type": "math",
+              "tex": "U = \\pi \\cdot d",
+              "speech": "U gleich pi mal d"
+            },
+            {
+              "type": "text",
+              "text": ", weil "
+            },
+            {
+              "type": "math",
+              "tex": "d = 2 \\cdot r",
+              "speech": "d gleich 2 mal r"
+            },
+            {
+              "type": "text",
+              "text": " gilt)."
+            }
+          ]
         },
         {
           "id": "01M8HA8FAFTZT92GS97QHQ7TED",
@@ -4305,10 +6874,83 @@
               "reason": "U / π liefert stets den Durchmesser d; für den Radius halbiert man d nochmals."
             }
           ],
-          "question": "Ein zylindrischer Stamm hat einen gemessenen Umfang von U = 62,8 cm. Berechne seinen Durchmesser d und Radius r (mit π ≈ 3,14).",
-          "concept": "Aus U = π · d erhält man d = U / π ≈ 62,8 / 3,14 = 20 cm und den Radius r = d / 2 = 10 cm.",
           "sample_solution": "1. d = U / π ≈ 62,8 / 3,14 = 20 cm.\n2. r = d / 2 = 10 cm.",
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=kz-1-pi-umfang"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=kz-1-pi-umfang",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Ein zylindrischer Stamm hat einen gemessenen Umfang von "
+            },
+            {
+              "type": "math",
+              "tex": "U = 62{,}8",
+              "speech": "U gleich 62 komma 8"
+            },
+            {
+              "type": "text",
+              "text": " cm. Berechne seinen Durchmesser "
+            },
+            {
+              "type": "math",
+              "tex": "d",
+              "speech": "d"
+            },
+            {
+              "type": "text",
+              "text": " und Radius "
+            },
+            {
+              "type": "math",
+              "tex": "r",
+              "speech": "r"
+            },
+            {
+              "type": "text",
+              "text": " (mit "
+            },
+            {
+              "type": "math",
+              "tex": "\\pi \\approx 3{,}14",
+              "speech": "pi ungefähr 3 komma 1 4"
+            },
+            {
+              "type": "text",
+              "text": ")."
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Aus "
+            },
+            {
+              "type": "math",
+              "tex": "U = \\pi \\cdot d",
+              "speech": "U gleich pi mal d"
+            },
+            {
+              "type": "text",
+              "text": " erhält man "
+            },
+            {
+              "type": "math",
+              "tex": "d = \\frac{U}{\\pi} \\approx \\frac{62{,}8}{3{,}14} = 20",
+              "speech": "d gleich U durch pi ungefähr 62 komma 8 durch 3 komma 1 4 gleich 20"
+            },
+            {
+              "type": "text",
+              "text": " cm und den Radius "
+            },
+            {
+              "type": "math",
+              "tex": "r = \\frac{d}{2} = 10",
+              "speech": "r gleich d durch 2 gleich 10"
+            },
+            {
+              "type": "text",
+              "text": " cm."
+            }
+          ]
         }
       ]
     },
@@ -4332,7 +6974,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-7",
+          "topic_code": "stage-7-kreis-zylinder",
           "topic_title": "Etappe 7: Kreis und Zylinder"
         },
         {
@@ -4363,8 +7005,6 @@
               "reason": "Mit dem Durchmesser d statt r müsste man noch durch 4 teilen; richtig ist π · r²."
             }
           ],
-          "question": "Wie lautet die exakte mathematische Formel für den Flächeninhalt A eines Kreises mit dem Radius r?",
-          "concept": "Der Flächeninhalt eines Kreises mit Radius r berechnet sich durch A = π · r².",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -4373,7 +7013,55 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=kz-2-kreisflaeche"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=kz-2-kreisflaeche",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie lautet die exakte mathematische Formel für den Flächeninhalt "
+            },
+            {
+              "type": "math",
+              "tex": "A",
+              "speech": "A"
+            },
+            {
+              "type": "text",
+              "text": " eines Kreises mit dem Radius "
+            },
+            {
+              "type": "math",
+              "tex": "r",
+              "speech": "r"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Der Flächeninhalt eines Kreises mit Radius "
+            },
+            {
+              "type": "math",
+              "tex": "r",
+              "speech": "r"
+            },
+            {
+              "type": "text",
+              "text": " berechnet sich durch "
+            },
+            {
+              "type": "math",
+              "tex": "A = \\pi \\cdot r^2",
+              "speech": "A gleich pi mal r Quadrat"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
         },
         {
           "id": "01M8HA8FAF9NK5GX9GZPNBBZ89",
@@ -4392,8 +7080,6 @@
               "reason": "Der Faktor wird mit sich selbst multipliziert, also 9, nicht mit 2."
             }
           ],
-          "question": "Wie verändert sich der Flächeninhalt eines Kreises, wenn man seinen Radius r verdreifacht?",
-          "concept": "Der Flächeninhalt A = π · r² wächst quadratisch mit dem Faktor 3² = 9.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -4402,7 +7088,46 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=kz-2-kreisflaeche"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=kz-2-kreisflaeche",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie verändert sich der Flächeninhalt eines Kreises, wenn man seinen Radius "
+            },
+            {
+              "type": "math",
+              "tex": "r",
+              "speech": "r"
+            },
+            {
+              "type": "text",
+              "text": " verdreifacht?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Der Flächeninhalt "
+            },
+            {
+              "type": "math",
+              "tex": "A = \\pi \\cdot r^2",
+              "speech": "A gleich pi mal r Quadrat"
+            },
+            {
+              "type": "text",
+              "text": " wächst quadratisch mit dem Faktor "
+            },
+            {
+              "type": "math",
+              "tex": "3^2 = 9",
+              "speech": "3 hoch 2 gleich 9"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
         },
         {
           "id": "01M8HA8FAF4RJ13JCAJJHT15AA",
@@ -4421,10 +7146,83 @@
               "reason": "Vor dem Quadrieren muss der Durchmesser halbiert werden auf den Radius r = 5 cm."
             }
           ],
-          "question": "Erkläre, wie die Zerlegung eines Kreises in viele schmale Sektoren zur Formel A = π · r² führt, und berechne A für d = 10 cm.",
-          "concept": "Sektoren bilden ein Rechteck aus π·r mal r; für r = 5 cm entsteht A = 25π ≈ 78,54 cm².",
           "sample_solution": "1. Feine Kreissektoren ergeben ein Rechteck der Breite π·r und Höhe r ⇒ A = π·r².\n2. Für d = 10 cm gilt r = 5 cm ⇒ A = 25π ≈ 78,54 cm².",
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=kz-2-kreisflaeche"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=kz-2-kreisflaeche",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Erkläre, wie die Zerlegung eines Kreises in viele schmale Sektoren zur Formel "
+            },
+            {
+              "type": "math",
+              "tex": "A = \\pi \\cdot r^2",
+              "speech": "A gleich pi mal r Quadrat"
+            },
+            {
+              "type": "text",
+              "text": " führt, und berechne "
+            },
+            {
+              "type": "math",
+              "tex": "A",
+              "speech": "A"
+            },
+            {
+              "type": "text",
+              "text": " für "
+            },
+            {
+              "type": "math",
+              "tex": "d = 10",
+              "speech": "d gleich 10"
+            },
+            {
+              "type": "text",
+              "text": " cm."
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Sektoren bilden ein Rechteck aus "
+            },
+            {
+              "type": "math",
+              "tex": "\\pi \\cdot r",
+              "speech": "pi mal r"
+            },
+            {
+              "type": "text",
+              "text": " mal "
+            },
+            {
+              "type": "math",
+              "tex": "r",
+              "speech": "r"
+            },
+            {
+              "type": "text",
+              "text": "; für "
+            },
+            {
+              "type": "math",
+              "tex": "r = 5",
+              "speech": "r gleich 5"
+            },
+            {
+              "type": "text",
+              "text": " cm entsteht "
+            },
+            {
+              "type": "math",
+              "tex": "A = 25\\pi \\approx 78{,}54",
+              "speech": "A gleich 25 pi ist ungefähr 78 komma 5 4"
+            },
+            {
+              "type": "text",
+              "text": " cm²."
+            }
+          ]
         }
       ]
     },
@@ -4448,7 +7246,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-7",
+          "topic_code": "stage-7-kreis-zylinder",
           "topic_title": "Etappe 7: Kreis und Zylinder"
         },
         {
@@ -4479,8 +7277,6 @@
               "reason": "Ein ganzer Kreis umfasst stets 360°, daher steht 360° im Nenner."
             }
           ],
-          "question": "Wie berechnest du die Bogenlänge b und die Fläche A_Sektor eines Kreissektors mit Mittelpunktswinkel α?",
-          "concept": "Man multipliziert den vollen Umfang bzw. die volle Kreisfläche mit dem Winkelanteil α / 360°.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -4489,7 +7285,55 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=kz-3-kreisteile"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=kz-3-kreisteile",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie berechnest du die Bogenlänge "
+            },
+            {
+              "type": "math",
+              "tex": "b",
+              "speech": "b"
+            },
+            {
+              "type": "text",
+              "text": " und die Sektorfläche "
+            },
+            {
+              "type": "math",
+              "tex": "A_{\\text{Sektor}}",
+              "speech": "A Sektor"
+            },
+            {
+              "type": "text",
+              "text": " eines Kreissektors mit Mittelpunktswinkel "
+            },
+            {
+              "type": "math",
+              "tex": "\\alpha",
+              "speech": "alpha"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Man multipliziert den vollen Umfang bzw. die volle Kreisfläche mit dem Winkelanteil "
+            },
+            {
+              "type": "math",
+              "tex": "\\alpha / 360^{\\circ}",
+              "speech": "alpha durch 360 Grad"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
         },
         {
           "id": "01M8HA8FAFRZVSV1DDXDYSSZVA",
@@ -4508,8 +7352,6 @@
               "reason": "Flächen erfordern quadratische Einheiten, keine Längenformel."
             }
           ],
-          "question": "Welche Fläche besitzt ein Kreisring mit Außenradius R und Innenradius r (R > r)?",
-          "concept": "A_Ring = π · (R² − r²), also die Differenz zwischen großem und kleinem Kreis.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -4518,7 +7360,51 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=kz-3-kreisteile"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=kz-3-kreisteile",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Welche Fläche besitzt ein Kreisring mit Außenradius "
+            },
+            {
+              "type": "math",
+              "tex": "R",
+              "speech": "groß R"
+            },
+            {
+              "type": "text",
+              "text": " und Innenradius "
+            },
+            {
+              "type": "math",
+              "tex": "r",
+              "speech": "klein r"
+            },
+            {
+              "type": "text",
+              "text": " ("
+            },
+            {
+              "type": "math",
+              "tex": "R > r",
+              "speech": "groß R größer klein r"
+            },
+            {
+              "type": "text",
+              "text": ")?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "A_{\\text{Ring}} = \\pi \\cdot (R^2 - r^2)",
+              "speech": "A Ring gleich pi mal Klammer groß R Quadrat minus klein r Quadrat"
+            },
+            {
+              "type": "text",
+              "text": ", also die Differenz zwischen großem und kleinem Kreis."
+            }
+          ]
         },
         {
           "id": "01M8HA8FAF412E3C2458G58B68",
@@ -4537,10 +7423,92 @@
               "reason": "90° ist ein Viertelkreis des Vollkreises mit 360°, kein Halbkreis."
             }
           ],
-          "question": "Berechne für einen Kreissektor (r = 6 cm, α = 90°) Bogenlänge b sowie Sektorfläche A (exakt als Vielfaches von π).",
-          "concept": "Anteil 1/4 ergibt Bogenlänge b = 3π cm und zugehörige Sektorfläche A = 9π cm².",
           "sample_solution": "1. 90° / 360° = 1/4.\n2. b = 1/4 · 12π = 3π cm; A = 1/4 · 36π = 9π cm².",
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=kz-3-kreisteile"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=kz-3-kreisteile",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Berechne für einen Kreissektor ("
+            },
+            {
+              "type": "math",
+              "tex": "r = 6",
+              "speech": "r gleich 6"
+            },
+            {
+              "type": "text",
+              "text": " cm, "
+            },
+            {
+              "type": "math",
+              "tex": "\\alpha = 90^{\\circ}",
+              "speech": "alpha gleich 90 Grad"
+            },
+            {
+              "type": "text",
+              "text": ") Bogenlänge "
+            },
+            {
+              "type": "math",
+              "tex": "b",
+              "speech": "b"
+            },
+            {
+              "type": "text",
+              "text": " sowie Sektorfläche "
+            },
+            {
+              "type": "math",
+              "tex": "A",
+              "speech": "A"
+            },
+            {
+              "type": "text",
+              "text": " (exakt als Vielfaches von "
+            },
+            {
+              "type": "math",
+              "tex": "\\pi",
+              "speech": "pi"
+            },
+            {
+              "type": "text",
+              "text": ")."
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Anteil "
+            },
+            {
+              "type": "math",
+              "tex": "\\frac{1}{4}",
+              "speech": "ein Viertel"
+            },
+            {
+              "type": "text",
+              "text": " ergibt Bogenlänge "
+            },
+            {
+              "type": "math",
+              "tex": "b = 3\\pi",
+              "speech": "b gleich 3 pi"
+            },
+            {
+              "type": "text",
+              "text": " cm und zugehörige Sektorfläche "
+            },
+            {
+              "type": "math",
+              "tex": "A = 9\\pi",
+              "speech": "A gleich 9 pi"
+            },
+            {
+              "type": "text",
+              "text": " cm²."
+            }
+          ]
         }
       ]
     },
@@ -4564,7 +7532,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-7",
+          "topic_code": "stage-7-kreis-zylinder",
           "topic_title": "Etappe 7: Kreis und Zylinder"
         },
         {
@@ -4596,7 +7564,6 @@
             }
           ],
           "question": "Welche geometrische Figur ergibt die abgerollte Mantelfläche eines geraden Kreiszylinders im Körpernetz?",
-          "concept": "Ein Rechteck mit der Breite des Kreisumfangs U = 2·π·r und der Körperhöhe h: M = 2·π·r·h.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -4605,7 +7572,40 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=kz-4-schraegbild-netz"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=kz-4-schraegbild-netz",
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Ein Rechteck mit der Breite des Kreisumfangs "
+            },
+            {
+              "type": "math",
+              "tex": "U = 2 \\cdot \\pi \\cdot r",
+              "speech": "U gleich 2 mal pi mal r"
+            },
+            {
+              "type": "text",
+              "text": " und der Körperhöhe "
+            },
+            {
+              "type": "math",
+              "tex": "h",
+              "speech": "h"
+            },
+            {
+              "type": "text",
+              "text": ": "
+            },
+            {
+              "type": "math",
+              "tex": "M = 2 \\cdot \\pi \\cdot r \\cdot h",
+              "speech": "M gleich 2 mal pi mal r mal h"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
         },
         {
           "id": "01M8HA8FAFS5ZEAG0R0X0C1CW1",
@@ -4625,7 +7625,6 @@
             }
           ],
           "question": "Wie setzt sich der gesamte Oberflächeninhalt O eines geschlossenen geraden Prismas oder Kreiszylinders zusammen?",
-          "concept": "Aus zweimal Grundfläche für Boden sowie Deckel und einmal der Mantelfläche: O = 2·G + M.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -4634,7 +7633,22 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=kz-4-schraegbild-netz"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=kz-4-schraegbild-netz",
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Aus zweimal Grundfläche für Boden sowie Deckel und einmal der Mantelfläche: "
+            },
+            {
+              "type": "math",
+              "tex": "O = 2 \\cdot G + M",
+              "speech": "O gleich 2 mal G plus M"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
         },
         {
           "id": "01M8HA8FAFHGNPSTA0JBFYJ44B",
@@ -4653,10 +7667,79 @@
               "reason": "In M = 2·π·r·h darf der Faktor 2 nicht fehlen."
             }
           ],
-          "question": "Berechne die exakte (in π) sowie gerundete Oberfläche O eines geschlossenen Kreiszylinders mit r = 3 cm und h = 5 cm.",
-          "concept": "2·G = 2·9π = 18π cm² und M = 2·π·3·5 = 30π cm² geben zusammen O = 48π ≈ 150,80 cm².",
           "sample_solution": "1. 2·G = 18π cm²; M = 30π cm².\n2. O = 48π cm² ≈ 150,80 cm².",
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=kz-4-schraegbild-netz"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=kz-4-schraegbild-netz",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Berechne die exakte (in "
+            },
+            {
+              "type": "math",
+              "tex": "\\pi",
+              "speech": "pi"
+            },
+            {
+              "type": "text",
+              "text": ") sowie gerundete Oberfläche "
+            },
+            {
+              "type": "math",
+              "tex": "O",
+              "speech": "O"
+            },
+            {
+              "type": "text",
+              "text": " eines geschlossenen Kreiszylinders mit "
+            },
+            {
+              "type": "math",
+              "tex": "r = 3",
+              "speech": "r gleich 3"
+            },
+            {
+              "type": "text",
+              "text": " cm und "
+            },
+            {
+              "type": "math",
+              "tex": "h = 5",
+              "speech": "h gleich 5"
+            },
+            {
+              "type": "text",
+              "text": " cm."
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "2G = 2 \\cdot 9\\pi = 18\\pi",
+              "speech": "2 G gleich 2 mal 9 pi gleich 18 pi"
+            },
+            {
+              "type": "text",
+              "text": " cm² und "
+            },
+            {
+              "type": "math",
+              "tex": "M = 2\\pi \\cdot 3 \\cdot 5 = 30\\pi",
+              "speech": "M gleich 2 pi mal 3 mal 5 gleich 30 pi"
+            },
+            {
+              "type": "text",
+              "text": " cm² geben zusammen "
+            },
+            {
+              "type": "math",
+              "tex": "O = 48\\pi \\approx 150{,}80",
+              "speech": "O gleich 48 pi ist ungefähr 150 komma 8 0"
+            },
+            {
+              "type": "text",
+              "text": " cm²."
+            }
+          ]
         }
       ]
     },
@@ -4680,7 +7763,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-7",
+          "topic_code": "stage-7-kreis-zylinder",
           "topic_title": "Etappe 7: Kreis und Zylinder"
         },
         {
@@ -4711,7 +7794,6 @@
               "reason": "V = G · h gilt exakt ohne jeden Faktor 1/3 für alle geraden Prismen und Zylinder."
             }
           ],
-          "question": "Warum gilt für das Volumen jedes geraden Prismas unabhängig von der Eckenzahl der Grundfläche V = G · h?",
           "concept": "Weil Grundfläche mal Höhe für jede n-Eck-Grundfläche in Dreiecken exakt dasselbe Produkt liefert.",
           "fast_check": {
             "type": "binary_choice",
@@ -4721,7 +7803,22 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=kz-5-volumen"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=kz-5-volumen",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Warum gilt für das Volumen jedes geraden Prismas unabhängig von der Eckenzahl der Grundfläche "
+            },
+            {
+              "type": "math",
+              "tex": "V = G \\cdot h",
+              "speech": "V gleich G mal h"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ]
         },
         {
           "id": "01M8HA8FAF26542RBFYDKTAD1Y",
@@ -4740,7 +7837,6 @@
               "reason": "Das halbierte Quadrat weicht erheblich vom exakten Faktor π ab."
             }
           ],
-          "question": "Wie macht man über regelmäßige Prismen plausibel, dass auch der Kreiszylinder die Formel V = π · r² · h hat?",
           "concept": "Mit steigender Eckenzahl n nähern sich die Fläche G_n dem Kreis und das Volumen dem Zylinder an.",
           "fast_check": {
             "type": "binary_choice",
@@ -4750,7 +7846,22 @@
             ],
             "correct_index": 0
           },
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=kz-5-volumen"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=kz-5-volumen",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie macht man über regelmäßige Prismen plausibel, dass auch der Kreiszylinder die Formel "
+            },
+            {
+              "type": "math",
+              "tex": "V = \\pi \\cdot r^2 \\cdot h",
+              "speech": "V gleich pi mal r Quadrat mal h"
+            },
+            {
+              "type": "text",
+              "text": " hat?"
+            }
+          ]
         },
         {
           "id": "01M8HA8FAFJAWWZ93FDZBBTQ7X",
@@ -4769,10 +7880,74 @@
               "reason": "Für das Volumen wird die Kreisfläche G = π·r² mit h multipliziert, nicht der Umfang."
             }
           ],
-          "question": "Berechne das exakte und gerundete Volumen eines geraden Kreiszylinders mit d = 8 cm und h = 5 cm.",
-          "concept": "Aus d = 8 cm folgt r = 4 cm; damit ist G = 16π cm² und V = 16π · 5 = 80π cm³ ≈ 251,33 cm³.",
           "sample_solution": "1. r = d/2 = 4 cm; G = 16π cm².\n2. V = 16π · 5 = 80π cm³ ≈ 251,33 cm³.",
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=kz-5-volumen"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=kz-5-volumen",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Berechne das exakte und gerundete Volumen eines geraden Kreiszylinders mit "
+            },
+            {
+              "type": "math",
+              "tex": "d = 8",
+              "speech": "d gleich 8"
+            },
+            {
+              "type": "text",
+              "text": " cm und "
+            },
+            {
+              "type": "math",
+              "tex": "h = 5",
+              "speech": "h gleich 5"
+            },
+            {
+              "type": "text",
+              "text": " cm."
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Aus "
+            },
+            {
+              "type": "math",
+              "tex": "d = 8",
+              "speech": "d gleich 8"
+            },
+            {
+              "type": "text",
+              "text": " cm folgt "
+            },
+            {
+              "type": "math",
+              "tex": "r = 4",
+              "speech": "r gleich 4"
+            },
+            {
+              "type": "text",
+              "text": " cm; damit ist "
+            },
+            {
+              "type": "math",
+              "tex": "G = 16\\pi",
+              "speech": "G gleich 16 pi"
+            },
+            {
+              "type": "text",
+              "text": " cm² und "
+            },
+            {
+              "type": "math",
+              "tex": "V = 16\\pi \\cdot 5 = 80\\pi",
+              "speech": "V gleich 16 pi mal 5 gleich 80 pi"
+            },
+            {
+              "type": "text",
+              "text": " cm³ ≈ 251,33 cm³."
+            }
+          ]
         }
       ]
     },
@@ -4796,7 +7971,7 @@
         {
           "provider": "zam-academy",
           "subject": "mathematik-gymnasium-8",
-          "topic_code": "stage-7",
+          "topic_code": "stage-7-kreis-zylinder",
           "topic_title": "Etappe 7: Kreis und Zylinder"
         },
         {
@@ -4886,9 +8061,28 @@
             }
           ],
           "question": "Auf einem Quader (6 × 6 × 4 cm) steht ein Zylinder (r = 2 cm, h = 3 cm). Berechne Gesamtvolumen V und Außenfläche O (auf 2 Dezimalen).",
-          "concept": "V = 144 + 12π ≈ 181,70 cm³ und Außenfläche O = 168 + 12π ≈ 205,70 cm².",
           "sample_solution": "1. V = 144 + 12π ≈ 181,70 cm³.\n2. O = O_Quader + M_Zyl = 168 + 12π ≈ 205,70 cm².",
-          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=kz-6-modellieren"
+          "source_link": "https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=kz-6-modellieren",
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "V = 144 + 12\\pi \\approx 181{,}70",
+              "speech": "V gleich 144 plus 12 pi ist ungefähr 181 komma 7 0"
+            },
+            {
+              "type": "text",
+              "text": " cm³ und Außenfläche "
+            },
+            {
+              "type": "math",
+              "tex": "O = 168 + 12\\pi \\approx 205{,}70",
+              "speech": "O gleich 168 plus 12 pi ist ungefähr 205 komma 7 0"
+            },
+            {
+              "type": "text",
+              "text": " cm²."
+            }
+          ]
         }
       ]
     }

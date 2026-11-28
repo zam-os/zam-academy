@@ -218,17 +218,17 @@ const plain = (html: string) =>
     .replace(/\s*=\s*$/, "")
     .trim();
 
-// Grade 5 answers are exact: a hint names a slip only when it was typed exactly.
-// With a rounding margin, 2 would count as "half of 3" and 1 as "50 : 100".
-function near(value: number, target: number): boolean {
+// Exact for whole numbers; decimal and π-based slips match within the shown precision.
+function near(value: number, target: number, field: NumberField): boolean {
   if (!Number.isFinite(target)) return false;
-  // Absolute on purpose: a relative margin would span whole numbers from 1e9 up.
-  return Math.abs(value - target) <= 1e-9;
+  if (field.digits === 0) return Math.abs(value - target) <= 1e-9;
+  const tolerance = Math.max(0.01 * Math.abs(target), 0.51 * 10 ** -field.digits, 1e-9);
+  return Math.abs(value - target) <= tolerance;
 }
 
 /**
  * A hint for a wrong answer without giving the result away: first the slips
- * the task itself predicts, then the general ones (sign, swapped fields,
+ * the task itself predicts, then the general ones (sign, π factor, swapped fields,
  * percent scale and halving), followed by topic-specific guidance.
  */
 export function wrongAnswerHint(
@@ -236,7 +236,7 @@ export function wrongAnswerHint(
   result: TaskResult,
 ): string {
   if (result.status === "invalid") {
-    return "Fülle jedes Feld aus: eine Zahl in jedes Eingabefeld und bei jeder Auswahl eine Antwort.";
+    return "Fülle jedes Feld aus: Zahlen mit Komma, Brüche wie 3/5 oder Vielfache von π wie 4π — und bei jeder Auswahl eine Antwort.";
   }
   if (result.status !== "wrong") return "";
   const numbers = task.fields
@@ -252,7 +252,7 @@ export function wrongAnswerHint(
   for (const { field, index } of wrongNumbers) {
     const parsed = result.fields[index].parsed ?? Number.NaN;
     for (const slip of field.slips ?? []) {
-      if (near(parsed, slip.value)) return slip.hint;
+      if (near(parsed, slip.value, field)) return slip.hint;
     }
   }
 
@@ -263,8 +263,8 @@ export function wrongAnswerHint(
     if (
       result.fields[first.index].status === "wrong" &&
       result.fields[second.index].status === "wrong" &&
-      near(a, second.field.answer) &&
-      near(b, first.field.answer)
+      near(a, second.field.answer, second.field) &&
+      near(b, first.field.answer, first.field)
     ) {
       return `Die Werte stimmen, stehen aber vertauscht: Was gehört zu ${plain(first.field.label)}, was zu ${plain(second.field.label)}?`;
     }
@@ -277,23 +277,31 @@ export function wrongAnswerHint(
     const answer = field.answer;
     const name = plain(field.label) || "Der Wert";
     const where = numbers.length > 1 ? ` bei ${name}` : "";
-    if (answer !== 0 && near(parsed, -answer))
+    if (answer !== 0 && near(parsed, -answer, field))
       return `Prüfe das Vorzeichen${where}.`;
+    const piField = field.digits === 0 ? { ...field, digits: 2 } : field;
     if (
       answer !== 0 &&
-      (near(parsed, answer * 100) || near(parsed, answer / 100))
+      (near(parsed, answer * Math.PI, piField) ||
+        near(parsed, answer / Math.PI, piField))
+    ) {
+      return `Um den Faktor π daneben${where}: π vergessen oder doppelt genommen?`;
+    }
+    if (
+      answer !== 0 &&
+      (near(parsed, answer * 100, field) || near(parsed, answer / 100, field))
     ) {
       return `Um den Faktor 100 daneben${where}: Prüfe die Einheit und die Umrechnung.`;
     }
     if (
       answer !== 0 &&
-      (near(parsed, answer * 1000) || near(parsed, answer / 1000))
+      (near(parsed, answer * 1000, field) || near(parsed, answer / 1000, field))
     ) {
       return `Um den Faktor 1000 daneben${where}: Prüfe die Einheit und die Umrechnung. Ein Punkt in der Zahl trennt die Tausender.`;
     }
     if (
       answer !== 0 &&
-      (near(parsed, answer * 2) || near(parsed, answer / 2))
+      (near(parsed, answer * 2, field) || near(parsed, answer / 2, field))
     ) {
       return `Genau doppelt oder halb so groß wie gesucht${where}: Prüfe, ob du etwas verdoppelt oder halbiert hast.`;
     }

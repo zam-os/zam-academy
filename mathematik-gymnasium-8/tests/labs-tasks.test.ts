@@ -295,6 +295,19 @@ describe("Aufgaben", () => {
                 Number.isFinite(field.answer),
                 `${where}: ${field.label}`,
               ).toBe(true);
+              if (
+                field.unit === "" &&
+                /^(P\(|h[_₁₂₃]|Relative Häufigkeit)/.test(field.label)
+              ) {
+                expect(
+                  field.answer,
+                  `${where}: probability in [0; 1]`,
+                ).toBeGreaterThanOrEqual(0);
+                expect(
+                  field.answer,
+                  `${where}: probability in [0; 1]`,
+                ).toBeLessThanOrEqual(1);
+              }
               expect(toleranceOf(field), where).toBeLessThan(
                 Math.abs(field.answer) * 0.05 + 0.06,
               );
@@ -334,6 +347,54 @@ describe("Aufgaben", () => {
             }
           }
         }
+      }
+    }
+  });
+
+  it("keeps displayed problem figures exact for gr-punkt-auf-hyperbel, bt-formel-bruch and kz-prisma-volumen", () => {
+    const byId = new Map(
+      ALL_LESSONS.flatMap((l) => l.exercises.map((e) => [e.id, e] as const)),
+    );
+    const parseIntDe = (raw: string) => Number(raw.replace("−", "-"));
+
+    for (let seed = 1; seed <= 200; seed++) {
+      for (const level of [1, 2] as const) {
+        const hyper = byId.get("gr-punkt-auf-hyperbel")!.make(createRng(seed), level);
+        const f0 = hyper.fields[0];
+        const f1 = hyper.fields[1];
+        expect(f0.kind).toBe("number");
+        expect(f1.kind).toBe("choice");
+        if (f0.kind !== "number" || f1.kind !== "choice") continue;
+        expect(Number.isInteger(f0.answer)).toBe(true);
+        const mPt = /P\((−?\d+) \| (−?\d+)\)/.exec(hyper.prompt)!;
+        expect(mPt).not.toBeNull();
+        const yP = parseIntDe(mPt[2]);
+        expect(yP === f0.answer).toBe(f1.options[f1.correctIndex].startsWith("Ja"));
+      }
+
+      const tri = byId.get("bt-formel-bruch")!.make(createRng(seed), 1);
+      const mh = tri.fields[1];
+      expect(mh.kind).toBe("number");
+      if (mh.kind === "number") {
+        const mTri = /A = (\d+) cm² und g = (\d+) cm/.exec(tri.prompt)!;
+        expect(mTri).not.toBeNull();
+        expect((2 * Number(mTri[1])) / Number(mTri[2])).toBe(mh.answer);
+      }
+
+      const prism = byId.get("kz-prisma-volumen")!.make(createRng(seed), 2);
+      const fg = prism.fields[0];
+      const fh = prism.fields[1];
+      expect(fg.kind).toBe("number");
+      expect(fh.kind).toBe("number");
+      if (fg.kind === "number" && fh.kind === "number") {
+        const mPr = /Katheten (\d+) cm und (\d+) cm.*?V = (\d+) cm³/.exec(prism.prompt)!;
+        expect(mPr).not.toBeNull();
+        const base = (Number(mPr[1]) * Number(mPr[2])) / 2;
+        const vol = Number(mPr[3]);
+        expect(Number.isInteger(base)).toBe(true);
+        expect(Number.isInteger(vol)).toBe(true);
+        expect(base).toBe(fg.answer);
+        expect(vol / fg.answer).toBe(fh.answer);
       }
     }
   });

@@ -1,6 +1,6 @@
 # Mathematik 8 Gymnasium
 
-LehrplanPLUS Bayern, Gymnasium, Jahrgangsstufe 8: **42 Lektionen**, **126 ZAM-Karten**. Jeder Lernbereich trägt eine eigene Akzentfarbe (`--stage-hue`), und jede Lektion enthält Erklärung mit Konzeptgrafik, Beispiel, Merksatz, Schnellcheck, interaktives Labor mit drei Aufträgen sowie zwei Aufgabengeneratoren auf zwei Stufen.
+LehrplanPLUS Bayern, Gymnasium, Jahrgangsstufe 8: **42 Lektionen**, **126 ZAM-Karten**. Jeder Lernbereich trägt eine eigene Akzentfarbe (`--accent`), und jede Lektion enthält Erklärung mit Konzeptgrafik, Beispiel, Merksatz, Schnellcheck, interaktives Labor mit drei Aufträgen sowie zwei Aufgabengeneratoren auf zwei Stufen.
 
 | Lernbereich | Stunden | Erwartungen | Lektionen |
 | --- | --- | --- | --- |
@@ -32,7 +32,7 @@ Zwei bestehende `de-by`-Zellen für Mathematik 8 Gymnasium enthalten zusammen 8 
 
 ```bash
 npm ci
-npm run dev        # http://localhost:5304/mathematik-gymnasium-8/
+npm run dev        # http://localhost:5305/mathematik-gymnasium-8/
 npx tsc --noEmit
 npm test
 npm run build      # eine Datei in dist/index.html

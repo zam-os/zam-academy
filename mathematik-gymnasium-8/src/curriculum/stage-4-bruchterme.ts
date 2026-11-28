@@ -168,7 +168,7 @@ const exMulFrac: ExerciseGenerator = {
   id: "bt-multiplizieren",
   make(rng, level) {
     const p = rng.pick([2, 3, 4, 6]);
-    const a = rng.int(1, 4);
+    const a = rng.int(3, 5);
     const xVal = level === 1 ? 3 : rng.pick([4, 5]);
     const q = level === 1 ? rng.pick([2, 4, 5]) : rng.pick([2, 3]);
     const ans = (p * xVal) / q;
@@ -179,7 +179,7 @@ const exMulFrac: ExerciseGenerator = {
       `Ein Produkt zweier Bruchterme lautet ${frac(`${fmt(p, 0)}x`, `x + ${fmt(a, 0)}`)} · ${frac(`x + ${fmt(a, 0)}`, fmt(q, 0))}. Vereinfache den Term auf D = ℚ \\ {${MINUS}${fmt(a, 0)}} und werte bei x = ${fmt(xVal, 0)} aus.`,
       [
         numberField(`Wert bei x = ${fmt(xVal, 0)}`, ans, "", 2, {
-          slips: [{ value: (p * q) / xVal, hint: `Multipliziere Zähler mal Zähler und Nenner mal Nenner (nicht den Kehrwert nehmen).` }],
+          slips: [{ value: (p * q * xVal) / ((xVal + a) * (xVal + a)), hint: `Multipliziere Zähler mal Zähler und Nenner mal Nenner (nicht den Kehrwert nehmen).` }],
         }),
       ],
       `Kürze die gemeinsame Klammer (x + ${fmt(a, 0)}) über Kreuz.`,
@@ -469,7 +469,7 @@ const exFormulaWithFrac: ExerciseGenerator = {
   id: "bt-formel-bruch",
   make(rng, level) {
     // Lens/parallel resistor or triangle area A = g*h/2 -> h = 2A/g, or Trapezoid/density rho = m/V
-    const g = rng.pick([4, 5, 6, 8]);
+    const g = rng.pick([4, 6, 8, 10]);
     const h = rng.pick([3, 4, 5, 6, 7]);
     const A = (g * h) / 2;
     const mode = level === 1 ? 0 : 1;
@@ -634,7 +634,7 @@ ${CONCEPT_DIAGRAMS.bt5}
       { name: "Verhältnisgleichung", html: `${frac("a", "b")} = ${frac("c", "d")} &nbsp;⇒&nbsp; a · d = c · b`, quantities: "gilt für b ≠ 0 und d ≠ 0 (Überkreuz-Regel)" },
     ],
     quiz: Q(
-      "Du löst 3/(x − 2) = 5/(x − 2) und erhältst nach Umformen keinen Widerspruch nicht? Moment: Bei (x + 1)/(x − 2) = 3/(x − 2) liefert x + 1 = 3 den Wert x = 2. Was ist L?",
+      "Bei der Bruchgleichung (x + 1)/(x − 2) = 3/(x − 2) liefert das Umformen x + 1 = 3, also x = 2. Was ist die Lösungsmenge L?",
       "L = ∅, da x = 2 den Nenner x − 2 zu 0 macht (Scheinlösung).",
       "L = {2}",
       "L = ℚ",

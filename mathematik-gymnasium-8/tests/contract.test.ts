@@ -71,18 +71,19 @@ describe("Lehrplan und Lektionsvertrag M8", () => {
       expect(lesson.quiz.options.length).toBeGreaterThanOrEqual(3);
       expect(lesson.quiz.correctIndex).toBeGreaterThanOrEqual(0);
       expect(lesson.quiz.correctIndex).toBeLessThan(lesson.quiz.options.length);
+      expect(lesson.formulas.length, lesson.id).toBeGreaterThan(0);
       expect(lesson.teacherVideo).toBeUndefined();
       expect(lesson.requiredCorrect).toBe(3);
       expect(lesson.lab.goals).toHaveLength(3);
       expect(lesson.exercises).toHaveLength(2);
-      const t1 = lesson.exercises[0].make(createRng(17), 1);
-      const t2 = lesson.exercises[0].make(createRng(17), 2);
-      expect(t1.formulaHint).toBeTruthy();
-      expect(t1.prompt).not.toBe(t2.prompt);
 
       for (const ex of lesson.exercises) {
         expect(exerciseIds.has(ex.id)).toBe(false);
         exerciseIds.add(ex.id);
+        const t1 = ex.make(createRng(17), 1);
+        const t2 = ex.make(createRng(17), 2);
+        expect(t1.formulaHint, `${lesson.id}/${ex.id} L1 formulaHint`).toBeTruthy();
+        expect(t1.prompt, `${lesson.id}/${ex.id} L1 vs L2 prompt`).not.toBe(t2.prompt);
       }
 
       const combinedText = `${lesson.title} ${lesson.subtitle} ${lesson.whyItMatters} ${lesson.explanationHtml}`;
@@ -227,6 +228,7 @@ describe("Lehrplan und Lektionsvertrag M8", () => {
 describe("ZAM-Zelle und Vorschlags-Mapping M8", () => {
   it("aligns cell.json with 42 atoms, 126 cards and pinned public contract IDs without replaces", () => {
     expect(cell.tile_id).toBe(ZAM_CELL_ID);
+    expect((cell as Record<string, unknown>).replaces).toBeUndefined();
     expect((cell as Record<string, unknown>).retired_items).toBeUndefined();
     expect(cell.atoms).toHaveLength(42);
     expect(publicContract).toHaveLength(42);
@@ -234,9 +236,12 @@ describe("ZAM-Zelle und Vorschlags-Mapping M8", () => {
     const atomIds = new Set<string>();
     const cardIds = new Set<string>();
     const cardSlugs = new Set<string>();
+    let segmentedItems = 0;
+    const stagesWithSegments = new Set<string>();
 
     for (let i = 0; i < ALL_LESSONS.length; i++) {
       const lesson = ALL_LESSONS[i];
+      const stage = STAGES.find((s) => s.lessons.some((l) => l.id === lesson.id))!;
       const atom = cell.atoms[i];
       const pinned = publicContract[i];
 
@@ -251,6 +256,7 @@ describe("ZAM-Zelle und Vorschlags-Mapping M8", () => {
 
       expect(atom.source_link).toBe(`https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=${lesson.id}`);
       expect(atom.curricula).toHaveLength(2);
+      expect(atom.curricula[0].topic_code).toBe(stage.id);
       expect(atom.curricula[1].school_type).toBe("gymnasium");
       expect(atom.curricula[1].grade).toBe(8);
       expect((atom.curricula[1] as Record<string, unknown>).track).toBeUndefined();
@@ -263,14 +269,16 @@ describe("ZAM-Zelle und Vorschlags-Mapping M8", () => {
           id: string;
           slug: string;
           tier: string;
+          bloom_level: number;
+          source_link: string;
           choice_distractors: Array<{ text: string; reason: string }>;
           fast_check?: { type: string; options: string[]; correct_index: number };
           sample_solution?: string;
           replaces?: string[];
           question?: string;
-          question_segments?: Array<{ type: string; text?: string; tex?: string }>;
+          question_segments?: Array<{ type: string; text?: string; tex?: string; speech?: string }>;
           concept?: string;
-          concept_segments?: Array<{ type: string; text?: string; tex?: string }>;
+          concept_segments?: Array<{ type: string; text?: string; tex?: string; speech?: string }>;
         };
         expect(item.replaces).toBeUndefined();
         expect(item.id).toMatch(ULID_RE);
@@ -278,6 +286,31 @@ describe("ZAM-Zelle und Vorschlags-Mapping M8", () => {
         cardIds.add(item.id);
         expect(cardSlugs.has(item.slug)).toBe(false);
         cardSlugs.add(item.slug);
+        expect(item.source_link).toBe(
+          `https://academy.zam-os.org/mathematik-gymnasium-8/#lesson=${lesson.id}`,
+        );
+        expect([1, 2, 3]).toContain(item.bloom_level);
+        expect((item.question !== undefined) !== (item.question_segments !== undefined)).toBe(true);
+        expect((item.concept !== undefined) !== (item.concept_segments !== undefined)).toBe(true);
+
+        for (const segs of [item.question_segments, item.concept_segments]) {
+          if (!segs) continue;
+          expect(segs.length).toBeGreaterThan(0);
+          for (const seg of segs) {
+            if (seg.type === "math") {
+              expect(seg.tex?.trim().length, item.slug).toBeGreaterThan(0);
+              expect(seg.speech?.trim().length, `${item.slug} speech`).toBeGreaterThan(0);
+              expect(seg.speech, `${item.slug} speech markup`).not.toMatch(/[\\$<]/);
+            } else {
+              expect(seg.type).toBe("text");
+              expect(seg.text?.length, item.slug).toBeGreaterThan(0);
+            }
+          }
+        }
+        if (item.question_segments || item.concept_segments) {
+          segmentedItems++;
+          stagesWithSegments.add(stage.id);
+        }
 
         expect(pinned.items[j]).toEqual({ id: item.id, slug: item.slug });
 
@@ -298,6 +331,8 @@ describe("ZAM-Zelle und Vorschlags-Mapping M8", () => {
         }
 
         const plain = plainTextOf(item);
+        expect(plain.question.trim().length, item.slug).toBeGreaterThan(10);
+        expect(plain.concept.trim().length, item.slug).toBeGreaterThan(3);
         expect(`${plain.question} ${plain.concept}`).not.toMatch(GRADE_9_FORBIDDEN);
 
         const learnerTexts = [
@@ -323,6 +358,9 @@ describe("ZAM-Zelle und Vorschlags-Mapping M8", () => {
         }
       }
     }
+
+    expect(segmentedItems).toBeGreaterThanOrEqual(40);
+    expect(stagesWithSegments.size).toBe(7);
 
     const deps = new Map(
       cell.atoms.map((a) => [a.id, a.prerequisites.map((p) => p.atom_id)]),
