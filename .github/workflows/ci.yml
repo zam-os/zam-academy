@@ -244,6 +244,8 @@ jobs:
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node chemie-realschule-9/scripts/validate-migration.mjs
       - name: Preserve Geschichte histories and refuse automatic merges
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node geschichte-realschule-9/scripts/validate-migration.mjs
+      - name: Move the two approved Geschichte 8 Gymnasium histories and preserve both cards on conflict
+        run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node geschichte-gymnasium-8/scripts/validate-migration.mjs
       - name: Preserve Grade 6 geography histories and refuse automatic merges
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node geographie-realschule-6/scripts/validate-migration.mjs
       - name: Preserve Geographie histories and refuse automatic merges

@@ -43,10 +43,10 @@ links need a connection only when opened.
   distinguishes guided preparation from activities requiring an atlas or
   independent work.
 - [ZAM cell](cell.json) contains all 75 items, with a lesson anchor for each.
-- [Migration proposal](replaces-de-by.json) records two possible transfers
-  and six keep-active entries. The proposal awaits approval.
-- [Publication marker](publication.json) registers version 0.0 for publication
-  on merge. Teacher review is open.
+- [Approved history mapping](replaces-de-by.json) moves two Grade 8 histories
+  and keeps six legacy items active.
+- [Publication marker](publication.json) records the package version. Teacher
+  review is open.
 
 The painting reproduction comes from [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:A_v_Werner_-_Kaiserproklamation_am_18_Januar_1871_(3._Fassung_1885).jpg)
 and is marked public domain. The app credits Anton von Werner, the 1885
