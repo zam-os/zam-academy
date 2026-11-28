@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "approved": null,
+  "status": "proposal-only",
+  "source": null,
+  "source_repository": "zam-os/zam",
+  "source_commit": "c92f4e383385ee487cd8b30f73b3bf3cb27b0860",
+  "sources": [
+    {
+      "file": "tests/fixtures/de-by-gymnasium-8-mathematik-lineare-funktionen-gleichungssysteme-kvt.json",
+      "sha256": "3259141e6b66dd89a23be31fb7f0dcb6ca937bf75bc1db6a098e846607c37a89",
+      "tile_id": "de-by:gymnasium-8-mathematik-lineare-funktionen-gleichungssysteme"
+    },
+    {
+      "file": "tests/fixtures/de-by-gymnasium-8-mathematik-wahrscheinlichkeit-kreisgeometrie-bruchterme-kvt.json",
+      "sha256": "28c2f7f2a7956ceef63da0d9c6b025f59b0d5bff1d3ab21b45f7ba0815b7d216",
+      "tile_id": "de-by:gymnasium-8-mathematik-wahrscheinlichkeit-kreisgeometrie-bruchterme"
+    }
+  ],
+  "rows": [
+    {
+      "de_by_cell": "de-by:gymnasium-8-mathematik-lineare-funktionen-gleichungssysteme",
+      "de_by_id": "01K8G8A0000000000000000J01",
+      "de_by_question": "Welche Steigung m₂ muss eine Gerade g₂ besitzen, damit sie orthogonal (senkrecht) auf der Geraden g₁: y = 2x - 5 steht?",
+      "category": "C",
+      "academy_slug": null,
+      "action": "keep-active",
+      "reason": "Orthogonalitätsbedingung m₁·m₂ = −1 kommt im aktuellen LehrplanPLUS M8 Gymnasium nicht vor."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-8-mathematik-lineare-funktionen-gleichungssysteme",
+      "de_by_id": "01K8G8A0000000000000000J02",
+      "de_by_question": "Analysiere lineare Funktionen in der Normalform f(x) = m·x + t: 1. Bedeutung der Parameter:   * Steigung m: m = Δy/Δx = (y₂ - y₁)/(x₂ - x₁) (m > 0: streng monoton steigend; m < 0: fallend; m = 0: konstante waagrechte Gerade).   * y-Achsenabschnitt t: Schnittpunkt mit der Ordinate S_y(0 | t), 2. Nullstelle x₀: Ansatz f(x) = 0 ⇒ m·x₀ + t = 0 ⇒ x₀ = -t/m (m ≠ 0), 3. Lagebeziehungen zweier Geraden:   * Parallelität: g₁ ∥ g₂ ⇔ m₁ = m₂ (bei t₁ ≠ t₂ echt parallel, bei t₁ = t₂ identisch).   * Orthogonalität (senkrechter Schnitt): g₁ ⊥ g₂ ⇔ m₁·m₂ = -1 ⇔ m₂ = -1/m₁, 4. Bestimme die Funktionsgleichung der Geraden g, die durch P(3 | 1) und Q(-1 | -7) verläuft.",
+      "category": "C",
+      "academy_slug": null,
+      "action": "keep-active",
+      "reason": "Mehrteilige Synthesekarte über Parameter, Nullstelle, Orthogonalität und Geradengleichung; in der Academy auf atomare Karten je Lektion aufgeteilt."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-8-mathematik-lineare-funktionen-gleichungssysteme",
+      "de_by_id": "01K8G8A0000000000000000J03",
+      "de_by_question": "Welche geometrische Interpretation hat ein lineares 2x2 Gleichungssystem, wenn es genau EINE eindeutige Lösung (x | y) besitzt?",
+      "category": "A",
+      "academy_slug": "lg-5-loesbarkeit-eindeutig",
+      "action": "propose-replace-after-approval",
+      "reason": "Gleiche atomare Abfrage zur geometrischen Deutung eines eindeutig lösbaren 2×2-LGS als genau einen Geradenschnittpunkt."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-8-mathematik-lineare-funktionen-gleichungssysteme",
+      "de_by_id": "01K8G8A0000000000000000J04",
+      "de_by_question": "Erkläre die 3 algebraischen Lösungsverfahren für lineare Gleichungssysteme (2x2) und löse das System: 1. Gleichsetzungsverfahren: Beide Gleichungen nach derselben Variablen auflösen und gleichsetzen (T₁(x) = T₂(x)), 2. Einsetzungsverfahren: Eine Gleichung nach einer Variablen isolieren und den Term in die andere Gleichung einsetzen, 3. Additionsverfahren (Subtraktionsverfahren): Multiplikation der Gleichungen mit geeigneten Faktoren, sodass bei gliedweiser Addition/Subtraktion eine Variable eliminiert wird (c₁·I + c₂·II), 4. Die 3 Lösungsfälle: Eindeutige Lösung L = {(x₀ | y₀)} (schneidende Geraden), Keine Lösung L = ∅ (echt parallele Geraden, Widerspruch z. B. 0 = 12), Unendlich viele Lösungen L = {(x | y) | y = mx + t} (identische Geraden, wahre Aussage z. B. 0 = 0), 5. Löse mit dem Additionsverfahren: I: 3x + 2y = 16, II: 5x - 4y = 8.",
+      "category": "C",
+      "academy_slug": null,
+      "action": "keep-active",
+      "reason": "Fünfteilige Synthesekarte über Gleichsetzungs-, Einsetzungs-, Additionsverfahren, Lösungsfälle und Rechenaufgabe; kein einzelner Nachfolger übernimmt alle Teile."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-8-mathematik-wahrscheinlichkeit-kreisgeometrie-bruchterme",
+      "de_by_id": "01K8G8B0000000000000000J01",
+      "de_by_question": "Wie lautet die 1. Pfadregel (Pfadmultiplikationsregel) zur Berechnung der Wahrscheinlichkeit eines bestimmten Pfades im Baumdiagramm?",
+      "category": "C",
+      "academy_slug": null,
+      "action": "keep-active",
+      "reason": "Allgemeine Pfadmultiplikationsregel (1. Pfadregel) wird im G9-LehrplanPLUS erst in M9 LB 3 eingeführt; M8 arbeitet bei Baumdiagrammen über das Zählprinzip und Gleichwahrscheinlichkeit."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-8-mathematik-wahrscheinlichkeit-kreisgeometrie-bruchterme",
+      "de_by_id": "01K8G8B0000000000000000J02",
+      "de_by_question": "Systematisiere die Wahrscheinlichkeitsrechnung für zweistufige Zufallsexperimente: 1. Laplace-Formel: P(E) = (|E|)/Space(Ω) = (Anzahl der günstigen Ergebnisse)/(Anzahl der möglichen Ergebnisse), 2. Baumdiagramme & Pfadregeln:   * 1. Pfadregel (Produktregel): Die Wahrscheinlichkeit eines Ergebnisses (Elementarereignisses) entspricht dem Produkt der Wahrscheinlichkeiten entlang des Pfades.   * 2. Pfadregel (Summenregel): Die Wahrscheinlichkeit eines zusammengesetzten Ereignisses E ist die Summe der Wahrscheinlichkeiten aller Pfade, die zu E gehören. 3. Ziehen mit vs. ohne Zurücklegen: Konstante vs. sich reduzierende Wahrscheinlichkeiten in der 2. Stufe. 4. In einer Urne liegen 4 rote und 6 blaue Kugeln. Es werden nacheinander 2 Kugeln ohne Zurücklegen gezogen. Berechne die Wahrscheinlichkeit für das Ereignis E: 'Mindestens eine Kugel ist rot' unter Nutzung des Gegenereignisses E̅.",
+      "category": "C",
+      "academy_slug": null,
+      "action": "keep-active",
+      "reason": "Mehrteilige Synthesekarte inklusive M9-Stoff (1./2. Pfadregel, Ziehen ohne Zurücklegen); in M8 auf atomare Laplace- und Zählprinzip-Karten aufgeteilt."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-8-mathematik-wahrscheinlichkeit-kreisgeometrie-bruchterme",
+      "de_by_id": "01K8G8B0000000000000000J03",
+      "de_by_question": "Wie lautet die exakte mathematische Formel für den Flächeninhalt A eines Kreises mit dem Radius r?",
+      "category": "A",
+      "academy_slug": "kz-2-kreisflaeche-formel",
+      "action": "propose-replace-after-approval",
+      "reason": "Gleiche atomare Wissensabfrage zur exakten Flächeninhaltsformel A = π·r² des Kreises."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-8-mathematik-wahrscheinlichkeit-kreisgeometrie-bruchterme",
+      "de_by_id": "01K8G8B0000000000000000J04",
+      "de_by_question": "Analysiere Kreisberechnungen und Bruchterme im Gymnasium 8: 1. Der Kreis:   * Umfang: U = 2πr = πd.   * Flächeninhalt: A = πr² = ¼πd².   * Kreissektor (Mittelpunktswinkel α): Bogenlänge b = 2πr·α/(360°), Sektorfläche A_Sektor = πr²·α/(360°) = ½b·r, 2. Bruchterme und Definitionsmenge D:   * Ein Bruchterm enthält eine Variable im Nenner: Der Nenner darf niemals Null werden ⇒ D = ℚ ∖ {x | Nenner(x) = 0}.   * Kürzen: Nur aus Produkten kürzen ('Aus Differenzen und Summen kürzen nur die Dummen'). 3. Vereinfache den Bruchterm und bestimme D: T(x) = (2x² - 8)/(x² - 4x + 4).",
+      "category": "C",
+      "academy_slug": null,
+      "action": "keep-active",
+      "reason": "Lernbereichsübergreifende Sammelkarte aus Kreisgeometrie (LB 7) und Bruchtermen (LB 4); keine einzelne Academy-Karte deckt beide Lernbereiche zusammen ab."
+    }
+  ]
+}
