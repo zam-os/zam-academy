@@ -1,0 +1,3767 @@
+{
+  "$schema": "https://zam.app/schemas/v1/kvt-tile.json",
+  "tile_id": "zam-academy:wirtschaft-recht-gymnasium-8",
+  "version": "2026.11.0",
+  "title": "Wirtschaft und Recht 8 Gymnasium (ZAM Academy)",
+  "description": "Wirtschaft und Recht 8 am Wirtschaftswissenschaftlichen Gymnasium in Bayern (LehrplanPLUS). 35 Kernlektionen zu Konsum, Geld, Unternehmen, Marketing und Recht und 10 Lektionen des Profilbereichs, 109 Karten.",
+  "publisher": "ZAM Academy",
+  "published_at": "2026-11-28T08:00:00Z",
+  "sources": [
+    {
+      "uri": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/",
+      "checked": "2026-11-28",
+      "label": "ZAM Academy · Wirtschaft und Recht 8 Gymnasium"
+    },
+    {
+      "uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/8/wirtschaft-und-recht",
+      "checked": "2026-11-28",
+      "label": "LehrplanPLUS · Wirtschaft und Recht 8 (WWG)"
+    }
+  ],
+  "atoms": [
+    {
+      "id": "01M8GDQAS2BHZHBNYRTTCT8V9W",
+      "atom_uri": "urn:zam:atom:01M8GDQAS2BHZHBNYRTTCT8V9W",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-ko-knappheit",
+      "title": "Knappheit, Bedürfnisse und das ökonomische Prinzip",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ko-knappheit",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb1",
+          "topic_title": "Ökonomisches Handeln im privaten Haushalt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb1",
+          "topic_title": "Ökonomisches Handeln im privaten Haushalt",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQATF887SZG992G0EGRJK",
+          "slug": "wrg8-ko-knappheit-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ko-knappheit",
+          "question": "Nach welchem Prinzip handelt, wer ein festes Ziel mit möglichst geringem Mitteleinsatz erreichen will?",
+          "concept": "Nach dem Minimalprinzip",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Nach dem Minimalprinzip",
+              "Nach dem Maximalprinzip"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Nach dem Maximalprinzip",
+              "reason": "Beim Maximalprinzip ist das Mittel fest und das Ergebnis soll möglichst groß sein."
+            },
+            {
+              "text": "Nach dem Nachhaltigkeitsprinzip",
+              "reason": "Nachhaltigkeit fragt nach langfristigen Folgen, nicht nach dem Verhältnis von Ziel und Mitteln."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQATGRES49MQBRWEZQ53Q",
+          "slug": "wrg8-ko-knappheit-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ko-knappheit",
+          "question": "Warum ist die Forderung „mit möglichst wenig Mitteln möglichst viel erreichen“ unmöglich?",
+          "concept": "Beim ökonomischen Prinzip liegt immer eine Größe fest: entweder das Mittel oder das Ziel.",
+          "materiality": "material",
+          "sample_solution": "Wer gar kein Geld ausgibt, setzt die wenigsten Mittel ein, bekommt aber nichts. Deshalb legt man entweder ein Budget von 30 Euro fest und sucht die beste Hose dafür, oder man legt die Hose fest und sucht den günstigsten Preis."
+        },
+        {
+          "id": "01M8GDQATH8B34QKW78MZXYY79",
+          "slug": "wrg8-ko-knappheit-transfer",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ko-knappheit",
+          "question": "Was unterscheidet einen Bedarf von einem Bedürfnis?",
+          "concept": "Ein Bedarf ist ein Bedürfnis, für das man genug Geld hat und das man am Markt erfüllen will.",
+          "materiality": "material",
+          "sample_solution": "Lena wünscht sich ein E-Bike und neue Kopfhörer. Für die Kopfhörer hat sie gespart, dafür hat sie einen Bedarf. Das E-Bike kann sie nicht bezahlen, es bleibt ein Bedürfnis."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQAS3ET020JZECR9BQW3F",
+      "atom_uri": "urn:zam:atom:01M8GDQAS3ET020JZECR9BQW3F",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-ko-opportunitaetskosten",
+      "title": "Opportunitätskosten und Kosten-Nutzen-Analyse",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ko-opportunitaetskosten",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQAS2BHZHBNYRTTCT8V9W",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb1",
+          "topic_title": "Ökonomisches Handeln im privaten Haushalt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb1",
+          "topic_title": "Ökonomisches Handeln im privaten Haushalt",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQATJQRWK27C7BGFRB3VF",
+          "slug": "wrg8-ko-opportunitaetskosten-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ko-opportunitaetskosten",
+          "question": "Wie nennt man den entgangenen Nutzen der besten Alternative, auf die man durch eine Entscheidung verzichtet?",
+          "concept": "Opportunitätskosten",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Opportunitätskosten",
+              "Transaktionskosten"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Transaktionskosten",
+              "reason": "Transaktionskosten entstehen beim Suchen, Vergleichen und Abschließen eines Geschäfts, nicht durch einen Verzicht."
+            },
+            {
+              "text": "Folgekosten",
+              "reason": "Folgekosten entstehen nach einem Kauf, etwa ein Abo; sie sind nicht der Nutzen einer Alternative."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQATKSBH2JVHK9KAVFB2S",
+          "slug": "wrg8-ko-opportunitaetskosten-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ko-opportunitaetskosten",
+          "question": "Was gehört bei einer Kosten-Nutzen-Analyse neben dem Preis auf die Kostenseite?",
+          "concept": "Zeit, Folgekosten und die Opportunitätskosten der besten Alternative.",
+          "materiality": "material",
+          "sample_solution": "Eine Konsole kostet 300 Euro. Dazu kommen 9 Euro Abo im Monat und die Zeit, die man spielt. Außerdem verzichtet man auf den Kletterkurs, den man sonst bezahlt hätte."
+        },
+        {
+          "id": "01M8GDQATMCX1EXX7FQE60QC2G",
+          "slug": "wrg8-ko-opportunitaetskosten-transfer",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ko-opportunitaetskosten",
+          "question": "Was ist ein Anreiz im Sinne der Ökonomie?",
+          "concept": "Ein Umstand, der ein Verhalten belohnt oder bestraft und es dadurch wahrscheinlicher macht.",
+          "materiality": "material",
+          "sample_solution": "Treuepunkte belohnen jeden weiteren Einkauf im selben Laden. Das Pfand belohnt, eine Flasche zurückzubringen. Beides verändert, wie Menschen sich entscheiden."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQAS47KMBK2M8T5HSG8Y5",
+      "atom_uri": "urn:zam:atom:01M8GDQAS47KMBK2M8T5HSG8Y5",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-ko-nachhaltigkeit",
+      "title": "Nachhaltig konsumieren: drei Dimensionen",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ko-nachhaltigkeit",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQAS3ET020JZECR9BQW3F",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb1",
+          "topic_title": "Ökonomisches Handeln im privaten Haushalt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb1",
+          "topic_title": "Ökonomisches Handeln im privaten Haushalt",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQATNAPBNFZVSQD9BFEBC",
+          "slug": "wrg8-ko-nachhaltigkeit-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ko-nachhaltigkeit",
+          "question": "Welche drei Dimensionen hat das Prinzip der Nachhaltigkeit?",
+          "concept": "Die ökonomische, die ökologische und die soziale Dimension",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die ökonomische, die ökologische und die soziale Dimension",
+              "Die technische, die rechtliche und die politische Dimension"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Die technische, die rechtliche und die politische Dimension",
+              "reason": "Das sind Rahmenbedingungen, nicht die drei Säulen der Nachhaltigkeit."
+            },
+            {
+              "text": "Die regionale, die nationale und die globale Dimension",
+              "reason": "Das sind räumliche Ebenen, keine Dimensionen der Nachhaltigkeit."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQATPAYW55Z6GZVJF1D7V",
+          "slug": "wrg8-ko-nachhaltigkeit-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ko-nachhaltigkeit",
+          "question": "Warum ist der nachhaltigste Kauf manchmal gar kein Kauf?",
+          "concept": "Leihen, gebraucht kaufen oder reparieren schont Rohstoffe und oft auch das Budget.",
+          "materiality": "material",
+          "sample_solution": "Mila braucht ein Kleid für eine Party. Leiht sie es von ihrer Cousine, entstehen keine neuen Rohstoffe und keine Kosten. Ein neues Kleid für 45 Euro wäre ökologisch und ökonomisch die schlechtere Wahl."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQAS5EK72PW2SQQGHKMB4",
+      "atom_uri": "urn:zam:atom:01M8GDQAS5EK72PW2SQQGHKMB4",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-ko-information",
+      "title": "Testberichte, Vergleichsportale und Labels",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ko-information",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQAS47KMBK2M8T5HSG8Y5",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb1",
+          "topic_title": "Ökonomisches Handeln im privaten Haushalt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb1",
+          "topic_title": "Ökonomisches Handeln im privaten Haushalt",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQATQX83P9CXFRV7DVTJG",
+          "slug": "wrg8-ko-information-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ko-information",
+          "question": "Woran erkennt man ein glaubwürdiges Öko- oder Soziallabel?",
+          "concept": "Öffentliche Kriterien und regelmäßige Kontrolle durch eine unabhängige Stelle",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Öffentliche Kriterien und regelmäßige Kontrolle durch eine unabhängige Stelle",
+              "Eine große, grüne und auffällige Gestaltung auf der Vorderseite der Verpackung"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Eine große, grüne und auffällige Gestaltung auf der Vorderseite der Verpackung",
+              "reason": "Gestaltung sagt nichts über Kriterien oder Kontrolle aus."
+            },
+            {
+              "text": "Ein vom Hersteller selbst entworfenes Zeichen mit dem Wort fair",
+              "reason": "Ein selbst vergebenes Zeichen prüft niemand von außen."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQATR95NY9SNFBKAWM90A",
+          "slug": "wrg8-ko-information-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ko-information",
+          "question": "Warum sind Vergleichsportale nicht immer neutral?",
+          "concept": "Viele verdienen an Provisionen oder bezahlten Platzierungen und zeigen nicht alle Anbieter.",
+          "materiality": "material",
+          "sample_solution": "Ein Portal zeigt einen Handytarif ganz oben als Tipp. Der Anbieter zahlt dem Portal für jeden Abschluss eine Provision. Ein günstigerer Tarif eines anderen Anbieters fehlt in der Liste."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQAS6ANWWG5VHHF9DZ5E9",
+      "atom_uri": "urn:zam:atom:01M8GDQAS6ANWWG5VHHF9DZ5E9",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-ko-entscheidungsmatrix",
+      "title": "Mit der Entscheidungsmatrix wählen",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ko-entscheidungsmatrix",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQAS3ET020JZECR9BQW3F",
+          "type": "soft"
+        },
+        {
+          "atom_id": "01M8GDQAS5EK72PW2SQQGHKMB4",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb1",
+          "topic_title": "Ökonomisches Handeln im privaten Haushalt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb1",
+          "topic_title": "Ökonomisches Handeln im privaten Haushalt",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQATSTAJRENSQE6ZWETGX",
+          "slug": "wrg8-ko-entscheidungsmatrix-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ko-entscheidungsmatrix",
+          "question": "Wie berechnet man in einer Entscheidungsmatrix den Nutzwert einer Alternative?",
+          "concept": "Jede Bewertung mit dem Gewicht ihres Kriteriums multiplizieren und die Produkte addieren",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Jede Bewertung mit dem Gewicht ihres Kriteriums multiplizieren und die Produkte addieren",
+              "Alle Bewertungen ohne Gewichte addieren und durch die Zahl der Kriterien teilen"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Alle Bewertungen ohne Gewichte addieren und durch die Zahl der Kriterien teilen",
+              "reason": "So fallen die persönlichen Prioritäten weg, die die Gewichte ausdrücken."
+            },
+            {
+              "text": "Nur die Bewertung des wichtigsten Kriteriums zählen und alle anderen weglassen",
+              "reason": "Die Matrix soll gerade mehrere Kriterien zusammenführen."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQATTDCJVJBMFY7AFD6W9",
+          "slug": "wrg8-ko-entscheidungsmatrix-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ko-entscheidungsmatrix",
+          "question": "Warum ist eine Entscheidungsmatrix nicht objektiv?",
+          "concept": "Kriterien, Gewichte und Bewertungen legt man selbst fest; andere Gewichte ergeben andere Sieger.",
+          "materiality": "material",
+          "sample_solution": "Zwei Rucksäcke liegen bei 50 Prozent Preis, 30 Prozent Qualität und 20 Prozent Nachhaltigkeit gleichauf. Wer Nachhaltigkeit mit 30 Prozent gewichtet, macht den nachhaltigeren Rucksack zum Sieger."
+        },
+        {
+          "id": "01M8GDQATVHGMRRS5RK4NFSTFM",
+          "slug": "wrg8-ko-entscheidungsmatrix-transfer",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ko-entscheidungsmatrix",
+          "question": "Welchen Nutzwert hat ein Angebot mit den Bewertungen 4, 3 und 2 bei den Gewichten 50, 30 und 20 Prozent?",
+          "concept": "3,3",
+          "materiality": "material",
+          "sample_solution": "0,5 mal 4 ergibt 2, 0,3 mal 3 ergibt 0,9 und 0,2 mal 2 ergibt 0,4. Zusammen sind das 3,3 Punkte."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQAS7G79FJT055JE0GF88",
+      "atom_uri": "urn:zam:atom:01M8GDQAS7G79FJT055JE0GF88",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-ko-werbung",
+      "title": "Werbung und Verkaufspsychologie",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ko-werbung",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQAS5EK72PW2SQQGHKMB4",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb1",
+          "topic_title": "Ökonomisches Handeln im privaten Haushalt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb1",
+          "topic_title": "Ökonomisches Handeln im privaten Haushalt",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQATW98NYB8XZNKD3Y9NX",
+          "slug": "wrg8-ko-werbung-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ko-werbung",
+          "question": "Wofür stehen die vier Buchstaben der AIDA-Formel in der Werbung?",
+          "concept": "Attention, Interest, Desire, Action",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Attention, Interest, Desire, Action",
+              "Analyse, Information, Distribution, Absatz"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Analyse, Information, Distribution, Absatz",
+              "reason": "Das sind Begriffe aus dem Marketing, aber nicht die Stufen der Werbewirkung."
+            },
+            {
+              "text": "Angebot, Inhalt, Design, Abschluss",
+              "reason": "Diese Begriffe beschreiben nicht, wie Werbung auf Menschen wirkt."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQATX27BW5X9XRR77G789",
+          "slug": "wrg8-ko-werbung-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ko-werbung",
+          "question": "Was sind Quengelwaren, und warum stehen sie an der Kasse?",
+          "concept": "Kleine, verlockende Artikel wie Süßigkeiten, die Kinder in der Wartezeit entdecken und zu Spontankäufen führen.",
+          "materiality": "material",
+          "sample_solution": "An der Supermarktkasse wartet eine Familie. Auf Augenhöhe des Kindes liegen Überraschungseier. Das Kind quengelt, und die Mutter kauft eines, obwohl es nicht auf der Einkaufsliste stand."
+        },
+        {
+          "id": "01M8GDQATYP6669C0MMZPMAPQ8",
+          "slug": "wrg8-ko-werbung-transfer",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ko-werbung",
+          "question": "Warum müssen bezahlte Beiträge von Influencern gekennzeichnet sein?",
+          "concept": "Weil das Verschleiern des kommerziellen Zwecks unlautere Werbung ist.",
+          "materiality": "material",
+          "sample_solution": "Eine Influencerin bekommt Geld für ein Video über einen Energydrink. Ohne den Hinweis Werbung oder Anzeige würden Follower das Video für eine persönliche Empfehlung halten."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQAS844JHZ2F8Y86TBXCG",
+      "atom_uri": "urn:zam:atom:01M8GDQAS844JHZ2F8Y86TBXCG",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-ko-verhaltensoekonomie",
+      "title": "Verhaltensökonomie: Wie Preise uns täuschen",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ko-verhaltensoekonomie",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQAS7G79FJT055JE0GF88",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb1",
+          "topic_title": "Ökonomisches Handeln im privaten Haushalt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb1",
+          "topic_title": "Ökonomisches Handeln im privaten Haushalt",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQATZ5HDE6TBYKHJH3K7A",
+          "slug": "wrg8-ko-verhaltensoekonomie-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ko-verhaltensoekonomie",
+          "question": "Wie heißt der Effekt, durch den 19,99 Euro deutlich billiger wirkt als 20 Euro?",
+          "concept": "Schwelleneffekt",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Schwelleneffekt",
+              "Ankereffekt"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Ankereffekt",
+              "reason": "Der Ankereffekt beruht auf einer zuerst gesehenen Vergleichszahl wie einem Streichpreis."
+            },
+            {
+              "text": "Preis-Qualitäts-Illusion",
+              "reason": "Diese Illusion schließt von einem hohen Preis auf hohe Qualität."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAV0VWMZQFNR2AXDWJ1G",
+          "slug": "wrg8-ko-verhaltensoekonomie-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ko-verhaltensoekonomie",
+          "question": "Wie wirkt ein durchgestrichener Streichpreis auf Kunden?",
+          "concept": "Als Anker: Er setzt einen Vergleichsmaßstab, an dem der neue Preis billig wirkt.",
+          "materiality": "material",
+          "sample_solution": "Kopfhörer werden mit statt 149 Euro nur 89,99 Euro beworben. Andere Händler verlangen seit Monaten etwa 85 Euro. Nur der Anker lässt das Angebot wie ein Schnäppchen wirken."
+        },
+        {
+          "id": "01M8GDQAV1596JPXDJ2HD6HJVN",
+          "slug": "wrg8-ko-verhaltensoekonomie-transfer",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ko-verhaltensoekonomie",
+          "question": "Was ist die Preis-Qualitäts-Illusion?",
+          "concept": "Der Fehlschluss, ein teureres Produkt sei automatisch besser.",
+          "materiality": "material",
+          "sample_solution": "Ein Kunde kauft das teuerste Sonnenspray, weil teuer besser schützen müsse. Ein Test zeigt, dass ein günstiges Spray genauso gut schützt."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQAS9XWBCE91MQ28CE1PR",
+      "atom_uri": "urn:zam:atom:01M8GDQAS9XWBCE91MQ28CE1PR",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-ge-geldfunktionen",
+      "title": "Wozu wir Geld brauchen: die Funktionen des Geldes",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ge-geldfunktionen",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQAS2BHZHBNYRTTCT8V9W",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb1",
+          "topic_title": "Ökonomisches Handeln im privaten Haushalt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb1",
+          "topic_title": "Ökonomisches Handeln im privaten Haushalt",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAV2QN567VK13WT5M306",
+          "slug": "wrg8-ge-geldfunktionen-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ge-geldfunktionen",
+          "question": "Welche drei Funktionen erfüllt Geld?",
+          "concept": "Tauschmittel, Recheneinheit und Wertaufbewahrungsmittel",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Tauschmittel, Recheneinheit und Wertaufbewahrungsmittel",
+              "Rohstoff, Werkzeug und Schmuck für den täglichen Gebrauch"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Rohstoff, Werkzeug und Schmuck für den täglichen Gebrauch",
+              "reason": "Das beschreibt Warengeld mit Gebrauchswert, nicht die Funktionen von Geld."
+            },
+            {
+              "text": "Steuer, Zins und Lohn in einer Volkswirtschaft",
+              "reason": "Das sind Einkommen und Abgaben, keine Funktionen des Geldes."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAV3Z6CRDENEA09KFV9Z",
+          "slug": "wrg8-ge-geldfunktionen-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ge-geldfunktionen",
+          "question": "Warum gilt der Euro als Geld, obwohl Banknoten kaum Materialwert haben?",
+          "concept": "Weil alle darauf vertrauen, dass andere ihn annehmen und sein Wert stabil bleibt.",
+          "materiality": "material",
+          "sample_solution": "Ein 50-Euro-Schein ist bedrucktes Papier. Ich nehme ihn trotzdem für mein Fahrrad an, weil ich sicher bin, dass der Bäcker und jeder andere ihn morgen ebenfalls annimmt."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQASAJXGTEEQ4BMNR0MNA",
+      "atom_uri": "urn:zam:atom:01M8GDQASAJXGTEEQ4BMNR0MNA",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-ge-geldwert",
+      "title": "Geldwertstabilität: Inflation und Deflation",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ge-geldwert",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQAS9XWBCE91MQ28CE1PR",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb1",
+          "topic_title": "Ökonomisches Handeln im privaten Haushalt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb1",
+          "topic_title": "Ökonomisches Handeln im privaten Haushalt",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAV4K9SW0N58FKXR0PRB",
+          "slug": "wrg8-ge-geldwert-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ge-geldwert",
+          "question": "Was passiert bei einer Inflation mit der Kaufkraft des Geldes?",
+          "concept": "Sie sinkt, weil das allgemeine Preisniveau steigt.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sie sinkt, weil das allgemeine Preisniveau steigt.",
+              "Sie steigt, weil das allgemeine Preisniveau sinkt."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Sie steigt, weil das allgemeine Preisniveau sinkt.",
+              "reason": "Das beschreibt eine Deflation, nicht eine Inflation."
+            },
+            {
+              "text": "Sie bleibt gleich, weil sich nur die Löhne verändern.",
+              "reason": "Bei Inflation verändern sich die Preise, und damit die Kaufkraft."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAV54F471W8CCT4GW1W4",
+          "slug": "wrg8-ge-geldwert-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ge-geldwert",
+          "question": "Wer gewinnt und wer verliert bei einer hohen Inflation?",
+          "concept": "Schuldner gewinnen real, Sparer und Arbeitnehmer mit langsam steigenden Löhnen verlieren.",
+          "materiality": "material",
+          "sample_solution": "Eine Familie mit festem Kreditzins zahlt real weniger zurück. Eine Rentnerin mit Sparbuch ohne Zinsen kann sich vom Ersparten weniger kaufen. Ein Azubi ohne Lohnerhöhung verliert Kaufkraft."
+        },
+        {
+          "id": "01M8GDQAV66X41AR66YBZ2F3QG",
+          "slug": "wrg8-ge-geldwert-transfer",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ge-geldwert",
+          "question": "Welche Inflationsrate strebt die Europäische Zentralbank mittelfristig an?",
+          "concept": "Zwei Prozent",
+          "materiality": "material",
+          "sample_solution": "Die EZB hält eine niedrige, stabile Inflation von zwei Prozent für Preisstabilität. Sie will weder hohe Inflation, die Sparer trifft, noch Deflation, bei der Menschen Käufe aufschieben."
+        },
+        {
+          "id": "01M8GDQAV7QSNMYJK43B66FQ0W",
+          "slug": "wrg8-ge-geldwert-vertiefung",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ge-geldwert",
+          "question": "Warum ist eine Deflation gefährlich?",
+          "concept": "Menschen schieben Käufe auf, Unternehmen verkaufen weniger, und eine Abwärtsspirale kann entstehen.",
+          "materiality": "material",
+          "sample_solution": "Alle erwarten, dass Fernseher nächstes Jahr billiger sind, und warten. Die Händler verkaufen weniger, senken Preise und entlassen Personal. Dadurch sinkt die Nachfrage weiter."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQASB2W5BHZ8959ANB75N",
+      "atom_uri": "urn:zam:atom:01M8GDQASB2W5BHZ8959ANB75N",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-ge-zahlungsarten",
+      "title": "Zahlungsarten im Überblick und richtig wählen",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ge-zahlungsarten",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQAS9XWBCE91MQ28CE1PR",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb1",
+          "topic_title": "Ökonomisches Handeln im privaten Haushalt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb1",
+          "topic_title": "Ökonomisches Handeln im privaten Haushalt",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAV8K34ZZQSQTQ2RHHH0",
+          "slug": "wrg8-ge-zahlungsarten-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ge-zahlungsarten",
+          "question": "Welche Zahlungsart passt zu einem gleich hohen Betrag, der jeden Monat an denselben Empfänger geht?",
+          "concept": "Der Dauerauftrag",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Der Dauerauftrag",
+              "Die SEPA-Lastschrift"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Die SEPA-Lastschrift",
+              "reason": "Die Lastschrift passt vor allem zu wechselnden Beträgen, die der Empfänger einzieht."
+            },
+            {
+              "text": "Die Barzahlung",
+              "reason": "Für regelmäßige Überweisungen ist Bargeld unpraktisch."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAV93JJA94932XTJ12BS",
+          "slug": "wrg8-ge-zahlungsarten-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ge-zahlungsarten",
+          "question": "Was unterscheidet eine Debitkarte von einer Kreditkarte?",
+          "concept": "Bei der Debitkarte wird direkt vom Girokonto abgebucht, bei der Kreditkarte werden Zahlungen gesammelt und später abgerechnet.",
+          "materiality": "material",
+          "sample_solution": "Mit der Girocard bezahlt Jonas im Laden, das Geld fehlt nach wenigen Tagen auf seinem Konto. Seine Mutter zahlt mit Kreditkarte; die Bank bucht alle Zahlungen des Monats gesammelt ab."
+        },
+        {
+          "id": "01M8GDQAVATHCMJ7E6C7SD29MJ",
+          "slug": "wrg8-ge-zahlungsarten-transfer",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ge-zahlungsarten",
+          "question": "Nach welchen drei Kriterien wählt man eine Zahlungsart aus?",
+          "concept": "Sicherheit, Kosten und Zweckmäßigkeit",
+          "materiality": "material",
+          "sample_solution": "Für einen unbekannten Onlineshop zählt vor allem Sicherheit, etwa Kauf auf Rechnung. Am Flohmarkt ist Bargeld zweckmäßig. Bei Konten und Karten prüft man die Gebühren."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQASCE371MMCMH00PYZZ7",
+      "atom_uri": "urn:zam:atom:01M8GDQASCE371MMCMH00PYZZ7",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-ge-digital",
+      "title": "Digital bezahlen: Möglichkeiten und Risiken",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ge-digital",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQASB2W5BHZ8959ANB75N",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb1",
+          "topic_title": "Ökonomisches Handeln im privaten Haushalt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb1",
+          "topic_title": "Ökonomisches Handeln im privaten Haushalt",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAVBQ9PF12VZK22PXTSW",
+          "slug": "wrg8-ge-digital-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ge-digital",
+          "question": "Wie heißt der Betrugsversuch, bei dem Täter mit gefälschten Nachrichten Zugangsdaten abgreifen?",
+          "concept": "Phishing",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Phishing",
+              "Inkasso"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Inkasso",
+              "reason": "Inkasso ist das Eintreiben offener Forderungen, kein Datendiebstahl."
+            },
+            {
+              "text": "Skonto",
+              "reason": "Skonto ist ein Preisnachlass für schnelle Zahlung."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAVC537ZBD3WE1GGTXBB",
+          "slug": "wrg8-ge-digital-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ge-digital",
+          "question": "Was bedeutet starke Kundenauthentifizierung bei Onlinezahlungen?",
+          "concept": "Eine Zahlung wird mit zwei unabhängigen Merkmalen bestätigt, etwa Gerät und PIN oder Fingerabdruck.",
+          "materiality": "material",
+          "sample_solution": "Amira kauft online ein und bestätigt die Zahlung in der Banking-App auf ihrem Handy mit dem Fingerabdruck. Ein Täter mit ihrem Passwort allein könnte nicht bezahlen."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQASD43TKFEP7T5W3YCWC",
+      "atom_uri": "urn:zam:atom:01M8GDQASD43TKFEP7T5W3YCWC",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-ge-haushaltsplan",
+      "title": "Den Haushaltsplan mit der Tabellenkalkulation führen",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ge-haushaltsplan",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQASB2W5BHZ8959ANB75N",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb1",
+          "topic_title": "Ökonomisches Handeln im privaten Haushalt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb1",
+          "topic_title": "Ökonomisches Handeln im privaten Haushalt",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAVD6EQ45PA38DYE65Q7",
+          "slug": "wrg8-ge-haushaltsplan-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ge-haushaltsplan",
+          "question": "Wie unterscheiden sich fixe von variablen Ausgaben?",
+          "concept": "Fixe fallen regelmäßig gleich an, variable kann man selbst von Monat zu Monat steuern.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Fixe fallen regelmäßig gleich an, variable kann man selbst von Monat zu Monat steuern.",
+              "Fixe kann man selbst von Monat zu Monat steuern, variable fallen regelmäßig gleich an."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Fixe kann man selbst von Monat zu Monat steuern, variable fallen regelmäßig gleich an.",
+              "reason": "Hier sind die beiden Begriffe vertauscht."
+            },
+            {
+              "text": "Fixe gibt es nur bei Unternehmen, variable nur in privaten Haushalten.",
+              "reason": "Beide Arten von Ausgaben gibt es in Haushalten und Unternehmen."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAVE423HC23DCGXAKE2N",
+          "slug": "wrg8-ge-haushaltsplan-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ge-haushaltsplan",
+          "question": "Wie berechnet man in einer Tabellenkalkulation den Überschuss, wenn die Einnahmen in B4 und die Ausgaben in B8 stehen?",
+          "concept": "Mit der Formel =B4-B8",
+          "materiality": "material",
+          "sample_solution": "Formeln beginnen mit einem Gleichheitszeichen. In B9 schreibt Lea =B4-B8. Ändert sie eine Ausgabe, rechnet das Programm den Überschuss sofort neu."
+        },
+        {
+          "id": "01M8GDQAVF74MH2AG3PJSXN7NZ",
+          "slug": "wrg8-ge-haushaltsplan-transfer",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ge-haushaltsplan",
+          "question": "Wie lange braucht man bei 30 Euro Sparrate im Monat für ein Ziel von 240 Euro?",
+          "concept": "Acht Monate",
+          "materiality": "material",
+          "sample_solution": "240 Euro geteilt durch 30 Euro ergibt 8. Spart Lea durch weniger Snacks 10 Euro mehr, braucht sie nur noch 240 geteilt durch 40, also sechs Monate."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQASEY8HTGZCD270DTZPE",
+      "atom_uri": "urn:zam:atom:01M8GDQASEY8HTGZCD270DTZPE",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-ge-ueberschuldung",
+      "title": "Überschuldung: Ursachen, Folgen und Hilfe",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ge-ueberschuldung",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQASD43TKFEP7T5W3YCWC",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb1",
+          "topic_title": "Ökonomisches Handeln im privaten Haushalt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb1",
+          "topic_title": "Ökonomisches Handeln im privaten Haushalt",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAVGCGAYMHSA6H14QF1F",
+          "slug": "wrg8-ge-ueberschuldung-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ge-ueberschuldung",
+          "question": "Ab wann gilt ein Haushalt als überschuldet?",
+          "concept": "Wenn Einkommen und Vermögen dauerhaft nicht für alle fälligen Zahlungen reichen.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Wenn Einkommen und Vermögen dauerhaft nicht für alle fälligen Zahlungen reichen.",
+              "Sobald er überhaupt einen Kredit oder einen Ratenkauf abgeschlossen hat."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Sobald er überhaupt einen Kredit oder einen Ratenkauf abgeschlossen hat.",
+              "reason": "Schulden allein sind keine Überschuldung, solange die Raten sicher bezahlt werden."
+            },
+            {
+              "text": "Wenn eine einzelne Rechnung einmal ein paar Tage zu spät bezahlt wurde.",
+              "reason": "Eine einmalige Verspätung ist keine dauerhafte Zahlungsunfähigkeit."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAVH7Z3TB9WRZK2ARK3R",
+          "slug": "wrg8-ge-ueberschuldung-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ge-ueberschuldung",
+          "question": "Was sind häufige Ursachen für Überschuldung?",
+          "concept": "Arbeitslosigkeit, Krankheit, Trennung und ein Konsumverhalten über die eigenen Verhältnisse.",
+          "materiality": "material",
+          "sample_solution": "Herr Brandt verliert nach einem Unfall für Monate sein Einkommen. Tim hat drei Ratenkäufe und zwei Handyverträge gleichzeitig. In beiden Fällen reicht das Geld nicht mehr für alle Raten."
+        },
+        {
+          "id": "01M8GDQAVJ2Q2GJ4CWYGXJYNNS",
+          "slug": "wrg8-ge-ueberschuldung-transfer",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ge-ueberschuldung",
+          "question": "Warum täuscht eine kleine Monatsrate beim Ratenkauf leicht?",
+          "concept": "Eine längere Laufzeit senkt die Rate, erhöht aber die Gesamtkosten.",
+          "materiality": "material",
+          "sample_solution": "Ein Laptop für 600 Euro kostet bei 9 Prozent Zins über 12 Monate rund 52 Euro im Monat, über 24 Monate nur rund 27 Euro. Insgesamt zahlt man bei der längeren Laufzeit aber mehr Zinsen."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQASFPG4X4VA2XV2QGFZ3",
+      "atom_uri": "urn:zam:atom:01M8GDQASFPG4X4VA2XV2QGFZ3",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-un-arbeitsteilung",
+      "title": "Arbeitsteilung: Spezialisierung, Kooperation, Koordination",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=un-arbeitsteilung",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQAS2BHZHBNYRTTCT8V9W",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb2",
+          "topic_title": "Ökonomisches Handeln im Unternehmen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb2",
+          "topic_title": "Ökonomisches Handeln im Unternehmen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAVKQER0Q3XTMKPDPTTD",
+          "slug": "wrg8-un-arbeitsteilung-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=un-arbeitsteilung",
+          "question": "Welche drei Grundprinzipien hat die Arbeitsteilung?",
+          "concept": "Spezialisierung, Kooperation und Koordination",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Spezialisierung, Kooperation und Koordination",
+              "Beschaffung, Produktion und Absatz"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Beschaffung, Produktion und Absatz",
+              "reason": "Das sind Funktionsbereiche eines Unternehmens, keine Prinzipien der Arbeitsteilung."
+            },
+            {
+              "text": "Planung, Kontrolle und Bewertung",
+              "reason": "Das sind Aufgaben der Leitung, nicht die Grundprinzipien der Arbeitsteilung."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAVM31QTAYMHYVWTFAXT",
+          "slug": "wrg8-un-arbeitsteilung-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=un-arbeitsteilung",
+          "question": "Warum bringt Spezialisierung ohne Koordination oft wenig?",
+          "concept": "Ohne Abstimmung entstehen Leerlauf, Wartezeiten und Doppelarbeit.",
+          "materiality": "material",
+          "sample_solution": "Am Waffelstand hat jeder eine Station, aber niemand plant. Die Bäcker warten auf Teig, an der Kasse staut es sich, und das Team schafft weniger als Alleskönner."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQASGYH8EWY7RC13X08QH",
+      "atom_uri": "urn:zam:atom:01M8GDQASGYH8EWY7RC13X08QH",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-un-arbeitsteilung-folgen",
+      "title": "Vorteile und Probleme der Arbeitsteilung",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=un-arbeitsteilung-folgen",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQASFPG4X4VA2XV2QGFZ3",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb2",
+          "topic_title": "Ökonomisches Handeln im Unternehmen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb2",
+          "topic_title": "Ökonomisches Handeln im Unternehmen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAVN1KA80697A4TFYQ5Z",
+          "slug": "wrg8-un-arbeitsteilung-folgen-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=un-arbeitsteilung-folgen",
+          "question": "Wie berechnet man die Wirtschaftlichkeit?",
+          "concept": "Ertrag geteilt durch Aufwand, beides in Euro",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Ertrag geteilt durch Aufwand, beides in Euro",
+              "Hergestellte Menge geteilt durch die Arbeitsstunden"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Hergestellte Menge geteilt durch die Arbeitsstunden",
+              "reason": "Das ist die Produktivität, die in Mengen rechnet."
+            },
+            {
+              "text": "Ertrag minus Aufwand, beides in Euro",
+              "reason": "Die Differenz ist der Gewinn, nicht die Wirtschaftlichkeit."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAVPW844C0VMVWSAR72J",
+          "slug": "wrg8-un-arbeitsteilung-folgen-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=un-arbeitsteilung-folgen",
+          "question": "Was sind typische Probleme der Arbeitsteilung?",
+          "concept": "Monotonie, einseitige Belastung, Abhängigkeit von einzelnen Stellen und Koordinationsaufwand.",
+          "materiality": "material",
+          "sample_solution": "In einer Fahrradfabrik zieht ein Mitarbeiter den ganzen Tag dieselben Schrauben an. Fällt die Lackiererei aus, stehen alle anderen Stationen still."
+        },
+        {
+          "id": "01M8GDQAVQ20CY384S3RH6MPX8",
+          "slug": "wrg8-un-arbeitsteilung-folgen-transfer",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=un-arbeitsteilung-folgen",
+          "question": "Wie hoch ist die Produktivität, wenn drei Personen in drei Stunden 54 Vogelhäuser bauen?",
+          "concept": "6 Stück je Arbeitsstunde",
+          "materiality": "material",
+          "sample_solution": "Drei Personen mal drei Stunden sind 9 Arbeitsstunden. 54 geteilt durch 9 ergibt 6 Vogelhäuser je Arbeitsstunde."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQASHCWH9M1FSRCBTYC8D",
+      "atom_uri": "urn:zam:atom:01M8GDQASHCWH9M1FSRCBTYC8D",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-un-aufbau",
+      "title": "Der Aufbau eines Unternehmens",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=un-aufbau",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQASFPG4X4VA2XV2QGFZ3",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb2",
+          "topic_title": "Ökonomisches Handeln im Unternehmen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb2",
+          "topic_title": "Ökonomisches Handeln im Unternehmen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAVRPTE1VMJ0DQWQ66VN",
+          "slug": "wrg8-un-aufbau-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=un-aufbau",
+          "question": "Wie heißt die kleinste Einheit der Aufbauorganisation?",
+          "concept": "Die Stelle",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Stelle",
+              "Die Abteilung"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Die Abteilung",
+              "reason": "Eine Abteilung fasst mehrere Stellen zusammen."
+            },
+            {
+              "text": "Das Organigramm",
+              "reason": "Das Organigramm ist die grafische Darstellung des Aufbaus."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAVS67VK2F18GTWV1MNV",
+          "slug": "wrg8-un-aufbau-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=un-aufbau",
+          "question": "Welche Funktionsbereiche hat ein Unternehmen typischerweise?",
+          "concept": "Beschaffung, Produktion und Absatz, ergänzt durch Verwaltung und Leitung.",
+          "materiality": "material",
+          "sample_solution": "Eine Möbelfirma kauft Holz ein, fertigt daraus Schränke und verkauft sie. Die Verwaltung rechnet Löhne ab, die Geschäftsführung setzt Ziele und steuert die Bereiche."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQASJ4GPQZ1ZG1GJ0P64T",
+      "atom_uri": "urn:zam:atom:01M8GDQASJ4GPQZ1ZG1GJ0P64T",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-un-ablauf",
+      "title": "Abläufe im Unternehmen: Kernprozesse und unterstützende Prozesse",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=un-ablauf",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQASHCWH9M1FSRCBTYC8D",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb2",
+          "topic_title": "Ökonomisches Handeln im Unternehmen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb2",
+          "topic_title": "Ökonomisches Handeln im Unternehmen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAVT36QXQ5AAFJBNJ7FB",
+          "slug": "wrg8-un-ablauf-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=un-ablauf",
+          "question": "Was ist ein Kernprozess eines Unternehmens?",
+          "concept": "Ein Ablauf, mit dem es seine eigentliche Leistung für die Kunden erstellt",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Ein Ablauf, mit dem es seine eigentliche Leistung für die Kunden erstellt",
+              "Ein Ablauf, der im Hintergrund Personal, Wartung oder IT betreut"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Ein Ablauf, der im Hintergrund Personal, Wartung oder IT betreut",
+              "reason": "Das sind unterstützende Prozesse."
+            },
+            {
+              "text": "Ein Ablauf, der nur einmal im Jahr bei der Inventur stattfindet",
+              "reason": "Kernprozesse laufen ständig und erstellen die Leistung für Kunden."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAVVR4QZCYWA94RTT20B",
+          "slug": "wrg8-un-ablauf-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=un-ablauf",
+          "question": "Welchen Mehrwert bringt eine gemeinsame Unternehmenssoftware für die Abläufe?",
+          "concept": "Alle Abteilungen sehen Aufträge und Bestände sofort; Übergaben gehen nicht verloren.",
+          "materiality": "material",
+          "sample_solution": "Der Vertrieb erfasst eine Bestellung. Das Lager sieht sie sofort, der Bestand wird reserviert, und die Buchhaltung kann die Rechnung erstellen, ohne dass jemand E-Mails weiterleiten muss."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQASKY8R9PS5APNM9X4N6",
+      "atom_uri": "urn:zam:atom:01M8GDQASKY8R9PS5APNM9X4N6",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-un-fertigungstypen",
+      "title": "Fertigungstypen: Einzel-, Varianten- und Massenfertigung",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=un-fertigungstypen",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQASJ4GPQZ1ZG1GJ0P64T",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb2",
+          "topic_title": "Ökonomisches Handeln im Unternehmen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb2",
+          "topic_title": "Ökonomisches Handeln im Unternehmen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAVWVCEYBQ7XGVW4KCDR",
+          "slug": "wrg8-un-fertigungstypen-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=un-fertigungstypen",
+          "question": "Welcher Fertigungstyp liegt vor, wenn ein Grundprodukt in wählbaren Ausführungen hergestellt wird?",
+          "concept": "Variantenfertigung",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Variantenfertigung",
+              "Einzelfertigung"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Einzelfertigung",
+              "reason": "Bei der Einzelfertigung entsteht jedes Produkt nur einmal nach Kundenwunsch."
+            },
+            {
+              "text": "Massenfertigung",
+              "reason": "Bei der Massenfertigung gibt es keine Wahl zwischen Ausführungen."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAVX8P1SK1SD34JSBD03",
+          "slug": "wrg8-un-fertigungstypen-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=un-fertigungstypen",
+          "question": "Warum sind die Kosten je Stück bei der Massenfertigung niedrig?",
+          "concept": "Weil sich die Fixkosten für Maschinen auf sehr viele gleiche Stücke verteilen.",
+          "materiality": "material",
+          "sample_solution": "Eine Anlage für Getränkedosen kostet viel Geld. Weil sie Millionen Dosen herstellt, entfällt auf jede Dose nur ein winziger Teil dieser Kosten."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQASMNBVNQ74CAX5F0718",
+      "atom_uri": "urn:zam:atom:01M8GDQASMNBVNQ74CAX5F0718",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-un-fertigungsverfahren",
+      "title": "Fertigungsverfahren: Werkstatt- und Fließfertigung",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=un-fertigungsverfahren",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQASKY8R9PS5APNM9X4N6",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb2",
+          "topic_title": "Ökonomisches Handeln im Unternehmen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb2",
+          "topic_title": "Ökonomisches Handeln im Unternehmen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAVYA9PS22NNV4PTAW5M",
+          "slug": "wrg8-un-fertigungsverfahren-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=un-fertigungsverfahren",
+          "question": "Welches Fertigungsverfahren ordnet die Arbeitsplätze in der Reihenfolge der Arbeitsschritte an?",
+          "concept": "Die Fließfertigung",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Fließfertigung",
+              "Die Werkstattfertigung"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Die Werkstattfertigung",
+              "reason": "Dort stehen gleichartige Maschinen zusammen, und das Werkstück wandert je nach Bedarf."
+            },
+            {
+              "text": "Die Baustellenfertigung",
+              "reason": "Dort kommen Menschen und Maschinen zum ortsfesten Produkt."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAVZ7WBCPHRYG5XR4355",
+          "slug": "wrg8-un-fertigungsverfahren-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=un-fertigungsverfahren",
+          "question": "Was sind Vor- und Nachteile der Werkstattfertigung?",
+          "concept": "Sie ist flexibel für wechselnde Aufträge, hat aber lange Wege, Wartezeiten und hohe Kosten je Stück.",
+          "materiality": "material",
+          "sample_solution": "Eine Schlosserei baut Treppengeländer nach Maß. Jedes Werkstück nimmt einen eigenen Weg durch Säge, Bohrerei und Schweißerei. Das passt zu Einzelstücken, wäre für 20.000 gleiche Teile aber zu langsam."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQASNR9JZAKWWY0PCFQTT",
+      "atom_uri": "urn:zam:atom:01M8GDQASNR9JZAKWWY0PCFQTT",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-ma-praesentation",
+      "title": "Unternehmenspräsentationen analysieren",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ma-praesentation",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQAS7G79FJT055JE0GF88",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb2",
+          "topic_title": "Ökonomisches Handeln im Unternehmen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb2",
+          "topic_title": "Ökonomisches Handeln im Unternehmen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAW06BM4TEGQB2CSCX7G",
+          "slug": "wrg8-ma-praesentation-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ma-praesentation",
+          "question": "Welche vier Aspekte machen eine Präsentation erfolgreich?",
+          "concept": "Zielgruppenorientierung, Reduktion, Visualisierung und verständliche Sprache",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Zielgruppenorientierung, Reduktion, Visualisierung und verständliche Sprache",
+              "Möglichst viele Folien, viel Text, viele Fachbegriffe und eine lange Dauer"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Möglichst viele Folien, viel Text, viele Fachbegriffe und eine lange Dauer",
+              "reason": "Viel Text und Fachsprache überfordern das Publikum."
+            },
+            {
+              "text": "Teure Technik, Musik, Animationen und Effekte auf jeder einzelnen Folie",
+              "reason": "Effekte lenken ab und ersetzen keine klaren Botschaften."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAW1KG1JW4NEJJJ6G984",
+          "slug": "wrg8-ma-praesentation-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ma-praesentation",
+          "question": "Warum sollte man Folien nicht vorlesen?",
+          "concept": "Das Publikum liest schneller, als vorgelesen wird, und hört dann nicht mehr zu.",
+          "materiality": "material",
+          "sample_solution": "Gruppe A liest zwölf Textfolien vor, die Klasse ist gelangweilt. Gruppe B zeigt ein Foto und erzählt frei; die Mitschüler hören zu und merken sich die drei Kernbotschaften."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQASPJYMJSMM6NBWWDX88",
+      "atom_uri": "urn:zam:atom:01M8GDQASPJYMJSMM6NBWWDX88",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-ma-marketing",
+      "title": "Marketing auf Käufermärkten",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ma-marketing",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQASNR9JZAKWWY0PCFQTT",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb2",
+          "topic_title": "Ökonomisches Handeln im Unternehmen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb2",
+          "topic_title": "Ökonomisches Handeln im Unternehmen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAW2N1528PHFZ9VANZFV",
+          "slug": "wrg8-ma-marketing-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ma-marketing",
+          "question": "Was kennzeichnet einen Käufermarkt?",
+          "concept": "Das Angebot übersteigt die Nachfrage, und die Käufer können zwischen vielen Angeboten wählen.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Das Angebot übersteigt die Nachfrage, und die Käufer können zwischen vielen Angeboten wählen.",
+              "Die Nachfrage übersteigt das Angebot, und die Anbieter verkaufen fast alles."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Die Nachfrage übersteigt das Angebot, und die Anbieter verkaufen fast alles.",
+              "reason": "Das beschreibt einen Verkäufermarkt."
+            },
+            {
+              "text": "Ein einziger Anbieter bestimmt allein die Preise für alle Käufer.",
+              "reason": "Das beschreibt ein Monopol."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAW3NA04A1NPV4Z90WSP",
+          "slug": "wrg8-ma-marketing-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ma-marketing",
+          "question": "Warum ist Marketing mehr als Werbung?",
+          "concept": "Es ist eine Unternehmensphilosophie, die alle Entscheidungen an den Kundenbedürfnissen ausrichtet.",
+          "materiality": "material",
+          "sample_solution": "Eine Firma befragt vor der Produktion 200 Schüler, entwickelt danach Design und Preis, wählt passende Läden und erst zum Schluss die Werbung. Alles richtet sich nach der Zielgruppe."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQASQBT4FC20Z487Z3EGT",
+      "atom_uri": "urn:zam:atom:01M8GDQASQBT4FC20Z487Z3EGT",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-ma-marktanalyse",
+      "title": "Marktanalyse und Marketing-Mix",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ma-marktanalyse",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQASPJYMJSMM6NBWWDX88",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb2",
+          "topic_title": "Ökonomisches Handeln im Unternehmen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb2",
+          "topic_title": "Ökonomisches Handeln im Unternehmen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAW4V2FWDB2PQQHD7BMF",
+          "slug": "wrg8-ma-marktanalyse-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ma-marktanalyse",
+          "question": "Wie berechnet man den Marktanteil eines Unternehmens?",
+          "concept": "Eigener Absatz geteilt durch das Marktvolumen mal 100",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Eigener Absatz geteilt durch das Marktvolumen mal 100",
+              "Marktvolumen geteilt durch den eigenen Absatz mal 100"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Marktvolumen geteilt durch den eigenen Absatz mal 100",
+              "reason": "Hier sind die beiden Größen vertauscht."
+            },
+            {
+              "text": "Eigener Absatz geteilt durch das Marktpotenzial mal 100",
+              "reason": "Der Marktanteil bezieht sich auf das tatsächliche Marktvolumen."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAW516JDDA8KWKY2K2T2",
+          "slug": "wrg8-ma-marktanalyse-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ma-marktanalyse",
+          "question": "Was unterscheidet Marktpotenzial und Marktvolumen?",
+          "concept": "Das Potenzial ist die größtmögliche Absatzmenge, das Volumen die tatsächlich verkaufte Menge aller Anbieter.",
+          "materiality": "material",
+          "sample_solution": "Zwei Millionen Schüler würden eine Trinkflasche kaufen, das ist das Potenzial. Tatsächlich werden 800.000 verkauft, das ist das Volumen. Der Markt kann also noch wachsen."
+        },
+        {
+          "id": "01M8GDQAW665ETY8DSP39RSERQ",
+          "slug": "wrg8-ma-marktanalyse-transfer",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ma-marktanalyse",
+          "question": "Aus welchen vier Instrumenten besteht der Marketing-Mix?",
+          "concept": "Produkt-, Preis-, Distributions- und Kommunikationspolitik",
+          "materiality": "material",
+          "sample_solution": "Ein Müslihersteller bringt eine neue Sorte heraus, legt einen Einführungspreis fest, verkauft auch an Bahnhofsautomaten und wirbt in sozialen Netzwerken. Alle vier Instrumente müssen zusammenpassen."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQASRSEX64K70PQMYME8P",
+      "atom_uri": "urn:zam:atom:01M8GDQASRSEX64K70PQMYME8P",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-ma-produkt",
+      "title": "Produkt- und Sortimentspolitik: der Produktlebenszyklus",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ma-produkt",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQASQBT4FC20Z487Z3EGT",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb2",
+          "topic_title": "Ökonomisches Handeln im Unternehmen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb2",
+          "topic_title": "Ökonomisches Handeln im Unternehmen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAW7Q5FS5YW45XRB3BN0",
+          "slug": "wrg8-ma-produkt-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ma-produkt",
+          "question": "Welche fünf Phasen hat der Produktlebenszyklus?",
+          "concept": "Einführung, Wachstum, Reife, Sättigung und Rückgang",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Einführung, Wachstum, Reife, Sättigung und Rückgang",
+              "Planung, Entwicklung, Test, Verkauf und Entsorgung"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Planung, Entwicklung, Test, Verkauf und Entsorgung",
+              "reason": "Das beschreibt die Entstehung eines Produkts, nicht den Verlauf am Markt."
+            },
+            {
+              "text": "Beschaffung, Produktion, Lagerung, Absatz und Service",
+              "reason": "Das sind betriebliche Funktionen, keine Phasen am Markt."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAW8AAK1B5DGKJAXJ3WH",
+          "slug": "wrg8-ma-produkt-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ma-produkt",
+          "question": "Was ist eine Produktvariation, und wann setzt man sie ein?",
+          "concept": "Die Veränderung eines bestehenden Produkts, oft in der Sättigung, um den Lebenszyklus zu verlängern.",
+          "materiality": "material",
+          "sample_solution": "Eine Smartwatch verkauft sich kaum noch, weil fast alle Stammkunden eine haben. Der Hersteller bringt neue Armbänder und einen besseren Akku heraus und gibt so neue Kaufgründe."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQASSGYGXDV0YGY03N44B",
+      "atom_uri": "urn:zam:atom:01M8GDQASSGYGXDV0YGY03N44B",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-ma-portfolio",
+      "title": "Die Vier-Felder-Portfolioanalyse",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ma-portfolio",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQASRSEX64K70PQMYME8P",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb2",
+          "topic_title": "Ökonomisches Handeln im Unternehmen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb2",
+          "topic_title": "Ökonomisches Handeln im Unternehmen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAW95FCDE1YM2SC4WECR",
+          "slug": "wrg8-ma-portfolio-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ma-portfolio",
+          "question": "Wie heißt ein Produkt mit hohem relativem Marktanteil auf einem kaum wachsenden Markt?",
+          "concept": "Cash Cow",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Cash Cow",
+              "Star"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Star",
+              "reason": "Ein Star hat einen hohen Anteil auf einem stark wachsenden Markt."
+            },
+            {
+              "text": "Question Mark",
+              "reason": "Ein Question Mark hat einen kleinen Anteil auf einem wachsenden Markt."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAWAFM6TRDYBDQTV700T",
+          "slug": "wrg8-ma-portfolio-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ma-portfolio",
+          "question": "Warum braucht ein Unternehmen Cash Cows in seinem Portfolio?",
+          "concept": "Ihre hohen Überschüsse finanzieren Investitionen in Stars und Question Marks.",
+          "materiality": "material",
+          "sample_solution": "Eine klassische Limonade ist seit Jahren Marktführer und bringt viel Geld bei geringem Aufwand. Damit bezahlt der Hersteller die Werbung für seinen neuen Eistee."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQAST919MMGAG9KPN3A4A",
+      "atom_uri": "urn:zam:atom:01M8GDQAST919MMGAG9KPN3A4A",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-ma-preis",
+      "title": "Preispolitik: Strategien, Konditionen und Kalkulation",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ma-preis",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQASQBT4FC20Z487Z3EGT",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb2",
+          "topic_title": "Ökonomisches Handeln im Unternehmen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb2",
+          "topic_title": "Ökonomisches Handeln im Unternehmen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAWBKG168KDXBFGNVFYG",
+          "slug": "wrg8-ma-preis-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ma-preis",
+          "question": "Welche Preisstrategie beginnt mit einem hohen Einführungspreis, der später gesenkt wird?",
+          "concept": "Die Abschöpfungsstrategie",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Abschöpfungsstrategie",
+              "Die Durchdringungsstrategie"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Die Durchdringungsstrategie",
+              "reason": "Sie beginnt mit einem niedrigen Preis, um schnell Kunden zu gewinnen."
+            },
+            {
+              "text": "Die Niedrigpreisstrategie",
+              "reason": "Sie setzt dauerhaft auf niedrige Preise."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAWCNT7T97RFS0V2XNQA",
+          "slug": "wrg8-ma-preis-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ma-preis",
+          "question": "Wie kommt man von den Selbstkosten zum Bruttoverkaufspreis?",
+          "concept": "Selbstkosten plus Gewinnzuschlag ergeben den Nettoverkaufspreis, darauf kommt die Umsatzsteuer.",
+          "materiality": "material",
+          "sample_solution": "Ein Helm hat 40 Euro Selbstkosten. Mit 20 Prozent Gewinnzuschlag sind es 48 Euro netto, mit 19 Prozent Umsatzsteuer 57,12 Euro brutto."
+        },
+        {
+          "id": "01M8GDQAWD09WY5TAJFBATRPZA",
+          "slug": "wrg8-ma-preis-transfer",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ma-preis",
+          "question": "Was ist ein Skonto?",
+          "concept": "Ein Preisnachlass für die Zahlung innerhalb einer kurzen Frist",
+          "materiality": "material",
+          "sample_solution": "Auf einer Rechnung steht: zahlbar in 30 Tagen, bei Zahlung innerhalb von zehn Tagen 2 Prozent Skonto. Wer schnell zahlt, spart bei 500 Euro also 10 Euro."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQASVZZSYKMND4D9H914X",
+      "atom_uri": "urn:zam:atom:01M8GDQASVZZSYKMND4D9H914X",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-ma-distribution",
+      "title": "Distributionspolitik: Wie kommt das Produkt zum Kunden?",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ma-distribution",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQASQBT4FC20Z487Z3EGT",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb2",
+          "topic_title": "Ökonomisches Handeln im Unternehmen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb2",
+          "topic_title": "Ökonomisches Handeln im Unternehmen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAWEXENZ0A0Z4KSHE2WA",
+          "slug": "wrg8-ma-distribution-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ma-distribution",
+          "question": "Wann spricht man von direktem Absatz?",
+          "concept": "Wenn der Hersteller selbst an die Endkunden verkauft, ohne Händler dazwischen",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Wenn der Hersteller selbst an die Endkunden verkauft, ohne Händler dazwischen",
+              "Wenn der Hersteller über Groß- und Einzelhandel an die Endkunden verkauft"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Wenn der Hersteller über Groß- und Einzelhandel an die Endkunden verkauft",
+              "reason": "Das ist indirekter Absatz über Absatzmittler."
+            },
+            {
+              "text": "Wenn die Kunden die Ware im Supermarkt selbst aus dem Regal nehmen",
+              "reason": "Der Supermarkt ist ein Händler, der Absatz ist also indirekt."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAWFMA3QDQFJSMBEVJ0X",
+          "slug": "wrg8-ma-distribution-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ma-distribution",
+          "question": "Was sind Vor- und Nachteile des indirekten Absatzes für einen Hersteller?",
+          "concept": "Er erreicht viele Kunden an vielen Orten, gibt aber eine Handelsspanne ab und hat weniger Einfluss auf die Präsentation.",
+          "materiality": "material",
+          "sample_solution": "Ein Joghurt steht in tausenden Supermärkten, ohne dass der Hersteller eigene Läden betreibt. Dafür verdient der Handel mit und entscheidet, wo im Regal der Joghurt steht."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQASWP1MBH529ZAJF6VJB",
+      "atom_uri": "urn:zam:atom:01M8GDQASWP1MBH529ZAJF6VJB",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-ma-kommunikation",
+      "title": "Kommunikationspolitik: Werbung, Verkaufsförderung und Öffentlichkeitsarbeit",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ma-kommunikation",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQASQBT4FC20Z487Z3EGT",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb2",
+          "topic_title": "Ökonomisches Handeln im Unternehmen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb2",
+          "topic_title": "Ökonomisches Handeln im Unternehmen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAWGSH424KAX5A4R1WAP",
+          "slug": "wrg8-ma-kommunikation-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ma-kommunikation",
+          "question": "Zu welchem Instrument der Kommunikationspolitik gehört eine kostenlose Verkostung im Supermarkt?",
+          "concept": "Zur Verkaufsförderung",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Zur Verkaufsförderung",
+              "Zur Öffentlichkeitsarbeit"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Zur Öffentlichkeitsarbeit",
+              "reason": "Öffentlichkeitsarbeit pflegt das Ansehen des ganzen Unternehmens, nicht den Absatz am Regal."
+            },
+            {
+              "text": "Zur Distributionspolitik",
+              "reason": "Die Distribution regelt den Weg zum Kunden, nicht die Ansprache am Verkaufsort."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAWHQQRN15GW6KQHFSRZ",
+          "slug": "wrg8-ma-kommunikation-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ma-kommunikation",
+          "question": "Was ist das Ziel der Öffentlichkeitsarbeit?",
+          "concept": "Das Ansehen des ganzen Unternehmens in der Öffentlichkeit zu pflegen",
+          "materiality": "material",
+          "sample_solution": "Ein Autohersteller lädt zum Tag der offenen Tür ein und berichtet über seine Solaranlage. Er wirbt nicht für ein bestimmtes Modell, sondern für sein Image."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQASX7YCTGW2M1G15ST8P",
+      "atom_uri": "urn:zam:atom:01M8GDQASX7YCTGW2M1G15ST8P",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-ma-konzept",
+      "title": "Ein einfaches Marketingkonzept erstellen",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ma-konzept",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQASRSEX64K70PQMYME8P",
+          "type": "soft"
+        },
+        {
+          "atom_id": "01M8GDQAST919MMGAG9KPN3A4A",
+          "type": "soft"
+        },
+        {
+          "atom_id": "01M8GDQASVZZSYKMND4D9H914X",
+          "type": "soft"
+        },
+        {
+          "atom_id": "01M8GDQASWP1MBH529ZAJF6VJB",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb2",
+          "topic_title": "Ökonomisches Handeln im Unternehmen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb2",
+          "topic_title": "Ökonomisches Handeln im Unternehmen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAWJVE4AN1G24BX85X0Q",
+          "slug": "wrg8-ma-konzept-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ma-konzept",
+          "question": "Nach welchen Kriterien wählt man Maßnahmen für ein Marketingkonzept aus?",
+          "concept": "Nach Zielgruppe, Marktvolumen und Phase im Produktlebenszyklus",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Nach Zielgruppe, Marktvolumen und Phase im Produktlebenszyklus",
+              "Nach dem Geschmack der Geschäftsführung und den Wünschen der Werbeagentur"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Nach dem Geschmack der Geschäftsführung und den Wünschen der Werbeagentur",
+              "reason": "Ein Konzept richtet sich nach Markt und Kunden, nicht nach persönlichen Vorlieben."
+            },
+            {
+              "text": "Nach dem kleinsten möglichen Werbebudget und dem billigsten Lieferanten",
+              "reason": "Kosten zählen, sind aber nicht die Kriterien für die Auswahl der Maßnahmen."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAWKTBG55V0KHARN9ZSC",
+          "slug": "wrg8-ma-konzept-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=ma-konzept",
+          "question": "Welche Maßnahmen passen zur Einführungsphase eines Produkts?",
+          "concept": "Bekanntheit schaffen durch Werbung und Proben, dazu eine Abschöpfungs- oder Durchdringungsstrategie.",
+          "materiality": "material",
+          "sample_solution": "Für eine neue Brotdose setzt ein Hersteller auf Proben bei Schulfesten und kurze Videos. Mit einem niedrigen Einführungspreis gewinnt er schnell Kunden."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQASY929SHKR31RARBAFT",
+      "atom_uri": "urn:zam:atom:01M8GDQASY929SHKR31RARBAFT",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-re-funktionen",
+      "title": "Wozu brauchen wir Recht? Die Funktionen des Rechts",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=re-funktionen",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb3",
+          "topic_title": "Rechtlich verantwortliches Handeln"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb3",
+          "topic_title": "Rechtlich verantwortliches Handeln",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAWMM060C5HJMQMGQ3G8",
+          "slug": "wrg8-re-funktionen-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=re-funktionen",
+          "question": "Welche Funktion des Rechts sorgt dafür, dass Streit ohne Gewalt vor Gericht gelöst wird?",
+          "concept": "Die Friedensfunktion",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Friedensfunktion",
+              "Die Freiheitssicherungsfunktion"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Die Freiheitssicherungsfunktion",
+              "reason": "Sie garantiert Freiräume, auch gegenüber dem Staat."
+            },
+            {
+              "text": "Die Ordnungsfunktion",
+              "reason": "Sie macht das Zusammenleben berechenbar, etwa durch Verkehrsregeln."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAWNKTTTCH9Y46A060KM",
+          "slug": "wrg8-re-funktionen-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=re-funktionen",
+          "question": "Was unterscheidet eine Rechtsnorm von einer Anstandsregel?",
+          "concept": "Der Staat erlässt Rechtsnormen und setzt sie notfalls mit Zwang durch.",
+          "materiality": "material",
+          "sample_solution": "Grüßen ist eine Anstandsregel; wer nicht grüßt, wird nicht bestraft. Wer bei Rot über die Ampel fährt, verstößt gegen eine Rechtsnorm und muss mit einem Bußgeld rechnen."
+        },
+        {
+          "id": "01M8GDQAWPSG3MMJHAF78HEB4Y",
+          "slug": "wrg8-re-funktionen-transfer",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=re-funktionen",
+          "question": "Wie begrenzt Art. 2 Abs. 1 GG die freie Entfaltung der Persönlichkeit?",
+          "concept": "Sie gilt, soweit man nicht die Rechte anderer verletzt und die verfassungsmäßige Ordnung achtet.",
+          "materiality": "material",
+          "sample_solution": "Tom darf laut Musik hören, weil er sich frei entfalten darf. Um Mitternacht muss er aber die Nachtruhe seiner Nachbarn achten, denn deren Rechte begrenzen seine Freiheit."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQASZRSF7C9V51B9VKQXT",
+      "atom_uri": "urn:zam:atom:01M8GDQASZRSF7C9V51B9VKQXT",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-re-zivil-straf",
+      "title": "Zivilrecht und Strafrecht unterscheiden",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=re-zivil-straf",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQASY929SHKR31RARBAFT",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb3",
+          "topic_title": "Rechtlich verantwortliches Handeln"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb3",
+          "topic_title": "Rechtlich verantwortliches Handeln",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAWQ5ACZA244WCM2T1QF",
+          "slug": "wrg8-re-zivil-straf-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=re-zivil-straf",
+          "question": "Welches Ziel verfolgt das Zivilrecht bei einem Schaden?",
+          "concept": "Den Ausgleich: Der Schädiger soll den Schaden ersetzen.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Den Ausgleich: Der Schädiger soll den Schaden ersetzen.",
+              "Die Strafe: Der Täter soll für sein Unrecht büßen."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Die Strafe: Der Täter soll für sein Unrecht büßen.",
+              "reason": "Strafen verhängt nur ein Strafgericht im Strafrecht."
+            },
+            {
+              "text": "Die Vorbeugung: Die Allgemeinheit soll abgeschreckt werden.",
+              "reason": "Das ist ein Ziel des Strafrechts, nicht des Zivilrechts."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAWRVXA3YB2EN0NVFV53",
+          "slug": "wrg8-re-zivil-straf-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=re-zivil-straf",
+          "question": "Kann eine einzige Tat zivil- und strafrechtliche Folgen haben?",
+          "concept": "Ja, Schadensersatz und Strafe stehen nebeneinander und ersetzen einander nicht.",
+          "materiality": "material",
+          "sample_solution": "Felix zerkratzt absichtlich ein Auto. Er muss die Reparatur von 1.200 Euro bezahlen, und zugleich kann ihn ein Jugendgericht wegen Sachbeschädigung zu Arbeitsstunden verurteilen."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQAT0DKSMR8GVJPJ0YVD5",
+      "atom_uri": "urn:zam:atom:01M8GDQAT0DKSMR8GVJPJ0YVD5",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-re-normen",
+      "title": "Rechtsnormen lesen: Tatbestand und Rechtsfolge",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=re-normen",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQASZRSF7C9V51B9VKQXT",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb3",
+          "topic_title": "Rechtlich verantwortliches Handeln"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb3",
+          "topic_title": "Rechtlich verantwortliches Handeln",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAWSVBJKCNETCCRGPNHE",
+          "slug": "wrg8-re-normen-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=re-normen",
+          "question": "Welcher Teil einer Rechtsnorm nennt die Voraussetzungen, die erfüllt sein müssen?",
+          "concept": "Der Tatbestand",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Der Tatbestand",
+              "Die Rechtsfolge"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Die Rechtsfolge",
+              "reason": "Die Rechtsfolge sagt, was gilt, wenn der Tatbestand erfüllt ist."
+            },
+            {
+              "text": "Die Überschrift",
+              "reason": "Die Überschrift hilft beim Finden, enthält aber nicht die Voraussetzungen."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAWT84GYDH9JX1P1BXBF",
+          "slug": "wrg8-re-normen-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=re-normen",
+          "question": "Was geschieht bei der Subsumtion?",
+          "concept": "Man prüft Merkmal für Merkmal, ob der Sachverhalt den Tatbestand erfüllt.",
+          "materiality": "material",
+          "sample_solution": "Mila steckt einen Lippenstift ein. Ist er fremd, beweglich, weggenommen, und wollte sie ihn behalten? Alle Merkmale von § 242 StGB liegen vor, also hat sie einen Diebstahl begangen."
+        },
+        {
+          "id": "01M8GDQAWVFPC9JWBV324GM3TQ",
+          "slug": "wrg8-re-normen-transfer",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=re-normen",
+          "question": "Warum ist das kurze, heimliche Ausleihen eines Fahrrads kein Diebstahl?",
+          "concept": "Weil die Absicht fehlt, die Sache dauerhaft zu behalten.",
+          "materiality": "material",
+          "sample_solution": "Jonas fährt mit Tims Rad 20 Minuten zum Bäcker und bringt es zurück. Er hat es weggenommen, wollte es aber nicht behalten; ein Merkmal von § 242 StGB fehlt."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQAT1WQES763NDX9T7ECJ",
+      "atom_uri": "urn:zam:atom:01M8GDQAT1WQES763NDX9T7ECJ",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-re-unerlaubte-handlung",
+      "title": "Unerlaubte Handlung und Deliktsfähigkeit",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=re-unerlaubte-handlung",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQAT0DKSMR8GVJPJ0YVD5",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb3",
+          "topic_title": "Rechtlich verantwortliches Handeln"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb3",
+          "topic_title": "Rechtlich verantwortliches Handeln",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAWW2MAKF3GR377Y8K6V",
+          "slug": "wrg8-re-unerlaubte-handlung-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=re-unerlaubte-handlung",
+          "question": "Ab welchem Alter kann ein Kind nach § 828 BGB überhaupt für einen Schaden verantwortlich sein?",
+          "concept": "Ab sieben Jahren",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Ab sieben Jahren",
+              "Ab 14 Jahren"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Ab 14 Jahren",
+              "reason": "Die Grenze von 14 Jahren gilt für die Strafmündigkeit im Strafrecht."
+            },
+            {
+              "text": "Ab 18 Jahren",
+              "reason": "Ab 18 haftet man voll, verantwortlich sein kann man aber schon früher."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAWXBEGFQZ715D0DH465",
+          "slug": "wrg8-re-unerlaubte-handlung-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=re-unerlaubte-handlung",
+          "question": "Wann haften Eltern für einen Schaden ihres Kindes?",
+          "concept": "Wenn sie ihre Aufsichtspflicht verletzt haben; automatisch haften sie nicht.",
+          "materiality": "material",
+          "sample_solution": "Ein Dreijähriger läuft unbeaufsichtigt an einen Parkplatz und kratzt ein Auto. Die Eltern haften, wenn sie ihn ihrem Alter entsprechend besser hätten beaufsichtigen müssen."
+        },
+        {
+          "id": "01M8GDQAWYKPBW3ZARXMGN4RQZ",
+          "slug": "wrg8-re-unerlaubte-handlung-transfer",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=re-unerlaubte-handlung",
+          "question": "Was entscheidet bei 7- bis 17-Jährigen über die Deliktsfähigkeit?",
+          "concept": "Ob sie die Einsicht hatten, für ihr Handeln verantwortlich zu sein.",
+          "materiality": "material",
+          "sample_solution": "Ben ist 12 und weiß, dass Schüsse im Hof Fenster treffen können. Er schießt trotzdem, die Scheibe bricht. Weil er die Einsicht hatte, muss er den Schaden ersetzen."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQAT211XTHA1620J7C5FX",
+      "atom_uri": "urn:zam:atom:01M8GDQAT211XTHA1620J7C5FX",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-re-straftat",
+      "title": "Straftat, Strafmündigkeit und Jugendstrafrecht",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=re-straftat",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQAT0DKSMR8GVJPJ0YVD5",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb3",
+          "topic_title": "Rechtlich verantwortliches Handeln"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb3",
+          "topic_title": "Rechtlich verantwortliches Handeln",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAWZWWW40HN8TVNJKNN6",
+          "slug": "wrg8-re-straftat-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=re-straftat",
+          "question": "Ab welchem Alter ist man in Deutschland strafmündig?",
+          "concept": "Ab 14 Jahren",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Ab 14 Jahren",
+              "Ab sieben Jahren"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Ab sieben Jahren",
+              "reason": "Ab sieben kann man zivilrechtlich haften, aber nicht bestraft werden."
+            },
+            {
+              "text": "Ab 18 Jahren",
+              "reason": "Schon Jugendliche ab 14 können nach dem Jugendstrafrecht verantwortlich sein."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAX019GNM8GF17H3TQ78",
+          "slug": "wrg8-re-straftat-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=re-straftat",
+          "question": "Welche Leitidee verfolgt das Jugendstrafrecht?",
+          "concept": "Den Erziehungsgedanken: neue Straftaten durch Erziehung statt Vergeltung verhindern.",
+          "materiality": "material",
+          "sample_solution": "Leon (15) sprüht Graffiti. Statt Gefängnis ordnet das Jugendgericht Arbeitsstunden und die Reinigung der Wand an, damit er lernt, für sein Unrecht einzustehen."
+        },
+        {
+          "id": "01M8GDQAX1PA5J7YWJK4AKYGQ9",
+          "slug": "wrg8-re-straftat-transfer",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=re-straftat",
+          "question": "Welche Arten von Folgen kennt das Jugendstrafrecht?",
+          "concept": "Erziehungsmaßregeln, Zuchtmittel und als letztes Mittel die Jugendstrafe.",
+          "materiality": "material",
+          "sample_solution": "Eine Weisung zu einem Trainingskurs ist eine Erziehungsmaßregel. Arbeitsstunden oder Jugendarrest sind Zuchtmittel. Erst bei schweren Taten folgt eine Jugendstrafe von mindestens sechs Monaten."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQAT3ZRC6FVSEVED1021X",
+      "atom_uri": "urn:zam:atom:01M8GDQAT3ZRC6FVSEVED1021X",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-re-internet",
+      "title": "Rechtssicher im Internet handeln",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=re-internet",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQASY929SHKR31RARBAFT",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb3",
+          "topic_title": "Rechtlich verantwortliches Handeln"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb3",
+          "topic_title": "Rechtlich verantwortliches Handeln",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAX20PSWCAPE1VAA8X5E",
+          "slug": "wrg8-re-internet-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=re-internet",
+          "question": "Was verlangt das Recht am eigenen Bild, bevor man ein Foto einer erkennbaren Person verbreitet?",
+          "concept": "Die Einwilligung der abgebildeten Person",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Einwilligung der abgebildeten Person",
+              "Eine Zahlung an den Fotografen des Bildes"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Eine Zahlung an den Fotografen des Bildes",
+              "reason": "Der Fotograf hat das Urheberrecht; die abgebildete Person muss trotzdem einwilligen."
+            },
+            {
+              "text": "Eine Genehmigung der örtlichen Polizei",
+              "reason": "Für private Fotos ist keine Behörde zuständig, sondern die abgebildete Person."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAX30AH9M5GN0A4YR298",
+          "slug": "wrg8-re-internet-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=re-internet",
+          "question": "Ist ein geschlossener Gruppenchat ein rechtsfreier Raum?",
+          "concept": "Nein, Beleidigungen und das Verbreiten fremder Bilder sind auch dort verboten.",
+          "materiality": "material",
+          "sample_solution": "Im Klassenchat werden über Elif beleidigende Sprüche gepostet. Auch wenn nur die Klasse mitliest, können das strafbare Beleidigungen sein, die auf Antrag verfolgt werden."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQAT4W53PXHHR3TKQ3BXJ",
+      "atom_uri": "urn:zam:atom:01M8GDQAT4W53PXHHR3TKQ3BXJ",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-re-urheberrecht",
+      "title": "Geistiges Eigentum und Urheberrecht",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=re-urheberrecht",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQAT3ZRC6FVSEVED1021X",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb3",
+          "topic_title": "Rechtlich verantwortliches Handeln"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb3",
+          "topic_title": "Rechtlich verantwortliches Handeln",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAX4W69E4Y71ND4GA29F",
+          "slug": "wrg8-re-urheberrecht-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=re-urheberrecht",
+          "question": "Wie lange nach dem Tod des Urhebers ist ein Werk in Deutschland geschützt?",
+          "concept": "70 Jahre",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "70 Jahre",
+              "10 Jahre"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "10 Jahre",
+              "reason": "Zehn Jahre gelten beim Recht am eigenen Bild für Angehörige, nicht beim Urheberrecht."
+            },
+            {
+              "text": "Für immer",
+              "reason": "Das Urheberrecht erlischt nach einer festen Frist."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAX57AG67GNTDDYBEE63",
+          "slug": "wrg8-re-urheberrecht-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=re-urheberrecht",
+          "question": "Darf man ein gekauftes Lied als Musik in einem öffentlichen Video verwenden?",
+          "concept": "Nein, der Kauf erlaubt die private Nutzung, nicht die Veröffentlichung ohne Lizenz.",
+          "materiality": "material",
+          "sample_solution": "Tobias hat ein Lied legal gekauft und hört es auf dem Handy. Lädt er es als Hintergrundmusik in sein öffentliches Video hoch, macht er es ohne Erlaubnis öffentlich zugänglich."
+        },
+        {
+          "id": "01M8GDQAX6HP3XDJPB90ZEWKE3",
+          "slug": "wrg8-re-urheberrecht-transfer",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=re-urheberrecht",
+          "question": "Unter welchen Bedingungen darf man fremde Werke zitieren?",
+          "concept": "Bei Auseinandersetzung mit dem Werk, mit Quellenangabe und nur im durch den Zweck gerechtfertigten Umfang.",
+          "materiality": "material",
+          "sample_solution": "Mia bespricht in ihrem Referat zwei Sätze aus einem Roman und nennt Autor und Buch. Das ist ein Zitat. Das ganze Kapitel abzuschreiben wäre es nicht."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQAT5D3P9WKHC8NKTJWRJ",
+      "atom_uri": "urn:zam:atom:01M8GDQAT5D3P9WKHC8NKTJWRJ",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-pr-zeitmanagement",
+      "title": "Persönliches Zeitmanagement",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=pr-zeitmanagement",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQAS3ET020JZECR9BQW3F",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb4",
+          "topic_title": "Profilbereich am WWG"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb4",
+          "topic_title": "Profilbereich am WWG",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAX7GXV4M4QBYW7NB3X4",
+          "slug": "wrg8-pr-zeitmanagement-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=pr-zeitmanagement",
+          "question": "Nach welchen zwei Fragen ordnet die Eisenhower-Matrix Aufgaben?",
+          "concept": "Ist die Aufgabe wichtig, und ist sie dringend?",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Ist die Aufgabe wichtig, und ist sie dringend?",
+              "Ist die Aufgabe leicht, und macht sie Spaß?"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Ist die Aufgabe leicht, und macht sie Spaß?",
+              "reason": "Leichtigkeit und Spaß sagen nichts darüber, ob eine Aufgabe zu den eigenen Zielen beiträgt."
+            },
+            {
+              "text": "Ist die Aufgabe teuer, und dauert sie lange?",
+              "reason": "Kosten und Dauer sind keine Achsen der Eisenhower-Matrix."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAX8CB8HCS5BXXN9GCRZ",
+          "slug": "wrg8-pr-zeitmanagement-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=pr-zeitmanagement",
+          "question": "Wofür steht die ALPEN-Methode?",
+          "concept": "Aufgaben notieren, Länge schätzen, Pufferzeit planen, Entscheidungen treffen, Nachkontrolle",
+          "materiality": "material",
+          "sample_solution": "Can schreibt seine Aufgaben auf, schätzt für die Englisch-Ex eine Stunde, plant 20 Minuten Puffer, lernt zuerst Englisch und prüft am Abend, was geklappt hat."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQAT6Q91DYAFH5XS1KZW8",
+      "atom_uri": "urn:zam:atom:01M8GDQAT6Q91DYAFH5XS1KZW8",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-pr-grafiken",
+      "title": "Grafiken zum Konsumverhalten auswerten und erstellen",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=pr-grafiken",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQASD43TKFEP7T5W3YCWC",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb4",
+          "topic_title": "Profilbereich am WWG"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb4",
+          "topic_title": "Profilbereich am WWG",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAX908D9BXPYG2CA87CP",
+          "slug": "wrg8-pr-grafiken-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=pr-grafiken",
+          "question": "Welcher Diagrammtyp eignet sich, um Anteile an einem Ganzen darzustellen?",
+          "concept": "Das Kreisdiagramm",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Das Kreisdiagramm",
+              "Das Liniendiagramm"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Das Liniendiagramm",
+              "reason": "Ein Liniendiagramm zeigt Entwicklungen über die Zeit."
+            },
+            {
+              "text": "Das Streudiagramm",
+              "reason": "Ein Streudiagramm zeigt Zusammenhänge zweier Größen, keine Anteile."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAXAPP3TPQ3VCG043ZJH",
+          "slug": "wrg8-pr-grafiken-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=pr-grafiken",
+          "question": "Wie kann eine abgeschnittene Achse ein Diagramm verzerren?",
+          "concept": "Beginnt die Achse nicht bei null, wirken kleine Unterschiede viel größer.",
+          "materiality": "material",
+          "sample_solution": "Die Snackausgaben steigen von 8 Euro auf 9,20 Euro, also um 15 Prozent. Beginnt die Achse bei 7 Euro, wirkt die letzte Säule mehr als doppelt so hoch wie die erste."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQAT752CH7TVTG1H3MVJ2",
+      "atom_uri": "urn:zam:atom:01M8GDQAT752CH7TVTG1H3MVJ2",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-pr-geldgeschichte",
+      "title": "Die Geschichte des Geldes und seine Eigenschaften",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=pr-geldgeschichte",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQAS9XWBCE91MQ28CE1PR",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb4",
+          "topic_title": "Profilbereich am WWG"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb4",
+          "topic_title": "Profilbereich am WWG",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAXBCGF8CJ92TZC6KP0M",
+          "slug": "wrg8-pr-geldgeschichte-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=pr-geldgeschichte",
+          "question": "Welche Eigenschaft fehlte Vieh als Geld vor allem?",
+          "concept": "Es ließ sich kaum teilen und schlecht transportieren.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Es ließ sich kaum teilen und schlecht transportieren.",
+              "Es war zu wenig wert, um damit überhaupt zu bezahlen."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Es war zu wenig wert, um damit überhaupt zu bezahlen.",
+              "reason": "Vieh war sehr wertvoll; das Problem lag bei Teilbarkeit und Transport."
+            },
+            {
+              "text": "Es war zu leicht zu fälschen.",
+              "reason": "Eine Kuh lässt sich nicht fälschen; sie lässt sich aber auch nicht halbieren."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAXCH2HYMNV2YQTXYQ1Y",
+          "slug": "wrg8-pr-geldgeschichte-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=pr-geldgeschichte",
+          "question": "Welche Eigenschaften braucht gutes Geld?",
+          "concept": "Es muss allgemein anerkannt, knapp, haltbar, teilbar, leicht transportierbar und schwer zu fälschen sein.",
+          "materiality": "material",
+          "sample_solution": "Kastanien wären als Klassengeld nicht knapp, weil jeder sie sammeln kann. Gestempelte, nummerierte Gutscheine sind knapp, fälschungssicher und werden von allen anerkannt."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQAT8BT0PHJTKHXP8SEKB",
+      "atom_uri": "urn:zam:atom:01M8GDQAT8BT0PHJTKHXP8SEKB",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-pr-kredit",
+      "title": "Kredite aufnehmen und absichern",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=pr-kredit",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQASEY8HTGZCD270DTZPE",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb4",
+          "topic_title": "Profilbereich am WWG"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb4",
+          "topic_title": "Profilbereich am WWG",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAXD2J1WHW6746R2199A",
+          "slug": "wrg8-pr-kredit-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=pr-kredit",
+          "question": "Wie heißt die Kreditsicherheit, bei der eine andere Person für die Schulden einsteht?",
+          "concept": "Die Bürgschaft",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Bürgschaft",
+              "Die Sicherungsübereignung"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Die Sicherungsübereignung",
+              "reason": "Bei ihr dient eine Sache, etwa ein Auto, als Sicherheit."
+            },
+            {
+              "text": "Die Grundschuld",
+              "reason": "Sie sichert einen Kredit über ein Grundstück im Grundbuch ab."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAXEN37VV6G4V3CWTQR4",
+          "slug": "wrg8-pr-kredit-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=pr-kredit",
+          "question": "Warum vergleicht man Kredite über den effektiven Jahreszins?",
+          "concept": "Er enthält neben dem Sollzins auch bestimmte Kosten wie Gebühren.",
+          "materiality": "material",
+          "sample_solution": "Kredit A hat 5 Prozent Sollzins, aber hohe Bearbeitungsgebühren. Kredit B hat 5,5 Prozent ohne Gebühren. Erst der effektive Jahreszins zeigt, welcher Kredit insgesamt günstiger ist."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQAT9C3239JQ5ZNMQBCFV",
+      "atom_uri": "urn:zam:atom:01M8GDQAT9C3239JQ5ZNMQBCFV",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-pr-fertigungsverfahren",
+      "title": "Weitere Fertigungsverfahren: Baustellen- und Inselfertigung",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=pr-fertigungsverfahren",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQASMNBVNQ74CAX5F0718",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb4",
+          "topic_title": "Profilbereich am WWG"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb4",
+          "topic_title": "Profilbereich am WWG",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAXFB39G7MCKJXGQJT5S",
+          "slug": "wrg8-pr-fertigungsverfahren-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=pr-fertigungsverfahren",
+          "question": "Welches Fertigungsverfahren nutzt eine Werft beim Bau eines großen Schiffs?",
+          "concept": "Die Baustellenfertigung",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Baustellenfertigung",
+              "Die Fließfertigung"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Die Fließfertigung",
+              "reason": "Ein Schiff ist viel zu groß für ein Band mit festem Takt."
+            },
+            {
+              "text": "Die Werkstattfertigung",
+              "reason": "Das Schiff kann nicht von Werkstatt zu Werkstatt wandern."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAXGZA174YJQQFNFY68K",
+          "slug": "wrg8-pr-fertigungsverfahren-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=pr-fertigungsverfahren",
+          "question": "Was kennzeichnet die Inselfertigung?",
+          "concept": "Eine Gruppe stellt in einer Fertigungsinsel mit allen nötigen Maschinen ein Produkt weitgehend selbst her.",
+          "materiality": "material",
+          "sample_solution": "Sechs Beschäftigte bauen E-Bike-Motoren komplett, verteilen die Aufgaben selbst und prüfen die Qualität. Die Arbeit ist abwechslungsreicher als am Fließband."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQATABAZHDAPJ8TB5ZD3D",
+      "atom_uri": "urn:zam:atom:01M8GDQATABAZHDAPJ8TB5ZD3D",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-pr-marketingformen",
+      "title": "Virales Marketing, Neuromarketing und Guerillamarketing",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=pr-marketingformen",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQASWP1MBH529ZAJF6VJB",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb4",
+          "topic_title": "Profilbereich am WWG"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb4",
+          "topic_title": "Profilbereich am WWG",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAXH0GVEDKN0APJKDYQ9",
+          "slug": "wrg8-pr-marketingformen-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=pr-marketingformen",
+          "question": "Wie heißt Marketing, bei dem sich eine Botschaft durch Teilen von selbst verbreitet?",
+          "concept": "Virales Marketing",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Virales Marketing",
+              "Guerillamarketing"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Guerillamarketing",
+              "reason": "Guerillamarketing setzt auf überraschende Aktionen im öffentlichen Raum."
+            },
+            {
+              "text": "Neuromarketing",
+              "reason": "Neuromarketing nutzt Erkenntnisse der Hirnforschung."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAXJB63G69G7ABXRVA56",
+          "slug": "wrg8-pr-marketingformen-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=pr-marketingformen",
+          "question": "Welches Risiko birgt virales Marketing?",
+          "concept": "Das Unternehmen verliert die Kontrolle darüber, wie die Botschaft verbreitet und gedeutet wird.",
+          "materiality": "material",
+          "sample_solution": "Eine Getränke-Challenge verbreitet sich rasant. Dann posten Jugendliche gefährliche Videos, und der Hersteller muss die Aktion stoppen und sich öffentlich erklären."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQATBC2437QNJVEX4RXC7",
+      "atom_uri": "urn:zam:atom:01M8GDQATBC2437QNJVEX4RXC7",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-pr-jugendschutz",
+      "title": "Das Jugendschutzgesetz",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=pr-jugendschutz",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQASY929SHKR31RARBAFT",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb4",
+          "topic_title": "Profilbereich am WWG"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb4",
+          "topic_title": "Profilbereich am WWG",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAXKXKCC7YPP1JZHHQY0",
+          "slug": "wrg8-pr-jugendschutz-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=pr-jugendschutz",
+          "question": "Ab welchem Alter dürfen Jugendliche ohne Begleitung Bier oder Wein bekommen?",
+          "concept": "Ab 16 Jahren",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Ab 16 Jahren",
+              "Ab 14 Jahren"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Ab 14 Jahren",
+              "reason": "Mit 14 und 15 ist das nur in Begleitung einer personensorgeberechtigten Person erlaubt."
+            },
+            {
+              "text": "Ab 18 Jahren",
+              "reason": "Ab 18 gilt das für Branntwein; Bier und Wein sind früher erlaubt."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAXMDEH7Z2SX0WXQ9HTH",
+          "slug": "wrg8-pr-jugendschutz-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=pr-jugendschutz",
+          "question": "An wen richtet sich das Jugendschutzgesetz vor allem?",
+          "concept": "An Erwachsene wie Gastwirte, Verkäufer und Veranstalter; Jugendliche selbst werden nicht bestraft.",
+          "materiality": "material",
+          "sample_solution": "Ein Kioskbesitzer verkauft einem 15-Jährigen eine E-Zigarette. Ihm droht ein Bußgeld, weil er gegen das Gesetz verstoßen hat. Der Jugendliche selbst bekommt keine Strafe."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQATCBWTBC6FV07N40N5Y",
+      "atom_uri": "urn:zam:atom:01M8GDQATCBWTBC6FV07N40N5Y",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-pr-gericht",
+      "title": "Strafverfahren und Zivilprozess",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=pr-gericht",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQASZRSF7C9V51B9VKQXT",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb4",
+          "topic_title": "Profilbereich am WWG"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb4",
+          "topic_title": "Profilbereich am WWG",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAXNF2SM9CSTDYZ7E8H4",
+          "slug": "wrg8-pr-gericht-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=pr-gericht",
+          "question": "Womit beginnt ein Zivilprozess?",
+          "concept": "Mit der Klage einer Partei beim Gericht",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Mit der Klage einer Partei beim Gericht",
+              "Mit der Anklage der Staatsanwaltschaft"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Mit der Anklage der Staatsanwaltschaft",
+              "reason": "Eine Anklage gibt es nur im Strafverfahren."
+            },
+            {
+              "text": "Mit einer Festnahme durch die Polizei",
+              "reason": "Polizeiliche Maßnahmen gehören zum Strafverfahren."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAXP6Y5AHBTV9GT3C2K2",
+          "slug": "wrg8-pr-gericht-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=pr-gericht",
+          "question": "Bis zu welchem Streitwert ist in der Regel das Amtsgericht zuständig?",
+          "concept": "Bis 10.000 Euro",
+          "materiality": "material",
+          "sample_solution": "Frau Krüger klagt auf 450 Euro für ein verkauftes Handy. Bei diesem Streitwert ist das Amtsgericht zuständig; über 10.000 Euro wäre es meist das Landgericht mit Anwaltszwang."
+        },
+        {
+          "id": "01M8GDQAXQ34DGHG7M6WYVA8YH",
+          "slug": "wrg8-pr-gericht-transfer",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=pr-gericht",
+          "question": "Was bedeutet die Unschuldsvermutung?",
+          "concept": "Jeder gilt als unschuldig, bis seine Schuld in einem Urteil festgestellt ist.",
+          "materiality": "material",
+          "sample_solution": "Ein Angeklagter steht vor Gericht. Solange das Gericht seine Schuld nicht im Urteil festgestellt hat, darf ihn niemand als Täter behandeln, und Zweifel wirken zu seinen Gunsten."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQATDMV6PGNB7CRH64SNK",
+      "atom_uri": "urn:zam:atom:01M8GDQATDMV6PGNB7CRH64SNK",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-pr-jugendarbeit",
+      "title": "Jobben als Minderjähriger: das Jugendarbeitsschutzgesetz",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=pr-jugendarbeit",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQATBC2437QNJVEX4RXC7",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb4",
+          "topic_title": "Profilbereich am WWG"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb4",
+          "topic_title": "Profilbereich am WWG",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAXRQ1XZSP758KPZK4AY",
+          "slug": "wrg8-pr-jugendarbeit-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=pr-jugendarbeit",
+          "question": "Wie viele Stunden täglich dürfen 13- und 14-Jährige mit Einwilligung der Eltern leichte Arbeiten übernehmen?",
+          "concept": "Höchstens zwei Stunden",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Höchstens zwei Stunden",
+              "Höchstens acht Stunden"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Höchstens acht Stunden",
+              "reason": "Acht Stunden täglich gelten für Jugendliche, die nicht mehr vollzeitschulpflichtig sind."
+            },
+            {
+              "text": "Höchstens vier Stunden",
+              "reason": "Für Kinder ab 13 erlaubt das Gesetz nur zwei Stunden täglich."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAXSA7SHE35ZWSERP1XB",
+          "slug": "wrg8-pr-jugendarbeit-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=pr-jugendarbeit",
+          "question": "Was gilt für vollzeitschulpflichtige Jugendliche, die in den Ferien jobben wollen?",
+          "concept": "Sie dürfen höchstens vier Wochen im Kalenderjahr in den Ferien arbeiten.",
+          "materiality": "material",
+          "sample_solution": "Emil ist 14 und in der 8. Klasse. Ein Eiscafé will ihn sechs Wochen in den Sommerferien beschäftigen. Erlaubt sind aber höchstens vier Wochen im Jahr."
+        }
+      ]
+    },
+    {
+      "id": "01M8GDQATEZVG020B0MAFQQ83V",
+      "atom_uri": "urn:zam:atom:01M8GDQATEZVG020B0MAFQQ83V",
+      "namespace": "zam-academy-wirtschaft-recht-gymnasium-8",
+      "slug": "wrg8-pr-projekt",
+      "title": "Projekt: Unternehmenspräsentation, Fallstudie und Planspiel",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=pr-projekt",
+      "prerequisites": [
+        {
+          "atom_id": "01M8GDQASNR9JZAKWWY0PCFQTT",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-gymnasium-8",
+          "topic_code": "lb4",
+          "topic_title": "Profilbereich am WWG"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "WWG",
+          "topic_code": "lb4",
+          "topic_title": "Profilbereich am WWG",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8GDQAXT2V6NCN03T2JJDHHY",
+          "slug": "wrg8-pr-projekt-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=pr-projekt",
+          "question": "Was unterscheidet ein Planspiel von einer Fallstudie?",
+          "concept": "Im Planspiel trifft man in Rollen über mehrere Runden Entscheidungen und erlebt ihre Folgen.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Im Planspiel trifft man in Rollen über mehrere Runden Entscheidungen und erlebt ihre Folgen.",
+              "Im Planspiel analysiert man einen einzigen Fall bis zu einer begründeten Entscheidung."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Im Planspiel analysiert man einen einzigen Fall bis zu einer begründeten Entscheidung.",
+              "reason": "Das beschreibt die Fallstudie."
+            },
+            {
+              "text": "Im Planspiel präsentiert man nur ein Unternehmen mit digitalen Medien.",
+              "reason": "Das beschreibt eine Unternehmenspräsentation."
+            }
+          ]
+        },
+        {
+          "id": "01M8GDQAXV0EPB9ADB6WSZ3TA2",
+          "slug": "wrg8-pr-projekt-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-gymnasium-8/#lesson=pr-projekt",
+          "question": "In welchen Phasen läuft ein Projekt ab?",
+          "concept": "Ziel festlegen, planen, durchführen, präsentieren und reflektieren",
+          "materiality": "material",
+          "sample_solution": "Eine Gruppe will eine Bäckerei vorstellen. Sie legt Ziel und Zielgruppe fest, verteilt Aufgaben mit Zeitplan, recherchiert, präsentiert vor der Klasse und bespricht danach, was sie verbessern würde."
+        }
+      ]
+    }
+  ]
+}
