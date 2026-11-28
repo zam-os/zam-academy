@@ -1,0 +1,356 @@
+{
+  "curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/8/physik",
+  "checked": "2026-11-28",
+  "curriculum_sha256": "f4903084ea3e3272f876d2fb68e3daf1be1c7345b8eb075b0ad2be3906efdf53",
+  "learning_areas": [
+    {
+      "lb": "1",
+      "title": "Elektrischer Strom",
+      "hours": 14
+    },
+    {
+      "lb": "2",
+      "title": "Optik",
+      "hours": 14
+    },
+    {
+      "lb": "3.1",
+      "title": "Dynamik zweidimensionaler Bewegungen",
+      "hours": 17
+    },
+    {
+      "lb": "3.2",
+      "title": "Kräfte und ihre Wirkungen",
+      "hours": 11
+    },
+    {
+      "lb": "4.1",
+      "title": "Untersuchungen an Solarzellen und anderen Elektrizitätsquellen",
+      "hours": 10,
+      "track": "NTG"
+    },
+    {
+      "lb": "4.2",
+      "title": "Vertiefung prozessbezogener Kompetenzen anhand ausgewählter Inhalte",
+      "hours": 18,
+      "track": "NTG"
+    }
+  ],
+  "competencies": [
+    {
+      "lb": "1",
+      "competence": "nutzen ein anschauliches Modell zum elektrischen Stromkreis, um die elektrischen Grundgrößen Stromstärke, Spannung und Widerstand zu veranschaulichen und Zusammenhänge zwischen diesen Größen zu erläutern. Dabei grenzen sie alltagssprachliche Formulierungen von fachsprachlich korrekten ab. An ausgewählten Stellen erläutern sie Grenzen des verwendeten Modells.",
+      "lessons": [
+        "stromkreis"
+      ],
+      "status": "implemented",
+      "evidence": "The adjustable circuit distinguishes voltage, current and resistance. The lesson compares them with a water circuit and identifies limits of that analogy."
+    },
+    {
+      "lb": "1",
+      "competence": "entwerfen unter Anleitung einen Versuchsaufbau zur Aufnahme von Kennlinien. Sie führen ihre Messungen unter angeleiteter Verwendung von Stromstärke- und Spannungsmessgeräten durch und fertigen mit Hilfe ein strukturiertes Versuchsprotokoll an. Sie sind sich wesentlicher Gefahren des elektrischen Stroms bewusst und berücksichtigen Sicherheitsvorkehrungen beim Experimentieren.",
+      "lessons": [
+        "kennlinie"
+      ],
+      "status": "supported",
+      "evidence": "The model plots a resistor and a lamp, shows meter placement, and provides a notebook slot. Learners design, perform and document the measurement with school equipment."
+    },
+    {
+      "lb": "1",
+      "competence": "wenden die Definitionsgleichung des elektrischen Widerstands an, um Berechnungen in einem einfachen elektrischen Stromkreis durchzuführen. Hierbei gehen sie sicher mit den Einheiten der elektrischen Grundgrößen um und berücksichtigen die Genauigkeit experimentell ermittelter Werte.",
+      "lessons": [
+        "stromkreis",
+        "kennlinie"
+      ],
+      "status": "implemented",
+      "evidence": "Generated tasks use the resistance definition and milliampere conversion. The lesson discusses meaningful rounding and instrument resolution."
+    },
+    {
+      "lb": "1",
+      "competence": "recherchieren in vorgegebenen Quellen, z. B. im Internet, wie Schaltkreise im Haushalt, insbesondere aufgrund von Sicherheitsaspekten, aufgebaut sind. Sie stellen ihre Rechercheergebnisse unter Anleitung in Form von Schaltbildern und fachsprachlich korrekten Texten dar.",
+      "lessons": [
+        "parallel-haushalt"
+      ],
+      "status": "supported",
+      "evidence": "A linked ELEKTRO+ source and the transfer task guide research and a household schematic. The learner draws and explains their own schematic."
+    },
+    {
+      "lb": "1",
+      "competence": "planen selbständig die experimentelle Untersuchung von Stromstärken und Spannungen in Reihen- und Parallelschaltungen. Sie führen diese Untersuchung – mit Hilfe bei der Verwendung von Stromstärke- und Spannungsmessgeräten – selbständig durch und erstellen selbständig ein strukturiertes Versuchsprotokoll.",
+      "lessons": [
+        "reihenschaltung",
+        "parallel-haushalt"
+      ],
+      "status": "supported",
+      "evidence": "Adjustable circuits show both types, and the notebook supports planning and documentation. Physical setup and measurements need classroom equipment."
+    },
+    {
+      "lb": "1",
+      "competence": "erläutern unter Verwendung des eingeführten Modells zum elektrischen Stromkreis und geeigneter Rechnungen Beobachtungen zu Stromstärken und Spannungen in elektrischen Schaltungen mit maximal drei Widerständen.",
+      "lessons": [
+        "reihenschaltung",
+        "parallel-haushalt"
+      ],
+      "status": "implemented",
+      "evidence": "Models show up to three resistors. Guided and transfer calculations apply the voltage and current rules to circuit readings."
+    },
+    {
+      "lb": "2",
+      "competence": "formulieren auf der Grundlage von Alltagserfahrungen, einfachen Experimenten und physikalischen Vorkenntnissen eigene Vermutungen und Erklärungsansätze zu optischen Phänomenen (z. B. Spiegelbilder, Brechung).",
+      "lessons": [
+        "spiegel",
+        "brechung"
+      ],
+      "status": "implemented",
+      "evidence": "The moving-observer and water examples ask learners to predict a phenomenon and justify it with two rays."
+    },
+    {
+      "lb": "2",
+      "competence": "verwenden ein einfaches Modell der Lichtausbreitung und des Reflexionsgesetzes, um am Beispiel des Spiegels eine physikalisch strukturierte Erklärung der Entstehung von Bildern nachzuvollziehen.",
+      "lessons": [
+        "spiegel"
+      ],
+      "status": "implemented",
+      "evidence": "A live drawing shows incident and reflected rays, the normal, and back extensions to the virtual image."
+    },
+    {
+      "lb": "2",
+      "competence": "planen unter Anleitung ein Experiment zur Untersuchung der Abbildung durch eine Sammellinse, das sie selbständig durchführen und dokumentieren. Sie formulieren auf der Grundlage ihrer Beobachtungen und Messergebnisse halbquantitative Aussagen über Zusammenhänge zwischen den dabei relevanten Größen.",
+      "lessons": [
+        "sammellinse"
+      ],
+      "status": "supported",
+      "evidence": "The lab models image size, orientation and position, and the notebook scaffolds an experiment. Learners conduct and record the real measurements in class."
+    },
+    {
+      "lb": "2",
+      "competence": "analysieren mithilfe einer geeigneten Simulationssoftware die Lichtausbreitung an einer Sammellinse und übertragen unter Verwendung halbquantitativer Aussagen zum Brechungsgesetz die Struktur physikalischer Argumentationsweisen auf eigene Erklärungen zur Entstehung virtueller und reeller Bilder bei einer Sammellinse. Sie veranschaulichen ihre Erklärungen mithilfe selbst angefertigter Zeichnungen.",
+      "lessons": [
+        "brechung",
+        "sammellinse"
+      ],
+      "status": "implemented",
+      "evidence": "A refraction model and a thin-lens ray diagram support qualitative analysis. Drawing prompts ask learners to construct real and virtual images."
+    },
+    {
+      "lb": "2",
+      "competence": "benennen Risiken bei Experimenten in der Optik und beim Umgang mit Lichtquellen und optischen Geräten im Alltag (z. B. bei der Verwendung von Sammellinsen und bei der Handhabung von Laserpointern) und reflektieren vorgegebene Sicherheitshinweise.",
+      "lessons": [
+        "sammellinse"
+      ],
+      "status": "implemented",
+      "evidence": "The lesson explains risks from concentrated sunlight and laser light and specifies an ordinary classroom light source for the imaging experiment."
+    },
+    {
+      "lb": "2",
+      "competence": "vergleichen Rechercheergebnisse im Internet mit einem vorgegebenen, passgenauen Sachtext, z. B. zur Bildentstehung beim Auge. Sie erstellen fachsprachlich korrekte Zusammenfassungen dieser Quellen und fertigen aussagekräftige Zeichnungen sorgfältig an bzw. nutzen digitale Medien zur Veranschaulichung.",
+      "lessons": [
+        "auge"
+      ],
+      "status": "supported",
+      "evidence": "Two BVA sources, a text and a diagram scaffold a source comparison and drawing. The independent comparison and its written synthesis are learner work."
+    },
+    {
+      "lb": "2",
+      "competence": "beschreiben auf der Grundlage physikalischer Kenntnisse technische Anwendungen der Totalreflexion und erläutern die Bedeutung dieser Technologien z. B. in der Medizin oder in der Nachrichtentechnik.",
+      "lessons": [
+        "totalreflexion"
+      ],
+      "status": "implemented",
+      "evidence": "The model compares glass–air and core–cladding thresholds. The lesson explains data transmission and medical illumination."
+    },
+    {
+      "lb": "3.1",
+      "competence": "wenden die Definitionsgleichung der Geschwindigkeit an, um Geschwindigkeiten abzuschätzen, im Rahmen von experimentellen Untersuchungen zu bestimmen und einfache Berechnungen durchzuführen. Hierbei gehen sie sicher mit Einheiten und der Genauigkeit von Messwerten um.",
+      "lessons": [
+        "tempo"
+      ],
+      "status": "supported",
+      "evidence": "The stroboscopic model, unit conversion and generated tasks support speed estimates and measurement precision. Real timing takes place in a school experiment."
+    },
+    {
+      "lb": "3.1",
+      "competence": "kennzeichnen in Stroboskopdarstellungen oder mithilfe geeigneter Software in Videos von zweidimensionalen Bewegungen die Geschwindigkeit eines Körpers, indem sie Pfeile als fachtypische Darstellungsform verwenden.",
+      "lessons": [
+        "vektoren"
+      ],
+      "status": "implemented",
+      "evidence": "Learners compare stroboscopic point distances and label velocity arrows in a sketch with a common scale."
+    },
+    {
+      "lb": "3.1",
+      "competence": "bestimmen zeichnerisch die Geschwindigkeitsänderung und die Geschwindigkeit vor bzw. nach einer Krafteinwirkung für das betreffende Zeitintervall.",
+      "lessons": [
+        "kraftstoss"
+      ],
+      "status": "implemented",
+      "evidence": "The model and sketch task compose the initial, final and change arrows using a fixed scale."
+    },
+    {
+      "lb": "3.1",
+      "competence": "analysieren Geschwindigkeitsänderungen von Bewegungen: Sie beschreiben maßgebliche Größenabhängigkeiten mithilfe von Je-desto-Aussagen, machen das zweite Newton’sche Gesetz in der Form F ⋅ Δt = m ⋅ Δv plausibel und nutzen diese Gleichung zur Definition der physikalischen Größe Kraft. Sie argumentieren mit den jeweils relevanten Größenabhängigkeiten in alltagsrelevanten Kontexten, insbesondere aus dem Straßenverkehr oder aus dem Sport, auch um die Beträge von Kräften abzuschätzen und Risiken zu beurteilen.",
+      "lessons": [
+        "kraftstoss",
+        "beschleunigung"
+      ],
+      "status": "implemented",
+      "evidence": "Force, duration, mass and change in speed are related through examples from sports and traffic."
+    },
+    {
+      "lb": "3.1",
+      "competence": "nutzen im Spezialfall eindimensionaler Bewegungen das zweite Newton‘sche Gesetz und die Beschleunigung für Argumentationen und einfache Berechnungen.",
+      "lessons": [
+        "beschleunigung"
+      ],
+      "status": "implemented",
+      "evidence": "The speed–time slope and generated tasks connect acceleration, sign and force for one-dimensional motion."
+    },
+    {
+      "lb": "3.1",
+      "competence": "planen unter Anleitung ein Experiment zur Bestimmung der Beschleunigungen von Körpern aus gemessenen Geschwindigkeitsänderungen, beispielsweise mithilfe von Sensoren oder einer Videoanalyse, das sie mit Hilfe durchführen und auswerten.",
+      "lessons": [
+        "beschleunigung"
+      ],
+      "status": "supported",
+      "evidence": "A planning task and experiment notebook scaffold a video measurement and its analysis. Learners carry it out in class."
+    },
+    {
+      "lb": "3.2",
+      "competence": "unterscheiden zwischen Masse und Gewichtskraft und untersuchen insbesondere auch alltagssprachliche Formulierungen.",
+      "lessons": [
+        "gewichtskraft"
+      ],
+      "status": "implemented",
+      "evidence": "A paired diagram compares equal mass and different gravitational forces. The guided task interprets an everyday expression."
+    },
+    {
+      "lb": "3.2",
+      "competence": "analysieren alltägliche Bewegungen unter dem Einfluss mehrerer Kräfte und übertragen ihre Kenntnisse zur Addition von Geschwindigkeitspfeilen auf die Addition von Kräften. Am Beispiel der schiefen Ebene führen sie mit der Zerlegung einer Kraft in Komponenten vorgegebener Richtungen auch die Umkehrung dieser Operation durch.",
+      "lessons": [
+        "gleichgewicht",
+        "schiefe-ebene"
+      ],
+      "status": "implemented",
+      "evidence": "Learners add opposing forces and decompose the weight into components at an adjustable incline."
+    },
+    {
+      "lb": "3.2",
+      "competence": "argumentieren in alltagsrelevanten Kontexten mit dem Trägheitsgesetz und dem Kräftegleichgewicht. Sie verfassen, unterstützt durch selbst angefertigte aussagekräftige Skizzen, kurze Texte mit physikalisch schlüssigen Argumentationen. Sie nutzen das Kräftegleichgewicht zur statischen Kraftmessung.",
+      "lessons": [
+        "gleichgewicht"
+      ],
+      "status": "implemented",
+      "evidence": "The worksheet requests force sketches and an explanation of a stationary spring balance. An interactive force balance connects inertia with model and everyday situations."
+    },
+    {
+      "lb": "3.2",
+      "competence": "identifizieren in einer vorgegebenen Bewertung zu einer einfachen kontextbezogenen Problemstellung aus der Mechanik physikalische und außerfachliche Argumente und analysieren die argumentative Struktur der Bewertung. Im Zusammenhang mit vorgegebenen Gefahrensituationen im Straßenverkehr erklären sie auf der Grundlage des Trägheitssatzes und des zweiten Newton’schen Gesetzes die Bedeutung wichtiger Sicherheitssysteme im Auto.",
+      "lessons": [
+        "beschleunigung"
+      ],
+      "status": "implemented",
+      "evidence": "A sorting activity distinguishes physical claims, costs and a misconception. The transfer task explains restraint systems and force reduction."
+    },
+    {
+      "lb": "3.2",
+      "competence": "stellen Alltagsvorstellungen zu Bewegungen und ihren Ursachen deren physikalische Beschreibung gegenüber und vollziehen in diesem Zusammenhang einen wesentlichen Erkenntnisfortschritt durch die physikalische Sicht auf die Natur nach.",
+      "lessons": [
+        "gleichgewicht"
+      ],
+      "status": "implemented",
+      "evidence": "The transfer task compares motion on ideal smooth and rough surfaces to distinguish velocity and its change."
+    },
+    {
+      "lb": "3.2",
+      "competence": "planen unter Anleitung einen geeigneten Versuch, um einen Zusammenhang zwischen Kraft und Verformung dehnbarer Körper zu untersuchen, führen diesen selbständig durch und protokollieren ihn selbständig. Sie verwenden ein Tabellenkalkulationsprogramm, um die Messwerte, auch unter Verwendung von Ausgleichsgeraden, graphisch auszuwerten, und identifizieren dabei den Hooke’schen Bereich.",
+      "lessons": [
+        "feder"
+      ],
+      "status": "supported",
+      "evidence": "The plot includes a model trend and reference line. The planning task specifies spreadsheet columns and analysis; learners carry out the spring experiment and fit their own line."
+    },
+    {
+      "lb": "4.1",
+      "track": "NTG",
+      "competence": "messen selbständig Stromstärken und Spannungen in Reihen- und Parallelschaltungen von Solarmodulen, variieren äußere Einflussgrößen (z. B. Neigungswinkel, Beschattung) und ziehen Schlussfolgerungen für eine optimale Nutzung von Solarmodulen, die sie beispielsweise in Form einer Betriebsanleitung formulieren. Sie testen die Verwendbarkeit von Solarmodulen in unterschiedlichen technischen Anwendungen.",
+      "lessons": [
+        "solarmodule"
+      ],
+      "status": "supported",
+      "evidence": "The model varies angle, shading and wiring, and the tasks guide controlled measurements and a motor test. Physical measurements and application checks are done in class."
+    },
+    {
+      "lb": "4.1",
+      "track": "NTG",
+      "competence": "untersuchen experimentell Aufbau und Eigenschaften weiterer Elektrizitätsquellen (z. B. Modellversuch zum galvanischen Element, Untersuchung der Ausgangsspannungen unterschiedlicher Netzgeräte, Innenwiderstand und Klemmenspannung einer Batterie und einer Solarzelle) und interpretieren ausgewählte Beobachtungen mithilfe ihrer theoretischen Kenntnisse zum elektrischen Stromkreis.",
+      "lessons": [
+        "stromquellen"
+      ],
+      "status": "supported",
+      "evidence": "The two source models compare terminal voltage under load. The notebook scaffolds real measurements, and a transfer task prepares a conductivity investigation."
+    },
+    {
+      "lb": "4.2",
+      "track": "NTG",
+      "competence": "führen weitgehend selbständig Experimente zur Beobachtung von Phänomenen sowie zur Beantwortung vorgegebener Fragestellungen durch. Sie werten experimentelle Daten unter Verwendung vorgegebener Darstellungsformen weitgehend selbständig aus, auch unter Verwendung geeigneter digitaler Hilfsmittel.",
+      "lessons": [
+        "forschungsauftrag"
+      ],
+      "status": "supported",
+      "evidence": "The model supplies an example trajectory and the notebook supports observations. The learner performs real recording and analysis in class."
+    },
+    {
+      "lb": "4.2",
+      "track": "NTG",
+      "competence": "interpretieren Beobachtungen und Daten im Rahmen der Auswertung mit fachsprachlich korrekten Formulierungen oder einfachen Formen der Mathematisierung, ggf. unter Verwendung ihnen bereits bekannter Konzepte oder Modelle. Sie beschreiben die experimentelle Arbeitsweise in den wesentlichen Teilschritten.",
+      "lessons": [
+        "forschungsauftrag"
+      ],
+      "status": "implemented",
+      "evidence": "A worksheet distinguishes observation, interpretation and judgment. The model and written response support the work steps."
+    },
+    {
+      "lb": "4.2",
+      "track": "NTG",
+      "competence": "entnehmen selbständig Informationen aus angemessenen Quellen und führen dabei auch Informationen aus mehreren Quellen, auch solchen im Internet, zusammen.",
+      "lessons": [
+        "forschungsauftrag"
+      ],
+      "status": "supported",
+      "evidence": "The lesson links curriculum and measurement guidance. Learners independently compare sources and produce a synthesis."
+    },
+    {
+      "lb": "4.2",
+      "track": "NTG",
+      "competence": "dokumentieren weitgehend selbständig experimentelle Untersuchungen sowie durch die Arbeit mit Modellen gewonnene Ergebnisse. Hierbei berücksichtigen sie Vorgaben zur Art und Struktur der Dokumentation und setzen vorgegebene fachtypische Darstellungsformen sachgerecht ein (z. B. Pfeile, Diagramme).",
+      "lessons": [
+        "forschungsauftrag"
+      ],
+      "status": "supported",
+      "evidence": "The task gives a model protocol and asks for arrows and a measurement limitation. Learners document their own experiment."
+    },
+    {
+      "lb": "4.2",
+      "track": "NTG",
+      "competence": "präsentieren Arbeitsergebnisse sachgerecht in mündlichen Beiträgen, Kurzreferaten oder anhand von Dokumentationen und verwenden hierbei bewusst wichtige Fachbegriffe des jeweiligen Themengebiets. Sie übertragen gebräuchliche alltagssprachliche Formulierungen in fachsprachliche Aussagen.",
+      "lessons": [
+        "forschungsauftrag"
+      ],
+      "status": "supported",
+      "evidence": "A presentation brief requests labelled arrows, technical terms and a justified conclusion. The presentation happens in class."
+    },
+    {
+      "lb": "4.2",
+      "track": "NTG",
+      "competence": "untersuchen die Struktur von Bewertungen zu einfach strukturierten Problemstellungen auf der Grundlage bereits erworbener Fachkenntnisse sowie weitgehend selbständig gewonnener Arbeitsergebnisse (z. B. durch Textarbeit oder Recherche). Sie formulieren zu solchen Kontexten auch eigene kurze Bewertungen. Sie reflektieren, dass sich Bewertungen aufgrund der Auswahl und der Gewichtung von Kriterien unterscheiden können.",
+      "lessons": [
+        "forschungsauftrag"
+      ],
+      "status": "implemented",
+      "evidence": "Tasks distinguish physical evidence from criteria and ask learners to justify their weighting when choosing a measuring method."
+    }
+  ],
+  "optional_lessons": [
+    "forschungsauftrag"
+  ]
+}

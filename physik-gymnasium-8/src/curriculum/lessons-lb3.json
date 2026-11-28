@@ -1,0 +1,738 @@
+[
+  {
+    "id": "tempo",
+    "lb": 3,
+    "title": "Geschwindigkeit messen",
+    "period": "Ph8 3.1 · Dynamik zweidimensionaler Bewegungen",
+    "intro": "Miss Weg und Zeit zwischen Bildern einer Bewegung.",
+    "tracks": [
+      "ANDERE",
+      "NTG"
+    ],
+    "paragraphs": [
+      "Die mittlere Geschwindigkeit entlang einer Strecke erhältst du aus der zurückgelegten Weglänge geteilt durch die verstrichene Zeit. Bei gleichförmiger Bewegung legst du in gleichen Zeiten gleich lange Strecken zurück. Bei veränderlicher Bewegung beschreibt ein kleines Zeitintervall die Geschwindigkeit um den betrachteten Zeitpunkt besser.",
+      "In einer Bildfolge mit gleichen Zeitabständen kannst du mit einem Maßstab die Ortsabstände messen. Du brauchst eine bekannte Länge im Bild und den Zeitabstand zwischen den Bildern. Zu viele Stellen im Ergebnis täuschen eine Messgenauigkeit vor, die Maßstab und Zeitmessung nicht liefern.",
+      "Beispiel: Ein Roller legt 12 m in 3,0 s zurück. Die mittlere Geschwindigkeit beträgt 4,0 m/s oder rund 14 km/h. Multipliziere den Zahlenwert in m/s mit 3,6 für km/h."
+    ],
+    "formulas": [
+      "v = Δs / Δt",
+      "1 m/s = 3,6 km/h"
+    ],
+    "sourceIds": [
+      "lp",
+      "measurement"
+    ],
+    "model": "tempo",
+    "calculation": "tempo",
+    "takeaway": "Teile die Weglänge durch die Zeit und notiere die Einheit. Größere Punktabstände bei gleicher Bildzeit bedeuten größeres Tempo.",
+    "quiz": {
+      "question": "Was passiert mit v, wenn dieselbe Strecke in der halben Zeit zurückgelegt wird?",
+      "answer": "v wird doppelt so groß",
+      "wrong": [
+        "v bleibt gleich",
+        "v wird halb so groß"
+      ],
+      "explanation": "Der Nenner Δt halbiert sich, deshalb verdoppelt sich der Quotient."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Beobachtungen zuordnen",
+      "instruction": "Ordne zu, welche Größe jeweils gemessen oder berechnet wird.",
+      "categories": [
+        "Strecke",
+        "Zeit",
+        "Geschwindigkeit"
+      ],
+      "entries": [
+        {
+          "text": "Abstand zwischen zwei Markierungen mit dem Maßband",
+          "target": 0,
+          "feedback": "Das ist Δs."
+        },
+        {
+          "text": "Abstand zwischen zwei Zeitstempeln",
+          "target": 1,
+          "feedback": "Das ist Δt."
+        },
+        {
+          "text": "Quotient aus beiden Werten",
+          "target": 2,
+          "feedback": "Der Quotient gibt die mittlere Geschwindigkeit an."
+        }
+      ],
+      "conclusion": "Teile die Weglänge durch die Zeit und notiere die Einheit. Größere Punktabstände bei gleicher Bildzeit bedeuten größeres Tempo."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Fahrrad legt 15 m in 3,0 s zurück. Bestimme die Geschwindigkeit in beiden üblichen Einheiten.",
+        "hints": [
+          "Berechne Δs / Δt.",
+          "Für km/h mit 3,6 multiplizieren."
+        ],
+        "model": "15 m / 3,0 s = 5,0 m/s. Das sind 18 km/h.",
+        "criteria": [
+          "Division korrekt",
+          "m/s korrekt",
+          "km/h korrekt"
+        ]
+      },
+      "2": {
+        "prompt": "Vergleiche zwei Messungen derselben gleichförmigen Fahrt: 2 m in 0,49 s und 20 m in 5,0 s. Warum kann die zweite verlässlicher sein?",
+        "hints": [
+          "Vergleiche die Reaktionszeit mit der Messzeit.",
+          "Rechne beide Geschwindigkeiten aus."
+        ],
+        "model": "Die Ergebnisse sind ungefähr 4,1 m/s und 4,0 m/s. Eine gleich große absolute Stoppabweichung ist über 5,0 s anteilig kleiner. Der Unterschied allein belegt keine Tempoänderung.",
+        "criteria": [
+          "Beide Werte angenähert",
+          "Relative Zeitabweichung",
+          "Vorsichtige Auswertung"
+        ]
+      }
+    }
+  },
+  {
+    "id": "vektoren",
+    "lb": 3,
+    "title": "Geschwindigkeitspfeile auf einer Kurve",
+    "period": "Ph8 3.1 · Dynamik zweidimensionaler Bewegungen",
+    "intro": "Lies Tempo und Richtung aus gleichmäßig getakteten Bildern ab.",
+    "tracks": [
+      "ANDERE",
+      "NTG"
+    ],
+    "paragraphs": [
+      "Eine Geschwindigkeit hat Betrag und Richtung. In einer Zeichnung zeigt der Geschwindigkeitspfeil in Bewegungsrichtung. Seine Länge steht für den Betrag nach einem festen Maßstab. Auf einer Kurve liegt die momentane Richtung tangential zur Bahn.",
+      "In einer Stroboskopdarstellung entstehen die Punkte in gleichen Zeitabständen. Die Verbindung zweier eng benachbarter Punkte nähert die Bewegungsrichtung zwischen ihnen an. Für den Pfeil an einem mittleren Punkt ist die Richtung vom Punkt davor zum Punkt danach eine Näherung, wenn sich die Bewegung in diesem Abschnitt gleichmäßig ändert.",
+      "Beispiel: Bei einem Maßstab von 1 cm für 2 m/s bekommt ein Pfeil für 6 m/s die Länge 3 cm. Bei gleichbleibendem Tempo bleibt er in der Kurve gleich lang, dreht sich aber mit der Fahrtrichtung."
+    ],
+    "formulas": [
+      "Geschwindigkeitspfeil",
+      "Richtung und Betrag",
+      "Maßstab"
+    ],
+    "sourceIds": [
+      "lp"
+    ],
+    "model": "vektoren",
+    "calculation": "vektoren",
+    "takeaway": "Gleiche Pfeillänge bedeutet gleiches Tempo. Eine andere Pfeilrichtung bedeutet eine andere Geschwindigkeit.",
+    "quiz": {
+      "question": "Ein Fahrrad fährt bei gleichem Tempo um eine Ecke. Was ändert sich?",
+      "answer": "Die Richtung des Geschwindigkeitspfeils",
+      "wrong": [
+        "Nur die Länge des Pfeils",
+        "Weder Richtung noch Länge"
+      ],
+      "explanation": "Die Geschwindigkeit ändert sich durch die neue Richtung."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Beobachtungen zuordnen",
+      "instruction": "Welches Merkmal liest du jeweils ab?",
+      "categories": [
+        "Betrag",
+        "Richtung",
+        "Ortsmarke"
+      ],
+      "entries": [
+        {
+          "text": "Länge des Geschwindigkeitspfeils im gewählten Maßstab",
+          "target": 0,
+          "feedback": "Sie gibt das Tempo an."
+        },
+        {
+          "text": "Spitze des Pfeils zeigt schräg nach rechts oben",
+          "target": 1,
+          "feedback": "Dorthin bewegt sich der Körper."
+        },
+        {
+          "text": "Stroboskop-Punkt am Pfeilanfang",
+          "target": 2,
+          "feedback": "Dort war der Körper zum entsprechenden Zeitpunkt."
+        }
+      ],
+      "conclusion": "Gleiche Pfeillänge bedeutet gleiches Tempo. Eine andere Pfeilrichtung bedeutet eine andere Geschwindigkeit."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Zeichne in eine Kurve bei konstantem Tempo drei Geschwindigkeitspfeile.",
+        "hints": [
+          "Wähle denselben Maßstab für alle.",
+          "Lege die Pfeile tangential an."
+        ],
+        "model": "Ich zeichne an drei Stellen gleich lange Pfeile tangential in Fahrtrichtung. Auf diese Weise bleibt der Betrag gleich und die Richtung ändert sich.",
+        "criteria": [
+          "Drei Stellen",
+          "Gleiche Länge",
+          "Tangential in Fahrtrichtung"
+        ]
+      },
+      "2": {
+        "prompt": "Auf zwei Videos fährt je ein Roller gleich schnell. In einem liegen die Punkte doppelt so weit auseinander. Gib eine mögliche Erklärung und eine Kontrollrechnung an.",
+        "hints": [
+          "Vergleiche Zeit zwischen Bildern und Maßstab.",
+          "Überprüfe den Quotienten Weg durch Zeit."
+        ],
+        "model": "Bei gleicher Abbildung kann der Bildabstand in der Zeit doppelt so groß sein. Dann sind Weg und Zeit doppelt, der Quotient gleich. Man muss auch die Längenskala im Bild kennen.",
+        "criteria": [
+          "Sachgerechte Erklärung",
+          "Quotient bleibt gleich",
+          "Bildmaßstab genannt"
+        ]
+      }
+    }
+  },
+  {
+    "id": "kraftstoss",
+    "lb": 3,
+    "title": "Geschwindigkeitsänderung und Kraftstoß",
+    "period": "Ph8 3.1 · Dynamik zweidimensionaler Bewegungen",
+    "intro": "Setze Pfeile zusammen und prüfe, wie Einwirkdauer und Masse wirken.",
+    "tracks": [
+      "ANDERE",
+      "NTG"
+    ],
+    "paragraphs": [
+      "Lege die Pfeile der Geschwindigkeit davor und danach mit gemeinsamem Startpunkt übereinander. Der Pfeil von der alten zur neuen Spitze zeigt Δv⃗. Um die neue Geschwindigkeit zu zeichnen, hängst du Δv⃗ an die Spitze der alten Geschwindigkeit.",
+      "Für eine konstante resultierende Kraft gilt F⃗ · Δt = m · Δv⃗. Die Geschwindigkeitsänderung zeigt in Richtung der Kraft. Bei gleicher Kraft ändert eine längere Einwirkzeit die Geschwindigkeit stärker, eine größere Masse schwächer. Bei veränderlicher Kraft ist in dieser Gleichung die mittlere Kraft über die Einwirkzeit gemeint.",
+      "Beispiel: Auf einen Puck mit 0,5 kg wirkt 0,25 s lang seitlich eine resultierende Kraft von 4 N. Seine Geschwindigkeit ändert sich um 2 m/s in Kraftrichtung. Hatte er zuvor 3 m/s nach rechts und wirkt die Kraft nach oben, zeigt die neue Geschwindigkeit nach rechts oben."
+    ],
+    "formulas": [
+      "Δv⃗ = v⃗ danach − v⃗ davor",
+      "F⃗ · Δt = m · Δv⃗",
+      "1 N = 1 kg · m/s²"
+    ],
+    "sourceIds": [
+      "lp"
+    ],
+    "model": "kraftstoss",
+    "calculation": "kraftstoss",
+    "takeaway": "Die Kraft legt die Richtung der Geschwindigkeitsänderung fest. Der ursprüngliche Geschwindigkeitspfeil trägt zur neuen Bewegung bei.",
+    "quiz": {
+      "question": "Welche Richtung hat Δv⃗ bei einer Kraft nach oben auf einen nach rechts laufenden Puck?",
+      "answer": "Nach oben",
+      "wrong": [
+        "Nach rechts",
+        "Entlang der neuen Geschwindigkeit"
+      ],
+      "explanation": "Δv⃗ zeigt wie die resultierende Kraft nach oben. Der neue Geschwindigkeitspfeil ist die Summe."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Beobachtungen zuordnen",
+      "instruction": "Ordne jede Änderung dem richtigen Pfeil zu.",
+      "categories": [
+        "v⃗ davor",
+        "Δv⃗",
+        "v⃗ danach"
+      ],
+      "entries": [
+        {
+          "text": "Der Puck läuft vor dem Anstoß nach rechts.",
+          "target": 0,
+          "feedback": "Das beschreibt die Ausgangsgeschwindigkeit."
+        },
+        {
+          "text": "Der kurze Stoß wirkt seitlich.",
+          "target": 1,
+          "feedback": "Der zusätzliche Pfeil zeigt in Richtung des Stoßes."
+        },
+        {
+          "text": "Der Puck bewegt sich anschließend schräg.",
+          "target": 2,
+          "feedback": "Das ist die Vektorsumme."
+        }
+      ],
+      "conclusion": "Die Kraft legt die Richtung der Geschwindigkeitsänderung fest. Der ursprüngliche Geschwindigkeitspfeil trägt zur neuen Bewegung bei."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Skizziere den Beispielpuck mit drei Pfeilen im Maßstab 1 cm für 1 m/s.",
+        "hints": [
+          "Zeichne zuerst 3 cm nach rechts.",
+          "Hänge 2 cm nach oben an die erste Pfeilspitze."
+        ],
+        "model": "Der erste Pfeil ist 3 cm nach rechts, Δv⃗ geht 2 cm von seiner Spitze nach oben. Die Verbindung vom ursprünglichen Start zur neuen Spitze ist v⃗ danach.",
+        "criteria": [
+          "Maßstab verwendet",
+          "Δv⃗ am richtigen Ort",
+          "Diagonale richtig"
+        ]
+      },
+      "2": {
+        "prompt": "Ein Kletterer fällt in eine weiche Matte. Wie verändert eine doppelt so lange Abbremszeit die mittlere resultierende Kraft bei gleicher Geschwindigkeitsänderung?",
+        "hints": [
+          "Masse und Δv bleiben gleich.",
+          "Vergleiche das Produkt F · Δt."
+        ],
+        "model": "Bei gleicher Masse und gleicher Geschwindigkeitsänderung bleibt F · Δt gleich. Wird die Abbremszeit doppelt so groß, halbiert sich die mittlere resultierende Kraft.",
+        "criteria": [
+          "Gleiche Masse und Δv",
+          "Produkt konstant",
+          "Halbierung erklärt"
+        ]
+      }
+    }
+  },
+  {
+    "id": "beschleunigung",
+    "lb": 3,
+    "title": "Beschleunigung und Verkehrssicherheit",
+    "period": "Ph8 3.1 · Dynamik zweidimensionaler Bewegungen",
+    "intro": "Vergleiche Bremsvorgänge und werte Geschwindigkeiten aus.",
+    "tracks": [
+      "ANDERE",
+      "NTG"
+    ],
+    "paragraphs": [
+      "Bei geradliniger Bewegung legst du eine positive Richtung fest. Die Beschleunigung gibt an, wie sich die Geschwindigkeit pro Sekunde ändert. Wird ein nach rechts fahrendes Auto langsamer, sind Δv und a bei dieser Vorzeichenwahl negativ. Die resultierende Kraft zeigt in Richtung von a.",
+      "Beispiel: Ein Wagen wird in 2,0 s von 8,0 m/s auf 4,0 m/s langsamer. Seine mittlere Beschleunigung beträgt −2,0 m/s². Bei 500 kg beträgt die mittlere resultierende Kraft −1000 N, also 1000 N entgegen der gewählten Bewegungsrichtung.",
+      "Beim Aufprall bewegt sich der Körper aufgrund seiner Trägheit zunächst weiter. Der Gurt hält ihn zurück. Airbag und Knautschzone können die Abbremszeit verlängern und so die mittlere Kraft verringern. Für eine Videoauswertung bestimmst du v in zwei kurzen Zeitfenstern und teilst die Differenz durch den Abstand ihrer Mittelpunktszeiten."
+    ],
+    "formulas": [
+      "a = Δv / Δt",
+      "F = m · a bei geradliniger Bewegung",
+      "a in m/s²"
+    ],
+    "sourceIds": [
+      "lp"
+    ],
+    "model": "beschleunigung",
+    "calculation": "beschleunigung",
+    "takeaway": "Eine größere Abbremszeit bedeutet bei gleichem Δv eine kleinere mittlere Beschleunigung und Kraft.",
+    "quiz": {
+      "question": "Ein Auto fährt nach rechts und wird langsamer. Rechts ist positiv. Welches Vorzeichen hat a?",
+      "answer": "Negativ",
+      "wrong": [
+        "Positiv",
+        "Immer null"
+      ],
+      "explanation": "Die Endgeschwindigkeit ist kleiner als die Anfangsgeschwindigkeit. Δv ist negativ."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Beobachtungen zuordnen",
+      "instruction": "Unterscheide Aussagearten über eine Ausstattung im Auto.",
+      "categories": [
+        "Physikalisches Argument",
+        "Außerfachliches Kriterium",
+        "Fehlvorstellung"
+      ],
+      "entries": [
+        {
+          "text": "Die längere Abbremszeit senkt bei gleichem Δv die mittlere Kraft.",
+          "target": 0,
+          "feedback": "Das folgt aus dem zweiten Newton’schen Gesetz."
+        },
+        {
+          "text": "Die Anschaffung ist teurer.",
+          "target": 1,
+          "feedback": "Das ist ein wirtschaftliches Kriterium."
+        },
+        {
+          "text": "Ohne zurückhaltende Kraft stoppt der Körper gleichzeitig mit dem Auto.",
+          "target": 2,
+          "feedback": "Aufgrund der Trägheit bewegt er sich zunächst weiter."
+        }
+      ],
+      "conclusion": "Eine größere Abbremszeit bedeutet bei gleichem Δv eine kleinere mittlere Beschleunigung und Kraft."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Plane eine Videoauswertung einer anfahrenden Spielbahn.",
+        "hints": [
+          "Markiere eine bekannte Strecke im Bild.",
+          "Wähle zwei kurze Zeitfenster."
+        ],
+        "model": "Ich stelle die Kamera fest, lege den Maßstab in die Bewegungsebene und nutze Zeitstempel für v₁ und v₂. Dann teile ich v₂ − v₁ durch den zeitlichen Abstand der Fenster.",
+        "criteria": [
+          "Maßstab",
+          "Zwei Geschwindigkeiten",
+          "Auswertung mit Δt"
+        ]
+      },
+      "2": {
+        "prompt": "Ein Gurt und ein Airbag wirken zusammen. Begründe ihre Bedeutung und unterscheide das von einer Aussage über Anschaffungskosten.",
+        "hints": [
+          "Trägheit erklärt die Weiterbewegung.",
+          "Gleiche Geschwindigkeitsänderung in mehr Zeit."
+        ],
+        "model": "Der Gurt bremst den Körper, der sich sonst weiterbewegt. Ein Airbag kann die Abbremszeit von Kopf und Oberkörper verlängern und Kräfte über eine größere Fläche verteilen. Kosten sind ein wirtschaftliches Kriterium.",
+        "criteria": [
+          "Trägheit angewendet",
+          "Abbremszeit und Kraft",
+          "Sachargument und Kosten getrennt"
+        ]
+      }
+    }
+  },
+  {
+    "id": "gewichtskraft",
+    "lb": 3,
+    "title": "Masse, Gewichtskraft und freier Fall",
+    "period": "Ph8 3.2 · Kräfte und ihre Wirkungen",
+    "intro": "Vergleiche denselben Körper auf Erde und Mond.",
+    "tracks": [
+      "ANDERE",
+      "NTG"
+    ],
+    "paragraphs": [
+      "Die Masse eines Körpers misst seine Trägheit und wird in Kilogramm angegeben. Seine Gewichtskraft ist die Anziehungskraft des Himmelskörpers; sie zeigt näherungsweise zum Mittelpunkt und wird in Newton angegeben. Der Ortsfaktor g gibt Gewichtskraft pro Kilogramm an.",
+      "Im freien Fall ohne Luftwiderstand ist g zugleich der Betrag der Beschleunigung. Weil F_G = m · g und F = m · a gilt, haben Körper am selben Ort die gleiche Fallbeschleunigung. Im Alltag kann Luftwiderstand bei einem Blatt Papier die Bewegung deutlich verändern.",
+      "Beispiel: Ein Körper von 2,0 kg hat auf der Erde eine Gewichtskraft von etwa 19,6 N und auf dem Mond etwa 3,2 N. Seine Masse bleibt 2,0 kg. Die Alltagsaussage „Das wiegt zwei Kilo“ bezeichnet hier die Masse."
+    ],
+    "formulas": [
+      "F_G = m · g",
+      "Erde rund 9,81 N/kg",
+      "Mond rund 1,62 N/kg"
+    ],
+    "sourceIds": [
+      "lp"
+    ],
+    "model": "gewichtskraft",
+    "calculation": "gewichtskraft",
+    "takeaway": "Masse bleibt beim Ortswechsel gleich. Die Gewichtskraft hängt vom Ortsfaktor ab.",
+    "quiz": {
+      "question": "Was ändert sich beim Wechsel von der Erde zum Mond?",
+      "answer": "Die Gewichtskraft wird kleiner, die Masse bleibt gleich.",
+      "wrong": [
+        "Beide Größen werden kleiner.",
+        "Nur die Masse wird kleiner."
+      ],
+      "explanation": "Der Ortsfaktor ändert sich; die Trägheit des Körpers bleibt gleich."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Beobachtungen zuordnen",
+      "instruction": "Ordne alle Aussagen einer Größe zu.",
+      "categories": [
+        "Masse",
+        "Gewichtskraft",
+        "Ortsfaktor"
+      ],
+      "entries": [
+        {
+          "text": "Wird in kg angegeben und misst Trägheit.",
+          "target": 0,
+          "feedback": "Sie gehört zum Körper."
+        },
+        {
+          "text": "Wird in N angegeben und wirkt nach unten zur Oberfläche.",
+          "target": 1,
+          "feedback": "Die Anziehung hängt auch vom Ort ab."
+        },
+        {
+          "text": "Wird in N/kg angegeben.",
+          "target": 2,
+          "feedback": "Der Wert ist auf dem Mond kleiner als auf der Erde."
+        }
+      ],
+      "conclusion": "Masse bleibt beim Ortswechsel gleich. Die Gewichtskraft hängt vom Ortsfaktor ab."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre einer jüngeren Person, was „Ich wiege 40 Kilo“ physikalisch bedeutet.",
+        "hints": [
+          "Masse und Kraft haben verschiedene Einheiten.",
+          "Verwende g ≈ 10 N/kg als Überschlag."
+        ],
+        "model": "40 kg bezeichnet die Masse. Auf der Erde ergibt das etwa 400 N Gewichtskraft. Auf dem Mond bleibt die Masse 40 kg und die Gewichtskraft wird kleiner.",
+        "criteria": [
+          "Masse benannt",
+          "Gewichtskraft mit Einheit",
+          "Ortswechsel korrekt"
+        ]
+      },
+      "2": {
+        "prompt": "Ein Papierblatt und eine Kugel werden gemeinsam fallen gelassen. Warum kann das Blatt später ankommen?",
+        "hints": [
+          "Vergleiche Fall mit und ohne Luft.",
+          "Skizziere Gewichtskraft und Luftwiderstand."
+        ],
+        "model": "Ohne Luft hätten beide am selben Ort die gleiche Fallbeschleunigung. In Luft wirkt auf das Blatt ein im Verhältnis zur Gewichtskraft größerer Luftwiderstand nach oben. Deshalb beschleunigt es weniger.",
+        "criteria": [
+          "Idealer Fall",
+          "Richtung des Luftwiderstands",
+          "Kraftverhältnis"
+        ]
+      }
+    }
+  },
+  {
+    "id": "gleichgewicht",
+    "lb": 3,
+    "title": "Kräftegleichgewicht und Trägheit",
+    "period": "Ph8 3.2 · Kräfte und ihre Wirkungen",
+    "intro": "Prüfe, wann ein Körper seinen Bewegungszustand beibehält.",
+    "tracks": [
+      "ANDERE",
+      "NTG"
+    ],
+    "paragraphs": [
+      "Kräfte werden als Pfeile addiert. Zwei gleich große entgegengesetzte Kräfte am selben Körper ergeben als Summe null. Dann bleibt der Körper in Ruhe oder bewegt sich geradlinig mit gleichbleibender Geschwindigkeit. Für eine Richtungs- oder Tempoänderung braucht es eine resultierende Kraft.",
+      "Beim gleichförmigen Radfahren gleichen sich Antrieb und Widerstände aus. Ohne Antrieb bremst die Reibung das Rad. Im Gedankenmodell ohne Reibung bliebe es bei gleichförmiger Bewegung. Zeichne nur die Kräfte, die auf den untersuchten Körper wirken.",
+      "Beispiel: Ein hängender Körper zieht mit 3 N nach unten. Im Stillstand zieht ihn die Messfeder mit 3 N nach oben; die Summe ist null. So kann ein Federkraftmesser die Gewichtskraft statisch messen."
+    ],
+    "formulas": [
+      "Resultierende Kraft F_res",
+      "Kräftegleichgewicht",
+      "Trägheitssatz"
+    ],
+    "sourceIds": [
+      "lp"
+    ],
+    "model": "gleichgewicht",
+    "calculation": "gleichgewicht",
+    "takeaway": "Kräftegleichgewicht bedeutet unveränderte Geschwindigkeit. Dazu gehört auch Ruhe.",
+    "quiz": {
+      "question": "Wann liegt Kräftegleichgewicht vor?",
+      "answer": "Wenn sich die Pfeile aller Kräfte am betrachteten Körper zu null addieren.",
+      "wrong": [
+        "Sobald sich der Körper bewegt.",
+        "Sobald zwei Kräfte auf den Körper wirken."
+      ],
+      "explanation": "Die Richtung und der Betrag aller Kräfte bestimmen ihre Vektorsumme."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Beobachtungen zuordnen",
+      "instruction": "Ordne zu, was in Bewegungsrichtung passiert.",
+      "categories": [
+        "Resultierende vorwärts",
+        "Resultierende rückwärts",
+        "Resultierende null"
+      ],
+      "entries": [
+        {
+          "text": "Antrieb 10 N, Widerstand 6 N, vorwärts fahrend.",
+          "target": 0,
+          "feedback": "Es bleiben 4 N vorwärts übrig."
+        },
+        {
+          "text": "Das Fahrrad rollt ohne Antrieb, Luft und Reibung bremsen.",
+          "target": 1,
+          "feedback": "Die resultierende Kraft zeigt entgegen der Fahrt."
+        },
+        {
+          "text": "Ein Wagen fährt geradlinig mit gleichbleibendem Tempo.",
+          "target": 2,
+          "feedback": "Sein Geschwindigkeitspfeil ändert sich nicht."
+        }
+      ],
+      "conclusion": "Kräftegleichgewicht bedeutet unveränderte Geschwindigkeit. Dazu gehört auch Ruhe."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Skizziere einen Körper, der mit 3 N an einem Federkraftmesser hängt.",
+        "hints": [
+          "Zeichne nur Kräfte auf den Körper.",
+          "Vergleiche Richtung und Betrag."
+        ],
+        "model": "Der Gewichtskraftpfeil zeigt nach unten, der Pfeil der Federkraft nach oben. Beide sind gleich lang und stehen für je 3 N.",
+        "criteria": [
+          "Körper klar gewählt",
+          "Beide Pfeile",
+          "Beträge gleich"
+        ]
+      },
+      "2": {
+        "prompt": "Jemand sagt „Ohne eine vorwärts gerichtete Kraft bleibt ein bewegter Körper sofort stehen.“ Erkläre den Denkfehler mit einem glatten und einem rauen Untergrund.",
+        "hints": [
+          "Unterscheide Geschwindigkeit und Geschwindigkeitsänderung.",
+          "Reibung wirkt entgegen der Bewegung."
+        ],
+        "model": "Ohne horizontale Kräfte bleibt das Tempo auf ideal glattem Untergrund gleich. Auf rauem Untergrund gibt es entgegen der Fahrt Reibung. Sie ändert die Geschwindigkeit.",
+        "criteria": [
+          "Trägheitsgesetz",
+          "Vergleich mit Reibung",
+          "Kräfte als Ursache der Änderung"
+        ]
+      }
+    }
+  },
+  {
+    "id": "schiefe-ebene",
+    "lb": 3,
+    "title": "Kräfte an der schiefen Ebene",
+    "period": "Ph8 3.2 · Kräfte und ihre Wirkungen",
+    "intro": "Zerlege einen Gewichtskraftpfeil in zwei vorgegebene Richtungen.",
+    "tracks": [
+      "ANDERE",
+      "NTG"
+    ],
+    "paragraphs": [
+      "Die Gewichtskraft zeigt auch an einer Rampe senkrecht nach unten. Du kannst denselben Pfeil durch zwei Komponenten darstellen: eine parallel zur Rampe hangabwärts, eine senkrecht zur Rampe in die Unterlage. Zeichne von der Pfeilspitze Parallelen zu diesen Richtungen. Die beiden entstehenden Seitenpfeile addieren sich zur Gewichtskraft.",
+      "Bei steilerer Rampe wird die parallele Komponente größer und die senkrechte kleiner. Die Unterlage drückt mit der Normalkraft senkrecht nach außen. Haftreibung kann bei einem ruhenden Körper den Hangabtrieb ausgleichen; ihre Richtung ist dann hangaufwärts.",
+      "Beispiel: Bei waagerechtem Brett wirkt die ganze Gewichtskraft senkrecht hinein und keine Komponente entlang des Bretts. Kippst du es, zeigt der Hangabtrieb entlang des Bretts nach unten. Wird die Haftreibung zu klein, setzt sich der Körper in Bewegung."
+    ],
+    "formulas": [
+      "Hangabtriebskraft",
+      "senkrechte Komponente",
+      "Kräfteparallelogramm"
+    ],
+    "sourceIds": [
+      "lp"
+    ],
+    "model": "schiefe-ebene",
+    "takeaway": "Komponenten sind eine Darstellung derselben Kraft. Sie gehören bei einer Bilanz an die Stelle der Gewichtskraft.",
+    "quiz": {
+      "question": "Wie verändert sich die hangabwärts gerichtete Komponente beim Steilerstellen?",
+      "answer": "Sie wird größer.",
+      "wrong": [
+        "Sie wird kleiner.",
+        "Sie bleibt gleich."
+      ],
+      "explanation": "Der Winkel der Rampe ändert die Projektion der Gewichtskraft entlang der Rampe."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Beobachtungen zuordnen",
+      "instruction": "Ordne jedem Pfeil seine Richtung zu.",
+      "categories": [
+        "Senkrecht nach unten",
+        "Parallel hangabwärts",
+        "Senkrecht zur Rampe nach außen"
+      ],
+      "entries": [
+        {
+          "text": "Gewichtskraft",
+          "target": 0,
+          "feedback": "Sie zeigt auf der Erde näherungsweise zum Erdmittelpunkt."
+        },
+        {
+          "text": "Hangabtriebskraft",
+          "target": 1,
+          "feedback": "Sie ist der Anteil entlang der Rampe."
+        },
+        {
+          "text": "Normalkraft der Unterlage",
+          "target": 2,
+          "feedback": "Sie ist eine Kraft auf den Körper, senkrecht zur Kontaktfläche."
+        }
+      ],
+      "conclusion": "Komponenten sind eine Darstellung derselben Kraft. Sie gehören bei einer Bilanz an die Stelle der Gewichtskraft."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Zeichne für eine Rampe die Gewichtskraft mit ihren beiden Komponenten.",
+        "hints": [
+          "Lege die Richtungen an die Rampenlinie.",
+          "Ergänze das Parallelogramm von der Spitze aus."
+        ],
+        "model": "Die Diagonale zeigt nach unten. Eine Seite liegt parallel zur Rampe, die andere senkrecht zu ihr; als Pfeile vom selben Ursprung ergeben sie zusammen die Diagonale.",
+        "criteria": [
+          "Gewichtspfeil senkrecht",
+          "Beide Richtungen",
+          "Parallelogramm geschlossen"
+        ]
+      },
+      "2": {
+        "prompt": "Ein Klotz bleibt zunächst auf der Rampe liegen. Erkläre in einer Kraftskizze, welche Kräfte seine Gewichtskraft ausgleichen.",
+        "hints": [
+          "Ersetze die Gewichtskraft durch ihre Komponenten.",
+          "Prüfe die Bilanz in beiden Rampenrichtungen."
+        ],
+        "model": "Die Normalkraft gleicht die senkrechte Komponente aus. Die Haftreibung zeigt hangaufwärts und gleicht die parallele Komponente aus. Beide Summen sind null.",
+        "criteria": [
+          "Komponenten korrekt",
+          "Normalkraft",
+          "Haftreibung"
+        ]
+      }
+    }
+  },
+  {
+    "id": "feder",
+    "lb": 3,
+    "title": "Dehnung, Kraft und Hooke’scher Bereich",
+    "period": "Ph8 3.2 · Kräfte und ihre Wirkungen",
+    "intro": "Untersuche im Diagramm, wann doppelte Kraft doppelte Dehnung bedeutet.",
+    "tracks": [
+      "ANDERE",
+      "NTG"
+    ],
+    "paragraphs": [
+      "Miss zuerst die unbelastete Länge einer Feder. Hänge dann unter Anleitung nacheinander bekannte Massen an und bestimme ihre Gewichtskräfte. Ziehe die unbelastete Länge von der jeweils gemessenen Länge ab. Die Differenz ist die Dehnung Δl.",
+      "Zeichnest du die Kraft F über der Dehnung Δl, liegen die Messpunkte im Hooke’schen Bereich ungefähr auf einer Ursprungsgeraden. Zeichne eine Ausgleichsgerade durch den Bereich nah am Ursprung, statt die Punkte einzeln zu verbinden. Ihre Steigung ist die Federhärte D. Eine bleibende Dehnung nach Entlastung weist auf dauerhafte Verformung hin.",
+      "Beispiel: Bei 1 N verlängert sich eine Feder um 2 cm, bei 2 N um 4 cm. Dann ist D = 0,5 N/cm. Ein Messpunkt 3 N bei 8 cm passt deutlich schlechter zu der Ursprungsgeraden. Prüfe ihn mit einer Wiederholung."
+    ],
+    "formulas": [
+      "F = D · Δl im Hooke’schen Bereich",
+      "Federhärte D",
+      "Ausgleichsgerade"
+    ],
+    "sourceIds": [
+      "lp"
+    ],
+    "model": "feder",
+    "calculation": "feder",
+    "takeaway": "Nur im Hooke’schen Bereich gilt die Proportionalität zwischen Kraft und Dehnung.",
+    "quiz": {
+      "question": "Welche Dehnung erwartest du bei doppelter Kraft im Hooke’schen Bereich?",
+      "answer": "Doppelte Dehnung",
+      "wrong": [
+        "Halbe Dehnung",
+        "Gleiche Dehnung"
+      ],
+      "explanation": "Bei derselben Feder und gültiger Proportionalität bleibt F / Δl konstant."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Den Versuch vorbereiten und auswerten",
+      "instruction": "Bringe die Schritte mit den Pfeiltasten der Liste in die passende Reihenfolge.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Unbelastete Federlänge messen.",
+          "target": 0,
+          "feedback": "Sie ist der Bezug für jede Dehnung."
+        },
+        {
+          "text": "Bekannte Lasten anhängen und jeweils die belastete Länge messen.",
+          "target": 1,
+          "feedback": "Die Gewichtskraft der Last ist die Belastung der Feder."
+        },
+        {
+          "text": "Von jeder belasteten Länge die Anfangslänge abziehen.",
+          "target": 2,
+          "feedback": "Das ergibt die Dehnung in der Tabelle."
+        },
+        {
+          "text": "Kraft gegen Dehnung auftragen und den geraden Bereich auswerten.",
+          "target": 3,
+          "feedback": "Dort kannst du eine Ausgleichsgerade einzeichnen."
+        }
+      ],
+      "conclusion": "Nur im Hooke’schen Bereich gilt die Proportionalität zwischen Kraft und Dehnung."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Plane die Messung und nenne die Spalten für deine Tabelle.",
+        "hints": [
+          "Miss die unbelastete Länge.",
+          "Berechne Δl für jede Belastung."
+        ],
+        "model": "Ich erfasse Masse, Gewichtskraft, belastete Länge und die Dehnung gegenüber der unbelasteten Länge. Ich zeichne F über Δl mit Einheiten und lege für die kleinen Belastungen eine Ausgleichsgerade an.",
+        "criteria": [
+          "Unbelastete Länge",
+          "Tabelle mit F und Δl",
+          "Achsen und Ausgleichsgerade"
+        ]
+      },
+      "2": {
+        "prompt": "Eine Feder liefert (2 cm; 1 N), (4 cm; 2 N), (6 cm; 3 N) und (10 cm; 4 N). Begründe, welche Punkte zur Geraden gehören.",
+        "hints": [
+          "Rechne für jeden Punkt F / Δl.",
+          "Wiederhole auffällige Messungen."
+        ],
+        "model": "Die ersten drei Punkte liefern jeweils 0,5 N/cm. Der letzte liefert 0,4 N/cm und weicht sichtbar ab. Ich überprüfe ihn und nehme ihn bei bestätigter Abweichung aus der Ausgleichsgeraden heraus.",
+        "criteria": [
+          "Erste drei richtig",
+          "Letzter Quotient",
+          "Kontrollmessung"
+        ]
+      }
+    }
+  }
+]

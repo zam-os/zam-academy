@@ -1,0 +1,279 @@
+[
+  {
+    "id": "solarmodule",
+    "lb": 4,
+    "title": "Solarzellen in Reihe und parallel",
+    "period": "Ph8 4.1 · Untersuchungen an Solarzellen und anderen Elektrizitätsquellen",
+    "intro": "Untersuche Einfallswinkel, Verschattung und Verschaltung.",
+    "tracks": [
+      "NTG"
+    ],
+    "paragraphs": [
+      "Solarzellen wandeln Lichtenergie in elektrische Energie um. In gleicher Ausrichtung addieren sich in Reihe die Leerlaufspannungen gleichartiger Module. Der Strom in der Reihe wird bei einfacher Verschaltung vom schwächer beleuchteten Modul begrenzt. In Parallelschaltung können sich bei passender, gleicher Klemmenspannung die Zweigströme addieren.",
+      "Bei senkrechtem Lichteinfall ist die Einstrahlung pro Modulfläche bei gleicher Lichtquelle besonders groß. Drehst du ein Modul weg oder deckst einen Teil ab, kann es weniger Strom liefern. Das vereinfachte Modell zeigt Spannungs- und Stromgrenzen; tatsächliche Werte unter Last hängen auch von Kennlinien, Temperatur und Bauweise ab.",
+      "Beispiel: Zwei gleiche beleuchtete Module mit je 3 V Leerlaufspannung ergeben idealisiert in Reihe etwa 6 V. Wenn ein Modellmotor mehr Spannung braucht, ist die Reihe einen Versuch wert. Ob er anläuft, prüfst du anschließend mit Messungen unter Last."
+    ],
+    "formulas": [
+      "Leerlaufspannung",
+      "Kurzschlussstrom",
+      "Einstrahlung",
+      "Reihenschaltung und Parallelschaltung"
+    ],
+    "sourceIds": [
+      "lp",
+      "solar"
+    ],
+    "model": "solarmodule",
+    "takeaway": "Miss U und I unter denselben Bedingungen und ändere jeweils nur eine Einflussgröße.",
+    "quiz": {
+      "question": "Was begrenzt bei zwei einfachen Modulen in Reihe häufig den nutzbaren Strom?",
+      "answer": "Das schwächer beleuchtete Modul",
+      "wrong": [
+        "Die Summe beider Leerlaufspannungen allein",
+        "Nur das hellere Modul"
+      ],
+      "explanation": "In Reihe fließt derselbe Strom, also kann ein schwaches Modul die ganze Reihe begrenzen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Beobachtungen zuordnen",
+      "instruction": "Ordne die Aussagen zum Versuchsplan zu.",
+      "categories": [
+        "Verschaltung",
+        "Beleuchtung",
+        "Last"
+      ],
+      "entries": [
+        {
+          "text": "Gleiche Module hintereinander statt nebeneinander elektrisch verbinden.",
+          "target": 0,
+          "feedback": "Vergleiche Reihe mit parallel bei gleicher Beleuchtung."
+        },
+        {
+          "text": "Nur den Winkel eines Moduls zur Lampe ändern.",
+          "target": 1,
+          "feedback": "Quelle und Abstand bleiben gleich."
+        },
+        {
+          "text": "Spannung und Strom am angeschlossenen Motor messen.",
+          "target": 2,
+          "feedback": "Werte im Leerlauf reichen für den Betrieb nicht aus."
+        }
+      ],
+      "conclusion": "Miss U und I unter denselben Bedingungen und ändere jeweils nur eine Einflussgröße."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Plane einen Vergleich mit gleich beleuchteten und teilweise beschatteten Modulen.",
+        "hints": [
+          "Lass Abstand und Winkel zunächst gleich.",
+          "Miss bei der gleichen Last."
+        ],
+        "model": "Ich prüfe beide Verschaltungen mit gleicher Last und Beleuchtung. Anschließend beschatte ich ein Modul, ohne Abstand oder Winkel zu ändern, und vergleiche U, I und den Betrieb des Motors.",
+        "criteria": [
+          "Nur eine Änderung pro Vergleich",
+          "Beide Schaltungen",
+          "Lastfall dokumentiert"
+        ]
+      },
+      "2": {
+        "prompt": "Lies die verlinkte Projektbeschreibung des Fraunhofer ISE. Bewerte für ein zeitweise beschattetes Schulmodell, worauf du bei der Verschaltung und beim Test achten würdest.",
+        "hints": [
+          "Nutzt der Motor eher mehr Spannung oder mehr Strom?",
+          "Überprüfe die Vereinfachung im Modell."
+        ],
+        "model": "Eine Reihe liefert bei gleicher Einstrahlung mehr Leerlaufspannung, kann aber durch das beschattete Modul begrenzt werden. Parallele Pfade können Verschattung abmildern. Ich prüfe unter gleicher Last und definiertem Schatten, ob der Motor in jeder Schaltung läuft.",
+        "criteria": [
+          "Beide Verschaltungen betrachtet",
+          "Anwendungsziel",
+          "Kontrollierter Lasttest"
+        ]
+      }
+    }
+  },
+  {
+    "id": "stromquellen",
+    "lb": 4,
+    "title": "Elektrizitätsquellen unter Last",
+    "period": "Ph8 4.1 · Untersuchungen an Solarzellen und anderen Elektrizitätsquellen",
+    "intro": "Vergleiche Leerlauf mit belasteter Batterie und untersuche, was Leitfähigkeit zeigt.",
+    "tracks": [
+      "NTG"
+    ],
+    "paragraphs": [
+      "Ein galvanisches Element besteht aus zwei verschiedenen Elektroden und einem Elektrolyten. Chemische Reaktionen ermöglichen eine Spannung zwischen den Elektroden. Der Elektrolyt ermöglicht Ladungstransport durch Ionen; im äußeren metallischen Leiter bewegen sich Elektronen.",
+      "Im Leerlauf misst du die Spannung ohne nennenswerten Strom. Schließt du eine Last an, sinkt bei vielen Quellen die Klemmenspannung. Ein einfaches Modell stellt die reale Quelle als ideale Spannungsquelle mit einem inneren Widerstand in Reihe dar. Je größer der Strom, desto größer ist darin der innere Spannungsabfall.",
+      "Beispiel: Eine Schulbatterie zeigt unbelastet 4,5 V. Mit Last misst du 4,0 V. Der Unterschied von 0,5 V lässt sich durch einen inneren Spannungsabfall erklären. Ein Leitfähigkeitsmesser arbeitet umgekehrt mit derselben Schulquelle und vergleicht bei gleicher Elektrodenanordnung die Stromstärke verschiedener Proben."
+    ],
+    "formulas": [
+      "galvanisches Element",
+      "Klemmenspannung",
+      "Innenwiderstand",
+      "Leitfähigkeit"
+    ],
+    "sourceIds": [
+      "lp"
+    ],
+    "model": "stromquellen",
+    "takeaway": "Vergleiche Quellenspannungen im Leerlauf und unter gleicher Last. Arbeite mit der beaufsichtigten Schul-Niederspannungsquelle.",
+    "quiz": {
+      "question": "Wann liegt im einfachen Modell die volle Quellenspannung an den Klemmen?",
+      "answer": "Im Leerlauf",
+      "wrong": [
+        "Beim größtmöglichen Strom",
+        "Immer unabhängig von der Last"
+      ],
+      "explanation": "Ohne Strom entsteht am Innenwiderstand kein Spannungsabfall."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Beobachtungen zuordnen",
+      "instruction": "Unterscheide drei Bauteile im Modellversuch.",
+      "categories": [
+        "Elektrolyt",
+        "Äußere Last",
+        "Innenwiderstand"
+      ],
+      "entries": [
+        {
+          "text": "Enthält bewegliche Ionen zwischen den Elektroden.",
+          "target": 0,
+          "feedback": "Er schließt den Ladungstransport im Inneren."
+        },
+        {
+          "text": "Ist außen an die Quelle angeschlossen und beeinflusst den Strom.",
+          "target": 1,
+          "feedback": "Sie bildet einen Teil des Stromkreises."
+        },
+        {
+          "text": "Erklärt einen Teil des kleineren U an der belasteten Batterie.",
+          "target": 2,
+          "feedback": "An ihm fällt intern Spannung ab."
+        }
+      ],
+      "conclusion": "Vergleiche Quellenspannungen im Leerlauf und unter gleicher Last. Arbeite mit der beaufsichtigten Schul-Niederspannungsquelle."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche im Modell Leerlauf und Last und erkläre die Spannungsdifferenz.",
+        "hints": [
+          "Lies beide Spannungen bei gleichem Quellentyp.",
+          "Prüfe, ob I null ist."
+        ],
+        "model": "Im Leerlauf ist I fast null. Mit Last fließt Strom, am Innenwiderstand fällt Spannung ab und die Klemmenspannung sinkt.",
+        "criteria": [
+          "Zwei Messlagen",
+          "Strom korrekt",
+          "Innenwiderstand"
+        ]
+      },
+      "2": {
+        "prompt": "Plane den Vergleich der Leitfähigkeit von zwei Flüssigkeiten mit einem zuvor unter Anleitung gebauten Messgerät.",
+        "hints": [
+          "Halte Geometrie und Quelle gleich.",
+          "Wiederhole und dokumentiere."
+        ],
+        "model": "Ich halte Abstand, Eintauchtiefe, Temperatur und Spannung konstant. Mit gereinigten Elektroden messe ich I in Reihe für beide Proben mehrmals. Größeres I bei gleicher Anordnung weist auf bessere Leitfähigkeit hin.",
+        "criteria": [
+          "Kontrollgrößen",
+          "Aufbau mit Strommessung",
+          "Interpretation"
+        ]
+      }
+    }
+  },
+  {
+    "id": "forschungsauftrag",
+    "lb": 4,
+    "title": "Forschungsauftrag: Bewegung im Sport",
+    "period": "Ph8 4.2 · Vertiefung prozessbezogener Kompetenzen anhand ausgewählter Inhalte",
+    "intro": "Prüfe mit Modell, Messplan und einer begründeten Bewertung eine Behauptung.",
+    "tracks": [
+      "NTG"
+    ],
+    "paragraphs": [
+      "Fragestellung: Muss ein Ball in der Kurve schneller werden, damit sich seine Geschwindigkeit ändert? Formuliere zuerst eine Vermutung. Werte dann im Modell Punktabstände und Pfeile aus, bevor du eine unkritische seitliche Ablenkung eines rollenden Balls im Unterricht filmst.",
+      "Miss in der Videoanalyse die Länge gleicher Abschnitte und verwende einen Maßstab in der Ballebene. Dokumentiere Fragestellung, Aufbau, Beobachtung, Schlussfolgerung und eine Grenze der Messung. Zeichne mindestens zwei Geschwindigkeitspfeile im gleichen Maßstab und stelle dein Ergebnis anhand der Zeichnung kurz vor.",
+      "Beispiel: Je 0,30 m in 0,10 s bedeuten vor und nach einer Ablenkung 3,0 m/s. Die Richtungen vor und nach dem Kontakt können verschieden sein. Eine höher auflösende Kamera kann die Auswertung erleichtern; eine vorhandene Schulkamera kostet weniger. Die Bewertung hängt davon ab, wie du Messgenauigkeit und Kosten gewichtest."
+    ],
+    "formulas": [
+      "Fragestellung",
+      "Messprotokoll",
+      "Diagramm",
+      "Kriterien gewichten"
+    ],
+    "sourceIds": [
+      "lp",
+      "measurement"
+    ],
+    "model": "forschungsauftrag",
+    "optional": true,
+    "takeaway": "Trenne Beobachtung, physikalische Deutung und Bewertung. Gib bei einem Urteil die Kriterien und ihre Gewichtung an.",
+    "quiz": {
+      "question": "Welche Aussage folgt aus gleich langen Pfeilen mit verschiedenen Richtungen?",
+      "answer": "Das Tempo ist gleich, die Geschwindigkeit hat sich geändert.",
+      "wrong": [
+        "Tempo und Geschwindigkeit sind unverändert.",
+        "Das Tempo ist größer geworden."
+      ],
+      "explanation": "Die Pfeillänge steht für den Betrag; die Richtung ist ein eigener Bestandteil der Geschwindigkeit."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Den Versuch vorbereiten und auswerten",
+      "instruction": "Bringe die Schritte mit den Pfeiltasten der Liste in die passende Reihenfolge.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Eine überprüfbare Vermutung formulieren.",
+          "target": 0,
+          "feedback": "Zum Beispiel: Der Ball ändert seine Richtung bei gleichbleibendem Tempo."
+        },
+        {
+          "text": "Mit fest ausgerichteter Kamera und einem Maßstab in der Ballebene aufnehmen.",
+          "target": 1,
+          "feedback": "Maßstab und Zeitstempel machen das Video auswertbar."
+        },
+        {
+          "text": "Abstände messen und Geschwindigkeitspfeile im gleichen Maßstab zeichnen.",
+          "target": 2,
+          "feedback": "Vergleiche Betrag und Richtung getrennt."
+        },
+        {
+          "text": "Ergebnis und eine Messgrenze darstellen und ein Urteil begründen.",
+          "target": 3,
+          "feedback": "Zeige in der Präsentation, worauf sich dein Ergebnis stützt."
+        }
+      ],
+      "conclusion": "Trenne Beobachtung, physikalische Deutung und Bewertung. Gib bei einem Urteil die Kriterien und ihre Gewichtung an."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Verfasse ein kurzes Modellprotokoll über die Bahn. Nenne deine Vermutung, eine Beobachtung und den Schluss.",
+        "hints": [
+          "Lies Abstände und Richtungen getrennt.",
+          "Überlege, welche Fehler beim Filmen dazukommen."
+        ],
+        "model": "Meine Vermutung ist gleiches Tempo trotz Richtungswechsel. Die Abstände sind gleich, die Pfeile zeigen verschieden. Die Geschwindigkeit ändert sich. Eine schräg stehende Kamera könnte gleiche Wegstrecken verschieden abbilden.",
+        "criteria": [
+          "Vermutung",
+          "Beobachtung und Schluss",
+          "Messgrenze"
+        ]
+      },
+      "2": {
+        "prompt": "Vergleiche die Hinweise zu Messunsicherheiten aus der verlinkten Quelle mit dem Fachlehrplan. Entwirf einen Kurzvortrag mit einem begründeten Urteil über zwei Messverfahren.",
+        "hints": [
+          "Nutze eine beschriftete Skizze mit Pfeilen.",
+          "Begründe, welches Kriterium wichtiger ist."
+        ],
+        "model": "Ich zeige die Geschwindigkeitspfeile vor und nach der Ablenkung. Video liefert Richtung und Zeitstempel, ein rein eindimensionaler Sensor nur eine Komponente. Für die Richtungsfrage ist das Video geeigneter; Perspektivfehler kontrolliere ich durch eine fest ausgerichtete Kamera und einen Maßstab.",
+        "criteria": [
+          "Quellenbezug",
+          "Zwei Verfahren und Kriterium",
+          "Anschauliche Skizze"
+        ]
+      }
+    }
+  }
+]

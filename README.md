@@ -48,6 +48,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Physik 8 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`physik-realschule-8/`](physik-realschule-8/) | https://academy.zam-os.org/physik-realschule-8/ | `zam-academy:physik-realschule-8` |
 | Natur und Technik 7 Gymnasium (LehrplanPLUS Bayern, Informatics and a link to Physics) | [`nt-gymnasium-7/`](nt-gymnasium-7/) | https://academy.zam-os.org/nt-gymnasium-7/ | `zam-academy:nt-gymnasium-7` |
 | Physik 7 Gymnasium (LehrplanPLUS Bayern, Natur und Technik 7, Schwerpunkt Physik) | [`physik-gymnasium-7/`](physik-gymnasium-7/) | Built by Pages on merge | `zam-academy:physik-gymnasium-7` |
+| Physics 8 Gymnasium (Bavarian LehrplanPLUS, including the NTG profile) | [`physik-gymnasium-8/`](physik-gymnasium-8/) | Built by Pages on merge | `zam-academy:physik-gymnasium-8` |
 | Physik 11 Gymnasium (LehrplanPLUS Bayern, alle Ausbildungsrichtungen, Profilbereich NTG) | [`physik-gymnasium-11/`](physik-gymnasium-11/) | https://academy.zam-os.org/physik-gymnasium-11/ | `zam-academy:physik-gymnasium-11` |
 | Physik 9 Realschule (LehrplanPLUS Bayern) | [`physik-realschule-9/`](physik-realschule-9/) | https://academy.zam-os.org/physik-realschule-9/ | `zam-academy:physik-realschule-9` |
 | Relationale Datenbanken und SQL (DE/EN, LehrplanPLUS IT 2.3.1/2.3.2) | [`sql/`](sql/) | https://academy.zam-os.org/sql/ | `zam-academy:sql` |
@@ -205,6 +206,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Englisch 5: cd englisch-realschule-5 (dev server on :5223)
 # Mathematik 13 Gymnasium: cd mathematik-gymnasium-13 (dev server on :5225)
 # Physik 7 Gymnasium: cd physik-gymnasium-7 (dev server on :5266)
+# Physics 8 Gymnasium: cd physik-gymnasium-8 (dev server on :5304)
 # Natur und Technik 7 Gymnasium: cd nt-gymnasium-7 (dev server on :5269)
 # Physik 11 Gymnasium: cd physik-gymnasium-11 (dev server on :5226)
 # Geography 5 Realschule: cd geographie-realschule-5 (dev server on :5240)

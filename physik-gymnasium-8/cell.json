@@ -1,0 +1,2142 @@
+{
+  "$schema": "https://zam.app/schemas/v1/kvt-tile.json",
+  "tile_id": "zam-academy:physik-gymnasium-8",
+  "version": "2026.11.1",
+  "title": "Physik 8 Gymnasium (ZAM Academy)",
+  "description": "Wiederhole elektrischen Strom, Optik und Mechanik nach LehrplanPLUS Bayern. Für das NTG kommen Solarzellen, Elektrizitätsquellen und ein Forschungsauftrag hinzu. Jede Karte führt zur passenden Lektion.",
+  "publisher": "ZAM Academy",
+  "sources": [
+    {
+      "uri": "https://academy.zam-os.org/physik-gymnasium-8/",
+      "label": "ZAM Academy · Physik 8 Gymnasium"
+    },
+    {
+      "uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/8/physik",
+      "checked": "2026-11-28",
+      "label": "LehrplanPLUS · Physik 8 Gymnasium"
+    }
+  ],
+  "atoms": [
+    {
+      "id": "01M8H8A889A5C4H0G84KQGSDVK",
+      "atom_uri": "urn:zam:atom:01M8H8A889A5C4H0G84KQGSDVK",
+      "namespace": "zam-academy-physik-gymnasium-8",
+      "slug": "ph8-stromkreis",
+      "title": "Strom, Spannung und Widerstand",
+      "domain": "physik/elektrizitaet",
+      "reduction": "classical",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=stromkreis",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "physik-gymnasium-8",
+          "topic_code": "lb1",
+          "topic_title": "Elektrischer Strom"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "physik",
+          "topic_code": "lb1",
+          "topic_title": "Elektrischer Strom",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H8A889GZFWQF8MWJ2HR0YC",
+          "slug": "ph8-spannung-offener-kreis",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=stromkreis",
+          "question": "Was misst du zwischen den Polen einer idealen Batterie bei offenem Schalter?",
+          "materiality": "material",
+          "concept": "Die Quellenspannung.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "Die Quellenspannung."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "Die Stromstärke der Lampe."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A889X3PV164SVSQ0GBJ3",
+          "slug": "ph8-stromstaerke-bedeutung",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=stromkreis",
+          "question": "Welche Größe beschreibt die Ladungsmenge pro Zeit durch den Leiter?",
+          "materiality": "material",
+          "concept": "Die Stromstärke.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "Die Stromstärke."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "Die Spannung."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A889YSS9CPJKB20NWR0P",
+          "slug": "ph8-vergleich-widerstaende",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=stromkreis",
+          "question": "Zwei Stromkreise haben dieselbe Spannung und verschiedene Widerstände. Wie unterscheiden sich ihre Stromstärken?",
+          "materiality": "material",
+          "concept": "Der größere Widerstand führt zu kleinerer Stromstärke.",
+          "sample_solution": "Bei gleicher Spannung fließt durch den größeren Widerstand weniger Strom. Ein Amperemeter in Reihe zeigt dort die kleinere Stromstärke."
+        }
+      ]
+    },
+    {
+      "id": "01M8H8A889W5X10BQXTPD7A1YJ",
+      "atom_uri": "urn:zam:atom:01M8H8A889W5X10BQXTPD7A1YJ",
+      "namespace": "zam-academy-physik-gymnasium-8",
+      "slug": "ph8-kennlinie",
+      "title": "Widerstände und Kennlinien",
+      "domain": "physik/elektrizitaet",
+      "reduction": "classical",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=kennlinie",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H8A889A5C4H0G84KQGSDVK"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "physik-gymnasium-8",
+          "topic_code": "lb1",
+          "topic_title": "Elektrischer Strom"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "physik",
+          "topic_code": "lb1",
+          "topic_title": "Elektrischer Strom",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H8A889CTBPZPVXMRFTAXS5",
+          "slug": "ph8-widerstand-definition",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=kennlinie",
+          "question": "Wie berechnest du den Widerstand aus der Spannung U und der Stromstärke I?",
+          "materiality": "material",
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "\\frac{U}{I}",
+              "speech": "U durch I"
+            }
+          ],
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "math",
+                  "tex": "\\frac{U}{I}",
+                  "speech": "U durch I"
+                }
+              ],
+              [
+                {
+                  "type": "math",
+                  "tex": "\\frac{I}{U}",
+                  "speech": "I durch U"
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A889T7Q4FHH1P1SN736D",
+          "slug": "ph8-voltmeter",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=kennlinie",
+          "question": "Wie schaltest du ein Voltmeter, um die Spannung an einem Widerstand zu messen?",
+          "materiality": "material",
+          "concept": "Parallel an seine beiden Anschlüsse.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "Parallel an seine beiden Anschlüsse."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "In Reihe direkt vor ihn."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A889JRPJ115MJGT8FPX2",
+          "slug": "ph8-gluehlampe-kennlinie",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=kennlinie",
+          "question": "Warum ist die Strom-Spannungs-Kennlinie einer Glühlampe gekrümmt?",
+          "materiality": "material",
+          "concept": "Ihr Draht wird warm und sein Widerstand steigt.",
+          "sample_solution": "Bei höherer Spannung steigt der Strom und der Draht wird wärmer. Dann nimmt der Widerstand zu; der Strom wächst weniger als proportional."
+        }
+      ]
+    },
+    {
+      "id": "01M8H8A889SGMPJW06NAB7BE6F",
+      "atom_uri": "urn:zam:atom:01M8H8A889SGMPJW06NAB7BE6F",
+      "namespace": "zam-academy-physik-gymnasium-8",
+      "slug": "ph8-reihenschaltung",
+      "title": "Strom und Spannung in Reihe",
+      "domain": "physik/elektrizitaet",
+      "reduction": "classical",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=reihenschaltung",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H8A889W5X10BQXTPD7A1YJ"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "physik-gymnasium-8",
+          "topic_code": "lb1",
+          "topic_title": "Elektrischer Strom"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "physik",
+          "topic_code": "lb1",
+          "topic_title": "Elektrischer Strom",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H8A88972RW5V1J4A5X59Q2",
+          "slug": "ph8-reihe-strom",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=reihenschaltung",
+          "question": "Wie verhält sich die Stromstärke an verschiedenen Stellen eines Reihenkreises?",
+          "materiality": "material",
+          "concept": "Sie ist überall gleich.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "Sie ist überall gleich."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "Sie nimmt nach jedem Widerstand ab."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A8896GE5CD2E4HXBNW6N",
+          "slug": "ph8-reihe-spannung",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=reihenschaltung",
+          "question": "Wie hängen die Teilspannungen und die Quellenspannung in der Reihenschaltung zusammen?",
+          "materiality": "material",
+          "concept": "Die Teilspannungen addieren sich zur Quellenspannung.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "Die Teilspannungen addieren sich zur Quellenspannung."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "Jede Teilspannung ist gleich der Quellenspannung."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A8890HK9P6VAJ0D8HFKV",
+          "slug": "ph8-teilspannungen",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=reihenschaltung",
+          "question": "An zwei Widerständen in Reihe fallen 2 V und 4 V ab. Wie groß ist die Quellenspannung und welcher Widerstand ist größer?",
+          "materiality": "material",
+          "concept": "6 V; der Widerstand mit 4 V ist doppelt so groß.",
+          "sample_solution": "Addiere die Teilspannungen. Weil dieselbe Stromstärke fließt, ist der Widerstand mit der doppelten Spannung doppelt so groß."
+        }
+      ]
+    },
+    {
+      "id": "01M8H8A889XG0RWVW19MR10YP1",
+      "atom_uri": "urn:zam:atom:01M8H8A889XG0RWVW19MR10YP1",
+      "namespace": "zam-academy-physik-gymnasium-8",
+      "slug": "ph8-parallel-haushalt",
+      "title": "Parallelschaltung und Schutz im Haushalt",
+      "domain": "physik/elektrizitaet",
+      "reduction": "classical",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=parallel-haushalt",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H8A889SGMPJW06NAB7BE6F"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "physik-gymnasium-8",
+          "topic_code": "lb1",
+          "topic_title": "Elektrischer Strom"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "physik",
+          "topic_code": "lb1",
+          "topic_title": "Elektrischer Strom",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H8A889VJ7EJ0QGP91T9BH6",
+          "slug": "ph8-knotenregel",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=parallel-haushalt",
+          "question": "Wie verhalten sich die beiden Teilströme und der Gesamtstrom bei zwei parallelen Zweigen?",
+          "materiality": "material",
+          "concept": "Die Teilströme addieren sich zum Gesamtstrom.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "Die Teilströme addieren sich zum Gesamtstrom."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "Beide Teilströme entsprechen dem Gesamtstrom."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A889WM7KQMG1B01TSVGD",
+          "slug": "ph8-parallel-spannung",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=parallel-haushalt",
+          "question": "Wie unterscheiden sich die Spannungen an zwei parallelen Zweigen?",
+          "materiality": "material",
+          "concept": "Beide sind gleich groß.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "Beide sind gleich groß."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "Am Zweig mit dem größeren Widerstand liegt mehr Spannung an."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A889YY9NHMBYFHB9GVJP",
+          "slug": "ph8-fi-leitungsschutz",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=parallel-haushalt",
+          "question": "Woran unterscheiden Fehlerstromschutz und Leitungsschutz einen Fehler?",
+          "materiality": "material",
+          "concept": "Der FI erkennt eine Stromdifferenz, der Leitungsschutz einen Überstrom.",
+          "sample_solution": "Der FI vergleicht Hin- und Rückstrom. Der Leitungsschutz löst etwa bei einem Kurzschluss oder einer Überlast mit zu großem Strom aus."
+        }
+      ]
+    },
+    {
+      "id": "01M8H8A8895MP95Y67H9PYYJ3J",
+      "atom_uri": "urn:zam:atom:01M8H8A8895MP95Y67H9PYYJ3J",
+      "namespace": "zam-academy-physik-gymnasium-8",
+      "slug": "ph8-spiegel",
+      "title": "Spiegelbilder und Reflexion",
+      "domain": "physik/optik",
+      "reduction": "classical",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=spiegel",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "physik-gymnasium-8",
+          "topic_code": "lb2",
+          "topic_title": "Optik"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "physik",
+          "topic_code": "lb2",
+          "topic_title": "Optik",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H8A889HRF7A1A2V6F4VBBT",
+          "slug": "ph8-reflexionsgesetz",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=spiegel",
+          "question": "Zu welcher Linie misst du Einfalls- und Reflexionswinkel?",
+          "materiality": "material",
+          "concept": "Zum Lot auf die Spiegelfläche.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "Zum Lot auf die Spiegelfläche."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "Zur Spiegelfläche selbst."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A8890VNCSREKNMS6QRX4",
+          "slug": "ph8-spiegelbild-abstand",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=spiegel",
+          "question": "Ein Stift steht 20 cm vor einem ebenen Spiegel. Wo liegt sein Bild?",
+          "materiality": "material",
+          "concept": "20 cm hinter der Spiegelfläche.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "20 cm hinter der Spiegelfläche."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "20 cm vor der Spiegelfläche."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A889NG88T22NS2C2D85G",
+          "slug": "ph8-spiegel-virtuell",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=spiegel",
+          "question": "Warum kannst du das Bild eines ebenen Spiegels nicht auf einem Schirm hinter dem Spiegel auffangen?",
+          "materiality": "material",
+          "concept": "Dort treffen sich nur die gedachten Verlängerungen.",
+          "sample_solution": "Die Lichtstrahlen werden vor dem Spiegel reflektiert. Hinter ihm treffen sich lediglich die gedachten Rückverlängerungen; dort kommt das Licht dieser Strahlen nicht an."
+        }
+      ]
+    },
+    {
+      "id": "01M8H8A88964X89YG6AVTN079V",
+      "atom_uri": "urn:zam:atom:01M8H8A88964X89YG6AVTN079V",
+      "namespace": "zam-academy-physik-gymnasium-8",
+      "slug": "ph8-brechung",
+      "title": "Licht an einer Grenzfläche",
+      "domain": "physik/optik",
+      "reduction": "classical",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=brechung",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H8A8895MP95Y67H9PYYJ3J"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "physik-gymnasium-8",
+          "topic_code": "lb2",
+          "topic_title": "Optik"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "physik",
+          "topic_code": "lb2",
+          "topic_title": "Optik",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H8A889A5ZBC7WN0P1KXXV6",
+          "slug": "ph8-brechung-zum-lot",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=brechung",
+          "question": "In welche Richtung wird Licht beim schrägen Eintritt aus Luft in Glas gebrochen?",
+          "materiality": "material",
+          "concept": "Zum Lot hin.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "Zum Lot hin."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "Vom Lot weg."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A889T2MKZPYW472ETR93",
+          "slug": "ph8-senkrechter-einfall",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=brechung",
+          "question": "Wie ändert sich die Strahlrichtung beim senkrechten Eintritt aus Luft in Wasser?",
+          "materiality": "material",
+          "concept": "Die Richtung bleibt gleich.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "Die Richtung bleibt gleich."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "Der Strahl knickt seitlich ab."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A8893WPYS7VSVTACQZHE",
+          "slug": "ph8-strohhalm",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=brechung",
+          "question": "Warum erscheint ein halb eingetauchter Strohhalm geknickt?",
+          "materiality": "material",
+          "concept": "Brechung verschiebt die scheinbare Lage des eingetauchten Teils.",
+          "sample_solution": "Licht vom Teil im Wasser wird an der Oberfläche vom Lot weg gebrochen. Das Auge deutet den ankommenden Strahl als geradlinig, sodass der Teil unter Wasser versetzt erscheint."
+        }
+      ]
+    },
+    {
+      "id": "01M8H8A889N8GF4S8QZS6JHVJ5",
+      "atom_uri": "urn:zam:atom:01M8H8A889N8GF4S8QZS6JHVJ5",
+      "namespace": "zam-academy-physik-gymnasium-8",
+      "slug": "ph8-sammellinse",
+      "title": "Bilder an der Sammellinse",
+      "domain": "physik/optik",
+      "reduction": "classical",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=sammellinse",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H8A88964X89YG6AVTN079V"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "physik-gymnasium-8",
+          "topic_code": "lb2",
+          "topic_title": "Optik"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "physik",
+          "topic_code": "lb2",
+          "topic_title": "Optik",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H8A889QP30FNBRPJ8FH0XH",
+          "slug": "ph8-linse-parallelstrahl",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=sammellinse",
+          "question": "Wohin läuft ein achsenparalleler Strahl hinter einer Sammellinse?",
+          "materiality": "material",
+          "concept": "Durch den Brennpunkt hinter der Linse.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "Durch den Brennpunkt hinter der Linse."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "Gerade parallel zur Achse weiter."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A8899WTNF4NYVSVSY2P5",
+          "slug": "ph8-lupe",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=sammellinse",
+          "question": "Wo muss der Gegenstand für ein aufrechtes Lupenbild stehen?",
+          "materiality": "material",
+          "concept": "Zwischen Brennpunkt und Linse.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "Zwischen Brennpunkt und Linse."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "Weiter als zwei Brennweiten von der Linse entfernt."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A889AA9KHP7A8410ZTWH",
+          "slug": "ph8-bild-auf-schirm",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=sammellinse",
+          "question": "Warum lässt sich das Bild eines Projektors auf einem Schirm auffangen, das Lupenbild aber nicht?",
+          "materiality": "material",
+          "concept": "Beim Projektor treffen sich Lichtstrahlen, bei der Lupe nur Verlängerungen.",
+          "sample_solution": "Der Projektor bildet einen Gegenstand außerhalb der Brennweite reell ab. Bei der Lupe liegt der Gegenstand innerhalb der Brennweite. Hinter der Linse laufen die Strahlen auseinander; nur ihre Rückverlängerungen schneiden sich."
+        }
+      ]
+    },
+    {
+      "id": "01M8H8A889S86BNJEGVAFZN5A4",
+      "atom_uri": "urn:zam:atom:01M8H8A889S86BNJEGVAFZN5A4",
+      "namespace": "zam-academy-physik-gymnasium-8",
+      "slug": "ph8-auge",
+      "title": "Auge, Netzhaut und Brille",
+      "domain": "physik/optik",
+      "reduction": "classical",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=auge",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H8A889N8GF4S8QZS6JHVJ5"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "physik-gymnasium-8",
+          "topic_code": "lb2",
+          "topic_title": "Optik"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "physik",
+          "topic_code": "lb2",
+          "topic_title": "Optik",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H8A889XGSV46VKWR5R11Z5",
+          "slug": "ph8-kurzsichtigkeit-glass",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=auge",
+          "question": "Welcher Linsentyp kann Kurzsichtigkeit korrigieren?",
+          "materiality": "material",
+          "concept": "Eine Zerstreuungslinse.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "Eine Zerstreuungslinse."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "Eine Sammellinse."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A889PYNV2087XA1N8E37",
+          "slug": "ph8-weitsichtigkeit-fokus",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=auge",
+          "question": "Wo würde Licht eines fernen Gegenstands beim entspannten weitsichtigen Auge fokussiert?",
+          "materiality": "material",
+          "concept": "Hinter der Netzhaut.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "Hinter der Netzhaut."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "Vor der Netzhaut."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A889H6F7Y1CYYEDW0W07",
+          "slug": "ph8-vergleich-sehfehler",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=auge",
+          "question": "Vergleiche die Lage des Fokus für ferne Objekte bei Kurz- und Weitsichtigkeit und nenne jeweils das Korrekturglas.",
+          "materiality": "material",
+          "concept": "Kurzsichtig: davor, Zerstreuungslinse. Weitsichtig: dahinter, Sammellinse.",
+          "sample_solution": "Die Zerstreuungslinse verlagert den zu frühen Fokus nach hinten auf die Netzhaut. Ein sammelndes Glas verlagert den zu weit hinten liegenden Fokus nach vorn."
+        }
+      ]
+    },
+    {
+      "id": "01M8H8A889KCCKSDJ23M81BPRA",
+      "atom_uri": "urn:zam:atom:01M8H8A889KCCKSDJ23M81BPRA",
+      "namespace": "zam-academy-physik-gymnasium-8",
+      "slug": "ph8-totalreflexion",
+      "title": "Totalreflexion und Lichtleiter",
+      "domain": "physik/optik",
+      "reduction": "classical",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=totalreflexion",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H8A88964X89YG6AVTN079V"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "physik-gymnasium-8",
+          "topic_code": "lb2",
+          "topic_title": "Optik"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "physik",
+          "topic_code": "lb2",
+          "topic_title": "Optik",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H8A889NB6V1RBYGV22Q9S4",
+          "slug": "ph8-totalreflexion-bedingungen",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=totalreflexion",
+          "question": "Welche zwei Bedingungen braucht Totalreflexion?",
+          "materiality": "material",
+          "concept": "Vom optisch dichteren zum optisch dünneren Medium; Einfallswinkel größer als Grenzwinkel.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "Vom optisch dichteren zum optisch dünneren Medium; Einfallswinkel größer als Grenzwinkel."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "Vom optisch dünneren zum dichteren Medium; Einfallswinkel kleiner als Grenzwinkel."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A889P99QSM7DF0XX6NYP",
+          "slug": "ph8-faser-kern",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=totalreflexion",
+          "question": "Wie müssen Kern und Mantel einer Glasfaser optisch beschaffen sein?",
+          "materiality": "material",
+          "concept": "Der Kern hat den höheren Brechungsindex.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "Der Kern hat den höheren Brechungsindex."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "Der Mantel hat den höheren Brechungsindex."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A889PP71F6D7027R91CQ",
+          "slug": "ph8-faser-knick",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=totalreflexion",
+          "question": "Warum kann eine stark geknickte Glasfaser Licht verlieren?",
+          "materiality": "material",
+          "concept": "Der Einfallswinkel zum Lot kann den Grenzwinkel unterschreiten.",
+          "sample_solution": "An der Biegung ändert sich das Lot. Bei zu kleinem Einfallswinkel kann sich ein gebrochener Strahl in den Mantel ausbreiten und die Faser verliert Licht."
+        }
+      ]
+    },
+    {
+      "id": "01M8H8A889VWF03C5MMAWCS00D",
+      "atom_uri": "urn:zam:atom:01M8H8A889VWF03C5MMAWCS00D",
+      "namespace": "zam-academy-physik-gymnasium-8",
+      "slug": "ph8-tempo",
+      "title": "Geschwindigkeit messen",
+      "domain": "physik/mechanik",
+      "reduction": "classical",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=tempo",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "physik-gymnasium-8",
+          "topic_code": "lb3.1",
+          "topic_title": "Dynamik zweidimensionaler Bewegungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "physik",
+          "topic_code": "lb3.1",
+          "topic_title": "Dynamik zweidimensionaler Bewegungen",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H8A8891G2TA4Q79489RP9R",
+          "slug": "ph8-geschwindigkeit-definition",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=tempo",
+          "question": "Wie bestimmst du die mittlere Geschwindigkeit aus Weg und Zeit?",
+          "materiality": "material",
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "\\frac{\\Delta s}{\\Delta t}",
+              "speech": "Weglänge durch Zeitspanne"
+            }
+          ],
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "math",
+                  "tex": "\\frac{\\Delta s}{\\Delta t}",
+                  "speech": "Weglänge durch Zeitspanne"
+                }
+              ],
+              [
+                {
+                  "type": "math",
+                  "tex": "\\frac{\\Delta t}{\\Delta s}",
+                  "speech": "Zeitspanne durch Weglänge"
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A889BC83PWTRCV3Q0Y8M",
+          "slug": "ph8-einheit-tempo",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=tempo",
+          "question": "Wie rechnest du von Metern pro Sekunde in Kilometer pro Stunde um?",
+          "materiality": "material",
+          "concept": "Multipliziere mit 3,6.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "Multipliziere mit 3,6."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "Teile durch 3,6."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A889MY4D51W8ZX7JP8MC",
+          "slug": "ph8-zeitfenster",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=tempo",
+          "question": "Wie ändert eine längere Messdauer bei gleicher Stoppungenauigkeit die anteilige Zeitunsicherheit?",
+          "materiality": "material",
+          "concept": "Sie wird kleiner.",
+          "sample_solution": "Derselbe absolute Zeitfehler nimmt in einer längeren Messung einen kleineren Anteil ein. Wiederholte Messungen und ein größerer Messweg helfen bei einer gleichförmigen Bewegung."
+        }
+      ]
+    },
+    {
+      "id": "01M8H8A8894NGDWP7NCP3142RQ",
+      "atom_uri": "urn:zam:atom:01M8H8A8894NGDWP7NCP3142RQ",
+      "namespace": "zam-academy-physik-gymnasium-8",
+      "slug": "ph8-vektoren",
+      "title": "Geschwindigkeitspfeile auf einer Kurve",
+      "domain": "physik/mechanik",
+      "reduction": "classical",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=vektoren",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H8A889VWF03C5MMAWCS00D"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "physik-gymnasium-8",
+          "topic_code": "lb3.1",
+          "topic_title": "Dynamik zweidimensionaler Bewegungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "physik",
+          "topic_code": "lb3.1",
+          "topic_title": "Dynamik zweidimensionaler Bewegungen",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H8A889HS4PRE19J84PE5MM",
+          "slug": "ph8-pfeil-laenge",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=vektoren",
+          "question": "Was steht beim Geschwindigkeitspfeil für den Betrag der Geschwindigkeit?",
+          "materiality": "material",
+          "concept": "Seine Länge im gewählten Maßstab.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "Seine Länge im gewählten Maßstab."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "Die Richtung seiner Spitze."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A889Y6J5KJK01PG2NZYW",
+          "slug": "ph8-kurve-tempo",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=vektoren",
+          "question": "Ein Körper fährt eine Kurve mit festem Tempo. Was ändert sich am Geschwindigkeitspfeil?",
+          "materiality": "material",
+          "concept": "Seine Richtung.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "Seine Richtung."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "Nur seine Länge."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A889K3YQB0P4JQZBM5FS",
+          "slug": "ph8-stroboskop-zeit",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=vektoren",
+          "question": "Woran erkennst du in einer getakteten Bildfolge, dass ein Körper schneller wird?",
+          "materiality": "material",
+          "concept": "Die Abstände wachsen bei gleichem Zeitabstand.",
+          "sample_solution": "In jedem Bildpaar vergeht dieselbe Zeit. Je mehr Weg der Körper in dieser Zeit zurücklegt, desto größer ist seine mittlere Geschwindigkeit im Intervall."
+        }
+      ]
+    },
+    {
+      "id": "01M8H8A889626JQ2JDK64YR6MT",
+      "atom_uri": "urn:zam:atom:01M8H8A889626JQ2JDK64YR6MT",
+      "namespace": "zam-academy-physik-gymnasium-8",
+      "slug": "ph8-kraftstoss",
+      "title": "Geschwindigkeitsänderung und Kraftstoß",
+      "domain": "physik/mechanik",
+      "reduction": "classical",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=kraftstoss",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H8A8894NGDWP7NCP3142RQ"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "physik-gymnasium-8",
+          "topic_code": "lb3.1",
+          "topic_title": "Dynamik zweidimensionaler Bewegungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "physik",
+          "topic_code": "lb3.1",
+          "topic_title": "Dynamik zweidimensionaler Bewegungen",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H8A889K108R8DP6RTG96CJ",
+          "slug": "ph8-kraft-einheit",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=kraftstoss",
+          "question": "Welche SI-Einheit hat die Kraft?",
+          "materiality": "material",
+          "concept": "Newton (N).",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "Newton (N)."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "Kilogramm (kg)."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A88929S816CRDSS10D30",
+          "slug": "ph8-richtung-aenderung",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=kraftstoss",
+          "question": "In welche Richtung zeigt die Geschwindigkeitsänderung bei einem kurzen konstanten Kraftstoß?",
+          "materiality": "material",
+          "concept": "In Richtung der resultierenden Kraft.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "In Richtung der resultierenden Kraft."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "Immer in die ursprüngliche Bewegungsrichtung."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A889KE3G16GSSSK2G6DQ",
+          "slug": "ph8-puck-seitenstoss",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=kraftstoss",
+          "question": "Ein nach rechts bewegter Puck wird nach oben angestoßen. Wie findest du seinen neuen Geschwindigkeitspfeil?",
+          "materiality": "material",
+          "concept": "Hänge den Änderungsvektor an die Spitze des alten Pfeils.",
+          "sample_solution": "Zeichne den ursprünglichen Pfeil nach rechts und von seiner Spitze die Geschwindigkeitsänderung nach oben. Der Pfeil vom ursprünglichen Start zur neuen Spitze zeigt die neue Geschwindigkeit."
+        }
+      ]
+    },
+    {
+      "id": "01M8H8A889FKBMVXNH65F24N2J",
+      "atom_uri": "urn:zam:atom:01M8H8A889FKBMVXNH65F24N2J",
+      "namespace": "zam-academy-physik-gymnasium-8",
+      "slug": "ph8-beschleunigung",
+      "title": "Beschleunigung und Verkehrssicherheit",
+      "domain": "physik/mechanik",
+      "reduction": "classical",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=beschleunigung",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H8A889626JQ2JDK64YR6MT"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "physik-gymnasium-8",
+          "topic_code": "lb3.1",
+          "topic_title": "Dynamik zweidimensionaler Bewegungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "physik",
+          "topic_code": "lb3.1",
+          "topic_title": "Dynamik zweidimensionaler Bewegungen",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H8A8893VFP89ZWXN8PTQ80",
+          "slug": "ph8-zweites-newton",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=beschleunigung",
+          "question": "Wie lautet das zweite Newton’sche Gesetz bei geradliniger Bewegung?",
+          "materiality": "material",
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "F=m\\cdot a",
+              "speech": "Resultierende Kraft gleich Masse mal Beschleunigung"
+            }
+          ],
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "math",
+                  "tex": "F=m\\cdot a",
+                  "speech": "Resultierende Kraft gleich Masse mal Beschleunigung"
+                }
+              ],
+              [
+                {
+                  "type": "math",
+                  "tex": "F=\\frac{m}{a}",
+                  "speech": "Kraft gleich Masse durch Beschleunigung"
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A889Q7QH0BYKBZEM7J1V",
+          "slug": "ph8-bremsen-vorzeichen",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=beschleunigung",
+          "question": "Ein Auto fährt nach rechts und bremst. Rechts ist positiv. Welches Vorzeichen hat seine Beschleunigung?",
+          "materiality": "material",
+          "concept": "Negativ.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "Negativ."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "Positiv."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A889YZYS7VNYSGDYMH49",
+          "slug": "ph8-abbremszeit",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=beschleunigung",
+          "question": "Wie beeinflusst eine doppelt so lange Abbremszeit die mittlere resultierende Kraft bei gleicher Masse und Geschwindigkeitsänderung?",
+          "materiality": "material",
+          "concept": "Die mittlere Kraft halbiert sich.",
+          "sample_solution": "Das Produkt aus mittlerer Kraft und Zeit bleibt bei gleicher Masse und Geschwindigkeitsänderung konstant. Die doppelte Zeit ergibt die halbe mittlere Kraft."
+        }
+      ]
+    },
+    {
+      "id": "01M8H8A889P8PVCJ9T217W5HRW",
+      "atom_uri": "urn:zam:atom:01M8H8A889P8PVCJ9T217W5HRW",
+      "namespace": "zam-academy-physik-gymnasium-8",
+      "slug": "ph8-gewichtskraft",
+      "title": "Masse, Gewichtskraft und freier Fall",
+      "domain": "physik/mechanik",
+      "reduction": "classical",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=gewichtskraft",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H8A889FKBMVXNH65F24N2J"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "physik-gymnasium-8",
+          "topic_code": "lb3.2",
+          "topic_title": "Kräfte und ihre Wirkungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "physik",
+          "topic_code": "lb3.2",
+          "topic_title": "Kräfte und ihre Wirkungen",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H8A889WBCMYXPJKSN70PSR",
+          "slug": "ph8-masse-mond",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=gewichtskraft",
+          "question": "Ein Astronaut hat auf der Erde 80 kg Masse. Welche Masse hat er auf dem Mond?",
+          "materiality": "material",
+          "concept": "80 kg.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "80 kg."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "Ungefähr 13 kg."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A889C6PSX72RFCBG2XAA",
+          "slug": "ph8-ortswechsel",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=gewichtskraft",
+          "question": "Wie ändert sich die Gewichtskraft eines Körpers beim Wechsel von der Erde zum Mond?",
+          "materiality": "material",
+          "concept": "Sie wird kleiner.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "Sie wird kleiner."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "Sie bleibt unverändert."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A8897VKMR1PEBZW4DM17",
+          "slug": "ph8-freier-fall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=gewichtskraft",
+          "question": "Warum fallen auf dem Mond eine Feder und ein Stein aus gleicher Höhe gleich schnell, wenn sie gleichzeitig losgelassen werden?",
+          "materiality": "material",
+          "concept": "Beide haben am selben Ort dieselbe Fallbeschleunigung.",
+          "sample_solution": "Ohne Luftwiderstand ist die Gewichtskraft proportional zur Masse. Teilt man die Gewichtskraft durch die Masse, ergibt sich für beide derselbe Ortsfaktor als Fallbeschleunigung."
+        }
+      ]
+    },
+    {
+      "id": "01M8H8A88972650K9DM6BPDKN9",
+      "atom_uri": "urn:zam:atom:01M8H8A88972650K9DM6BPDKN9",
+      "namespace": "zam-academy-physik-gymnasium-8",
+      "slug": "ph8-gleichgewicht",
+      "title": "Kräftegleichgewicht und Trägheit",
+      "domain": "physik/mechanik",
+      "reduction": "classical",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=gleichgewicht",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H8A889P8PVCJ9T217W5HRW"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "physik-gymnasium-8",
+          "topic_code": "lb3.2",
+          "topic_title": "Kräfte und ihre Wirkungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "physik",
+          "topic_code": "lb3.2",
+          "topic_title": "Kräfte und ihre Wirkungen",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H8A889J0NA90ZBZ81K1BY9",
+          "slug": "ph8-gleichgewicht-null",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=gleichgewicht",
+          "question": "Was gilt für die Summe aller Kräfte am Körper im Kräftegleichgewicht?",
+          "materiality": "material",
+          "concept": "Sie ist null.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "Sie ist null."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "Sie zeigt in seine Bewegungsrichtung."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A889T89B6GBD65R22AY1",
+          "slug": "ph8-traegheit",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=gleichgewicht",
+          "question": "Wie bewegt sich ein rollender Wagen ohne resultierende Kraft weiter?",
+          "materiality": "material",
+          "concept": "Geradlinig mit konstanter Geschwindigkeit.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "Geradlinig mit konstanter Geschwindigkeit."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "Er muss langsamer werden."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A889A68A97H3FTJBS4DA",
+          "slug": "ph8-federkraftmesser",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=gleichgewicht",
+          "question": "Wie lässt sich die Gewichtskraft eines ruhenden Körpers mit einem Federkraftmesser bestimmen?",
+          "materiality": "material",
+          "concept": "Die Federkraft nach oben hat denselben Betrag wie seine Gewichtskraft.",
+          "sample_solution": "Der Körper ruht, also ist die Kraftsumme null. Die nach oben gerichtete Federkraft und die Gewichtskraft nach unten sind entgegengesetzt und gleich groß."
+        }
+      ]
+    },
+    {
+      "id": "01M8H8A889PHGSVW29FG4E0H0S",
+      "atom_uri": "urn:zam:atom:01M8H8A889PHGSVW29FG4E0H0S",
+      "namespace": "zam-academy-physik-gymnasium-8",
+      "slug": "ph8-schiefe-ebene",
+      "title": "Kräfte an der schiefen Ebene",
+      "domain": "physik/mechanik",
+      "reduction": "classical",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=schiefe-ebene",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H8A88972650K9DM6BPDKN9"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "physik-gymnasium-8",
+          "topic_code": "lb3.2",
+          "topic_title": "Kräfte und ihre Wirkungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "physik",
+          "topic_code": "lb3.2",
+          "topic_title": "Kräfte und ihre Wirkungen",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H8A88936RWP0GAS6F0E37G",
+          "slug": "ph8-hangabtrieb-richtung",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=schiefe-ebene",
+          "question": "Wohin zeigt die Hangabtriebskraft?",
+          "materiality": "material",
+          "concept": "Parallel zur Rampe nach unten.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "Parallel zur Rampe nach unten."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "Senkrecht in die Rampe hinein."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A889M693GW0F723X02JA",
+          "slug": "ph8-hangabtrieb-neigung",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=schiefe-ebene",
+          "question": "Wie ändert sich der Hangabtrieb bei gleicher Masse und steilerer Rampe?",
+          "materiality": "material",
+          "concept": "Er wird größer.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "Er wird größer."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "Er wird kleiner."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A88944D8FG73X1WHNTYY",
+          "slug": "ph8-rampe-ruhe",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=schiefe-ebene",
+          "question": "Welche Kräfte gleichen die beiden Komponenten der Gewichtskraft eines ruhenden Körpers auf der Rampe aus?",
+          "materiality": "material",
+          "concept": "Normalkraft und Haftreibung.",
+          "sample_solution": "Die Normalkraft zeigt aus der Unterlage und gleicht die senkrechte Komponente aus. Die Haftreibung zeigt hangaufwärts und gleicht den Hangabtrieb aus."
+        }
+      ]
+    },
+    {
+      "id": "01M8H8A8894P0NQSP2V1HF7YP8",
+      "atom_uri": "urn:zam:atom:01M8H8A8894P0NQSP2V1HF7YP8",
+      "namespace": "zam-academy-physik-gymnasium-8",
+      "slug": "ph8-feder",
+      "title": "Dehnung, Kraft und Hooke’scher Bereich",
+      "domain": "physik/mechanik",
+      "reduction": "classical",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=feder",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H8A88972650K9DM6BPDKN9"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "physik-gymnasium-8",
+          "topic_code": "lb3.2",
+          "topic_title": "Kräfte und ihre Wirkungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "physik",
+          "topic_code": "lb3.2",
+          "topic_title": "Kräfte und ihre Wirkungen",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H8A889ZQAJ4GDAH32KWG2W",
+          "slug": "ph8-hooke-proportional",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=feder",
+          "question": "Wie ändert sich die Dehnung einer Feder bei doppelter Belastung im Hooke’schen Bereich?",
+          "materiality": "material",
+          "concept": "Sie verdoppelt sich.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "Sie verdoppelt sich."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "Sie halbiert sich."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A889KTK70M7M7CM44VW1",
+          "slug": "ph8-feder-diagramm",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=feder",
+          "question": "Wie verlaufen die Messpunkte im Kraft-Dehnungs-Diagramm im Hooke’schen Bereich idealerweise?",
+          "materiality": "material",
+          "concept": "Auf einer Geraden durch den Ursprung.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "Auf einer Geraden durch den Ursprung."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "Auf einer zunehmend flachen Kurve."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A88931J56G44SGTZYECE",
+          "slug": "ph8-hooke-grenze",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=feder",
+          "question": "Wie entscheidest du, ob ein einzelner abweichender Datenpunkt auf das Ende des Hooke’schen Bereichs hinweist?",
+          "materiality": "material",
+          "concept": "Wiederhole die Messung und prüfe weitere Werte.",
+          "sample_solution": "Eine einzelne Abweichung kann ein Messfehler sein. Wenn wiederholte Punkte bei größeren Lasten systematisch von der Ursprungsgeraden abweichen, ist die Proportionalität dort nicht mehr gegeben."
+        }
+      ]
+    },
+    {
+      "id": "01M8H8A889DSMR8EHFBQM9HVH8",
+      "atom_uri": "urn:zam:atom:01M8H8A889DSMR8EHFBQM9HVH8",
+      "namespace": "zam-academy-physik-gymnasium-8",
+      "slug": "ph8-solarmodule",
+      "title": "Solarzellen in Reihe und parallel",
+      "domain": "physik/elektrizitaet",
+      "reduction": "classical",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=solarmodule",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H8A889XG0RWVW19MR10YP1"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "physik-gymnasium-8",
+          "topic_code": "lb4.1",
+          "topic_title": "Untersuchungen an Solarzellen und anderen Elektrizitätsquellen",
+          "track": "NTG"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "physik",
+          "topic_code": "lb4.1",
+          "topic_title": "Untersuchungen an Solarzellen und anderen Elektrizitätsquellen",
+          "exam_relevant": false,
+          "track": "NTG"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H8A889X6V5BHR33XXKVQEV",
+          "slug": "ph8-solar-reihe",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=solarmodule",
+          "question": "Was passiert mit der Leerlaufspannung zweier gleich beleuchteter, gleicher Module in Reihenschaltung?",
+          "materiality": "material",
+          "concept": "Die Spannungen addieren sich.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "Die Spannungen addieren sich."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "Die Spannung bleibt wie bei einem einzelnen Modul."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A889KNTNNPCW6ESDA6AN",
+          "slug": "ph8-solar-schatten",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=solarmodule",
+          "question": "Welches Modul begrenzt bei einfacher Reihenschaltung oft den Strom?",
+          "materiality": "material",
+          "concept": "Das schwächer beleuchtete Modul.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "Das schwächer beleuchtete Modul."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "Nur das heller beleuchtete Modul."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A88953CRXR1D9V16SG2H",
+          "slug": "ph8-solar-motor",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=solarmodule",
+          "question": "Warum reichen Messungen im Leerlauf nicht für die Entscheidung, ob ein Solarmodul einen Motor betreibt?",
+          "materiality": "material",
+          "concept": "Unter Last liegen eine andere Spannung und ein Strom an.",
+          "sample_solution": "Die Leerlaufspannung misst man praktisch ohne Strom. Ein Motor benötigt beides zugleich. Deshalb muss man die Spannung und Stromstärke bei angeschlossenem Motor vergleichen."
+        }
+      ]
+    },
+    {
+      "id": "01M8H8A889P8ZKRKANJSY7CMFQ",
+      "atom_uri": "urn:zam:atom:01M8H8A889P8ZKRKANJSY7CMFQ",
+      "namespace": "zam-academy-physik-gymnasium-8",
+      "slug": "ph8-stromquellen",
+      "title": "Elektrizitätsquellen unter Last",
+      "domain": "physik/elektrizitaet",
+      "reduction": "classical",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=stromquellen",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H8A889W5X10BQXTPD7A1YJ"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "physik-gymnasium-8",
+          "topic_code": "lb4.1",
+          "topic_title": "Untersuchungen an Solarzellen und anderen Elektrizitätsquellen",
+          "track": "NTG"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "physik",
+          "topic_code": "lb4.1",
+          "topic_title": "Untersuchungen an Solarzellen und anderen Elektrizitätsquellen",
+          "exam_relevant": false,
+          "track": "NTG"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H8A8898PMCMRE89TEZRYAK",
+          "slug": "ph8-leerlauf",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=stromquellen",
+          "question": "Welche Stromstärke fließt bei einer Quelle im idealen Leerlauf?",
+          "materiality": "material",
+          "concept": "Null.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "Null."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "Die maximale Stromstärke der Quelle."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A88952VYDZAYE6R85A32",
+          "slug": "ph8-elektrolyt",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=stromquellen",
+          "question": "Welche Teilchen ermöglichen den Ladungstransport im Elektrolyten?",
+          "materiality": "material",
+          "concept": "Ionen.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "Ionen."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "Nur Elektronen."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A88972Z5T645BRJW6130",
+          "slug": "ph8-klemmenspannung",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=stromquellen",
+          "question": "Warum kann die Klemmenspannung einer Batterie beim Anschließen einer Last abfallen?",
+          "materiality": "material",
+          "concept": "Unter Last fällt am Innenwiderstand Spannung ab.",
+          "sample_solution": "Bei Stromfluss tritt am inneren Widerstand ein Spannungsabfall auf. Die an der äußeren Last messbare Spannung ist deshalb kleiner als im Leerlauf."
+        }
+      ]
+    },
+    {
+      "id": "01M8H8A889YHKVQCCH4CG72QX6",
+      "atom_uri": "urn:zam:atom:01M8H8A889YHKVQCCH4CG72QX6",
+      "namespace": "zam-academy-physik-gymnasium-8",
+      "slug": "ph8-forschungsauftrag",
+      "title": "Forschungsauftrag: Bewegung im Sport",
+      "domain": "physik/mechanik",
+      "reduction": "classical",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=forschungsauftrag",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H8A8894NGDWP7NCP3142RQ"
+        },
+        {
+          "atom_id": "01M8H8A889FKBMVXNH65F24N2J"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "physik-gymnasium-8",
+          "topic_code": "lb4.2",
+          "topic_title": "Vertiefung prozessbezogener Kompetenzen anhand ausgewählter Inhalte",
+          "track": "NTG"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "physik",
+          "topic_code": "lb4.2",
+          "topic_title": "Vertiefung prozessbezogener Kompetenzen anhand ausgewählter Inhalte",
+          "exam_relevant": false,
+          "track": "NTG"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H8A889PVKNXHFA3E03CY20",
+          "slug": "ph8-beobachtung",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=forschungsauftrag",
+          "question": "Welcher Satz ist eine Beobachtung in einer Bildfolge?",
+          "materiality": "material",
+          "concept": "Die Punktabstände sind gleich lang.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "Die Punktabstände sind gleich lang."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "Ein Video ist für die Untersuchung besser als eine Stoppuhr."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A889Y1TDTK7TGBAKBNWS",
+          "slug": "ph8-massstab-video",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=forschungsauftrag",
+          "question": "Wo muss der Maßstab für eine möglichst direkte Videoauswertung liegen?",
+          "materiality": "material",
+          "concept": "In der Ebene der Bewegung.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "In der Ebene der Bewegung."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "Beliebig weit vor dem bewegten Körper."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H8A8891NY328DEEVTJGSWN",
+          "slug": "ph8-video-bewertung",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/physik-gymnasium-8/#lesson=forschungsauftrag",
+          "question": "Warum kann ein Video für eine Richtungsfrage geeigneter sein als ein eindimensionaler Sensor?",
+          "materiality": "material",
+          "concept": "Das Video kann beide Richtungen im Bild erfassen.",
+          "sample_solution": "Ein eindimensionaler Sensor erfasst nur eine Komponente. Eine geeignete Kamera zeigt die Bahn in zwei Richtungen. Maßstab und Kameraposition helfen, die Ergebnisse einzuordnen."
+        }
+      ]
+    }
+  ]
+}
